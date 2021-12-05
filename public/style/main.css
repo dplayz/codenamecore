@@ -77,7 +77,7 @@ a:visited {
 }
 .toggle-button {
 	position: absolute;
-	top: 1rem;
+	top: 1.25rem;
 	right: 1rem;
 	display: none;
 	flex-direction: column;
