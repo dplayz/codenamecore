@@ -1,5 +1,5 @@
 html{
-	background: linear-gradient(90deg, rgba(8,19,253,1) 24%, rgba(45,139,252,1) 69%);
+	background: green
 }
 body{
 	background:transparent; 
@@ -77,7 +77,7 @@ a:visited {
 }
 .toggle-button {
 	position: absolute;
-	top: 2.25rem;
+	top: 1rem;
 	right: 1rem;
 	display: none;
 	flex-direction: column;
