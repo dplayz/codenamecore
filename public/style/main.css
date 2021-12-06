@@ -6,6 +6,7 @@ body{
 	margin:0;
 	padding:0;
 	font-family: Roboto, Helvetica, Arial, sans-serif;
+	text-align:center;
 }
 a:link {
 	color: blue;
@@ -117,6 +118,20 @@ a:visited {
 	.navbar-links.active {
 		display: flex;
 		}
+}
+
+.button {
+	display:inline-block;
+	background-color: red;
+	color: white;
+	padding: 1em 1.5em;
+	text-decoration: none;
+	border-radius:20px;
+	border:black 10px;
+}
+
+.button-green {
+	background-color: green;
 }
 
 #errormessage { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
