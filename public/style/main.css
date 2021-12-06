@@ -121,13 +121,12 @@ a:visited {
 }
 
 .button {
-	display:inline-block;
+	display:inline;
 	background-color: red;
 	color: white;
 	padding: 1em 1.5em;
 	text-decoration: none;
-	border-radius:20px;
-	border:black 10px;
+	border-radius:10px;
 }
 
 .button-green {
