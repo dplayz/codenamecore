@@ -1,5 +1,5 @@
 html{
-	background: green
+	background: #32e532
 }
 body{
 	background:transparent; 
@@ -8,12 +8,12 @@ body{
 	font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 a:link {
-	color: skyblue;
+	color: blue;
 	background-color: transparent;
 	text-decoration: none;
 }
 a:visited {
-  	color: skyblue;
+  	color: blue;
  	background-color: transparent;
  	text-decoration: none;
 }
