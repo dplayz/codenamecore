@@ -36,7 +36,7 @@ a:visited {
   	outline: none;
 }
 .active, .collapsible:hover {
-  	background-color: #555;
+  	background-color: #fff;
 }
 .content {
   	display: none;
@@ -70,7 +70,7 @@ a:visited {
 .navbar-links li a {
 	display: block;
 	text-decoration: none;
-	color: white;
+	color: black;
 	padding: 1rem;
 }
 .navbar-links li:hover {
