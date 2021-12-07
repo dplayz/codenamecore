@@ -160,6 +160,12 @@ div.padding-bottom{
 	padding-bottom:100px;
 }
 
+@media (max-width: 600px) {
+	.row {
+		display: block;
+	}
+}
+
 #errormessage { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
 #errormessage h3 { color: #888; font-weight: normal; font-size: 16px; margin: 16px 0 12px; }
 #errormessage h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
