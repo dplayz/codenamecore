@@ -125,6 +125,7 @@ a.button {
 	background-color:#32373C;
 	color:white;
     padding: 8px 20px;
+	margin:5px;
     text-decoration:none;
     font-weight:bold;
     border-radius:5px;
@@ -132,9 +133,22 @@ a.button {
 	border-radius:25px;
 }
 
-.button-green {
+a.button-green {
 	background-color: green;
 }
+
+  .row {
+	display: flex;
+  }
+  
+  /* Create two equal columns that sits next to each other */
+  .column {
+	flex: 50%;
+	margin-top:auto;
+	margin-bottom:auto;
+	padding:10px;
+}
+  
 
 #errormessage { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
 #errormessage h3 { color: #888; font-weight: normal; font-size: 16px; margin: 16px 0 12px; }
