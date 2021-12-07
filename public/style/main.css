@@ -36,7 +36,7 @@ a:visited {
   	outline: none;
 }
 .active, .collapsible:hover {
-  	background-color: #555;
+  	background-color: #ffffff;
 }
 .content {
   	display: none;
@@ -122,8 +122,8 @@ a:visited {
 
 a.button {
 	display:inline-block;
-	background-color:#32373C;
-	color:white;
+	background-color:#fffff;
+	color:black;
     padding: 8px 20px;
 	margin:5px;
     text-decoration:none;
