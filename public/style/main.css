@@ -120,13 +120,16 @@ a:visited {
 		}
 }
 
-.button {
-	display:inline;
-	background-color: red;
-	color: white;
-	padding: 1em 1.5em;
-	text-decoration: none;
-	border-radius:10px;
+a.button {
+	display:inline-block;
+	background-color:#32373C;
+	color:white;
+    padding: 8px 20px;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:5px;
+    cursor:pointer;
+	border-radius:25px;
 }
 
 .button-green {
