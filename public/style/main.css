@@ -148,7 +148,17 @@ a.button-green {
 	margin-bottom:auto;
 	padding:10px;
 }
-  
+div.padding{
+	padding-top:15%;
+	padding-bottom:15%;
+	}
+div.border{
+	border-top: 2px solid gray;
+	border-bottom: 2px solid gray;
+}
+div.padding-bottom{
+	padding-bottom:15%;
+}
 
 #errormessage { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
 #errormessage h3 { color: #888; font-weight: normal; font-size: 16px; margin: 16px 0 12px; }
