@@ -1,36 +1,56 @@
 <DOCTYPE html>
-<html style="background: rgb(8,19,253);
-background: linear-gradient(90deg, rgba(8,19,253,1) 24%, rgba(45,139,252,1) 69%);">
+<html>
 	<head>
-	<title>dplayz Games</title>
+	<title>World of SteelCraft</title>
 	<link rel="stylesheet" href="../style/main.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#32e532">
 	<!--Script to call the header-->
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script>  
 	$(function(){ 
 	$("#pageheader").load("../header.html");  
+	$("#pagefooter").load("../footer.html"); 
 	}); 
 	</script>
-	<!--Redirect non javascript users into the error page-->
-	<noscript><meta http-equiv="refresh" content="0;url=../error/disabledjs.html"></noscript>  
+	<!--Hide all content and display error message-->
+	<noscript>            
+		<div id="errormessage">
+			<h2>Error</h2>
+			<h1>Javascript is off</h1><p>Website cannot be displayed properly because Javascript is turned off</p>
+			<h3>What should I do?</h3><p>Enable Javascipt, and reload this page</p>
+		</div>
+	  	<style>#pagecontent{display:none;}</style>
+	</noscript>  
 	</head>
 	<body>
-		<div id="pageheader"></div> 
-		<div style="text-align:center;">
-		<img src="../images/logo.png" width="240px" style="margin-top:2%;">	
+		<div id="pageheader"></div>
+		<div id="pagecontent">
+		<div class="pagetitle padding-bottom">
+		<h2>World of SteelCraft</h2>
+			<p>The official website of World of SteelCraft were some information from server is shared to community members and newcomers.</p>		
+			<a class="button button-green">World of SteelCraft SMP</a><a class="button button-green">Season Downloads</a>
 		</div>
-		<br>
-			<table style="margin-left:auto; margin-right:auto;">
-				<tr>
-					<td><a href="../info/" target="_parent"><button>Info</button></a></td>
-					<td><a href="https://blog.dplayzgames06.tk" target="_parent"><button>Blog</button></a></td>
-				</tr>
-			</table>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
+		<div class="row padding border">
+			<div class="column">
+				<h4>World of SteelCraft SMP</h4>
+				<p>A SMP Server founded and owned by Scary Master Playz that was started from July 27, 2020, growing and has 20+ friendly members.</p>
+			</div>
+			<div class="column">
+				<a class="button" href="../smp/server/info">Server Info</a><a class="button" href="https://link.worldofsteelcraft.tk/smp-save">Join server(Members Only)</a></a>
+			</div>
+		  </div>
+		
+		<div class="row padding border">
+			<div class="column">	
+				<h4>Season Downloads</h4>
+				<p>Every Season end, we provide download links for the members so they can check their builds, items and others after the season change.</p>
+			</div>
+			<div class="column">
+				<a class="button button-seasondownloaddirect" href="">Season 7 Download</a><a class="button" href="">Season Download</a>
+			</div>
+		</div>
+		</div>
+		<div id="pagefooter"></div>
 	</body>
 </html>
