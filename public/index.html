@@ -12,11 +12,19 @@
 	$("#pagefooter").load("../footer.html"); 
 	}); 
 	</script>
-	<!--Redirect non javascript users into the error page-->
-	<noscript><meta http-equiv="refresh" content="0;url=../error/disabledjs.html"></noscript>  
+	<!--Hide all content and display error message-->
+	<noscript>            
+		<div id="errormessage">
+			<h2>Error</h2>
+			<h1>Javascript is off</h1><p>Website cannot be displayed properly because Javascript is turned off</p>
+			<h3>What should I do?</h3><p>Enable Javascipt, and reload this page</p>
+		</div>
+	  	<style>#pagecontent{display:none;}</style>
+	</noscript>  
 	</head>
 	<body>
 		<div id="pageheader"></div>
+		<div id="pagecontent">
 		<h2>World of SteelCraft</h2>
 			<p>The official website of World of SteelCraft were some information from server is shared to community members and newcomers.</p>		
 			<a class="button button-green">World of SteelCraft SMP</a><a class="button button-green">Season Downloads</a>
@@ -40,11 +48,7 @@
 				<a class="button button-seasondownloaddirect" href="">Season 7 Download</a><a class="button" href="">Season Download</a>
 			</div>
 		</div>
-		
+		</div>
 		<div id="pagefooter"></div>
-		<br>
-		<br>
-		<br>
-		<br>
 	</body>
 </html>
