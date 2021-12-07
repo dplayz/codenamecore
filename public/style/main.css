@@ -146,18 +146,18 @@ a.button-green {
 	flex: 50%;
 	margin-top:auto;
 	margin-bottom:auto;
-	padding:10px;
+	padding:15px;
 }
 div.padding{
-	padding-top:15%;
-	padding-bottom:15%;
+	padding-top:100px;
+	padding-bottom:100px;
 	}
 div.border{
 	border-top: 2px solid gray;
 	border-bottom: 2px solid gray;
 }
 div.padding-bottom{
-	padding-bottom:15%;
+	padding-bottom:100px;
 }
 
 #errormessage { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
