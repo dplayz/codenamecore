@@ -49,8 +49,8 @@ a:visited {
 	position: relative;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #333;
-	color: white;
+	background-color: #ffffff;
+	color: black;
 }
 .brand-title {
 	font-size: 1.5rem;
@@ -74,7 +74,7 @@ a:visited {
 	padding: 1rem;
 }
 .navbar-links li:hover {
-	background-color: #555;
+	background-color: #fff;
 }
 .toggle-button {
 	position: absolute;
@@ -89,7 +89,7 @@ a:visited {
 .toggle-button .bar {
 	height: 3px;
 	width: 100%;
-	background-color: white;
+	background-color: blue;
 	border-radius: 10px;
 }
 @media (max-width: 800px) {
