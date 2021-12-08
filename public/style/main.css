@@ -1,5 +1,5 @@
 html{
-	background: #32e532
+	background: #32e532;
 }
 body{
 	background:transparent; 
@@ -36,7 +36,7 @@ a:visited {
   	outline: none;
 }
 .active, .collapsible:hover {
-  	background-color: #ffffff;
+  	background-color: #fff;
 }
 .content {
   	display: none;
@@ -70,7 +70,7 @@ a:visited {
 .navbar-links li a {
 	display: block;
 	text-decoration: none;
-	color: white;
+	color: black;
 	padding: 1rem;
 }
 .navbar-links li:hover {
@@ -122,7 +122,7 @@ a:visited {
 
 a.button {
 	display:inline-block;
-	background-color:#fffff;
+	background-color:#ffffff;
 	color:black;
     padding: 8px 20px;
 	margin:5px;
