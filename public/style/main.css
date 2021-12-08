@@ -1,5 +1,5 @@
 html{
-	background: #32e532
+	background: #32e532;
 }
 body{
 	background:transparent; 
@@ -36,7 +36,7 @@ a:visited {
   	outline: none;
 }
 .active, .collapsible:hover {
-  	background-color: #555;
+  	background-color: #fff;
 }
 .content {
   	display: none;
@@ -49,8 +49,8 @@ a:visited {
 	position: relative;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #333;
-	color: white;
+	background-color: #ffffff;
+	color: black;
 }
 .brand-title {
 	font-size: 1.5rem;
@@ -70,11 +70,11 @@ a:visited {
 .navbar-links li a {
 	display: block;
 	text-decoration: none;
-	color: white;
+	color: black;
 	padding: 1rem;
 }
 .navbar-links li:hover {
-	background-color: #555;
+	background-color: #fff;
 }
 .toggle-button {
 	position: absolute;
@@ -89,7 +89,7 @@ a:visited {
 .toggle-button .bar {
 	height: 3px;
 	width: 100%;
-	background-color: white;
+	background-color: blue;
 	border-radius: 10px;
 }
 @media (max-width: 800px) {
@@ -122,8 +122,8 @@ a:visited {
 
 a.button {
 	display:inline-block;
-	background-color:#32373C;
-	color:white;
+	background-color:#ffffff;
+	color:black;
     padding: 8px 20px;
 	margin:5px;
     text-decoration:none;
@@ -146,18 +146,24 @@ a.button-green {
 	flex: 50%;
 	margin-top:auto;
 	margin-bottom:auto;
-	padding:10px;
+	padding:15px;
 }
 div.padding{
-	padding-top:15%;
-	padding-bottom:15%;
+	padding-top:100px;
+	padding-bottom:100px;
 	}
 div.border{
 	border-top: 2px solid gray;
 	border-bottom: 2px solid gray;
 }
 div.padding-bottom{
-	padding-bottom:15%;
+	padding-bottom:100px;
+}
+
+@media (max-width: 600px) {
+	.row {
+		display: block;
+	}
 }
 
 #errormessage { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
