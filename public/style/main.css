@@ -164,7 +164,7 @@ div.padding-bottom{
 #errormessage a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
 #errormessage, #errormessage a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
 #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-
+/*Temporarily remove dark mode because of active development
 @media (prefers-color-scheme: dark) {
 	html{
 		background:#159d15;
@@ -279,8 +279,6 @@ div.padding-bottom{
 	  .row {
 		display: flex;
 	  }
-	  
-	  /* Create two equal columns that sits next to each other */
 	  .column {
 		flex: 50%;
 		margin-top:auto;
@@ -313,3 +311,4 @@ div.padding-bottom{
 	#errormessage, #errormessage a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
 	#load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
 }
+*/
