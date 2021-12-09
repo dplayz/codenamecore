@@ -100,6 +100,12 @@ body{
 .navbar-knowledgebase{
 	background-color: #EDED28;
 }
+.navbar-knowledgebase ul li{
+	background-color: #EDED28;
+}
+.navbar-knowledgebase .dropdown-content {
+	background-color: #EDED28; 
+}
 
 .toggle-button {
 	position: absolute;
