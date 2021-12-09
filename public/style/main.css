@@ -106,7 +106,13 @@ body{
 .navbar-knowledgebase .dropdown-content {
 	background-color: #EDED28; 
 }
-
+.navbar-knowledgebase .navbar-links ul li {
+	text-align: center;
+	background-color:#EDED28;
+}
+.navbar-knowledgebase .navbar-links li a {
+	background-color:#EDED28;
+}
 .toggle-button {
 	position: absolute;
 	top: 1.25rem;
@@ -258,6 +264,10 @@ div.padding-bottom{
 		color:#fff;
 		padding: 1rem;
 	}
+	.navbar-links ul li {
+	text-align: center;
+	background-color:#333;
+}
 	.navbar-links li a:hover {
 		background-color: #888;
 	}
@@ -295,6 +305,13 @@ div.padding-bottom{
 	}
 	.navbar-knowledgebase .dropdown-content {
 		background-color: #a5a50d;
+	}
+	.navbar-knowledgebase .navbar-links ul li {
+		text-align: center;
+		background-color:#a5a50d;
+	}
+	.navbar-knowledgebase .navbar-links li a {
+		background-color:#a5a50d;
 	}
 	.toggle-button {
 		position: absolute;
