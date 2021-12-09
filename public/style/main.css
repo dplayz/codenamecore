@@ -309,7 +309,7 @@ div.padding-bottom{
 	.toggle-button .bar {
 		height: 3px;
 		width: 100%;
-		background-color: blue;
+		background-color: #fff;
 		border-radius: 10px;
 	}
 	@media (max-width: 800px) {
