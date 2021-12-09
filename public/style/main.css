@@ -287,6 +287,15 @@ div.padding-bottom{
 		min-width: 160px;
 		z-index: 1;
 	}
+	.navbar-knowledgebase{
+		background-color: #a5a50d;
+	}
+	.navbar-knowledgebase ul li{
+		background-color: #a5a50d;
+	}
+	.navbar-knowledgebase .dropdown-content {
+		background-color: #a5a50d;
+	}
 	.toggle-button {
 		position: absolute;
 		top: 1.25rem;
