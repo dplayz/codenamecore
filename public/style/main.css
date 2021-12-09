@@ -97,6 +97,10 @@ body{
 	z-index: 1;
 }
 
+.navbar-knowledgebase{
+	background-color: #EDED28;
+}
+
 .toggle-button {
 	position: absolute;
 	top: 1.25rem;
