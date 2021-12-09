@@ -45,7 +45,7 @@ body{
 .brand-title {
 	font-size: 1.5rem;
 	margin: .5rem;
-}		
+}
 .navbar-links {
 	height: 100%;
 }
@@ -53,6 +53,10 @@ body{
 	display: flex;
 	margin: 0;
 	padding: 0;
+}
+.navbar-links ul li {
+	text-align: center;
+	background-color:#fff;
 }
 .navbar-links li {
 	list-style: none;
@@ -65,6 +69,49 @@ body{
 }
 .navbar-links li a:hover {
 	background-color: #ddd;
+}
+
+.dropdown, .dropbtn{
+	position: flex;
+	display: inline-block;
+	text-decoration:none;
+	color:black;
+  }
+.navbar .dropdown-content {
+	display: none;
+	background-color: #fff;
+	min-width: 160px;
+	z-index: 1;
+  }
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}  
+.navbar-links .dropdown:hover .dropdown-content{display: block;}
+.navbar-links .dropdown-content {
+	position: absolute;
+	background-color: #ffffff;
+	min-width: 160px;
+	z-index: 1;
+}
+
+.navbar-knowledgebase{
+	background-color: #EDED28;
+}
+.navbar-knowledgebase ul li{
+	background-color: #EDED28;
+}
+.navbar-knowledgebase .dropdown-content {
+	background-color: #EDED28; 
+}
+.navbar-knowledgebase .navbar-links ul li {
+	text-align: center;
+	background-color:#EDED28;
+}
+.navbar-knowledgebase .navbar-links li a {
+	background-color:#EDED28;
 }
 .toggle-button {
 	position: absolute;
@@ -96,6 +143,7 @@ body{
 		}
 			
 	.navbar-links ul {
+		
 		width: 100%;
 		flex-direction: column;
 	}
@@ -107,7 +155,10 @@ body{
 	}
 	.navbar-links.active {
 		display: flex;
-		}
+	}
+	.navbar .dropdown-content {
+		position:relative;
+	}
 }
 
 a.button {
@@ -213,8 +264,54 @@ div.padding-bottom{
 		color:#fff;
 		padding: 1rem;
 	}
+	.navbar-links ul li {
+	text-align: center;
+	background-color:#333;
+}
 	.navbar-links li a:hover {
 		background-color: #888;
+	}
+	.dropdown, .dropbtn{
+		position: flex;
+		display: inline-block;
+		text-decoration:none;
+		color:black;
+		background-color:#555;
+	  }
+	.navbar .dropdown-content {
+		display: none;
+		background-color: #555;
+		min-width: 160px;
+		z-index: 1;
+	  }
+	.dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	}  
+	.navbar-links .dropdown:hover .dropdown-content{display: block;}
+	.navbar-links .dropdown-content {
+		position: absolute;
+		background-color: #555;
+		min-width: 160px;
+		z-index: 1;
+	}
+	.navbar-knowledgebase{
+		background-color: #a5a50d;
+	}
+	.navbar-knowledgebase ul li{
+		background-color: #a5a50d;
+	}
+	.navbar-knowledgebase .dropdown-content {
+		background-color: #a5a50d;
+	}
+	.navbar-knowledgebase .navbar-links ul li {
+		text-align: center;
+		background-color:#a5a50d;
+	}
+	.navbar-knowledgebase .navbar-links li a {
+		background-color:#a5a50d;
 	}
 	.toggle-button {
 		position: absolute;
@@ -229,7 +326,7 @@ div.padding-bottom{
 	.toggle-button .bar {
 		height: 3px;
 		width: 100%;
-		background-color: blue;
+		background-color: #fff;
 		border-radius: 10px;
 	}
 	@media (max-width: 800px) {
@@ -257,7 +354,10 @@ div.padding-bottom{
 		}
 		.navbar-links.active {
 			display: flex;
-			}
+		}
+		.navbar .dropdown-content {
+			position:relative;
+		}
 	}
 	a.button {
 		display:inline-block;
@@ -279,8 +379,6 @@ div.padding-bottom{
 	  .row {
 		display: flex;
 	  }
-	  
-	  /* Create two equal columns that sits next to each other */
 	  .column {
 		flex: 50%;
 		margin-top:auto;
