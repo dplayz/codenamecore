@@ -54,6 +54,10 @@ body{
 	margin: 0;
 	padding: 0;
 }
+.navbar-links ul li {
+	text-align: center;
+	background-color:#fff;
+}
 .navbar-links li {
 	list-style: none;
 }
@@ -66,7 +70,7 @@ body{
 .navbar-links li a:hover {
 	background-color: #ddd;
 }
-/* Dropdown Button */
+
 .dropdown, .dropbtn{
 	position: flex;
 	display: inline-block;
@@ -75,7 +79,7 @@ body{
   }
 .navbar .dropdown-content {
 	display: none;
-	background-color: #ffffff;
+	background-color: #fff;
 	min-width: 160px;
 	z-index: 1;
   }
@@ -128,6 +132,7 @@ body{
 	}
 	.navbar-links ul li {
 		text-align: center;
+		background-color:#333;
 	}
 	.navbar-links ul li a {
 		padding: .5rem 1rem;
@@ -194,7 +199,7 @@ div.padding-bottom{
 #errormessage a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
 #errormessage, #errormessage a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
 #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-/*Temporarily remove dark mode because of active development
+
 @media (prefers-color-scheme: dark) {
 	html{
 		background:#159d15;
@@ -246,6 +251,32 @@ div.padding-bottom{
 	.navbar-links li a:hover {
 		background-color: #888;
 	}
+	.dropdown, .dropbtn{
+		position: flex;
+		display: inline-block;
+		text-decoration:none;
+		color:black;
+		background-color:#555;
+	  }
+	.navbar .dropdown-content {
+		display: none;
+		background-color: #555;
+		min-width: 160px;
+		z-index: 1;
+	  }
+	.dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	}  
+	.navbar-links .dropdown:hover .dropdown-content{display: block;}
+	.navbar-links .dropdown-content {
+		position: absolute;
+		background-color: #555;
+		min-width: 160px;
+		z-index: 1;
+	}
 	.toggle-button {
 		position: absolute;
 		top: 1.25rem;
@@ -287,7 +318,10 @@ div.padding-bottom{
 		}
 		.navbar-links.active {
 			display: flex;
-			}
+		}
+		.navbar .dropdown-content {
+			position:relative;
+		}
 	}
 	a.button {
 		display:inline-block;
@@ -341,4 +375,3 @@ div.padding-bottom{
 	#errormessage, #errormessage a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
 	#load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
 }
-*/
