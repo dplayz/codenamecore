@@ -40,7 +40,8 @@ body{
 /*pageheader-light | Page header, parent style of the header  */
 .navbar {
 	display: flex;
-	position: relative;
+	position: fixed;
+	width:100%;
 	justify-content: space-between;
 	align-items: center;
 	background-color: #ffffff;
@@ -222,7 +223,6 @@ div.border{
 	/*pageheader-dark | Page header style*/
 	.navbar {
 		display: flex;
-		position: relative;
 		justify-content: space-between;
 		align-items: center;
 		background-color: #333;
