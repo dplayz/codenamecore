@@ -264,8 +264,6 @@ div.border{
 	.navbar .dropdown-content {
 		display: none;
 		background-color: #555;
-		min-width: 160px;
-		z-index: 1;
 	  }
 	.dropdown-content a {
 		color: black;
@@ -277,8 +275,11 @@ div.border{
 	.navbar-links .dropdown-content {
 		position: absolute;
 		background-color: #555;
-		min-width: 160px;
 		z-index: 1;
+	}
+	div.navbar-links-last{
+		position: absolute;
+		right:0;
 	}
 	.toggle-button {
 		position: absolute;
