@@ -358,9 +358,6 @@ div.border{
 		border-radius:25px;
 		border:2px solid white;
 	}
-	a.button-green {
-		background-color: green;
-	}
 	/*pagecontent-dark-border | Border Default Style */
 	div.border{
 		border-top: 2px solid gray;
