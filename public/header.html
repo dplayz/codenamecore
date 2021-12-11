@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="/style/main.css">
 <link rel="stylesheet/less" type="text/css" href="/style/main.less" />
 <script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+<script>$(function(){$("#pagecontent-notice").load("/notice.html");});</script>
+<div id="pagecontent-notice"></div>
 <nav class="navbar">
     <div class="brand-title"><img src="/images/logo.png" width="100px"></div>
     <a href="#" class="toggle-button">
@@ -12,7 +14,7 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><div class="dropdown">
-          <a class="dropbtn">Community</a>
+          <a class="dropbtn">Community</a>  
           <div class="dropdown-content">
             <a href="/community/ban">Banned Members</a>
             <a href="/community/member-list">Member List</a>
