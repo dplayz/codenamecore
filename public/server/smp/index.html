@@ -1,0 +1,84 @@
+<DOCTYPE html>
+    <html>
+        <head>
+            <meta name="theme-color" content="#32e532">
+            <link rel="stylesheet" href="/style/main.css">
+            <link rel="stylesheet/less" type="text/css" href="/style/main.less" />
+            <script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="manifest" href="manifest.json">
+            <script src="./scripts/browser-update.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <!--Hide all content and display error message-->
+            <noscript><div id="errormessage">
+                <h2>Error</h2>
+                <h1>Javascript is off</h1><p>Website cannot be displayed properly because Javascript is turned off</p>
+                <h3>What should I do?</h3><p>Enable Javascipt, and reload this page</p>
+            </div><style>#pagecontent{display:none;}</style></noscript>
+            <!--Script to call the header-->
+            <script>$(function(){ $("#pageheader").load("/header.html");$("#pagecontent-notice").load("/notice.html");$("#pagefooter").load("/footer.html");});</script>
+            <title>World of SteelCraft</title>
+            <!-- Meta Tag | Primary Meta Tags -->
+            <meta name="title" content="World of SteelCraft">
+            <meta name="description" content="World of SteelCraft is a server owned by Scary Master Playz which is currently managed by Scary Master Playz and other admins. We're welcoming Filipino Minecraft Players to join">
+            <!-- Meta Tag | Open Graph / Facebook -->
+            <meta property="og:type" content="website">
+            <meta property="og:url" content="https://next.worldofsteelcraft.tk">
+            <meta property="og:title" content="World of SteelCraft">
+            <meta property="og:description" content="World of SteelCraft is a server owned by Scary Master Playz which is currently managed by Scary Master Playz and other admins. We're welcoming Filipino Minecraft Players to join">
+            <meta property="og:image" content="https://files.worldofsteelcraft.tk/assets/web/logo.png">
+            <!-- Meta Tag | Twitter -->
+            <meta property="twitter:card" content="summary_large_image">
+            <meta property="twitter:url" content="https://next.worldofsteelcraft.tk">
+            <meta property="twitter:title" content="World of SteelCraft">
+            <meta property="twitter:description" content="World of SteelCraft is a server owned by Scary Master Playz which is currently managed by Scary Master Playz and other admins. We're welcoming Filipino Minecraft Players to join">
+            <meta property="twitter:image" content="https://files.worldofsteelcraft.tk/assets/web/logo.png">
+        </head>
+        <body>
+            <div id="pageheader"></div>
+            <div id="pagecontent">
+            <div>
+                <div class="serverstatus border padding-bottom">
+                    <div class="pagetitle">
+                        <img src="/images/logo.png" width="250px">
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <div class="mypanel">
+                                <table>
+                                <tbody><tr><th>Server IP Address</th><td><span id="hostname"></span></td></tr>
+                                <tr><th>Server Port</th><td><span id="port"></span></td></tr>
+                                <tr><th>Online</th><td><span id="isonline"></span></td></tr>
+                                <tr><th>Version Running</th><td><span id="version"></span></td></tr>
+                                <tr><th>Players</th><td><span id="playeronline">_</span>/<span id="playermax">_</span></td></tr>
+                                <tr><th>Map Name</th><td><span id="mapname"></span></td></tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <img src="https://worldofsteelcraft.tk/query/smp.png" alt="" width="404" height="269"/></figure>
+                        </div>
+                    </div>
+                    <a class="button button-green" href="https://link.worldofsteelcraft.tk/smp-save">Join server(Members Only)</a>
+                </div>
+                <div class="border padding">
+                <iframe src="https://worldofsteelcraft.tk/wp-content/uploads/wosc/mapindex.html" width="600px" height="600px"></iframe>
+            </div>
+            <!--Temporary solution-->
+            <script type="text/javascript">
+            jQuery(document).ready(function( $ ){
+                $.getJSON('https://api.mcsrvstat.us/bedrock/2/smp.worldofsteelcraft.tk:39148', function(data) {      
+                            $('#hostname').text(data.hostname);
+                            $('#port').text(data.port);
+                            $('#version').text(data.version);
+                            $('#mapname').text(data.map);
+                            $('#isonline').text(data.online);
+                            $('#playeronline').text(data.players.online);
+                            $('#playermax').text(data.players.max);
+                            $('#motd').text(data.motd.html[0]);
+                });
+            });
+            </script>
+            <div id="pagefooter"></div>
+        </body>
+    </html>
