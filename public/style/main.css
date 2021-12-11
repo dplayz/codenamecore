@@ -178,7 +178,14 @@ a.button {
 	border:2px solid black;
 }
 a.button-green {
-	background-color: green;
+	background: rgb(11,217,45);
+}
+a.button-seasondownloaddirect {
+	background: rgb(11,217,45);
+	background: -moz-linear-gradient(131deg, rgba(11,217,45,1) 45%, rgba(170,170,170,1) 100%);
+	background: -webkit-linear-gradient(131deg, rgba(11,217,45,1) 45%, rgba(170,170,170,1) 100%);
+	background: linear-gradient(131deg, rgba(11,217,45,1) 45%, rgba(170,170,170,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0bd92d",endColorstr="#aaaaaa",GradientType=1);
 }
 /*pagecontent-light-border | Border Default Style */
 div.border{
@@ -345,22 +352,23 @@ div.border{
 	}
 	/*pagecontent-dark-buttonanchor | Parent button*/
 	a.button {
-		display:inline-block;
 		background-color:#32373C;
 		color:white;
-		padding: 8px 20px;
-		margin:5px;
-		text-decoration:none;
-		font-weight:bold;
 		border-radius:5px;
 		cursor:pointer;
 		border-radius:25px;
 		border:2px solid white;
 	}
 	a.button-green {
-		background-color: rgb(42, 153, 42);
+		background-color: rgb(52,153,69);
 	}
-	
+	a.button-seasondownloaddirect {
+		background: rgb(52,153,69);
+		background: -moz-linear-gradient(131deg, rgba(52,153,69,1) 45%, rgba(88,84,84,1) 100%);
+		background: -webkit-linear-gradient(131deg, rgba(52,153,69,1) 45%, rgba(88,84,84,1) 100%);
+		background: linear-gradient(131deg, rgba(52,153,69,1) 45%, rgba(88,84,84,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#349945",endColorstr="#585454",GradientType=1);
+}
 	/*pagecontent-dark-border | Border Default Style */
 	div.border{
 		border-top: 2px solid gray;
