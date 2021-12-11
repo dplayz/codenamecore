@@ -100,6 +100,10 @@ body{
 	min-width: 160px;
 	z-index: 1;
 }
+div.navbar-links-last{
+	position: absolute;
+	right:0;
+}
 .toggle-button {
 	position: absolute;
 	top: 1.25rem;
@@ -282,10 +286,6 @@ div.border{
 		position: absolute;
 		background-color: #555;
 		z-index: 1;
-	}
-	div.navbar-links-last{
-		position: absolute;
-		right:0;
 	}
 	.toggle-button {
 		position: absolute;
