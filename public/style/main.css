@@ -177,10 +177,6 @@ a.button {
 	border-radius:25px;
 	border:2px solid black;
 }
-
-a.button-green {
-	background-color: green;
-}
 /*pagecontent-light-border | Border Default Style */
 div.border{
 	border-top: 2px solid gray;
