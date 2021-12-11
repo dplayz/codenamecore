@@ -407,4 +407,16 @@ div.padding{
 div.padding-bottom{
 	padding-bottom:100px;
 }
+div.pagetitle{
+	padding-top:100px;
+}
 
+table, th, td {
+	border: 2.5px solid black;
+	border-radius:10px;
+	border-collapse: collapse;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	padding:5px;
+}
