@@ -1,4 +1,8 @@
 <link rel="stylesheet" href="/style/main.css">
+<link rel="stylesheet/less" type="text/css" href="/style/main.less" />
+<script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+<script>$(function(){$("#pagecontent-notice").load("/notice.html");});</script>
+<div id="pagecontent-notice"></div>
 <nav class="navbar">
     <div class="brand-title"><img src="/images/logo.png" width="100px"><img src="/images/dl.png" width="45px"></div>
     <a href="#" class="toggle-button">
@@ -29,7 +33,7 @@
         </div></li>
         <li><div class="dropdown">
           <a class="dropbtn">Server</a>
-          <div class="dropdown-content">
+          <div class="dropdown-content navbar-links-last">
             <a href="/server/smp">WoSC SMP</a>
             <a href="/server/smp/season-dl">Season Downloads</a>
           </div>
