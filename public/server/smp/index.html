@@ -15,7 +15,9 @@
                 <h1>Javascript is off</h1><p>Website cannot be displayed properly because Javascript is turned off</p>
                 <h3>What should I do?</h3><p>Enable Javascipt, and reload this page</p>
             </div><style>#pagecontent{display:none;}</style></noscript>
-            <!--Script to call the header-->
+            <!--Script to request and display the server query information-->
+			<script src="/scripts/smp-info.js"></script>
+			<!--Script to call the header-->
             <script>$(function(){ $("#pageheader").load("/header.html");$("#pagecontent-notice").load("/notice.html");$("#pagefooter").load("/footer.html");});</script>
             <title>World of SteelCraft</title>
             <!-- Meta Tag | Primary Meta Tags -->
@@ -62,23 +64,8 @@
                     <a class="button button-green" href="https://link.worldofsteelcraft.tk/smp-save">Join server(Members Only)</a>
                 </div>
                 <div class="border padding">
-                <iframe src="https://worldofsteelcraft.tk/wp-content/uploads/wosc/mapindex.html" width="600px" height="600px"></iframe>
+                <iframe class="smp-map" src="https://worldofsteelcraft.tk/wp-content/uploads/wosc/mapindex.html"></iframe>
             </div>
-            <!--Temporary solution-->
-            <script type="text/javascript">
-            jQuery(document).ready(function( $ ){
-                $.getJSON('https://api.mcsrvstat.us/bedrock/2/smp.worldofsteelcraft.tk:39148', function(data) {      
-                            $('#hostname').text(data.hostname);
-                            $('#port').text(data.port);
-                            $('#version').text(data.version);
-                            $('#mapname').text(data.map);
-                            $('#isonline').text(data.online);
-                            $('#playeronline').text(data.players.online);
-                            $('#playermax').text(data.players.max);
-                            $('#motd').text(data.motd.html[0]);
-                });
-            });
-            </script>
             <div id="pagefooter"></div>
         </body>
     </html>
