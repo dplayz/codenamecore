@@ -206,6 +206,13 @@ div.border{
 #errormessage, #errormessage a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
 #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
 
+a.button-seasondownloaddirect {
+	background: rgb(11,217,45);
+	background: -moz-linear-gradient(131deg, rgba(11,217,45,1) 45%, rgba(170,170,170,1) 100%);
+	background: -webkit-linear-gradient(131deg, rgba(11,217,45,1) 45%, rgba(170,170,170,1) 100%);
+	background: linear-gradient(131deg, rgba(11,217,45,1) 45%, rgba(170,170,170,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0bd92d",endColorstr="#aaaaaa",GradientType=1);
+}
 @media (prefers-color-scheme: dark) {
 	/*page-dark-html*/
 	html{
@@ -383,6 +390,14 @@ div.border{
 	#errormessage a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
 	#errormessage, #errormessage a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
 	#load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+
+	div.serverstatus{
+		background: rgb(52,153,69);
+		background: -moz-linear-gradient(131deg, rgba(52,153,69,1) 45%, rgba(88,84,84,1) 100%);
+		background: -webkit-linear-gradient(131deg, rgba(52,153,69,1) 45%, rgba(88,84,84,1) 100%);
+		background: linear-gradient(131deg, rgba(52,153,69,1) 45%, rgba(88,84,84,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#349945",endColorstr="#585454",GradientType=1);
+	}
 }
 /*pagecontent-both-column | Column Style */
   .row {
