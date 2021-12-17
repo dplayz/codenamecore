@@ -1,5 +1,5 @@
 jQuery(document).ready(function( $ ){
-	$.getJSON('https://api.mcsrvstat.us/bedrock/2/smp.worldofsteelcraft.tk:39148', function(data) {      
+	$.getJSON('https://api.mcsrvstat.us/bedrock/2/smp.worldofsteelcraft.tk:25733', function(data) {      
 		$('#hostname').text(data.hostname);
 		$('#port').text(data.port);
 		$('#version').text(data.version);
