@@ -426,7 +426,7 @@ div.pagetitle{
 	padding-top:100px;
 }
 /*pagecontent-both-table | Table Default Style */
-table, th, td {
+table, tr, th, td {
 	border: 2.5px solid black;
 	border-radius:10px;
 	border-collapse: collapse;
