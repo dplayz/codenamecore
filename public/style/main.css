@@ -422,8 +422,19 @@ div.padding{
 div.padding-bottom{
 	padding-bottom:100px;
 }
-div.pagetitle{
-	padding-top:100px;
+div#pagecontent{
+	padding-top:40px;
+}
+div.padding-pagetitle{
+	padding-top:80px;
+	padding-bottom:100px;
+}
+div.padding-pagetitle-with-preview{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.pagepreview img{
+width:100%;
 }
 /*pagecontent-both-table | Table Default Style */
 table, tr, th, td {
@@ -438,4 +449,8 @@ table, tr, th, td {
 /*pagecontent-both-table-no_border | No Table Border Default Style, inherits pagecontent-both-table (This is int)*/
 table.no-table-border, .no-table-border td, .no-table-border th {
 	border-style: none;
+}
+/*pagecontent-both-pagepreview_image_size*/
+.pagepreview img{
+	width:100%;
 }
