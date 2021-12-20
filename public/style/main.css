@@ -228,12 +228,12 @@ a.button-seasondownloaddirect {
 	}
 	/*pagecontent-dark-anchor*/
 	a:link {
-		color: blue;
+		color: skyblue;
 		background-color: transparent;
 		text-decoration: none;
 	}
 	a:visited {
-		  color: blue;
+		color: skyblue;
 		 background-color: transparent;
 		 text-decoration: none;
 	}
@@ -378,8 +378,8 @@ a.button-seasondownloaddirect {
 }
 	/*pagecontent-dark-border | Border Default Style */
 	div.border{
-		border-top: 2px solid gray;
-		border-bottom: 2px solid gray;
+		border-top: 2px solid lightgray;
+		border-bottom: 2px solid lightgray;
 	}
 	/*pagecontent-dark-error | Error page style */
 	#errormessage { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
@@ -422,8 +422,19 @@ div.padding{
 div.padding-bottom{
 	padding-bottom:100px;
 }
-div.pagetitle{
-	padding-top:100px;
+div#pagecontent{
+	padding-top:40px;
+}
+div.padding-pagetitle{
+	padding-top:80px;
+	padding-bottom:100px;
+}
+div.padding-pagetitle-with-preview{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.pagepreview img{
+width:100%;
 }
 /*pagecontent-both-table | Table Default Style */
 table, tr, th, td {
@@ -438,4 +449,15 @@ table, tr, th, td {
 /*pagecontent-both-table-no_border | No Table Border Default Style, inherits pagecontent-both-table (This is int)*/
 table.no-table-border, .no-table-border td, .no-table-border th {
 	border-style: none;
+}
+/*pagecontent-both-pagepreview_image_size*/
+.pagepreview img{
+	text-align:center;
+	width:90%;
+	padding-top:50px;
+}
+@media (min-width: 800px) {
+	.pagepreview img{
+		width:600px;
+	}
 }
