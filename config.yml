@@ -3,9 +3,9 @@ languageCode: en-us
 title: World of SteelCraft Beta
 theme: WoSCWebTheme
 params:
-  description: World of SteelCraft is a server owned by Scary Master Playz which is currently managed by Scary Master Playz and other admins. We're welcoming Filipino Minecraft Players to join
+  description: World of SteelCraft is a server owned by Scary Master Playz which is currently managed by himself and other admins. We're welcoming Filipino Minecraft Players to join
 
 enableRobotsTXT: true
-buildDrafts: true
+buildDrafts: false
 buildFuture: false
 buildExpired: false
