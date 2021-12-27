@@ -1,0 +1,11 @@
+name: Deploy to Firebase after building Hugo Site
+'on':
+  push:
+    branches:
+      - main
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: pulimento/github-action-hugo-deploy-to-firebase@master 
