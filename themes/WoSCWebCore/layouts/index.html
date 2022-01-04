@@ -3,7 +3,7 @@
         <head>
             {{ partial "head.html" . }}
         </head>
-        <body>
+        <body class="with-sidebar">
             <div id="pageheader">{{ partial "header.html" . }}</div>
             <div class="pagetitle padding-bottom">
                 <h1>{{ .Title }}</h1>
@@ -20,7 +20,7 @@
                     </div>
                 </div>            
                 <div id="homepage-woscsmpseasondlsection" class="row padding border">
-                    <div class="column">	
+                    <div clas       s="column">	
                         <h4>Season Downloads</h4>
                         <p>Every Season end, we provide download links for the members so they can check their builds, items and others after the season change.</p>
                     </div>
@@ -30,8 +30,7 @@
                 </div>
             </div>
             <div id="sidebar">
-                <h3>Current Time:</h3>
-                <iframe src="https://free.timeanddate.com/clock/i85188tq/n145/fn14/fs20/tct/pct/ftb/tt0/tw1/tm1/td1/th2/ta1" frameborder="0" width="415" height="26" allowtransparency="true"></iframe>
+                {{ partial "sidebar.html" . }}
             </div>
             <div id="pagefooter">{{ partial "footer.html" . }}</div> 
         </body>
