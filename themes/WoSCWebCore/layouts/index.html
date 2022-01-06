@@ -2,9 +2,8 @@
     <html>
         <head>
             {{ partial "head.html" . }}
-
         </head>
-        <body>
+        <body class="with-sidebar">
             <div id="pageheader">{{ partial "header.html" . }}</div>
             <div class="pagetitle padding-bottom">
                 <h1>{{ .Title }}</h1>
@@ -19,10 +18,9 @@
                     <div class="column">
                         <a class="button button-green" href="/server/smp/">Server Info</a><a class="button button-green" href="https://link.worldofsteelcraft.tk/smp-save">Join server(Members Only)</a></a>
                     </div>
-                  </div>
-                
+                </div>            
                 <div id="homepage-woscsmpseasondlsection" class="row padding border">
-                    <div class="column">	
+                    <div clas       s="column">	
                         <h4>Season Downloads</h4>
                         <p>Every Season end, we provide download links for the members so they can check their builds, items and others after the season change.</p>
                     </div>
@@ -31,8 +29,9 @@
                     </div>
                 </div>
             </div>
-            <div class="pagetitle padding-bottom">
-            <div id="pagefooter">{{ partial "footer.html" . }}</div>
-            
+            <div id="sidebar">
+                {{ partial "sidebar.html" . }}
+            </div>
+            <div id="pagefooter">{{ partial "footer.html" . }}</div> 
         </body>
     </html>
