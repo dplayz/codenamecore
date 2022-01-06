@@ -2,8 +2,6 @@
     <html>
         <head>
             <meta name="theme-color" content="#32e532">
-            <link rel="stylesheet" href="/style/main.css">
-            <link rel="stylesheet/less" type="text/css" href="/style/main.less" />
             <script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="manifest" href="manifest.json">
@@ -16,7 +14,7 @@
                 <h3>What should I do?</h3><p>Enable Javascipt, and reload this page</p>
             </div><style>#pagecontent{display:none;}</style></noscript>
             <!--Script to call the header-->
-            <script>$(function(){ $("#pageheader").load("/header.html");$("#pagecontent-notice").load("/notice.html");$("#pagefooter").load("/footer.html");});</script>
+            <script>$(function(){ $("#pageheader").load("/global/header.html");$("#sidebar").load("/global/sidebar.html");$("#pagefooter").load("/global/footer.html");});</script>
             <title> | World of SteelCraft</title>
             <!-- Meta Tag | Primary Meta Tags -->
             <meta name="title" content=" | World of SteelCraft">
@@ -38,6 +36,8 @@
             <div id="pageheader"></div>
             <div id="pagecontent">
                 <div class="pagetitle padding-bottom"></div>
+            </div>
+            <div id="sidebar">
             </div>
             <div id="pagefooter"></div>
         </body>
