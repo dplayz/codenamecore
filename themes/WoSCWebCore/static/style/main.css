@@ -44,7 +44,7 @@ body{
 /*pageheader-light | Page header, parent style of the header  */
 .navbar {
 	display: flex;
-	position: absolute;
+	position: fixed;
 	top:0;
 	width:100%;
 	justify-content: space-between;
@@ -475,3 +475,10 @@ div#pagefooter{
 #sidebar a, #sidebar ol{
 	text-align:left;
 }*/
+
+div#pagenotice{
+	position:fixed;
+	width:100%;
+	background-color:yellowgreen;
+	bottom:0;
+}
