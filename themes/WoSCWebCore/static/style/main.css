@@ -1,3 +1,7 @@
+/*
+	main.css
+	Design v.2022.0106.0
+*/
 /*page-light-html */
 html{
 	background: #32e532;
@@ -40,7 +44,7 @@ body{
 /*pageheader-light | Page header, parent style of the header  */
 .navbar {
 	display: flex;
-	position: absolute;
+	position: fixed;
 	top:0;
 	width:100%;
 	justify-content: space-between;
@@ -379,8 +383,8 @@ a.button-seasondownloaddirect {
 }
 	/*pagecontent-dark-border | Border Default Style */
 	div.border{
-		border-top: 2px solid gray;
-		border-bottom: 2px solid gray;
+		border-top: 2px solid lightgray;
+		border-bottom: 2px solid lightgray;
 	}
 	/*pagecontent-dark-error | Error page style */
 	#errormessage { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
@@ -419,6 +423,8 @@ a.button-seasondownloaddirect {
 div.padding{
 	padding-top:100px;
 	padding-bottom:100px;
+	padding-left:50px;
+	padding-right:50px;
 }
 div.padding-bottom{
 	padding-bottom:100px;
@@ -445,7 +451,8 @@ div#pagefooter{
 	background-color: #222; 
 	margin-bottom:-20px; 
 	padding:20px; 
-	color:white;}
+	color:white;
+}
 #pagefooter a{color:skyblue;}
 /* WIP
 @media (min-width: 1000px) {
@@ -471,3 +478,10 @@ div#pagefooter{
 #sidebar a, #sidebar ol{
 	text-align:left;
 }*/
+
+div#pagenotice{
+	position:fixed;
+	width:100%;
+	background-color:yellowgreen;
+	bottom:0;
+}
