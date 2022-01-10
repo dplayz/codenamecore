@@ -1,11 +1,12 @@
 ---
 category: post
-title: "Rules"
+title: "World of SteelCraft Rules"
 date: 2022-01-05T12:07:10+08:00
-description: ""
+description: "Here's the rules that you need to follow within World of SteelCraft."
 draft: false
 ---
-These are the rules that you need to follow. Everyone should follow
+Here's the rules that you need to follow within World of SteelCraft.  
+If reading this rules is difficult to you, you can try to check [Basic English Rules of World of SteelCraft](/rules/english/basic)
 <div class="padding border" id="section-1" >
 
 ### Section 1 | Major Rules
