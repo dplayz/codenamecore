@@ -4,7 +4,6 @@ title: "Rules"
 date: 2022-01-05T12:07:10+08:00
 description: ""
 draft: false
-tags: ['new']
 ---
 These are the rules that you need to follow. Everyone should follow
 <div class="padding border" id="section-1" >
