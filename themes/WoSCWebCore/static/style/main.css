@@ -1,6 +1,6 @@
 /*
 	main.css
-	Design v.2022.0106.0
+	Design v.2022.0110.1
 */
 /*page-light-html */
 html{
@@ -386,6 +386,13 @@ a.button-seasondownloaddirect {
 		border-top: 2px solid lightgray;
 		border-bottom: 2px solid lightgray;
 	}
+	/*pagecontent-dark-pagenotice | Pagenotice Default Style*/
+	div#pagenotice{
+	position:fixed;
+	width:100%;
+	background-color:yellowgreen;
+	bottom:0;
+}
 	/*pagecontent-dark-error | Error page style */
 	#errormessage { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
 	#errormessage h3 { color: #888; font-weight: normal; font-size: 16px; margin: 16px 0 12px; }
@@ -432,6 +439,7 @@ div.padding-bottom{
 div.pagetitle{
 	padding-top:100px;
 }
+div.padding-post{padding-top:50px;padding-bottom:50px;}
 /*pagecontent-both-table | Table Default Style */
 table, tr, th, td {
 	border: 2.5px solid black;
@@ -442,6 +450,7 @@ table, tr, th, td {
 	text-align:center;
 	padding:5px;
 }
+div#pagecontent table {padding-bottom:100px;}
 /*pagecontent-both-table-no_border | No Table Border Default Style, inherits pagecontent-both-table (This is int)*/
 table.no-table-border, .no-table-border td, .no-table-border th {
 	border-style: none;
@@ -479,9 +488,5 @@ div#pagefooter{
 	text-align:left;
 }*/
 
-div#pagenotice{
-	position:fixed;
-	width:100%;
-	background-color:yellowgreen;
-	bottom:0;
-}
+/*pagecontent-both-image | Image Default Style*/
+div#pagecontent img{width:90%; padding-top:25px; padding-bottom:25px}
