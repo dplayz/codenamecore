@@ -6,7 +6,7 @@ description: "Narito ang mga Batas o Alituntunin na dapat sundin sa loob ng Worl
 draft: false
 ---
 Narito ang mga Batas o Alituntunin na dapat sundin sa loob ng World of SteelCraft.  
-Kung ikaw ay nahihirapang intindihin ang mga nakasulat sa pahinang ito, subukang tignan ang [pinadaling batas o alituntunin ng World of SteelCraft](/rules/filipino/basic/)
+Kung ikaw ay nahihirapang intindihin ang mga nakasulat sa pahinang ito, subukang tignan ang [pinadaling batas o alituntunin ng World of SteelCraft](/rules/fil/basic/)
 <div class="padding border" id="section-1" >
 
 ### Seksyon 1 | Pangunahing Panuntunan
