@@ -13,7 +13,7 @@ Season 1 is the first Season of World of SteelCraft SMP that takes about 1 month
 These are the world download links to play:
 | Mirror | Link |
 |-|-|
-| WoSC Files | [Download Here](https://files.worldofsteelcraft.tk/smp/download/WoSCSMPS1.mcworld) | 
-| MediaFire | |
-|Mega.nz||
+| WoSC Files | [Download Here](https://wosc.tk/WoSCSMPS1-GD) | 
+| MediaFire | [Download Here](https://wosc.tk/WoSCSMPS1-MF) |
+|Mega.nz| [Download Here](https://wosc.tk/WoSCSMPS1-MG)|
 </div>
