@@ -1,0 +1,24 @@
+<head>
+  {{ partial "head.html" . }}
+</head>
+{{ partial "header.html" . }}
+
+<div class="pagetitle padding-bottom">
+  <h1>Ban Information</h1></div>
+<div id="pagecontent">
+{{ range.Data.Pages }}
+<div class="padding">
+<article class="post-snippet">
+  <h3>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </h3>
+	<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+		{{ .Date.Format "January 2, 2006" }}
+	</time>
+</article>
+</div>
+{{ end }}
+</div>
+<div id="pagefooter">
+{{ partial "footer.html" . }}
+</div>
