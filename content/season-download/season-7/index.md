@@ -3,7 +3,7 @@ category: page
 title: "Season 7 World Download"
 date: 2021-11-07T23:11:01Z
 description: "Season 7 is the seventh Season of World of SteelCraft SMP that takes about 2 months. The season started on August 6 and ended on November 7."
-draft: true
+draft: false
 ---
 Season 7 is the seventh Season of World of SteelCraft SMP that takes about 2 months. The season started on August 6 and ended on November 7.
 
