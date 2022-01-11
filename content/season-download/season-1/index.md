@@ -1,7 +1,7 @@
 ---
 category: page
 title: "Season 1 World Download"
-date: 2022-01-10T08:13:01Z
+date: 2021-03-02T14:06:01Z
 description: "Season 1 is the first Season of World of SteelCraft SMP that takes about 1 month and 2 weeks. The season started on July 27, 2020 and ended on September 9, 2020. This is considered a history because this is were we started as a community."
 draft: false
 ---
@@ -13,7 +13,7 @@ Season 1 is the first Season of World of SteelCraft SMP that takes about 1 month
 These are the world download links to play:
 | Mirror | Link |
 |-|-|
-| WoSC Files | [Download Here](https://files.worldofsteelcraft.tk/smp/download/WoSCSMPS1.mcworld) | 
-| MediaFire | |
-|Mega.nz||
+| WoSC Files | [Download Here](https://wosc.tk/WoSCSMPS1-GD) | 
+| MediaFire | [Download Here](https://wosc.tk/WoSCSMPS1-MF) |
+|Mega.nz| [Download Here](https://wosc.tk/WoSCSMPS1-MG)|
 </div>

@@ -6,7 +6,7 @@ description: "Here's the rules that you need to follow within World of SteelCraf
 draft: false
 ---
 Here's the rules that you need to follow within World of SteelCraft.  
-If reading this rules is difficult to you, you can try to check [Basic English Rules of World of SteelCraft](/rules/english/basic)
+If reading this rules is difficult to you, you can try to check [Basic English Rules of World of SteelCraft](/rules/en/basic)
 <div class="padding border" id="section-1" >
 
 ### Section 1 | Major Rules
