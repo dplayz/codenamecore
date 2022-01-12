@@ -1,0 +1,17 @@
+---
+category: post
+title: "Ban Information 003"
+date: 2021-05-10T13:25:00+08:00
+description: "Information about Ban and Reason"
+draft: false
+---
+|Username|Arowaiii|
+|-|-|
+|Reason|Banned for: Duplicating items, griefing builds, cheating|
+
+Information:  
+ Arowaii got banned for duplicating TNT, griefing builds, using Toolbox for Minecraft PE, and putting the blame to others. Admins then banned him.
+
+**Proof:**      
+This folder was shared by him
+<iframe src="https://drive.google.com/embeddedfolderview?id=1Jqne7EpKd5CR0m12MGj9899lJnH7p5ft#grid" style="width:100%; height:600px; border:0;"></iframe>

@@ -1,7 +1,7 @@
 ---
 category: post
-title: ""
-date: 2022-01-11T12:26:59+08:00
+title: "How to"
+date: {{ .Date }}
 description: ""
 draft: true
 ---
