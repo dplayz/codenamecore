@@ -1,4 +1,3 @@
-### This README is currently work in progress, will stil be changed
 <p align="center" width="20px">
   <img src="https://files.worldofsteelcraft.tk/assets/web/logo.png" alt="logo" width="25%"/><br>  
   <h1 align="center">World of SteelCraft Website Beta</h1>
@@ -19,4 +18,6 @@ Your contribution still matters, but it might be only appreciated by the members
 
 Here is what to follow:
 - If you do not want to ruin your workflow, and our workflow, please create another branch other than **main**.
-- When forking, if you want to stop receiving emails from GitHub Action that the action failed, or do not want to setup a GitHub Action to push to your website, please DISABLE GITHUB ACTIONS AT YOUR REPOSITORY.
+- When forking, if you want to stop receiving emails from GitHub Action that the action failed, or do not want to setup a GitHub Action to push to your website, kindly disable your github actions on your repository.
+- You can help us on keeping code quality by cleaning the code or recommending solutions that is more optimized.
+
