@@ -3,12 +3,10 @@ title: "SMP Server"
 date: 2022-01-13T10:34:50+08:00
 draft: true
 ---
-
-<div class="pagetitle">
-                <img src="/images/logo.png" class="style-exclude" width="150px">
-            </div>
+<script src="/scripts/smp-query.js"></script>
+<div class="serverstatus pagetitle">
             <div id="pagecontent">
-            <div>
+                    <img src="/images/logo.png" class="style-exclude" width="150px">
                     <div class="row">
                         <div class="column">
                             <div class="mypanel">
@@ -23,10 +21,13 @@ draft: true
                             </div>
                         </div>
                         <div class="column">
-                            <img src="https://worldofsteelcraft.tk/query/smp.png" alt="" width="404" height="269"/>
+                            <img src="https://gamestatus.xyz/graph/graph_N7SOBwrOiPTDuGv.png?id=1642503126590" alt="" width="80%"/>
                         </div>
                     </div>
                     <a class="button button-green" href="https://link.worldofsteelcraft.tk/smp-save">Join server(Members Only)</a>
                 </div>
+                </div>
+                <div class="border padding">
+                <embed class="smp-map" src="/wosc/mapindex.html"></embed>
             </div>
             </div>
