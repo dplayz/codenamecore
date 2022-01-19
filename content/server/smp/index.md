@@ -29,7 +29,7 @@ draft: true
                 <a class="button button-green join-btn" href="https://link.worldofsteelcraft.tk/smp-save">Join server(Members Only)</a>
             </div>
                 <div class="padding">
-                <embed class="smp-map" src="/wosc/mapindex.html"></embed>
+                <embed class="smp-map" src="/server/smp/mapindex.html" width="25%" height="25%"></embed>
             </div>
     </div>
 </div>
