@@ -1,7 +1,7 @@
 ---
 title: "SMP Server"
 date: 2022-01-13T10:34:50+08:00
-draft: true
+draft: false
 ---
 <script src="/scripts/smp-query.js"></script>
 <div class="serverstatus pagetitle">
