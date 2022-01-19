@@ -1,12 +1,12 @@
 jQuery(document).ready(function( $ ){
-	$.getJSON('https://api.mcsrvstat.us/bedrock/2/smp.worldofsteelcraft.tk:33158', function(data) {      
-		$('#hostname').text(data.hostname);
-		$('#port').text(data.port);
-		$('#version').text(data.version);
-		$('#mapname').text(data.map);
-		$('#isonline').text(data.online);
-		$('#playeronline').text(data.players.online);
-		$('#playermax').text(data.players.max);
-		$('#motd').text(data.motd.html[0]);
+	$.getJSON('https://api.bedrockinfo.com/v2/status?server=smp.worldofsteelcraft.tk&port=33158', function(data) {      
+		$('#hostname').text(data.HostName);
+		$('#port').text(data.IPv4Port);
+		$('#version').text(data.Version);
+		$('#mapname').text(data.LevelName);
+		$('#isonline').text(data.Online);
+		$('#playeronline').text(data.Players);
+		$('#playermax').text(data.MaxPlayers);
+		$('#motd').text(data.ServerName);
 	});
 });
