@@ -3,7 +3,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="manifest" href="manifest.json">
 <script src="./scripts/browser-update.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!--Hide all content and display error message-->
 <noscript><div id="errormessage">
@@ -25,7 +24,7 @@
 <meta property="og:description" content="{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
 {{- .Summary | default (printf "%s - %s" .Title  .Site.Title) }}{{- else }}
 {{- with .Site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
-<meta property="og:image" content="https://worldofsteelcraft.tk/images/preview.png">
+<meta property="og:image" content="{{ "/images/preview.png" | relURL }}">
 <!-- Meta Tag | Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{ .Permalink }}">
@@ -33,4 +32,4 @@
 <meta property="twitter:description" content="{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
 {{- .Summary | default (printf "%s - %s" .Title  .Site.Title) }}{{- else }}
 {{- with .Site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
-<meta property="twitter:image" content="https://worldofsteelcraft.tk/images/preview.png">
+<meta property="twitter:image" content="{{ "/images/preview.png" | relURL }}">
