@@ -1,5 +1,5 @@
 ---
-category: post
+category: page
 title: ""
 date: {{ .Date }}
 description: ""
