@@ -24,7 +24,7 @@
 <meta property="og:description" content="{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
 {{- .Summary | default (printf "%s - %s" .Title  .Site.Title) }}{{- else }}
 {{- with .Site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
-<meta property="og:image" content="{{ "/images/preview.png" | relURL }}">
+<meta property="og:image" content="{{ "/images/preview.png" | absURL }}customPagePreview">
 <!-- Meta Tag | Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{ .Permalink }}">
@@ -32,4 +32,4 @@
 <meta property="twitter:description" content="{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
 {{- .Summary | default (printf "%s - %s" .Title  .Site.Title) }}{{- else }}
 {{- with .Site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
-<meta property="twitter:image" content="{{ "/images/preview.png" | relURL }}">
+<meta property="twitter:image" content="{{ "/images/preview.png" | absURL }}">
