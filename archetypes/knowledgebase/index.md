@@ -4,4 +4,5 @@ title: "How to"
 date: {{ .Date }}
 description: ""
 draft: true
+sitemapExclude: false
 ---
