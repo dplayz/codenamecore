@@ -8,7 +8,7 @@
 [![licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](https://github.com/worldofsteelcraft/woscweb/blob/main/LICENSE)
 [![website status](https://img.shields.io/website?down_color=red&down_message=offline&label=WoSC%20Website&style=plastic&up_color=green&up_message=online&url=https%3A%2F%2Fworldofsteelcraft.tk)](https://next.worldofsteelcraft.tk)
 [![actively maintaned](https://img.shields.io/maintenance/yes/2022?style=plastic)](https://github.com/worldofsteelcraft/woscweb/commits/main)  
-This is the repository of website World of SteelCraft uses.
+This is the repository of website World of SteelCraft uses.  
 Based on [Hugo](https://gohugo.io), a static site generator using our own theme, keeping the old design
 
 ## Dependencies
