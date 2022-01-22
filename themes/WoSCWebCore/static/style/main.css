@@ -1,6 +1,6 @@
 /*
 	main.css
-	Design v.2022.0119.0
+	Design v.2022.0122.0
 */
 /*page-light-html */
 html{
@@ -494,4 +494,10 @@ div#pagefooter{
 }*/
 
 /*pagecontent-both-image | Image Default Style*/
-div#pagecontent img:not(style-exclude){width:90%; padding-top:25px; padding-bottom:25px}
+div#pagecontent img:not(.style-exclude){width:90%; padding-top:25px; padding-bottom:25px}
+@media (min-width: 800px) {
+	div#pagecontent img:not(.style-exclude){ display:inline-flex; width:45%!important; }
+}
+/*pagecontent-both-list | List Default Style*/
+div#pagecontent li{text-align:left; margin-left:auto; margin-right:auto;}
+div#pagecontent ol{display:inline-block; text-align:center;}
