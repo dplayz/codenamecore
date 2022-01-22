@@ -1,0 +1,35 @@
+---
+category: post
+title: "Season 5 End"
+date: 2021-06-06T21:02:05+08:00
+description: "As 1.17 to be released on June 8 2021, admins and the community decided to end Season 5. This is normal event, to keep engagement of members, and to comply to the changes that Caves and Cliffs Update Part 1 will bring."
+draft: true
+
+sitemapExclude: false
+customPagePreviewImage: false
+customPagePreviewImageURL:
+---
+*Will be converted to markdown, please wait*
+<!-- wp:paragraph {"textColor":"black"} -->
+<p class="has-black-color has-text-color">As 1.17 to be released on June 8 2021, admins and the community decided to end Season 5. This is normal event, to keep engagement of members, and to comply to the changes that Caves and Cliffs Update Part 1 will bring. Here are the Frequently Asked Questions that members always ask:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true,"textColor":"black"} -->
+<ol class="has-black-color has-text-color"><li>What will happen to the world?<br>The world will be changed, and the progress will reset.</li><li>Will the world file be provided to the members?<br>Yes, the world file will be provided after the season end and we get everything setted up.</li><li>Will the IP address and Port be changed.<br>No, It will be not convenient to change IP address and Ports</li><li>Do I need to have to updated from 1.16 to 1.17?<br>Yes, In order to play, you need to update</li><li>Beta versions are accepted?<br>Depends, but as soon as possible, don't use it</li></ol>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":4} -->
+<h4>End Season Activities</h4>
+<!-- /wp:heading -->
+
+<!-- wp:table {"backgroundColor":"subtle-pale-green"} -->
+<figure class="wp-block-table"><table class="has-subtle-pale-green-background-color has-background"><thead><tr><th>Date</th><th>Activities</th></tr></thead><tbody><tr><td>June 8 12:00pm</td><td>Pre-Picture Taking</td></tr><tr><td>June 8 7:00pm</td><td>Post-Picture Taking</td></tr><tr><td>June 9 12:00pm</td><td>Season End</td></tr><tr><td>June 9 12:30pm</td><td>Season 6 Shift</td></tr></tbody></table><figcaption>Proposed Schedules yet. Schedules currently on discussions yet.</figcaption></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":4} -->
+<h4>Season Download Link </h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"textColor":"black"} -->
+<p class="has-black-color has-text-color">It will be available as soon as settled everything</p>
+<!-- /wp:paragraph -->
