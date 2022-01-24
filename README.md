@@ -4,7 +4,7 @@
   <p align="center">
   <a href="https://github.com/worldofsteelcraft/woscweb/tags"><img src="https://img.shields.io/github/v/tag/worldofsteelcraft/woscweb?color=green&style=plastic" alt="latest tag version"></a>
   <a href="https://github.com/worldofsteelcraft/woscweb/commits/main"><img src="https://img.shields.io/maintenance/yes/2022?style=plastic" alt="actively maintaned"></a>
-  <a href="https://github.com/worldofsteelcraft/woscweb/commits/main"><img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"></a>
+  <a href="https://github.com/worldofsteelcraft/woscweb/blob/main/LICENSE"><img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"></a>
     <br>
     <a href="worldofsteelcraft.tk"><img src="https://img.shields.io/website?down_color=red&down_message=offline&label=WoSC%20Website&style=plastic&up_color=green&up_message=online&url=https%3A%2F%2Fworldofsteelcraft.tk" alt="Website Status"></a>
     <a href="https://app.netlify.com/sites/woscweb/deploys"><img src="https://api.netlify.com/api/v1/badges/c55a6be2-88fa-4474-aaa9-dc1e3bd37967/deploy-status" alt="Netlify Status"></a>
