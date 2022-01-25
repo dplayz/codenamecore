@@ -1,7 +1,7 @@
 ---
 category: post
 title: "How to join as a member?"
-date: 2021-08-12T18:41:00+08:00
+date: 2021-08-12T10:41:00Z
 description: ""
 draft: true
 ---

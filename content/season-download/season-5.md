@@ -1,9 +1,10 @@
 ---
 category: page
 title: "Season 5 World Download"
-date: 2021-06-10T17:51:01Z
+date: 2021-06-10T09:51:01Z
 description: "Season 5 is the fifth Season of World of SteelCraft SMP that takes about 4 months and 9 days. The season started on February 1, 2021 and ended on June 9 2021 the same day members updated to 1.17. It is considered the longest season as of this time I'm writing this."
 draft: false
+permalink: /season-download/season-5
 ---
 Season 5 is the fifth Season of World of SteelCraft SMP that takes about 4 months and 9 days. The season started on February 1, 2021 and ended on June 9 2021 the same day members updated to 1.17. It is considered the longest season as of this time I'm writing this.
 

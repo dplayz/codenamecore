@@ -1,7 +1,7 @@
 ---
 category: post
 title: "World of SteelCraft Rules"
-date: 2022-01-05T12:07:10+08:00
+date: 2022-01-05T04:07:10Z
 description: "Here's the rules that you need to follow within World of SteelCraft."
 draft: false
 ---

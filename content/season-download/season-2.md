@@ -1,9 +1,10 @@
 ---
 category: page
 title: "Season 2 World Download"
-date: 2021-03-02T14:26:01Z
+date: 2021-03-02T05:26:01Z
 description: "Season 2 is the second Season of World of SteelCraft SMP that takes about 1 month and 3 weeks The season started on September 10 2020 and ended on October 27 2020. This is considered a succcessful season because of the size"
 draft: false
+permalink: /season-download/season-2
 ---
 Season 2 is the second Season of World of SteelCraft SMP that takes about 1 month and 3 weeks The season started on September 10 2020 and ended on October 27 2020. This is considered a succcessful season because of the size
 
