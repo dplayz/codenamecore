@@ -2,7 +2,7 @@
 category: page
 title: "Season 8 World Download"
 date: 2022-01-24T23:31:01Z
-description: "Season 8 is the seventh Season of World of SteelCraft SMP that takes about 2 months. The season started on November 7 and ended on January 17."
+description: "Season 8 is the eigth season of World of SteelCraft SMP that takes about 2 months. The season started on November 7 and ended on January 17."
 draft: false
 ---
 Season 8 is the seventh Season of World of SteelCraft SMP that takes about 2 months. The season started on November 7 and ended on January 17.
