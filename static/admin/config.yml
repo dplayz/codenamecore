@@ -19,7 +19,7 @@ collections:
       - {label: "Permalink", name: "permalink", widget: "string", required: false}
       - {label: "Use Custom Preview Image", name: "customPagePreviewImage", widget: "boolean", default: false}
       - {label: "Custom Preview Image", name: "customPagePreviewImageURL", widget: "image", required: false}
-      - {label: "Exclude from Sitemap", name: "sitemapExclude", widget: "boolean", required: true, default: false }
+      - {label: "Exclude from Sitemap", name: "sitemapExclude", widget: "boolean", required: false, default: false }
   - name: "season-download" # Used in routes, e.g., /admin/collections/blog
     label: "Season Download" # Used in the UI
     folder: "content/season-download" # The path to the folder where the documents are stored
@@ -33,7 +33,7 @@ collections:
       - {label: "Permalink", name: "permalink", widget: "string", required: false}
       - {label: "Use Custom Preview Image", name: "customPagePreviewImage", widget: "boolean", default: false}
       - {label: "Custom Preview Image", name: "customPagePreviewImageURL", widget: "image", required: false}
-      - {label: "Exclude from Sitemap", name: "sitemapExclude", widget: "boolean", required: true, default: false }
+      - {label: "Exclude from Sitemap", name: "sitemapExclude", widget: "boolean", required: false, default: false }
   - name: "ban" # Used in routes, e.g., /admin/collections/blog
     label: "Ban" # Used in the UI
     folder: "content/ban" # The path to the folder where the documents are stored
@@ -47,7 +47,7 @@ collections:
       - {label: "Permalink", name: "permalink", widget: "string", required: false}
       - {label: "Use Custom Preview Image", name: "customPagePreviewImage", widget: "boolean", default: false}
       - {label: "Custom Preview Image", name: "customPagePreviewImageURL", widget: "image", required: false}
-      - {label: "Exclude from Sitemap", name: "sitemapExclude", widget: "boolean", required: true, default: false }
+      - {label: "Exclude from Sitemap", name: "sitemapExclude", widget: "boolean", required: false, default: false }
   - name: "rules" # Used in routes, e.g., /admin/collections/blog
     label: "Rules" # Used in the UI
     folder: "content/rules" # The path to the folder where the documents are stored
@@ -75,4 +75,4 @@ collections:
       - {label: "Permalink", name: "permalink", widget: "string", required: false}
       - {label: "Use Custom Preview Image", name: "customPagePreviewImage", widget: "boolean", default: false}
       - {label: "Custom Preview Image", name: "customPagePreviewImageURL", widget: "image", required: false}
-      - {label: "Exclude from Sitemap", name: "sitemapExclude", widget: "boolean", required: true, default: false }
+      - {label: "Exclude from Sitemap", name: "sitemapExclude", widget: "boolean", required: false, default: false }
