@@ -8,14 +8,14 @@ permalink: /season-download/season-7
 ---
 Season 7 is the seventh Season of World of SteelCraft SMP that takes about 2 months. The season started on August 6 and ended on November 7.
 
-![](/images/season-download/Screenshot-53-1024x576.png)
-![](/images/season-download/Screenshot-58-1024x576.png)
-![](/images/season-download/Screenshot-56-1024x576.png)
-![](/images/season-download/Screenshot-59-1024x576.png)
-![](/images/season-download/Screenshot-2021-10-25-110709.png)
-![](/images/season-download/Screenshot-61-1024x576.png)
-![](/images/season-download/Screenshot-54-1024x576.png)
-![](/images/season-download/Screenshot-55-1024x576.png)
+![](/uploads/Screenshot-53-1024x576.png)
+![](/uploads/Screenshot-58-1024x576.png)
+![](/uploads/Screenshot-56-1024x576.png)
+![](/uploads/Screenshot-59-1024x576.png)
+![](/uploads/Screenshot-2021-10-25-110709.png)
+![](/uploads/Screenshot-61-1024x576.png)
+![](/uploads/Screenshot-54-1024x576.png)
+![](/uploads/Screenshot-55-1024x576.png)
 
 <div class="padding-post">
 
