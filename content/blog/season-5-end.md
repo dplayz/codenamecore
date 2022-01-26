@@ -3,7 +3,7 @@ category: post
 title: "Season 5 End"
 date: 2021-06-06T13:02:05Z  
 description: "As 1.17 to be released on June 8 2021, admins and the community decided to end Season 5. This is normal event, to keep engagement of members, and to comply to the changes that Caves and Cliffs Update Part 1 will bring."
-draft: true
+draft: false
 sitemapExclude: false
 customPagePreviewImage: false
 customPagePreviewImageURL:
