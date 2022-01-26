@@ -61,7 +61,7 @@ collections:
       - {label: "Permalink", name: "permalink", widget: "string", required: false}
       - {label: "Use Custom Preview Image", name: "customPagePreviewImage", widget: "boolean", default: false}
       - {label: "Custom Preview Image", name: "customPagePreviewImageURL", widget: "image", required: false}
-      - {label: "Exclude from Sitemap", name: "sitemapExclude", widget: "boolean", required: true, default: false }
+      - {label: "Exclude from Sitemap", name: "sitemapExclude", widget: "boolean", required: false, default: false }
   - name: "knowledgebase" # Used in routes, e.g., /admin/collections/blog
     label: "knowledgebase" # Used in the UI
     folder: "content/knowledgebase" # The path to the folder where the documents are stored
