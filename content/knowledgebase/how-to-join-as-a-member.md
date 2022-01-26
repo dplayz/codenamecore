@@ -3,7 +3,7 @@ category: post
 title: "How to join as a member?"
 date: 2021-08-12T10:41:00Z
 description: ""
-draft: true
+draft: false
 ---
 ### Using Android or iOS:
 #### Option 1: By using the auto-save link to get the IP Address saved
