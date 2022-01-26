@@ -6,7 +6,8 @@
         </head>
         <body>
             <div id="pageheader">{{ partial "header.html" . }}</div>
-            <div class="pagetitle"><div class="pagetitle"><h1>{{ .Title }}</h1><p>Published <span id="dateDisplay">{{ .PublishDate }}</span></p>
+            <div class="pagetitle"><div class="pagetitle"><h1>{{ .Title }}</h1>
+                <p>Published {{ .Date.Local | time.Format ":date_long" }}, {{.Date.Local | time.Format ":time_short"}}</p>
             </div>
             <div id="pagecontent" class="padding-bottom">{{ .Content }}</div>
             <div id="sidebar">
