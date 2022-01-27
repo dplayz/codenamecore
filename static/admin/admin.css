@@ -1,4 +1,5 @@
 @media (max-width: 799px) {
+  body{height:100% !important;}
   aside.css-1gj57a0-SidebarContainer-card.el9l68m0 {
     position: static;
     width: 100%;
@@ -13,16 +14,16 @@
     margin: 0;
     padding: 16px 7px;
   }
-
-  .css-1f7nhiq-CollectionMain {
-    padding-left: 0;
+  .css-1f7nhiq-CollectionMain  {
+    padding-left: 0 !important;
+    width:100% !important;
   }
-
   .css-1hvrgvd-CollectionTopContainer-card-cardTop {
     width: 100%;
   }
 
   .css-16b5p1f-ToolbarSectionMain-toolbarSection {
+    padding-top: 13.5px !important;
     flex-direction: column;
     justify-content: space-evenly;
   }
@@ -78,7 +79,13 @@
     display: inline-block;
     margin-top: 0;
   }
-
+  .css-6o0rf-PreviewPaneContainer-ControlPaneContainer{
+    width: 100% !important;
+  } 
+  .css-1jydmlz-PreviewContainer{
+    display:none !important;
+  }
+  .css-7d7n9g-StyledSplitPane-card-splitPane{display:block !important;}  
   .css-stmjdx-CardGridContainer  {
     position: static;
     overflow: visible;
