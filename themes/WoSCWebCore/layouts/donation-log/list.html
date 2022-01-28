@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+{{ partial "head.html" . }}
+</head>
+{{ partial "header.html" . }}
+
+<div class="pagetitle border">
+  <h1>Donation Log</h1>
+</div>
+<div id="pagecontent">
+{{ range.Data.Pages }}
+<div class="padding">
+  <article class="post-snippet">
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <p>Published {{ .Date.Local | time.Format ":date_long" }}, {{.Date.Local | time.Format ":time_short"}}</p>
+    {{ .Content }}
+  </article>
+</div>
+{{ end }}
+</div>
+<div id="pagefooter">
+{{ partial "footer.html" . }}
+</div>  
