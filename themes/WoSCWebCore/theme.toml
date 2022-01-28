@@ -2,13 +2,13 @@
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
 name = "WoSCWebCore"
-license = ""
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
+license = "CC-BY-SA-4.0"
+licenselink = "https://github.com/worldofsteelcraft/woscweb/blob/master/LICENSE"
+description = "This is the theme World of SteelCraft Website uses. Based on our own design, keeping the old website design"
 homepage = "https://worldofsteelcraft.tk/"
 tags = []
 features = []
-min_version = "0.41.0"
+min_version = "0.87.0"
 
 [author]
   name = "dpG06"
