@@ -72,7 +72,7 @@ collections:
       - {label: "Comments", name: "enableComments", widget: "boolean", default: false }
       - {label: "Exclude from Sitemap", name: "sitemapExclude", widget: "boolean", required: false}
   - name: "Knowledgebase" # Used in routes, e.g., /admin/collections/blog
-    label: "knowledgebase" # Used in the UI
+    label: "Knowledgebase" # Used in the UI
     folder: "content/knowledgebase" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
