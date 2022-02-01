@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<head>
-{{ partial "head.html" . }}
-</head>
-{{ partial "header-knowledgebase.html" . }}
-
+{{ define "header" }}
+<div id="pageheader">{{ partial "header-knowledgebase.html" . }}</div>
+{{end}}
+{{ define "main" }}
 <div class="pagetitle border">
   <h1>Knowledgebase</h1>
 </div>
@@ -19,6 +17,4 @@
 </div>
 {{ end }}
 </div>
-<div id="pagefooter">
-{{ partial "footer.html" . }}
-</div>  
+{{end}}

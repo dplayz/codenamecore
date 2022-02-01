@@ -1,11 +1,7 @@
-
-<DOCTYPE html>
-    <html>
-        <head>
-            {{ partial "head.html" . }}
-        </head>
-        <body>
-            <div id="pageheader">{{ partial "header-knowledgebase.html" . }}</div>
+{{ define "header" }}
+<div id="pageheader">{{ partial "header-knowledgebase.html" . }}</div>
+{{end}}
+{{ define "main" }}
             <div class="pagetitle"><h1>{{ .Title }}</h1>
                 <p>Published {{ .Date.Local | time.Format ":date_long" }}, {{.Date.Local | time.Format ":time_short"}}</p>
             </div>
@@ -15,6 +11,6 @@
                 {{ partial "sidebar.html" . }}
             </div>
             <div id="pagefooter">{{ partial "footer.html" . }}</div>
-            
         </body>
     </html>
+{{end}}
