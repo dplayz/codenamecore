@@ -1,20 +1,9 @@
-<!DOCTYPE html>
+{{ define "head" }}
 <head>
-  <meta name="theme-color" content="#32e532">
-  <link rel="stylesheet" href="/style/main.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="manifest.json">
-  <script src="./scripts/browser-update.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  
-  <noscript><div id="errormessage">
-      <h2>Error</h2>
-      <h1>Javascript is off</h1><p>Website cannot be displayed properly because Javascript is turned off</p>
-      <h3>What should I do?</h3><p>Enable Javascipt, and reload this page</p>
-  </div><style>#pagecontent{display:none;}</style></noscript>
-  <script>$(function(){$("#pagenotice").load("/global/notice.html");});</script>
+  {{ partial "head-basic-info.html" . }}
+  {{ partial "head-scripts.html" . }}
   <title>Ban Information | World of SteelCraft Beta</title>
-  
+
   <meta name="title" content="Ban Information | World of SteelCraft Beta">
   <meta name="description" content="This is the list of banned members with reasons and proof. You will not get banned for unreasonable reason.">
   
@@ -30,8 +19,8 @@
   <meta property="twitter:description" content="This is the list of banned members with reasons and proof. You will not get banned for unreasonable reason.">
   <meta property="twitter:image" content="https://worldofsteelcraft.tk/images/preview.png">
 </head>
-{{ partial "header.html" . }}
-
+{{end}}
+{{ define "main" }}
 <div class="pagetitle border">
   <h1>Ban Information</h1>
   <p>This is the list of banned members with reasons and proof. You will not get banned for unreasonable reason.</p>
@@ -51,6 +40,4 @@
 </div>
 {{ end }}
 </div>
-<div id="pagefooter">
-{{ partial "footer.html" . }}
-</div>  
+{{end}}
