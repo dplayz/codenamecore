@@ -1,8 +1,10 @@
 <DOCTYPE html>
     <html>
+        {{ block "head" . }}
         <head>
             {{ partial "head.html" . }}
         </head>
+        {{end}}
         <body>
             {{ block "header" . }}
             <div id="pageheader">{{ partial "header.html" . }}</div>
