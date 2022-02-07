@@ -9,12 +9,17 @@
             {{ block "header" . }}
             <div id="pageheader">{{ partial "header.html" . }}</div>
 		    {{ end }}
+            {{ block "sidebar-desktop" . }}
+            <aside id="sidebar-desktop">
+                    {{ partial "sidebar.html" . }}
+            </aside>
+            {{ end }}
             {{ block "main" . }}
             {{ end }}
-            {{ block "sidebar" . }}
-            <div id="sidebar">
+            {{ block "sidebar-mobile" . }}
+            <aside id="sidebar-mobile">
                     {{ partial "sidebar.html" . }}
-            </div>
+            </aside>
             {{ end }}
             {{ block "footer" . }}
             <div id="pagefooter">{{ partial "footer.html" . }}</div>
