@@ -2,11 +2,6 @@
 	main.css
 	Design v.2022.0122.0
 */
-/*page-light-html */
-html{
-	background: #32e532;
-	scroll-behavior:smooth;
-}
 /*page-light-body*/
 body{
 	background:transparent; 
@@ -468,31 +463,30 @@ div#pagefooter{
 	color:white;
 }
 #pagefooter a{color:skyblue;}
-/* WIP
-@media (min-width: 1000px) {
-	#pagecontent, div.pagetitle{
-		position:relative;
-		width:70%;
-		left:0;
-		top:0;
-	}
-	#sidebar{
-		position:absolute;
-		width:30%;
-		right:0;
-		top:0;
-		z-index: 1;
-	}
-}
-@media (max-width: 1000px) {
-		#sidebar{
-			display:none;
-		}
-}
-#sidebar a, #sidebar ol{
-	text-align:left;
-}*/
 
+aside#sidebar-desktop {
+	width: 30%;
+	padding-left: 15px;
+	margin-left: 15px;
+	float: right;
+  }
+@media (max-width: 800px) {
+	aside#sidebar-desktop {
+		display:none;
+	  }
+	aside#sidebar-mobile {
+		display:block;
+	  }
+}
+/*
+@media (min-width: 800px) {
+	aside#sidebar-mobile {
+		display:none;
+	  }
+	aside#sidebar-desktop {
+		display:block;
+	  }
+}*/
 /*pagecontent-both-image | Image Default Style*/
 div#pagecontent img:not(.style-exclude){width:90%; padding-top:25px; padding-bottom:25px}
 @media (min-width: 800px) {
@@ -501,3 +495,17 @@ div#pagecontent img:not(.style-exclude){width:90%; padding-top:25px; padding-bot
 /*pagecontent-both-list | List Default Style*/
 div#pagecontent li{text-align:left; margin-left:auto; margin-right:auto;}
 div#pagecontent ol{display:inline-block; text-align:center;}
+
+/*animation-both-pagecontent_pagetitle | Page Animation */
+#pagecontent, .pagetitle {
+	animation: .3s ease-out 0s 1 slideInFromLeft;
+	padding: 30px;
+}
+@keyframes slideInFromLeft {
+	0% {
+	  transform: translateX(-100%);
+	}
+	100% {
+	  transform: translateX(0);
+	}
+}
