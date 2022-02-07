@@ -2,44 +2,6 @@
 	main.css
 	Design v.2022.0122.0
 */
-#pagecontent, .pagetitle {
-	animation: fadeIn .5s;
-	-webkit-animation: fadeIn .5s;
-	-moz-animation: fadeIn .5s;
-	-o-animation: fadeIn .5s;
-	-ms-animation: fadeIn .5s;
-  }
-  @keyframes fadeIn {
-	0% {opacity:0;}
-	100% {opacity:1;}
-  }
-  
-  @-moz-keyframes fadeIn {
-	0% {opacity:0;}
-	100% {opacity:1;}
-  }
-  
-  @-webkit-keyframes fadeIn {
-	0% {opacity:0;}
-	100% {opacity:1;}
-  }
-  
-  @-o-keyframes fadeIn {
-	0% {opacity:0;}
-	100% {opacity:1;}
-  }
-  
-  @-ms-keyframes fadeIn {
-	0% {opacity:0;}
-	100% {opacity:1;}
-  }
-
-
-/*page-light-html */
-html{
-	background: #32e532;
-	scroll-behavior:smooth;
-}
 /*page-light-body*/
 body{
 	background:transparent; 
@@ -533,3 +495,17 @@ div#pagecontent img:not(.style-exclude){width:90%; padding-top:25px; padding-bot
 /*pagecontent-both-list | List Default Style*/
 div#pagecontent li{text-align:left; margin-left:auto; margin-right:auto;}
 div#pagecontent ol{display:inline-block; text-align:center;}
+
+/*animation-both-pagecontent_pagetitle | Page Animation */
+#pagecontent, .pagetitle {
+	animation: .3s ease-out 0s 1 slideInFromLeft;
+	padding: 30px;
+}
+@keyframes slideInFromLeft {
+	0% {
+	  transform: translateX(-100%);
+	}
+	100% {
+	  transform: translateX(0);
+	}
+}
