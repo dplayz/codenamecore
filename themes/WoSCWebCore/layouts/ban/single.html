@@ -1,6 +1,6 @@
 {{ define "main" }}
-            <div class="pagetitle"><div class="pagetitle"><h1>{{ .Title }}</h1>
+            <div class="pagecontent"><div class="pagetitle"><h1>{{ .Title }}</h1>
                 <p>Published {{ .Date.Local | time.Format ":date_long" }}, {{.Date.Local | time.Format ":time_short"}}</p>
             </div>
-            <div id="pagecontent" class="padding-bottom">{{ .Content }}</div>
+            <div id="pagecontent" class="padding-bottom">{{ .Content }}</div></div>
 {{end}}
