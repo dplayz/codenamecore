@@ -29,6 +29,13 @@ function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 }
 </script>
+<script>
+  var isIE = !!navigator.userAgent.match(/Trident/g) || !!navigator.userAgent.match(/MSIE/g);
+
+  if(isIE){
+   alert("We don't guarantee support for Internet Explorer or Trident Edge . Please switch to other browser alternatives or use Chromium Edge"); 
+  }
+</script>
 <script src="./scripts/browser-update.js"></script>
 {{ print "<!--Outside Site Scripts -->" | safeHTML }}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
