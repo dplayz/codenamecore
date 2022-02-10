@@ -2,6 +2,10 @@
 	main.css
 	Design v.2022.0122.0
 */
+/*page-dark-html*/
+html{
+	background:#32e532;
+}
 /*page-light-body*/
 body{
 	background:transparent; 
