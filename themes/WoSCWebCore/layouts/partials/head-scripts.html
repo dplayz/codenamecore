@@ -29,7 +29,7 @@ function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 }
 </script>
-<script>
+<!--<script>
   if('serviceWorker' in navigator) {
       navigator.serviceWorker
           .register('/sw.js', { scope: '.' })
@@ -42,7 +42,7 @@ function googleTranslateElementInit() {
               console.log('Service Worker Ready');
           });
   }
-</script>
+</script>-->
 <script>
   var isIE = !!navigator.userAgent.match(/Trident/g) || !!navigator.userAgent.match(/MSIE/g);
 
