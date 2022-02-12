@@ -30,6 +30,20 @@ function googleTranslateElementInit() {
 }
 </script>
 <script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/sw.js', { scope: '.' })
+          .then(function(registration) {
+              console.log('Service Worker Registered');
+          });
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              console.log('Service Worker Ready');
+          });
+  }
+</script>
+<script>
   var isIE = !!navigator.userAgent.match(/Trident/g) || !!navigator.userAgent.match(/MSIE/g);
 
   if(isIE){
