@@ -4,8 +4,6 @@ const BASE_CACHE_FILES = [
     '/style/main.css',
     '/images/logo.png',
     '/favicon.ico',
-    '/pwa/404',
-    '/pwa/offline',
     '/sw.js',
 ];
 
