@@ -5,7 +5,7 @@ const BASE_CACHE_FILES = [
     '/images/logo.png',
     '/favicon.ico',
     '/pwa/404',
-    '/pwa/offline'
+    '/pwa/offline',
     '/sw.js',
 ];
 
