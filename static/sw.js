@@ -11,7 +11,7 @@ const OFFLINE_CACHE_FILES = [
     '/style/main.css',
     '/images/logo.png',
     '/favicon.ico',
-    '/404.html',
+    '/pwa/404.html',
 ];
 
 const NOT_FOUND_CACHE_FILES = [
