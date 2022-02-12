@@ -4,16 +4,21 @@ const BASE_CACHE_FILES = [
     '/style/main.css',
     '/images/logo.png',
     '/favicon.ico',
+    '/pwa/404.html',
 ];
 
 const OFFLINE_CACHE_FILES = [
+    '/style/main.css',
+    '/images/logo.png',
+    '/favicon.ico',
+    '/404.html',
 ];
 
 const NOT_FOUND_CACHE_FILES = [
 ];
 
-const OFFLINE_PAGE = '';
-const NOT_FOUND_PAGE = '/404.html';
+const OFFLINE_PAGE = '/pwa/offline.html';
+const NOT_FOUND_PAGE = '/pwa/404.html';
 
 const CACHE_VERSIONS = {
     assets: 'assets-v' + CACHE_VERSION,
