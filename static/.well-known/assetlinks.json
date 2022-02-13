@@ -1,0 +1,10 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.wosc.twa",
+      "sha256_cert_fingerprints": [
+        "5E:43:49:3C:B3:82:4D:17:A5:F0:9F:09:98:35:B8:F4:CF:8B:F7:9D:71:53:8C:6B:BC:47:34:7E:AC:40:8D:AE"
+      ]
+    }
+  }]
