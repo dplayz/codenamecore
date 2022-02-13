@@ -30,7 +30,7 @@
       }
     ],
     "start_url": "/",
-    "scope": "/",
+    "scope": ".",
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "#FFFFFF",
