@@ -24,6 +24,7 @@ collections:
       - {label: "Custom Preview Image", name: "customPagePreviewImageURL", widget: "image", required: false}
       - {label: "Comments", name: "enableComments", widget: "boolean", default: false }
       - {label: "Exclude from Sitemap", name: "sitemapExclude", widget: "boolean", required: false}
+      - {label: "Blog Author", name: "author, widget: "string", required: true}
   - name: "season-download" # Used in routes, e.g., /admin/collections/blog
     label: "Season Download" # Used in the UI
     folder: "content/season-download" # The path to the folder where the documents are stored
