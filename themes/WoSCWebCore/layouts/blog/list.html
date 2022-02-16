@@ -4,13 +4,18 @@
 </div>
 <div id="pagecontent">
 {{ range.Data.Pages }}
-<div class="padding">
   <article class="post-snippet">
-    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    <p>Published {{ .Date.Local | time.Format ":date_long" }}, {{.Date.Local | time.Format ":time_short"}}</p>
-    {{ .Content }}
+    <div class="row pagetitle-design">
+      <div class="column" style="text-align:left;">
+          <h1>{{ .Title }}</h1>
+          <p>Published {{ dateFormat "02 Jan 06 15:04 MST" .Date.Local }}</p>
+          <p>Authored by {{ if .Params.author }}{{.Params.author}}{{ else }}{{ .Site.Params.Author }}{{end}}</p>
+      </div>
+      <div class="column">
+          <img width="100%" src="{{if .Params.customPagePreviewImageURL }}{{ .Params.customPagePreviewImageURL | absURL }}{{ else }}{{ .Site.Params.pagePreviewImage | absURL }}{{end}}">
+      </div>
+    </div>
   </article>
-</div>
 {{ end }}
 </div>
 {{end}}

@@ -28,16 +28,22 @@
   <p>If you think that you got wrongfully banned or want to get context or non-personal information, message us on our personal accounts or email <b><a href="mailto:admins@worldofsteelcraft.tk">admins@worldofsteelcraft.tk</a></b></p>
 </div>
 <div id="pagecontent" style="text-align:center;">
-{{ range.Data.Pages }}
-<div class="padding-top padding-bottom">
+  {{ range.Data.Pages }}
   <article class="post-snippet">
-    <h2>
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </h2>
-    <p>Published {{ .Date.Local | time.Format ":date_long" }}, {{.Date.Local | time.Format ":time_short"}}</p>
-    {{ .Content }}
+    <div class="padding-top padding-bottom">
+    <a href="{{.Permalink}}"></a>
+    <div class="row pagetitle-design">
+      <div class="column" style="text-align:left;">
+          <h1>{{ .Title }}</h1>
+          <p>Published {{ dateFormat "02 Jan 06 15:04 MST" .Date.Local }}</p>
+          <p>Authored by {{ if .Params.author }}{{.Params.author}}{{ else }}{{ .Site.Params.Author }}{{end}}</p>
+      </div>
+      <div class="column">
+          <img width="100%" src="{{if .Params.customPagePreviewImageURL }}{{ .Params.customPagePreviewImageURL | absURL }}{{ else }}{{ .Site.Params.pagePreviewImage | absURL }}{{end}}">
+      </div>    
+    </div>
+    </a>
   </article>
-</div>
 {{ end }}
 </div>
 {{end}}

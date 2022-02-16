@@ -173,6 +173,13 @@ div.navbar-links-last{
 .navbar-knowledgebase .navbar-links li a {
 	background-color:#EDED28;
 }
+/*pagetitle-design-light;pagepreview-design-light| Page Title Design*/
+div.pagetitle-design,div.pagepreview-design{
+	color:black;
+	background-color:gray;
+	border-radius:10px;
+	border:5px solid black;
+}
 /*pagecontent-light-buttonanchor | Parent button*/
 a.button {
 	display:inline-block;
@@ -371,6 +378,11 @@ div.serverstatus{
 	}
 	.navbar-knowledgebase .navbar-links li a {
 		background-color:#a5a50d;
+	}
+	/*pagetitle-design-dark;pagepreview-design-dark | Page Title Design*/
+	div.pagetitle-design,div.pagepreview-design{
+		color:white;
+		background-color:#333;
 	}
 	/*pagecontent-dark-buttonanchor | Parent button*/
 	a.button {
