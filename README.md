@@ -12,12 +12,12 @@
 </p>
  
 This is the repository of website World of SteelCraft uses.  
-Based on [Hugo](https://gohugo.io), a static site generator using our own theme, keeping the old design
+Based on [Hugo](https://gohugo.io), a static site generator, [Netlify CMS](https://netlifycms.org) as the backend and our own theme, keeping the old design
 
 ## Dependencies
 These are the dependencies of this website.
 - [Hugo](https://gohugo.io)
-- [Firebase Tools/Firebase CLI](https://firebase.google.com/docs/cli)
+- [Netlify CMS](https://netlifycms.org)
 - [Disqus](https://disqus.com)
 
 ## Contributing
