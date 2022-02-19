@@ -1,5 +1,5 @@
 jQuery(document).ready(function( $ ){
-	$.getJSON('https://api.bedrockinfo.com/v2/status?server=smp.worldofsteelcraft.tk&port=25881', function(data) {      
+	$.getJSON('https://api.bedrockinfo.com/v2/status?server=smp.worldofsteelcraft.tk&port=25752', function(data) {      
 		$('#hostname').text(data.HostName);
 		$('#port').text(data.IPv4Port);
 		$('#version').text(data.Version);
