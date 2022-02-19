@@ -384,6 +384,10 @@ div.serverstatus{
 		color:white;
 		background-color:#333;
 	}
+	@media(max-width:800px) {
+		div.pagetitle-design-padding{padding-left:0;padding-right:0;}}
+	@media(min-width:800px) {
+		div.pagetitle-design-padding{padding-left:15%;padding-right:15%;}}
 	/*pagecontent-dark-buttonanchor | Parent button*/
 	a.button {
 		background-color:#32373C;
