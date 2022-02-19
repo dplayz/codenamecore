@@ -12,6 +12,7 @@
                     </div>
                 </div>
             </div>
+            </div>
             <div id="pagecontent">{{ .Content }}</div>
             {{with eq .Params.enableComments false}}<div id="pagecomments" class="padding">Comments are disabled :(</div>{{ else }}<div id="pagecomments" class="padding border">{{ template "_internal/disqus.html" . }}</div>{{end}}
 {{end}}
