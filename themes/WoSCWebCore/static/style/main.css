@@ -480,29 +480,6 @@ div#pagefooter{
 }
 #pagefooter a{color:skyblue;}
 
-aside#sidebar-desktop {
-	width: 30%;
-	padding-left: 15px;
-	margin-left: 15px;
-	float: right;
-  }
-@media (max-width: 800px) {
-	aside#sidebar-desktop {
-		display:none;
-	  }
-	aside#sidebar-mobile {
-		display:block;
-	  }
-}
-/*
-@media (min-width: 800px) {
-	aside#sidebar-mobile {
-		display:none;
-	  }
-	aside#sidebar-desktop {
-		display:block;
-	  }
-}*/
 /*pagecontent-both-image | Image Default Style*/
 div#pagecontent img:not(.style-exclude){width:90%; padding-top:25px; padding-bottom:25px}
 @media (min-width: 800px) {
