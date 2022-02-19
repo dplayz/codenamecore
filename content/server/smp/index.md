@@ -23,7 +23,7 @@ draft: false
                 </div>
             </div>
             <div class="column">
-                <img src="https://https://gamestatus.xyz/graph/graph_N7SOBwrOiPTDuGv.png" alt="" width="80%" class="style-exclude"/>
+                <img src="https://gamestatus.xyz/graph/graph_N7SOBwrOiPTDuGv.png?id=1645249589761" alt="" width="80%" class="style-exclude"/>
             </div>
             </div>
                 <a class="button button-green join-btn" href="https://link.worldofsteelcraft.tk/smp-save">Join server(Members Only)</a>
