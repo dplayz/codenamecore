@@ -1,7 +1,7 @@
 ---
 title: Pinadaling batas o alituntunin ng World of SteelCraft
 date: 2022-02-19T09:18:11.519Z
-draft: true
+draft: false
 enableComments: false
 ---
 
