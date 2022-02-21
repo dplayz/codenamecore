@@ -4,31 +4,6 @@
     <h3>What should I do?</h3><p>Enable Javascipt, and reload this page</p>
 </div><style>#pagecontent{display:none;}</style></noscript>
 {{ print "<!--Inside Site Scripts-->"  | safeHTML }}
-<script>$(function(){$("#pagenotice").load("/global/notice.html");});</script>
-<script>
-	if (window.netlifyIdentity) {
-	  window.netlifyIdentity.on("init", user => {
-		if (!user) {
-		  window.netlifyIdentity.on("login", () => {
-			document.location.href = "/admin/";
-		  });
-		}
-	  });
-	}
-</script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "",
-    });
-  });
-</script>
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script>
 <script>
   if('serviceWorker' in navigator) {
       navigator.serviceWorker
@@ -53,6 +28,3 @@ function googleTranslateElementInit() {
 <script src="./scripts/browser-update.js"></script>
 {{ print "<!--Outside Site Scripts -->" | safeHTML }}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
