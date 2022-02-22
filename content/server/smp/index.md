@@ -4,6 +4,15 @@ date: 2022-01-13T10:34:50+08:00
 draft: false
 ---
 <script src="/scripts/smp-query.js"></script>
+<style>
+    html{
+	background: rgb(52,153,69);
+	background: -moz-linear-gradient(131deg, rgba(52,153,69,1) 45%, rgba(85,85,255,1) 100%);
+	background: -webkit-linear-gradient(131deg, rgba(52,153,69,1) 45%, rgba(85,85,255,1) 100%);
+	background: linear-gradient(131deg, rgba(52,153,69,1) 45%, rgba(85,85,255,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#349945",endColorstr="#5555FF",GradientType=1);
+}
+</style>
 <div class="serverstatus pagetitle">
     <img src="/images/logo.png" class="style-exclude" width="150px">
         <div class="row">
