@@ -56,15 +56,13 @@ Ang paggamit sa mga app na ito ay magbabawal sa iyo! (Basahin ang [Seksyon 3C](#
 |  Ikalawang Pagkakasala | Dalawang Linggong Suspensiyon |
 |  Ikatlong Pagkakasala  | Paaalisin o  Hindi na pababalikin    |
 
-**G**. Kailangan mong iulat ang lumabag sa lalong madaling panahon na malaman mo o ikaw ay maparusahan din 
+**G**. Iulat ang mga bugs at exploits
 
-**H**. Iulat ang mga bugs at exploits
+**H**. Newly joined members should be active within 5 days.  
 
-**I**. Newly joined members should be active within 5 days.  
+**I**. Kung sakali na ang bagong sali na miyembro ay hindi maaaring sumali sa loob ng limang araw, dapat silang magbigay ng wastong dahilan na nabanggit sa Section 2B
 
-**J**. Kung sakali na ang bagong sali na miyembro ay hindi maaaring sumali sa loob ng limang araw, dapat silang magbigay ng wastong dahilan na nabanggit sa Section 2B
-
-**K**. Ang isang miyembro ay dapat na aktibo sa loob ng 15-30 minuto upang maituring na aktibo.
+**J**. Ang isang miyembro ay dapat na aktibo sa loob ng 15-30 minuto upang maituring na aktibo.
 </div>
 <div class="padding border" id="section-4" >
 

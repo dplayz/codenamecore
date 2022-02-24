@@ -55,15 +55,13 @@ Using these apps will make you banned!(Read [Section 3C](#section-3))
 |  Second Offence | 2 weeks suspension |
 |  Third Offence  | Kick or Ban        |
 
-**G**. You have to report the violator as soon as you know or you will be punished as well  
+**G**. Report the exploits
 
-**H**. Report the exploits
+**H**. Newly joined members should be active within 5 days.  
 
-**I**. Newly joined members should be active within 5 days.  
+**I**. In case of newly joined members cannot join within 5 days, they should give valid reason mentioned from Section 2B  
 
-**J**. In case of newly joined members cannot join within 5 days, they should give valid reason mentioned from Section 2B  
-
-**K**.  A member should be active within 15-30 minutes in order to be considered active.  
+**J**.  A member should be active within 15-30 minutes in order to be considered active.  
 </div>
 <div class="padding border" id="section-4" >
 
