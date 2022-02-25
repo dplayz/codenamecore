@@ -24,7 +24,24 @@ function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 }
 </script>
+<script> 
+	window.fbAsyncInit = function() { 
+		FB.init({ 
+		appId : '583745462831772', 
+		xfbml : true, 
+		version : 'v3.2' 
+	}); 
+	// Get Embedded Video Player API Instance 
+		var my_video_player; 
+		FB.Event.subscribe('xfbml.ready', function(msg) { 
+		if (msg.type === 'video') { 
+		my_video_player = msg.instance; 
+		} 
+	}); 
+};
+</script> 
 {{ print "<!--Outside Site Scripts -->" | safeHTML }}
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<div id="fb-root"></div> <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
