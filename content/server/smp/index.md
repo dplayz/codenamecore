@@ -41,7 +41,7 @@ draft: false
             </div>
                 <a class="button button-green join-btn" href="https://link.worldofsteelcraft.tk/smp-save">Join server(Members Only)</a>
                 <div class="padding">
-                <embed class="smp-map" src="/server/smp/mapindex.html" width="25%" height="25%"></embed>
+                <embed class="smp-map" src="/server/smp/mapindex.html" width="25%" height="25%"></embed><style>@media (max-width:800px){.smp-map{width:95%;height:500px;}}@media (min-width:800px){.smp-map{width:800px;height:500px;}}.smp-map{border:5px solid black; border-radius:5px;}</style>
             </div>
     </div>
 </div>

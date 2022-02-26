@@ -7,8 +7,8 @@
 <body>
 <center>
     <img src="/images/logo.png" width="30%">
-    <iframe id="mainframe" src="" width="100%" height="80%"></iframe>
-   <!-- <iframe id="mainframe" src="/guide.html" width="100%" height="80%"></iframe>-->
+    <!--<iframe id="mainframe" src="" width="100%" height="80%"></iframe>-->
+    <iframe id="mainframe" src="guide.html" width="100%" height="400px"></iframe>
     <br>
     <br>
     <br>
@@ -19,7 +19,11 @@
     <button onclick="s3frame()">Season 3</button>
     <button onclick="s4frame()">Season 4</button>
     <button onclick="s5frame()">Season 5</button>
-    <button onclick="s6frame()">Season 6(Nether Dimension Only)</button>
+    <button onclick="s6frame()">Season 6</button>
+    <button onclick="s7frame()">Season 7(WIP)</button>
+    <button onclick="s8frame()">Season 8(WIP)</button>
+    <button onclick="s9frame()">[Reserved]</button>
+    <button onclick="s10frame()">Season 10[Not available]</button>
     </div>
 <script>
     function s1frame() {
@@ -43,11 +47,20 @@
     function s7frame() { 
       document.getElementById("mainframe").src = "https://map1.worldofsteelcraft.tk/s7";
     };
+    function s8frame() { 
+      document.getElementById("mainframe").src = "https://map1.worldofsteelcraft.tk/s8";
+    };
+    function s9frame() { 
+      document.getElementById("mainframe").src = "https://map2.worldofsteelcraft.tk/s9";
+    };
+    function s10frame() { 
+      document.getElementById("mainframe").src = "https://map2.worldofsteelcraft.tk/s10";
+    };
 
 </script>
 <style>
     html {
-        background-image: linear-gradient(to bottom right, red, rgb(170, 170, 170));
+      background-color:#32e532;
     }
     body {
         background-color:transparent;
@@ -57,6 +70,7 @@
     text-align:center;
     bottom: 10px;
 }
+
 </style>
 </body>
 </html>
