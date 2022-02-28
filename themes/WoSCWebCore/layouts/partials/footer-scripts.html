@@ -45,3 +45,20 @@ function googleTranslateElementInit() {
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <div id="fb-root"></div> <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S+Yti0U7QtuZvQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>	
+	const images = Array.from(document.querySelectorAll("img"));
+	images.forEach(img => {
+	  mediumZoom(img, {
+		margin: 0, /* The space outside the zoomed image */
+		background: 'rgba(50, 229, 50, 1)',
+		scrollOffset: 100, /* The number of pixels to scroll to close the zoom */
+		container: {
+		top: 0,
+		bottom: 0,
+		right: 0,
+		left: 0,}, /* The viewport to render the zoom in */
+		template: null /* The template element to display on zoom */
+	  });
+	});
+	</script>
