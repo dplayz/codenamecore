@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   branch: main
-  
+publish_mode: editorial_workflow
 media_folder: "static/uploads" 
 public_folder: "uploads"
 display_url: https://worldofsteelcraft.tk
@@ -16,7 +16,6 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime", picker_utc: false}
-      - {label: "Draft", name: "draft", widget: "boolean", default: true}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Description", name: "description", widget: "string", required: false}
       - {label: "Permalink", name: "permalink", widget: "string", required: false}
@@ -32,7 +31,6 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime", picker_utc: false}
-      - {label: "Draft", name: "draft", widget: "boolean", default: true}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Description", name: "description", widget: "string", required: false}
       - {label: "Permalink", name: "permalink", widget: "string", required: false}
@@ -47,7 +45,6 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime", picker_utc: false}
-      - {label: "Draft", name: "draft", widget: "boolean", default: true}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Description", name: "description", widget: "string", required: false}
       - {label: "Permalink", name: "permalink", widget: "string", required: false}
@@ -62,7 +59,6 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime", picker_utc: false}
-      - {label: "Draft", name: "draft", widget: "boolean", default: true}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Description", name: "description", widget: "string", required: false}
       - {label: "Permalink", name: "permalink", widget: "string", required: false}
@@ -76,7 +72,6 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime", picker_utc: false}
-      - {label: "Draft", name: "draft", widget: "boolean", default: true}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Description", name: "description", widget: "string", required: false}
       - {label: "Permalink", name: "permalink", widget: "string", required: false}
@@ -91,7 +86,6 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime", picker_utc: false}
-      - {label: "Draft", name: "draft", widget: "boolean", default: true}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Description", name: "description", widget: "string", required: false}
       - {label: "Permalink", name: "permalink", widget: "string", required: false}
