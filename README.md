@@ -1,5 +1,5 @@
 <p align="center" width="20px">
-  <img src="https://files.worldofsteelcraft.tk/assets/web/logo.png" alt="logo" width="25%"/><br>  
+  <img src="https://github.com/worldofsteelcraft/woscweb/blob/c84badfd9047d38cfd16be168ec1d3de88e57854/themes/WoSCWebCore/static/images/logo.png" alt="logo" width="25%"/><br>  
   <h1 align="center">World of SteelCraft Website</h1>
   <p align="center">
   <a href="https://github.com/worldofsteelcraft/woscweb/tags"><img src="https://img.shields.io/github/v/tag/worldofsteelcraft/woscweb?color=green&style=plastic" alt="latest tag version"></a>
