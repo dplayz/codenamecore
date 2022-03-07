@@ -490,6 +490,9 @@ div#pagecontent ol{display:inline-block; text-align:center;}
 	animation: .3s ease-out 0s 1 slideInFromLeft;
 	padding: 30px;
 }
+#sidebar {
+	animation: .3s ease-out 0s 1 slideInFromRight;
+}
 @keyframes slideInFromLeft {
 	0% {
 	  transform: translateX(-100%);
@@ -499,6 +502,20 @@ div#pagecontent ol{display:inline-block; text-align:center;}
 	  }
 	75% {
 		transform: translateX(+10%);
+	  }
+	100% {
+	  transform: translateX(0);
+	}
+}
+@keyframes slideInFromRight {
+	0% {
+	  transform: translateX(+100%);
+	}
+	65% {
+		transform: translateX(-10%);
+	  }
+	75% {
+		transform: translateX(-10%);
 	  }
 	100% {
 	  transform: translateX(0);
