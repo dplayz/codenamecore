@@ -494,6 +494,12 @@ div#pagecontent ol{display:inline-block; text-align:center;}
 	0% {
 	  transform: translateX(-100%);
 	}
+	65% {
+		transform: translateX(+10%);
+	  }
+	75% {
+		transform: translateX(+10%);
+	  }
 	100% {
 	  transform: translateX(0);
 	}
