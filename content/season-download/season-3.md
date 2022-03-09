@@ -8,8 +8,8 @@ permalink: /season-download/season-3
 ---
 Season 3 is the third Season of World of SteelCraft SMP that takes about 2 months and 1 week The season started on October 28 2020 and ended on December 31, 2020, New Year's Eve. This is considered a complete season because the season reaches 2 months
 
-![](https://cdn.discordapp.com/attachments/816191108249157633/816266366516199424/unknown.png)
-![](https://cdn.discordapp.com/attachments/816191108249157633/816266581100855326/unknown.png)
+![](/uploads/816266366516199424.png)
+![](/uploads/816266581100855326.png)
 
 <div class="padding-post">
 
