@@ -3,7 +3,7 @@
 		<br>
 		<p>Copyright {{.Site.Params.copyrightYearStarted}}-{{ .Now.Format "2006" }} by {{ .Site.Title }}</p>
 		<p>Elements of this website are owned by {{ .Site.Title }}. Other third party copyrighted content are owned by their respective owners.</p>
-		{{if .Site.Params.managedByOthersText}}<p>{{if .Site.Params.managedByOthersText}}</p>{{else}}{{end}}
+		{{if .Site.Params.managedByOthersText}}<p>{{.Site.Params.managedByOthersText}}</p>{{end}}
 		<div id="google_translate_element"></div>
 </p>
 </div>
