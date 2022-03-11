@@ -15,7 +15,7 @@
   window.OneSignal = window.OneSignal || [];
   OneSignal.push(function() {
     OneSignal.init({
-      appId: "b1a79808-64a9-404e-9861-53a8ce9775c6",
+      appId: "{{.Site.Params.fbSDKID}}",
     });
   });
 </script>
@@ -27,7 +27,7 @@ function googleTranslateElementInit() {
 <script> 
 	window.fbAsyncInit = function() { 
 		FB.init({ 
-		appId : '583745462831772', 
+		appId : '{{.Site.Params.fbSDKID}}', 
 		xfbml : true, 
 		version : 'v3.2' 
 	}); 
