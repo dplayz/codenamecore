@@ -1,11 +1,7 @@
 /*
-	main.css
-	Design v.2022.0122.0
+	codenamecore main.css
+	Design v.2022.311.0
 */
-/*page-dark-html*/
-html{
-	background:#32e532;
-}
 /*page-light-body*/
 body{
 	background:transparent; 
@@ -229,18 +225,6 @@ a.button-seasondownloaddirect {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0bd92d",endColorstr="#aaaaaa",GradientType=1);
 }
 @media (prefers-color-scheme: dark) {
-	/*page-dark-html*/
-	html{
-		background:#159d15;
-	}
-	/*page-dark-body*/
-	body{
-		background:transparent; 
-		margin:0;
-		padding:0;
-		font-family: Roboto, Helvetica, Arial, sans-serif;
-		text-align:center;
-	}
 	/*pagecontent-dark-anchor*/
 	a:link {
 		color: blue;
