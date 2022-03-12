@@ -13,7 +13,7 @@
             {{ end }}
             {{ block "sidebar" . }}
             <aside id="sidebar">
-                    {{ partial "sidebar.html" . }}
+                {{ if os.FileExists "layouts/partials/sidebar.html" }}{{ partial "sidebar.html" . }}{{end}}
             </aside>
             {{ end }}
             {{ block "footer" . }}
