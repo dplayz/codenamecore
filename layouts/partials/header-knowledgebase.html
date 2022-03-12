@@ -8,7 +8,7 @@
       <span class="bar"></span>
     </a>
     <div class="navbar-links">
-      {{ partial "nav.html" . }}
+      {{ if os.FileExists "layouts/partials/nav.html" }}{{ partial "nav.html" . }}{{else}}{{ partial "partial-default.html" . }}{{end}}
     </div>
   </nav>
   <script>
