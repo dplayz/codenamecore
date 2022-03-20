@@ -48,11 +48,14 @@ body{
 	align-items: center;
 	background-color: #ffffff;
 	color: black;
+	min-height:80px;
+	max-height:80px;
 }
 .brand-title {
 	font-size: 1.5rem;
 	margin: .5rem;
 }
+img.sitelogo {width:100%;max-height:65px;}
 .navbar-links {
 	height: 100%;
 }
