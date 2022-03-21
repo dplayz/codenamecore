@@ -42,7 +42,6 @@ body{
 	z-index:1;
 	display: flex;
 	position: fixed;
-
 	width:100%;
 	justify-content: space-between;
 	align-items: center;
@@ -102,7 +101,8 @@ img.sitelogo {width:100%;max-height:65px;}
 .navbar-links .dropdown-content {
 	position: absolute;
 	background-color: #ffffff;
-	min-width: 160px;
+	min-width: 80px;
+	max-width: 80px;
 	z-index: 1;
 }
 div.navbar-links-last{
@@ -111,7 +111,7 @@ div.navbar-links-last{
 }
 .toggle-button {
 	position: absolute;
-	top: 1.25rem;
+	top: 1.70rem;
 	right: 1rem;
 	display: none;
 	flex-direction: column;
@@ -295,16 +295,6 @@ a.button-seasondownloaddirect {
 		position: absolute;
 		background-color: #555;
 		z-index: 1;
-	}
-	.toggle-button {
-		position: absolute;
-		top: 1.25rem;
-		right: 1rem;
-		display: none;
-		flex-direction: column;
-		justify-content: space-between;
-		width: 30px;
-		height: 21px;
 	}
 	.toggle-button .bar {
 		height: 3px;
