@@ -137,10 +137,10 @@ div.navbar-links-last{
 		display: none;
 		width: 100%;
 		}
-			
 	.navbar-links ul {
 		width: 100%;
 		flex-direction: column;
+		margin-top:-10px;
 	}
 	.navbar-links ul li {
 		text-align: center;
@@ -254,11 +254,6 @@ a.button-seasondownloaddirect {
 	.navbar-links {
 		height: 100%;
 	}
-	.navbar-links ul {
-		display: flex;
-		margin: 0;
-		padding: 0;
-	}
 	.navbar-links li a {
 		display: block;
 		text-decoration: none;
@@ -314,11 +309,6 @@ a.button-seasondownloaddirect {
 			display: none;
 			width: 100%;
 			}
-				
-		.navbar-links ul {
-			width: 100%;
-			flex-direction: column;
-		}
 		.navbar-links ul li {
 			text-align: center;
 		}
