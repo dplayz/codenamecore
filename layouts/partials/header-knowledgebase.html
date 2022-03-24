@@ -1,8 +1,7 @@
-<script>$(function(){$("#pagecontent-notice").load("/notice.html");});</script>
-<div id="pagecontent-notice"></div>
-<nav class="navbar navbar-knowledgebase">
-    <div class="brand-title"><a href="/"><img src="/images/logo.png" width="100px"></a><a href="/community/knowledgebase"><img src="/images/knowledgebaselightbulb.png" width="45px"></a></div>
-    <a href="#" class="toggle-button">
+{{ if os.FileExists "layouts/partials/psa.html" }}<div class="psa"><div class="marquee">{{ partial "psa.html" . | markdownify}}</div></div>{{end}}
+<nav class="navbar navbar-knowledgebase" {{ if os.FileExists "layouts/partials/psa.html" }}style="top:20px;"{{else}}style="top:0px;"{{end}}>
+    <div class="brand-title"><a href="/"><img src="/images/logo.png" class="sitelogo" width="100px"></a></div>
+    <a class="toggle-button">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -19,4 +18,4 @@
     navbarLinks.classList.toggle('active')
     })
   </script>
-<div class="pageheaderpadding" style="margin-top:66px;"></div>
+  <div class="pageheaderpadding" {{ if os.FileExists "layouts/partials/psa.html" }}style="margin-top:100px;"{{else}}style="margin-top:80px"{{end}}></div>
