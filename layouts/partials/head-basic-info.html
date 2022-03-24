@@ -1,6 +1,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="{{if .Site.Params.themeColor}}{{.Site.Params.themeColor}}{{else}}#ffffff{{end}}">
-<link rel="stylesheet" href="/style/main.css">
-<link rel="stylesheet" href="/style/custom.css">
+{{ $maincss := resources.Get "main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $maincss.Permalink }}">
+{{ if os.FileExists "assets/custom.css" }}
+{{ $customcss := resources.Get "custom.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $customcss.Permalink }}">
+{{end}}
 <link rel="manifest" href="/manifest.json">
 <link rel="apple-touch-icon" href="/images/apple-touch-icon/152x152.png">
