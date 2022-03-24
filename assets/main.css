@@ -29,7 +29,7 @@ body{
   	outline: none;
 }
 .active, .collapsible:hover {
-  	background-color: #fff;
+  	background-color: #666;
 }
 .content {
   	display: none;
