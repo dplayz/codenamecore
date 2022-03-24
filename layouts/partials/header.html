@@ -1,4 +1,4 @@
-{{ if os.FileExists "layouts/partials/psa.html" }}<div class="psa" style="background:yellow;z-index:1;position:fixed;max-height:20px; width:100%; top:0px; text-align:center">{{ partial "psa.html" . | markdownify }}</div><style>div.psa *{min-width:10px;max-width:15px;min-height:10px;max-height:10px; display:inline;}</style>{{end}}
+{{ if os.FileExists "layouts/partials/psa.html" }}<div class="psa"><div class="marquee">{{ partial "psa.html" . | markdownify}}</div></div>{{end}}
 <nav class="navbar" {{ if os.FileExists "layouts/partials/psa.html" }}style="top:20px;"{{else}}style="top:0px;"{{end}}>
     <div class="brand-title"><a href="/"><img src="/images/logo.png" class="sitelogo" width="100px"></a></div>
     <a class="toggle-button">
