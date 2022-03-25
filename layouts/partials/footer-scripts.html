@@ -21,12 +21,12 @@
   });
 </script>
 {{end}}
-{{if .Site.Params.fbSDKID}}
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 }
 </script>
+{{if .Site.Params.fbSDKID}}
 <script> 
 	window.fbAsyncInit = function() { 
 		FB.init({ 
