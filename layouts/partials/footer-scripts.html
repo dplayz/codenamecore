@@ -11,6 +11,7 @@
 	  });
 	}
 </script>
+{{ if .Site.Params.onesignalSDKID}}
 <script>
   window.OneSignal = window.OneSignal || [];
   OneSignal.push(function() {
@@ -19,6 +20,8 @@
     });
   });
 </script>
+{{end}}
+{{if .Site.Params.fbSDKID}}
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
@@ -40,6 +43,7 @@ function googleTranslateElementInit() {
 	}); 
 };
 </script> 
+{{end}}
 {{ print "<!--Outside Site Scripts -->" | safeHTML }}
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
