@@ -1,1 +1,1 @@
-<div id="pagecontent" style="text-align:left;padding-right:10%;padding-left:10%; text-indent: 30px;" class="padding-bottom">{{ .Content }}</div>
+<div id="pagecontent" {{ if os.FileExists "layouts/partials/sidebar.html" }}class="page-post-with-sidebar"{{else}}class="page-post"{{end}} class="padding-bottom">{{ .Content }}</div>
