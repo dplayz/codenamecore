@@ -233,12 +233,6 @@ a.button-seasondownloaddirect {
 .page-post-with-sidebar figcaption, .page-post figcaption {
 	text-align:center;
 }
-@media (min-width:800px) {
-	.page-post-with-sidebar{
-		text-align:left;
-		width:60%;
-	}
-}
 /*pagecontent-light-border | Border Default Style */
 div.border{
 	border-top: 2px solid gray;

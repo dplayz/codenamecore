@@ -9,13 +9,20 @@
             {{ block "header" . }}
             <div id="pageheader">{{ partial "header.html" . }}</div>
 		    {{ end }}
+            {{ block "container". }}
+            <div class="container">
+                <div class="main-container">
             {{ block "main" . }}
             {{ end }}
+                </div>
+                <div class="sidebar-container">
             {{ block "sidebar" . }}
             <aside id="sidebar">
-                {{ if os.FileExists "layouts/partials/sidebar.html" }}{{ partial "sidebar.html" . }}{{end}}
+                {{ if os.FileExists "layouts/partials/sidebar.html" }}{{ partial "sidebar-partial.html" . }}{{end}}
             </aside>
             {{ end }}
+                </div>
+            {{end}}
             {{ block "footer" . }}
             <div id="pagefooter">{{ partial "footer.html" . }}</div>
             {{ end }}
