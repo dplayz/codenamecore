@@ -238,6 +238,8 @@ div.border{
 	border-top: 2px solid gray;
 	border-bottom: 2px solid gray;
 }
+/*pagecontent-light-tableofcontents | Table of Contents style */
+div.tableofcontents-container{border:5px black solid; border-radius:5px;padding:5px; text-align:left;}
 /*pagecontent-light-error | Error page style */
 #errormessage { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
 #errormessage h3 { color: #888; font-weight: normal; font-size: 16px; margin: 16px 0 12px; }
