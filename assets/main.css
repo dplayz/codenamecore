@@ -1,6 +1,5 @@
 /*
 	codenamecore main.css
-	Design v.2022.311.0
 */
 /*page-light-body*/
 body{
@@ -168,6 +167,11 @@ div.psa div *{
 div.psa img{
 	max-height:18px;
 	padding:1px;
+}
+/*dev_branch_notice-both | Dev Branch Notice Default Style */
+div.dev-branch-notice{
+	background-color:yellow; 
+	width:100%;
 }
 /*pageheader-light-knowledgebase | Knowledgebase header, still inherits header style */
 .navbar-knowledgebase{
@@ -484,6 +488,13 @@ div#pagecontent img:not(.style-exclude){width:90%; padding-top:25px; padding-bot
 /*pagecontent-both-list | List Default Style*/
 div#pagecontent li{text-align:left; margin-left:auto; margin-right:auto;}
 div#pagecontent ol{display:inline-block; text-align:center;}
+
+/*dev_branch_notice-both | Dev Branch Notice Default Style */
+div.dev-branch-notice{
+	background-color:yellow; 
+	width:100%;
+	z-index:1;
+}
 
 /*animation-both-pagecontent_pagetitle | Page Animation */
 #pagecontent, .pagetitle {

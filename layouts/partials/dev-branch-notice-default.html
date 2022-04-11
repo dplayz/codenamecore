@@ -1,0 +1,6 @@
+{{if eq .Site.Params.devBranchNotice true}}
+<div class="dev-branch-notice" style="position:fixed; bottom:0;">
+{{if os.FileExists "partials/dev-branch-notice.html"}}{{partial "dev-branch-notice.html"}}{{else}}
+<p><b>This is development version of <a href="{{.Site.BaseURL}}">{{.Site.Title}}</a></b></p>
+</div>{{end}}
+{{end}}
