@@ -1,5 +1,5 @@
 {{if eq .Site.Params.devBranchNotice true}}
-{{ $branch := getenv "HUGO_GIT_COMMIT_REF" }}
-{{ if ne $branch "main" }}{{ partial "dev-branch-notice-default.html" . }}{{else if ne $branch "master" }}{{ partial "dev-branch-notice-default.html" . }}
+{{ $branch := getenv "HUGO_BRANCH" }}
+{{ if ne $branch "main" }}{{ partial "dev-branch-notice-default.html" . }}
 {{end}}
 {{end}}
