@@ -14,7 +14,7 @@
               <img width="100%" src="{{if .Params.customPagePreviewImageURL }}{{ .Params.customPagePreviewImageURL | absURL }}{{ else }}{{ .Site.Params.pagePreviewImage | absURL }}{{end}}">
           </div>
         </div>
-          <div style="display:block;padding-bottom:5%">{{ if gt (len .Summary) 200 }}{{slicestr .Summary 0 200}}...{{else}}{{.Summary}}{{ end }}</div>   
+          <div class="pagetitle-design-text" style="display:block;padding-bottom:5%">{{ if gt (len .Summary) 200 }}<p>{{slicestr .Summary 0 200}}...</p>{{else}}<p>{{.Summary}}</p>{{ end }}</div>   
         </div>
         </a>
       </article>

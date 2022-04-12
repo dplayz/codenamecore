@@ -228,13 +228,7 @@ a.button-seasondownloaddirect {
 	padding-right:10%;
 	text-indent: 30px;
 }
-.page-post-with-sidebar{
-	text-align:left;
-	padding-left:20%;
-	padding-right:20%;
-	text-indent: 30px;
-}
-.page-post-with-sidebar figcaption, .page-post figcaption {
+.page-post figcaption {
 	text-align:center;
 }
 /*pagecontent-light-border | Border Default Style */
@@ -380,10 +374,17 @@ a.button-seasondownloaddirect {
 		color:white;
 		background-color:#333;
 	}
-	@media(max-width:800px) {
-		div.pagetitle-design-padding{padding-left:0;padding-right:0;}}
 	@media(min-width:800px) {
-		div.pagetitle-design-padding{padding-left:15%;padding-right:15%;}}
+		div.pagetitle-design{margin-left:15%;margin-right:15%;}}
+	@media(max-width:800px) {
+		div.pagetitle-design{margin-left:5%;margin-right:5%;}}
+	@media(max-width:500px) {
+		div.pagetitle-design{margin-left:0%;margin-right:0%;}}
+	@media(max-width:500px) {
+		p, a{font-size:calc(12px + 1.5vw)}
+		h1, h2, h3, h4, h5, h6{font-size:calc(15px + 1.5vw)}
+	}
+	
 	/*pagecontent-dark-buttonanchor | Parent button*/
 	a.button {
 		background-color:#32373C;

@@ -1,5 +1,4 @@
 <div class="pagetitle">
-    <div style="padding-right:15%; padding-left:15%; ">
     <div class="row pagetitle-design">
         <div class="column" style="text-align:left;">
             <h1>{{ .Title }}</h1>
@@ -9,6 +8,5 @@
         <div class="column">
             <img width="100%" src="{{if .Params.customPagePreviewImageURL }}{{ .Params.customPagePreviewImageURL | absURL }}{{ else }}{{ .Site.Params.pagePreviewImage | absURL }}{{end}}">
         </div>
-    </div>
     </div>
 </div>
