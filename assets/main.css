@@ -381,8 +381,13 @@ a.button-seasondownloaddirect {
 	@media(max-width:500px) {
 		div.pagetitle-design{margin-left:0%;margin-right:0%;}}
 	@media(max-width:500px) {
-		p, a{font-size:calc(12px + 1.5vw)}
-		h1, h2, h3, h4, h5, h6{font-size:calc(15px + 1.5vw)}
+		p, a{font-size:calc(10px + 1.5vw)}
+		h1{font-size:calc(22px + 1.5vw)}
+		h2{font-size:calc(14px + 1.5vw)} 
+		h3{font-size:calc(8.72px + 1.5vw)}
+		h4{font-size:calc(6px + 1.5vw)}
+		h5{font-size:calc(3.28px + 1.5vw)}
+		h6{font-size:calc(15px + 1.5vw)}
 	}
 	
 	/*pagecontent-dark-buttonanchor | Parent button*/
