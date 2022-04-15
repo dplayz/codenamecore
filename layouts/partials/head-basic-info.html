@@ -1,3 +1,4 @@
+{{if eq .Site.Params.noIndexAll true}}<meta name="robots" content="noindex">{{else if eq .Params.noIndexPage true}}<meta name="robots" content="noindex">{{end}}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="{{if .Site.Params.themeColor}}{{.Site.Params.themeColor}}{{else}}#ffffff{{end}}">
 {{ $maincss := resources.Get "main.css" | minify | fingerprint }}
