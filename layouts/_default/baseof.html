@@ -26,7 +26,7 @@
             {{ block "footer" . }}
             <div id="pagefooter">
                 {{if os.FileExists "layouts/partials/footer-links.html" }}
-                <div class="footer-sitelinks">{{partial "footer-links.html" | markdownify }}</div>
+                <div class="footer-sitelinks">{{partial "footer-links.html" . }}</div>
                 <hr>{{end}}
                 <div class="footer-siteinfo">{{ partial "footer.html" . }}</div>
             </div>

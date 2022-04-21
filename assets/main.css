@@ -254,6 +254,18 @@ div.border{
 	border-top: 2px solid gray;
 	border-bottom: 2px solid gray;
 }
+.list-no-bullets li {
+	list-style: none;
+}
+.list-align-left li {
+	text-align: left;
+}
+.text-align-left {
+	text-align: left;
+}
+.column-width-150px{
+	max-width:150px;
+}
 /*pagecontent-light-tableofcontents | Table of Contents style */
 div.tableofcontents-container{border:5px black solid; border-radius:5px;padding:5px; text-align:left;}
 /*pagecontent-light-error | Error page style */
