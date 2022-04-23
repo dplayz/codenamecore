@@ -1,11 +1,23 @@
 {{if eq .Site.Params.noIndexAll true}}<meta name="robots" content="noindex">{{else if eq .Params.noIndexPage true}}<meta name="robots" content="noindex">{{end}}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="{{if .Site.Params.themeColor}}{{.Site.Params.themeColor}}{{else}}#ffffff{{end}}">
-{{ $maincss := resources.Get "main.css" | minify | fingerprint }}
+
+{{ if eq hugo.Environment "development" }}
+{{ $maincss := resources.Get "style/main.css" | fingerprint }}
 <link rel="stylesheet" href="{{ $maincss.RelPermalink }}">
-{{ if os.FileExists "assets/custom.css" }}
-{{ $customcss := resources.Get "custom.css" | minify | fingerprint }}
+{{else}}
+{{ $maincss := resources.Get "style/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $maincss.RelPermalink }}">
+{{end}}
+
+{{ if os.FileExists "assets/style/custom.css" }}
+{{ if eq hugo.Environment "development" }}
+{{ $customcss := resources.Get "style/custom.css" | fingerprint }}
 <link rel="stylesheet" href="{{ $customcss.RelPermalink }}">
+{{else}}
+{{ $customcss := resources.Get "style/custom.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $customcss.RelPermalink }}">
+{{end}}
 {{end}}
 <link rel="manifest" href="/manifest.json">
 <link rel="apple-touch-icon" href="/images/apple-touch-icon/152x152.png">
