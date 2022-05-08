@@ -6,24 +6,30 @@
         </head>
         {{end}}
         <body>
+            {{if eq .Params.hideHeader true}}{{else}}
             {{ block "header" . }}
             <div id="pageheader">{{ partial "header.html" . }}</div>
 		    {{ end }}
+            {{ end }}
             {{ block "container". }}
             <div class="container">
                 <div class="main-container">
             {{ block "main" . }}
+            {{.Content}}
             {{ end }}
                 </div>
+                {{ if eq .Params.hideSidebar true}}{{else}}
                 <div class="sidebar-container">
             {{ block "sidebar" . }}
             <aside id="sidebar">
                 {{ if os.FileExists "layouts/partials/sidebar.html" }}{{ partial "sidebar-partial.html" . }}{{end}}
             </aside>
             {{ end }}
+            {{end}}
                 </div>
             {{end}}
             {{ block "footer" . }}
+            {{if eq .Params.hideFooter true}}{{else}}
             <div id="pagefooter">
                 {{if os.FileExists "layouts/partials/footer-links.html" }}
                 <div class="footer-sitelinks">{{partial "footer-links.html" . }}</div>
@@ -31,6 +37,7 @@
                 <div class="footer-siteinfo">{{ partial "footer.html" . }}</div>
             </div>
             {{ end }}
+            {{end}}
             {{ block "footer-scripts" . }}
             <div id="pagefooter-scripts">{{ partial "footer-scripts.html" . }}</div>
             {{ end }}
