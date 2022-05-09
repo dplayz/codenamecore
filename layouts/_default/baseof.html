@@ -5,7 +5,7 @@
             {{ partial "head.html" . }}
         </head>
         {{end}}
-        <body>
+        <body {{if .Params.body_class}}class="{{.Params.body_class}}"{{end}}>
             {{if eq .Params.hideHeader true}}{{else}}
             {{ block "header" . }}
             <div id="pageheader">{{ partial "header.html" . }}</div>
