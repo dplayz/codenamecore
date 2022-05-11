@@ -11,7 +11,7 @@
 	  });
 	}
 </script>
-{{ if .Site.Params.onesignalSDKID}}
+{{ if .Site.Params.onesignalSDKID}}{{ if ne hugo.Environment "production" }}{{else}}
 <script>
   window.OneSignal = window.OneSignal || [];
   OneSignal.push(function() {
@@ -20,7 +20,7 @@
     });
   });
 </script>
-{{end}}
+{{end}}{{end}}
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');

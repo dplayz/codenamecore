@@ -4,6 +4,7 @@
     <h3>What should I do?</h3><p>Enable Javascipt, and reload this page</p>
 </div><style>#pagecontent{display:none;}</style></noscript>
 {{ print "<!--Inside Site Scripts-->"  | safeHTML }}
+{{ if ne hugo.Environment "production" }}{{else}}
 <script>
   if('serviceWorker' in navigator) {
       navigator.serviceWorker
@@ -17,7 +18,7 @@
               console.log('Service Worker Ready');
           });
 }
-</script>
+</script>{{end}}
 <script>
   var isIE = !!navigator.userAgent.match(/Trident/g) || !!navigator.userAgent.match(/MSIE/g);
 
@@ -25,6 +26,7 @@
    alert("We don't guarantee support for Internet Explorer or Trident Edge . Please switch to other browser alternatives or use Chromium Edge"); 
   }
 </script>
-<script src="/scripts/browser-update.js"></script>
+{{ if ne hugo.Environment "production" }}{{else}}
+<script src="/scripts/browser-update.js"></script>{{end}}
 {{ print "<!--Outside Site Scripts -->" | safeHTML }}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
