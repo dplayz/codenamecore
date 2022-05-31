@@ -5,7 +5,7 @@
             {{ partial "head.html" . }}
         </head>
         {{end}}
-        <body {{if .Params.body_class}}class="{{.Params.body_class}}"{{end}}>
+        <body {{if .Params.body_class}}class="{{.Params.body_class}}"{{end}} data-barba="wrapper">
             {{if eq .Params.hideHeader true}}{{else}}
             {{ block "header" . }}
             <div id="pageheader">{{ partial "header.html" . }}</div>
@@ -13,7 +13,7 @@
             {{ end }}
             {{ block "container". }}
             <div class="container">
-                <div class="main-container">
+                <div class="main-container" data-barba="container" data-barba-namespace="home">
             {{ block "main" . }}
             {{.Content}}
             {{ end }}
