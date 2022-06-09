@@ -1,32 +1,6 @@
-<noscript><div id="errormessage">
-    <h2>Error</h2>
-    <h1>Javascript is off</h1><p>Website cannot be displayed properly because Javascript is turned off</p>
-    <h3>What should I do?</h3><p>Enable Javascipt, and reload this page</p>
-</div><style>#pagecontent{display:none;}</style></noscript>
-{{ print "<!--Inside Site Scripts-->"  | safeHTML }}
-{{ if ne hugo.Environment "production" }}{{else}}
-<script>
-  if('serviceWorker' in navigator) {
-      navigator.serviceWorker
-          .register('/sw.js', { scope: '.' })
-          .then(function(registration) {
-              console.log('Service Worker Registered');
-          });
-      navigator.serviceWorker
-          .ready
-          .then(function(registration) {
-              console.log('Service Worker Ready');
-          });
-}
-</script>{{end}}
-<script>
-  var isIE = !!navigator.userAgent.match(/Trident/g) || !!navigator.userAgent.match(/MSIE/g);
-
-  if(isIE){
-   alert("We don't guarantee support for Internet Explorer or Trident Edge . Please switch to other browser alternatives or use Chromium Edge"); 
-  }
-</script>
-{{ if ne hugo.Environment "production" }}{{else}}
-<script src="/scripts/browser-update.js"></script>{{end}}
-{{ print "<!--Outside Site Scripts -->" | safeHTML }}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+{{ partial "error-notices/js-blocked.html" . }}
+{{ partial "head-scripts/service-worker-activator.html" . }}
+{{ partial "error-notices/IE-lack-of-support-notice.html" .}}
+{{ partial "error-notices/browser-version-check.html" }}
+{{ partial "head-scripts/jquery-callback.html" . }}
+{{ partial "head-scripts/dynamicContentFetcher.html" . }}
