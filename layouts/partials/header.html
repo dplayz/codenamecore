@@ -1,4 +1,4 @@
-{{ if os.FileExists "layouts/partials/psa.html" }}<div class="psa"><div class="marquee">{{ partial "psa.html" . | markdownify}}</div></div>{{end}}
+{{partial "header/psa-callback.html" }}
 <nav class="navbar" {{ if os.FileExists "layouts/partials/psa.html" }}style="top:20px;"{{else}}style="top:0px;"{{end}}>
     <div class="brand-title"><a href="/">{{ if os.FileExists "static/images/logo.png" }}<img src="/images/logo.png" class="sitelogo" width="100px">{{else}}<style>.brand-title b{max-width:8px;min-width:1px;}</style><b>{{ .Site.Title }}</b>{{end}}</a></div>
     <a class="toggle-button">
