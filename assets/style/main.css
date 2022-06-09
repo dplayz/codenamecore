@@ -527,7 +527,7 @@ table.no-table-border, .no-table-border td, .no-table-border th {
 	border-style: none;
 }
 
-div#pagefooter{
+footer#pagefooter{
 	background-color: #222; 
 	margin-bottom:-20px; 
 	padding:20px; 

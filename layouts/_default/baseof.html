@@ -1,53 +1,39 @@
 <!DOCTYPE html>
-    <html>
-        {{ block "head" . }}
-        <head>
-            {{ partial "head.html" . }}
-        </head>
+<html>
+    {{ block "head" . }}
+    <head>
+        {{ partial "head.html" . }}
+    </head>
+    {{end}}
+    <body {{if .Params.body_class}}class="{{.Params.body_class}}"{{end}}>
+        {{if eq .Params.hideHeader true}}{{else}}
+        <header id="pageheader">{{ partial "header.html" .}}</header>
         {{end}}
-        <body {{if .Params.body_class}}class="{{.Params.body_class}}"{{end}}>
-            {{if eq .Params.hideHeader true}}{{else}}
-            {{ block "header" . }}
-            <div id="pageheader">{{ partial "header.html" . }}</div>
-		    {{ end }}
-            {{ end }}
-            {{ block "container". }}
-            <div class="container">
-                <div class="main-container">
-            {{ block "main" . }}
-            {{.Content}}
-            {{ end }}
-                </div>
-                {{ if eq .Params.hideSidebar true}}{{else}}
-                <div class="sidebar-container">
-            {{ block "sidebar" . }}
-            <aside id="sidebar">
-                {{ if os.FileExists "layouts/partials/sidebar.html" }}{{ partial "sidebar-partial.html" . }}{{end}}
-            </aside>
-            {{ end }}
+        
+        {{ block "main" .}}
+        {{.Content}}
+        {{end}}
+        {{ block "sidebar-container" . }}
+        <aside id="sidebar pagesidebar">
+            {{ if os.FileExists "layouts/partials/sidebar.html" }}{{ partial "sidebar-partial.html" . }}{{end}}
+        </aside>
+        {{end}}
+        {{ block "footer-container" . }}
+        <footer id="pagefooter">
+            {{if os.FileExists "layouts/partials/footer-links.html" }}
+                <div class="footer-sitelinks">{{partial "footer-links.html" . }}</div><hr>
             {{end}}
-                </div>
-            {{end}}
-            {{ block "footer" . }}
-            {{if eq .Params.hideFooter true}}{{else}}
-            <div id="pagefooter">
-                {{if os.FileExists "layouts/partials/footer-links.html" }}
-                <div class="footer-sitelinks">{{partial "footer-links.html" . }}</div>
-                <hr>{{end}}
                 <div class="footer-siteinfo">{{ partial "footer.html" . }}</div>
-            </div>
-            {{ end }}
-            {{end}}
-            {{ block "footer-scripts" . }}
+        </footer>
+        {{end}}
+        {{ block "medium-zoom-container" . }}
+            {{ partial "footer-scripts/medium-zoom-template.html"}}
+        {{end}}
+        {{ block "dev-mode-notice" . }}
+            {{ partial "dev-branch-notice/challenge.html" . }}
+        {{end}}
+        {{ block "footer-scripts-container" . }}
             <div id="pagefooter-scripts">{{ partial "footer-scripts.html" . }}</div>
-            {{ end }}
-            {{ block "zoom-block" . }}
-            <template id="zoom-template" style="background-color:transparent;">
-                <div id="zoom-container" style="margin-top:-150px;top:0;left:0;right:0;bottom:0;width:100%;position:fixed;"></div>
-            </template>
-            {{ end }}
-            {{ block "dev-mode-notice" . }}
-            {{ partial "dev-branch-notice-challenge.html" . }}
-            {{end}}
-        </body>
-    </html>
+        {{end}}
+    </body>
+</html>
