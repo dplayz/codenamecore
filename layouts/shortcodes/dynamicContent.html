@@ -1,0 +1,9 @@
+<div class="dynamicContent" id="{{ .Get 0 }}">{{.Inner}}</div></div>
+<script>
+  var dynamicContent = getParameterByName('display{{ .Get 0 }}');
+  if (dynamicContent == "true")
+  {
+    item = document.getElementById("{{ .Get 0 }}");
+    item.classList.remove("dynamicContent");
+  }
+</script>
