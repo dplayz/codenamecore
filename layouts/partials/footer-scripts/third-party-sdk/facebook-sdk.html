@@ -1,0 +1,22 @@
+{{ if eq .Site.Params.disableFacebookSDK true}}{{else}}
+{{if .Site.Params.fbSDKID}}
+<div id="fb-root"></div>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+<script> 
+	window.fbAsyncInit = function() { 
+		FB.init({ 
+		appId : '{{.Site.Params.fbSDKID}}', 
+		xfbml : true, 
+		version : 'v3.2' 
+	}); 
+	// Get Embedded Video Player API Instance 
+		var my_video_player; 
+		FB.Event.subscribe('xfbml.ready', function(msg) { 
+		if (msg.type === 'video') { 
+		my_video_player = msg.instance; 
+		} 
+	}); 
+};
+</script> 
+{{end}}
+{{end}}

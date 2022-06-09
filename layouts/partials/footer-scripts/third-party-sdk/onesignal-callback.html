@@ -1,0 +1,11 @@
+{{ if .Site.Params.onesignalSDKID}}{{ if ne hugo.Environment "production" }}{{else}}
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "{{.Site.Params.onesignalSDKID}}",
+    });
+  });
+</script>
+{{end}}{{end}}
