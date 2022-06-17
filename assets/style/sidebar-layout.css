@@ -1,0 +1,13 @@
+@media(min-width:800px){
+    .main-container {
+        float: left;
+        width: 70%;
+      }
+    .sidebar-container {
+        float: right;
+        width: 30%;
+      }
+    .footer-container {
+        clear: both;
+    }
+}
