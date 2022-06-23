@@ -2,24 +2,27 @@
 <html>
     {{ block "head" . }}
     <head>
-        {{ partial "head.html" . }}
+        {{ partial "head.html" . }} 
     </head>
     {{end}}
     <body {{if .Params.body_class}}class="{{.Params.body_class}}"{{end}}>
         {{if eq .Params.hideHeader true}}{{else}}
         <header id="pageheader">{{ partial "header.html" .}}</header>
         {{end}}
-        
-        {{ block "main" .}}
-        {{.Content}}
+        {{ block "main-container" .}}
+        <div class="main-container">
+            {{ block "main" .}}
+            {{.Content}}
+            {{ end }}
+        </div>
         {{end}}
         {{ block "sidebar-container" . }}
-        <aside id="sidebar pagesidebar">
-            {{ if os.FileExists "layouts/partials/sidebar.html" }}{{ partial "sidebar-partial.html" . }}{{end}}
+        <aside id="sidebar" class="sidebar-container">
+            {{ if os.FileExists "layouts/partials/sidebar.html" }}{{ partial "sidebar/layout.html" . }}{{end}}
         </aside>
         {{end}}
         {{ block "footer-container" . }}
-        <footer id="pagefooter">
+        <footer id="pagefooter" class="footer-container">
             {{if os.FileExists "layouts/partials/footer-links.html" }}
                 <div class="footer-sitelinks">{{partial "footer-links.html" . }}</div><hr>
             {{end}}
