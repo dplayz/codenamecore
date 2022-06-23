@@ -48,7 +48,7 @@ body{
 .active, .collapsible:hover {
   	background-color: #666;
 }
-.content {
+div.collapsible-content {
   	display: none;
   	overflow:hidden;
   	background-color: transparent;
