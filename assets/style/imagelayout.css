@@ -1,0 +1,4 @@
+div#pagecontent img:not(.style-exclude){width:90%; padding-top:25px; padding-bottom:25px}
+@media (min-width: 800px) {
+	div#pagecontent img:not(.style-exclude){ display:inline-flex; width:45%!important; }
+}

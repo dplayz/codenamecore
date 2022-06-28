@@ -1,0 +1,12 @@
+@media (prefers-color-scheme: dark) {
+    a:link{
+        color: blue;
+        background-color: transparent;
+        text-decoration: none;
+    }
+    a:visited{
+        color: blue;
+        background-color: transparent;
+        text-decoration: none;
+    }
+}

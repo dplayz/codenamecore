@@ -1,0 +1,6 @@
+div#pagenotice{
+	position:fixed;
+	width:100%;
+	background-color:yellowgreen;
+	bottom:0;
+}

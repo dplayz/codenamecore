@@ -1,0 +1,4 @@
+div#pagecontent table {padding-bottom:100px;}
+table.no-table-border, .no-table-border td, .no-table-border th {
+	border-style: none;
+}

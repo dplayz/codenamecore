@@ -1,0 +1,30 @@
+a.button {
+	display:inline-block;
+	background-color:#32373C;
+	color:white;
+    padding: 8px 20px;
+	margin:5px;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:5px;
+    cursor:pointer;
+	border-radius:25px;
+	border:2px solid black;
+}
+a.button-green {
+	background: rgb(11,217,45);
+}
+
+@media (prefers-color-scheme:dark){
+    a.button {
+		background-color:#32373C;
+		color:white;
+		border-radius:5px;
+		cursor:pointer;
+		border-radius:25px;
+		border:2px solid white;
+	}
+    a.button-green {
+		background-color: rgb(52,153,69);
+	}
+}
