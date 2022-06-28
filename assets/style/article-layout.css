@@ -3,9 +3,9 @@ article.article-content div.pagetitle img.cover-image{
     width:100%;
     object-fit:cover;   
 }
-@media (min-width:900px){
+@media (min-width:1000px){
     article.article-content div.pagetitle img.cover-image{
-        width:900px;
+        width:700px;
         object-fit:cover;   
     }
 }
