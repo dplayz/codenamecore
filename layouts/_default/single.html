@@ -1,3 +1,12 @@
 {{ define "main" }}
-        {{ .Content }}
+{{ if eq .Params.singlePage true }}
+    {{.Content}}
+{{else}}
+    <article class="article-content">
+    {{ partial "page/pagetitle.html" .}}
+    {{ partial "page/pagecontent.html" .}}
+    </article>
+    {{ partial "page/pagecomments.html" .}}
+    {{partial "page/relatedcontents.html" .}}
+{{end}}
 {{end}}
