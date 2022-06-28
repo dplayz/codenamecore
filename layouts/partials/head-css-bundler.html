@@ -1,0 +1,51 @@
+{{ $generalcss := resources.Get "style/general.css" | fingerprint }}
+{{ $headercss := resources.Get "style/header.css" | fingerprint }}
+{{ $anchortagcss := resources.Get "style/anchortag.css" | fingerprint }}
+{{ $anchorbuttoncss := resources.Get "style/anchorbutton.css" | fingerprint }}
+{{ $errormessageblockcss := resources.Get "style/errormessageblock.css" | fingerprint }}
+{{ $articlelayoutmaincss := resources.Get "style/article-layout.css" | fingerprint }}
+{{ $articlesnippetliststylecss := resources.Get "style/article-snippet-layout/list-style.css" | fingerprint }}
+{{ $articlesnippetboxstylecss := resources.Get "style/article-snippet-layout/box-style.css" | fingerprint }}
+{{ $articlepostlayoutcss:= resources.Get "style/articlepostlayout.css" | fingerprint }}
+{{ $pagecommentblockcss := resources.Get "style/pagecommentblock.css" | fingerprint }}
+{{ $collapsibleblockcss := resources.Get "style/collapsibleblock.css" | fingerprint }}
+{{ $borderclasscss := resources.Get "style/borderclass.css" | fingerprint }}
+{{ $columnlayoutcss := resources.Get "style/columnlayout.css" | fingerprint }}
+{{ $paddinglayoutcss := resources.Get "style/paddinglayout.css" | fingerprint }}
+{{ $imagelayoutcss := resources.Get "style/imagelayout.css" | fingerprint }}
+{{ $tablelayoutcss := resources.Get "style/tablelayout.css" | fingerprint }}
+{{ $listlayoutcss := resources.Get "style/listlayout.css" | fingerprint }}
+{{ $textautoadjustcss := resources.Get "style/text-autoadjust.css" | fingerprint }}
+{{ $marqueeanimationcss := resources.Get "style/marquee-animation.css" | fingerprint  }}
+{{ $footerlayoutcss := resources.Get "style/footerlayout.css" | fingerprint  }}
+{{ $devbranchnoticelayoutcss := resources.Get "style/devbranchnoticelayout.css" | fingerprint  }}
+{{ $pagenoticecss := resources.Get "style/pagenotice.css" | fingerprint  }}
+
+{{ $stylebundle := slice 
+    $generalcss
+    $headercss
+    $anchortagcss
+    $anchorbuttoncss
+    $errormessageblockcss 
+    $articlelayoutmaincss 
+    $articlesnippetliststylecss 
+    $articlesnippetboxstylecss
+    $articlepostlayoutcss
+    $pagecommentblockcss 
+    $collapsibleblockcss 
+    $borderclasscss 
+    $columnlayoutcss
+    $paddinglayoutcss
+    $imagelayoutcss
+    $tablelayoutcss
+    $listlayoutcss
+    $textautoadjustcss
+    $marqueeanimationcss 
+    $footerlayoutcss 
+    $devbranchnoticelayoutcss 
+    $pagenoticecss
+    | resources.Concat "style/style-bundle.css" }}
+    
+<link rel="stylesheet" href="{{ $stylebundle.RelPermalink }}">
+{{ $customcss := resources.Get "style/custom.css" | fingerprint }}
+<link rel="stylesheet" href="{{ $customcss.RelPermalink }}">
