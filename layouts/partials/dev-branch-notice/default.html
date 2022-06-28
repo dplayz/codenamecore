@@ -1,5 +1,5 @@
 <div class="dev-branch-notice" style="position:fixed; bottom:0;">
     {{if os.FileExists "partials/dev-branch-notice.html"}}{{partial "dev-branch-notice.html"}}{{else}}
-    <p><b>This is {{hugo.Environment}} version of <a href="{{.Site.BaseURL}}">{{.Site.Title}}</a>{{if .Site.Params.bugreportURL}}, Report Bugs <a href="{{.Site.Params.bugreportURL}}">here</a>{{end}} </b></p>
+    <p><b>This is {{hugo.Environment}} version of <a href="{{.Site.BaseURL}}" style="color:blue;">{{.Site.Title}}</a>{{if .Site.Params.devBranchNotice.bugreportURL}}, Report Bugs <a href="{{.Site.Params.devBranchNotice.bugreportURL}}" style="color:blue;">here</a>{{end}} </b></p>
     {{end}}
 </div>
