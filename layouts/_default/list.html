@@ -1,4 +1,13 @@
 {{ define "main" }}
-{{ partial "list/listtitle.html" .}}
-{{ partial "list/pagetitle-design.html" .}}
-{{ end }}
+  {{if ne .RelPermalink "/"}}
+      {{partial "list/list-content.html" .}}
+  {{else}}
+    {{if os.FileExists "/content/_index.md"}}
+      {{if eq .Params.singlepage true}}
+        {{.Content}}
+      {{else}}
+        {{partial "list/list-content.html" .}}
+      {{end}}
+    {{end}}
+  {{end}}
+{{end}}
