@@ -5,12 +5,12 @@
         {{ partial "head.html" . }} 
     </head>
     {{end}}
-    <body {{if .Params.body_class}}class="{{.Params.body_class}}"{{end}}>
+    <body {{if .Params.body_class}}class="{{.Params.body_class}}"{{end}} data-barba="wrapper">
         {{if eq .Params.hideHeader true}}{{else}}
         <header id="pageheader">{{ partial "header.html" .}}</header>
         {{end}}
         {{ block "main-container" .}}
-        <div class="main-container">
+        <div class="main-container" data-barba="container" data-barba-namespace="home">
             {{ block "main" .}}
             {{.Content}}
             {{ end }}
