@@ -1,5 +1,6 @@
 div.marquee{
-	display:flex;
+	position:static;
+	display:block;
 	-moz-transform: translateX(100%);
 	-webkit-transform: translateX(100%);
 	transform: translateX(100%);

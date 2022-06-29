@@ -115,20 +115,22 @@ div.navbar-links-last{
 	}
 }
 div.psa{
-	background:yellow;
+	font-size:14px;
 	z-index:1;
 	position:fixed;
-	max-height:20px; 
+	border-bottom:3px solid red;
 	width:100%; 
 	top:0px; 
 	text-align:center
 }
-div.psa div *{
-	max-height:15px;
-}
+div.psa p {margin-top:-10px;}
+div.psa-height-00{height:0px;}
+div.psa-height-20{height:20px;}
+div.psa-height-40{height:40px;}
 div.psa img{
 	max-height:18px;
 	padding:1px;
+	display:inline-block;
 }
 @media(prefers-color-scheme: dark) {
     	/*pageheader-dark | Page header style*/
