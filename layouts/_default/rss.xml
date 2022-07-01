@@ -26,6 +26,7 @@
     {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{- end -}}
     {{ range $pages }}
+    {{if or (eq .Params.unlisted true) (eq .Params.singlepage true)}}{{else}}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
@@ -35,6 +36,7 @@
       <description>{{ .Summary | html }}</description>
       <descriptionImage>{{if .Params.customPagePreviewImageURL }}{{ .Params.customPagePreviewImageURL | absURL }}{{ else }}{{ .Site.Params.pagePreviewImage | absURL }}{{end}}</descriptionImage>
     </item>
+    {{end}}
     {{ end }}
   </channel>
 </rss>
