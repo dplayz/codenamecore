@@ -12,8 +12,6 @@
     <div class="navbar-links">
       <ul>
       {{ $currentPage := . }}
-      {{ $list := (.Site.Menus.main) }}
-      {{ $len := (len $list) }}
       {{ range .Site.Menus.main }}
         {{if .HasChildren}}
           <li><div class="dropdown">
