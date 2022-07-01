@@ -47,5 +47,7 @@
     | resources.Concat "style/style-bundle.css" }}
     
 <link rel="stylesheet" href="{{ $stylebundle.RelPermalink }}">
+{{if os.FileExists "/assets/style/custom.css"}}
 {{ $customcss := resources.Get "style/custom.css" | fingerprint }}
 <link rel="stylesheet" href="{{ $customcss.RelPermalink }}">
+{{end}}
