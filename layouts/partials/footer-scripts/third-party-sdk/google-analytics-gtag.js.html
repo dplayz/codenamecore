@@ -1,0 +1,16 @@
+{{ if ne hugo.Environment "production" }}
+{{if .Site.Params.identity.googleanalytics.measurementid}}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{.Site.Params.identity.googleanalytics.measurementid}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  {{if eq .Site.Params.identity.googleanalytics.disablepageview true}}
+  gtag('config', '{{.Site.Params.identity.googleanalytics.measurementid}}', { 'send_page_view': false });
+  {{else}}
+  gtag('config', '{{.Site.Params.identity.googleanalytics.measurementid}}');
+  {{end}}
+</script>
+{{end}}
+{{end}}

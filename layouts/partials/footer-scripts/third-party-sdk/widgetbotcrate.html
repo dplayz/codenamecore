@@ -1,0 +1,15 @@
+
+{{if and (.Site.Params.identity.widgetbotcrate.serverid) (.Site.Params.identity.widgetbotcrate.channelid) }}
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+    new Crate({
+      server: '{{.Site.Params.identity.widgetbotcrate.serverid}}',
+      channel: '{{.Site.Params.identity.widgetbotcrate.channelid}}'
+    })
+</script>
+{{else if .Site.Params.identity.widgetbotcrate.serverid}}
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+    new Crate({
+      server: '299881420891881473',
+    })
+</script>
+{{end}}

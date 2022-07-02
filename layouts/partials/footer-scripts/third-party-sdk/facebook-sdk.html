@@ -1,11 +1,11 @@
 {{ if eq .Site.Params.disableFacebookSDK true}}{{else}}
-{{if .Site.Params.fbSDKID}}
+{{if .Site.Params.identity.fbSDKID}}
 <div id="fb-root"></div>
 <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 <script> 
 	window.fbAsyncInit = function() { 
 		FB.init({ 
-		appId : '{{.Site.Params.fbSDKID}}', 
+		appId : '{{.Site.Params.identity.fbSDKID}}', 
 		xfbml : true, 
 		version : 'v3.2' 
 	}); 
