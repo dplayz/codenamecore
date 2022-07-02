@@ -44,10 +44,9 @@
     $footerlayoutcss 
     $devbranchnoticelayoutcss 
     $pagenoticecss
-    | resources.Concat "style/style-bundle.css" }}
-    
-<link rel="stylesheet" href="{{ $stylebundle.RelPermalink }}">
+    | resources.Concat "style/style-bundle.css" | resources.Fingerprint "sha512"}}
+<link rel="stylesheet" href="{{ $stylebundle.RelPermalink }}" integrity="{{ $stylebundle.Data.Integrity }}">
 {{if os.FileExists "/assets/style/custom.css"}}
-{{ $customcss := resources.Get "style/custom.css" | fingerprint }}
-<link rel="stylesheet" href="{{ $customcss.RelPermalink }}">
+{{ $customcss := resources.Get "style/custom.css" | resources.Fingerprint "sha512" }}
+<link rel="stylesheet" href="{{ $customcss.RelPermalink }}" integrity="{{ $customcss.Data.Integrity }}">
 {{end}}
