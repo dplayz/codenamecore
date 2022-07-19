@@ -1,12 +1,13 @@
 article.list-style{
-    border:2.5px solid black;
+    border:3px solid black;
     margin-top:20px;
     margin-bottom:20px;
     margin-left:auto;
     margin-right:auto;
+    border-radius:4px;
 }
 @media(max-width:650px) {
-    article.list-style{ height:100%;}
+    article.list-style{ height:100%; width:80%;}
     article.list-style div.article-cover img{
         height:100%;width:100%;
         object-fit:cover;
@@ -38,4 +39,11 @@ article.list-style{
     text-align:left; 
     border:none;
 }
+}
+
+span.list-style-authors{
+  padding-left:2.5px;
+  padding-right:2.5px;
+  border:0.25px black solid;
+  border-radius:6.5px;
 }
