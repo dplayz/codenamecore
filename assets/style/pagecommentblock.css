@@ -1,4 +1,13 @@
-div#pagecomments{background-color: #fff;}
+div#pagecomments{
+    background-color: #fff;
+    max-width:1000px; 
+    margin-left:auto;
+    margin-right:auto;
+    width:75%;
+    height:inherit;
+    border-radius:10px;
+    border:5px solid black;
+}
 @media(prefers-color-scheme:dark){
     div#pagecomments{background-color: #000; color:white;}
 }
