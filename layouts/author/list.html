@@ -1,0 +1,25 @@
+{{define "main"}}
+<br>
+{{ if .Params.gravatar}}
+    <img src="https://www.gravatar.com/avatar/{{md5 .Params.gravatar}}">
+{{else}}
+    <img src="{{ .Params.avatar }}" alt="" />
+{{end}}
+<h1>{{ .Params.name }}</h1>
+<h2>Bio</h2>
+{{ .Content }}
+{{ with .Params.twitter }}
+  <p>
+    <a href="https://twitter.com/{{ substr . 1 }}">
+      Follow {{ $.Params.name }} on Twitter
+    </a>
+  </p>
+{{ end }}
+
+<h2>Articles</h2>
+<ul>
+{{ range .Data.Pages }}
+    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+{{ end }}
+</ul>
+{{end}}

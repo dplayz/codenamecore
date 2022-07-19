@@ -9,6 +9,7 @@
 {{ $articlepostlayoutcss:= resources.Get "style/articlepostlayout.css" | fingerprint }}
 {{ $pagecommentblockcss := resources.Get "style/pagecommentblock.css" | fingerprint }}
 {{ $collapsibleblockcss := resources.Get "style/collapsibleblock.css" | fingerprint }}
+{{ $authorinfocss := resources.Get "style/author-info.css" | fingerprint  }}
 {{ $borderclasscss := resources.Get "style/borderclass.css" | fingerprint }}
 {{ $columnlayoutcss := resources.Get "style/columnlayout.css" | fingerprint }}
 {{ $paddinglayoutcss := resources.Get "style/paddinglayout.css" | fingerprint }}
@@ -33,6 +34,7 @@
     $articlepostlayoutcss
     $pagecommentblockcss 
     $collapsibleblockcss 
+    $authorinfocss
     $borderclasscss 
     $columnlayoutcss
     $paddinglayoutcss
