@@ -29,7 +29,7 @@ div.padding-bottom{
 div.pagetitle{
 	padding-top:50px;
 }
-div.padding-post{padding-top:50px;padding-bottom:50px;}
+div.page-post{padding-top:10px;padding-bottom:10px;}
 /*pagecontent-both-table | Table Default Style */
 table, tr, th, td {
 	border: 2.5px solid black;
