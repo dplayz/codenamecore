@@ -1,3 +1,15 @@
+{{ if eq .Site.Params.thumbnailprocessing.enable true }}
+{{ $thumbnail := resources.Get "/images/preview.png" }}
+{{ $thumbnail = $thumbnail.Filter (images.GaussianBlur 6) (images.Text "Hugo rocks!" (dict
+    "color" "#ffffff"
+    "size" 60
+    "linespacing" 1
+    "x" 20
+    "y" 20
+)) | resources.Copy "/images/preview.png" }}
+{{$.Scratch.Set "thumbnail" $thumbnail.Permalink}}
+
+{{end}}
 <title>{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ .Site.Title }}</title>
 <meta name="title" content="{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ .Site.Title }}">
 <meta name="description" content="{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
@@ -9,11 +21,18 @@
 <meta property="og:description" content="{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
 {{- .Summary | default (printf "%s - %s" .Title  .Site.Title) }}{{- else }}
 {{- with .Site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
+{{if eq .Site.Params.thumbnailprocessing.enable true}}
+    <meta property="og:image" content="{{ $.Scratch.Get "thumbnail" }}">
+{{else}}
 <meta property="og:image" content="{{if .Params.customPagePreviewImageURL }}{{ .Params.customPagePreviewImageURL | absURL }}{{ else }}{{ .Site.Params.pagePreviewImage | absURL }}{{end}}">
+{{end}}
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{ .Permalink }}">
 <meta property="twitter:title" content="{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ .Site.Title }}">
 <meta property="twitter:description" content="{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
 {{- .Summary | default (printf "%s - %s" .Title  .Site.Title) }}{{- else }}
 {{- with .Site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
+{{if eq .Site.Params.thumbnailprocessing.enable true}}{{else}}
 <meta property="twitter:image" content="{{if .Params.customPagePreviewImageURL }}{{ .Params.customPagePreviewImageURL | absURL }}{{ else }}{{ .Site.Params.pagePreviewImage | absURL }}{{end}}">
+{{end}}
+
