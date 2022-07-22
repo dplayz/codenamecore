@@ -1,0 +1,7 @@
+{{if eq .Page.Params.infopage true}}
+<div class="infopage-profile" {{if .Get 1}}style="background-color:{{.Get 1}};"{{end}}>
+    <img src="{{.Get 0}}">
+</div>
+{{else}}
+<p>This shortcode will only work for infopage</p>
+{{end}}
