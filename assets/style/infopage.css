@@ -12,23 +12,19 @@ div.infopage{
         max-width:800px;
     }
 }
-div.infopage-profile{
-    width:150px;
-    aspect-ratio: 1/1;
-    border-radius: 100%;
-    background-color:white;
-    border:5px black solid;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:10px;
-    margin-bottom:10px;
-}
 div.infopage-profile img{
-    width: inherit;
+    width:150px;
+    background-color:white;
     aspect-ratio: 1/1;  
     object-fit: contain;
     padding:0;
-    border-radius:inherit;
+    border-radius: 100%;
+    border:10px black solid;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
 }
 button.collapsible-infopage{
     border-radius:25px;
