@@ -1,4 +1,4 @@
-<button type="button" class="collapsible collapsible-infopage {{.Get "class"}}">{{if .Get "name" }}{{.Get "name"}}{{else}}{{.Get 0}}{{end}}</button>
+<button type="button" class="collapsible {{.Get "class"}}">{{if .Get "name" }}{{.Get "name"}}{{else}}{{.Get 0}}{{end}}</button>
 <div class="collapsible-content">
     {{.Inner}}
 </div>
