@@ -6,7 +6,7 @@
     </head>
     {{end}}
     <body {{if .Params.body_class}}class="{{.Params.body_class}}"{{end}}>
-        {{if eq .Params.hideHeader true}}{{else}}
+        {{if and (or (eq .Params.hideHeader true) (eq .Params.infopage true))}}{{else}}
         <header id="pageheader">{{ partial "header.html" .}}</header>
         {{end}}
         {{ block "main-container" .}}
@@ -16,17 +16,21 @@
             {{ end }}
         </div>
         {{end}}
+        {{ if and (or (eq .Params.hideHeader true) (eq .Params.infopage true))}}{{else}}
         {{ block "sidebar-container" . }}
         <aside id="sidebar" class="sidebar-container">
             {{ if os.FileExists "layouts/partials/sidebar.html" }}{{ partial "sidebar/layout.html" . }}{{end}}
         </aside>
         {{end}}
+        {{end}}
+        {{if and (or (eq .Params.hideFooter true) (eq .Params.infopage true))}}{{else}}
         {{ block "footer-container" . }}
         <footer id="pagefooter" class="footer-container">
             {{if os.FileExists "layouts/partials/footer-links.html" }}
                 <div class="footer-sitelinks">{{partial "footer-links.html" . }}</div><hr>
             {{end}}
                 <div class="footer-siteinfo">{{ partial "footer.html" . }}</div>
+            {{end}}
         </footer>
         {{end}}
         {{ block "medium-zoom-container" . }}
