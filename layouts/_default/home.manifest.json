@@ -1,0 +1,53 @@
+{
+  "name": "{{if .Site.Params.pwa.name}}{{.Site.Params.pwa.name}}{{else}}{{.Site.Title}}{{end}}",
+  "short_name": "{{if .Site.Params.pwa.shortname}}{{.Site.Params.pwa.shortname}}{{else}}{{.Site.Title}}{{end}}",
+  "icons": [
+    {{- $pwaicons := resources.Get "favicon/icon.png" }}
+    {{- if os.FileExists "static/favicon.ico" }}{{- else -}}
+    {{- $favicon32px := $pwaicons.Resize "32x" }}
+    {{- $favicon32px := slice $favicon32px | resources.Concat "/favicon.ico" }}
+    {{- end -}}
+    {{- $pwaicon128px := $pwaicons.Resize "128x" }}
+    {{- $pwaicon128px := slice $pwaicon128px | resources.Concat "/images/icon/site/icon_128px.png" }}
+    {{- $pwaicon144px := $pwaicons.Resize "144x" }}
+    {{- $pwaicon144px := slice $pwaicon144px | resources.Concat "/images/icon/site/icon_144px.png" }}
+    {{- $pwaicon152px := $pwaicons.Resize "152x" }}
+    {{- $pwaicon152px := slice $pwaicon152px | resources.Concat "/images/icon/site/icon_152px.png" }}
+    {{- $pwaicon196px := $pwaicons.Resize "196x" }}
+    {{- $pwaicon196px := slice $pwaicon196px | resources.Concat "/images/icon/site/icon_196px.png" }}
+    {{- $pwaicon512px := $pwaicons.Resize "512x" }}
+    {{- $pwaicon512px := slice $pwaicon512px | resources.Concat "/images/icon/site/icon_512px.png" }}
+    {
+      "src": "{{ $pwaicon128px.RelPermalink}}",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "{{ $pwaicon144px.RelPermalink}}",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "{{ $pwaicon152px.RelPermalink}}",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "{{ $pwaicon196px.RelPermalink}}",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "any maskable" 
+    },
+    {
+      "src": "{{if .Site.Params.pwa.customSplashImage}}{{.Site.Params.pwa.customSplashImage}}{{else}}{{ $pwaicon512px.RelPermalink}}{{end}}",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF"
+}

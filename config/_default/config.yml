@@ -1,0 +1,6 @@
+outputFormats:
+  manifest:
+    name: manifest
+    baseName: manifest
+    mediaType: application/json
+    notAlternative: false
