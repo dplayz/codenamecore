@@ -1,6 +1,7 @@
 {
   "name": "{{if .Site.Params.pwa.name}}{{.Site.Params.pwa.name}}{{else}}{{.Site.Title}}{{end}}",
   "short_name": "{{if .Site.Params.pwa.shortname}}{{.Site.Params.pwa.shortname}}{{else}}{{.Site.Title}}{{end}}",
+  {{- if os.FileExists "assets/favicon/icon.png" }}
   "icons": [
     {{- $pwaicons := resources.Get "favicon/icon.png" }}
     {{- if os.FileExists "static/favicon.ico" }}{{- else -}}
@@ -44,6 +45,15 @@
       "type": "image/png"
     }
   ],
+  {{- else -}}
+  "icons": [
+    {
+      "src": "{{.Site.Params.pwa.customSplashImage}}",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  {{- end -}}
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
