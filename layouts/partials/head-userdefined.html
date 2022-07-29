@@ -1,0 +1,9 @@
+
+<style>
+{{- if .Site.Params.theme.backgroundcolor -}}
+html{background-color:{{.Site.Params.theme.backgroundcolor}};}
+{{- end -}}
+{{- if .Site.Params.theme.backgroundcolor_dark -}}
+@media (prefers-color-scheme: dark){html{background:{{.Site.Params.theme.backgroundcolor_dark}};}}
+{{- end -}}
+</style>
