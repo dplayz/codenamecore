@@ -1,19 +1,13 @@
 <figure class="author-info-snippet" id="articleauthors">
   <br>
-  {{ if .Params.gravatar}}
+  {{- if .Params.gravatar -}}
     <img src="https://www.gravatar.com/avatar/{{md5 .Params.gravatar}}">
-  {{else}}
+  {{- else}}
     <img src="{{ .Params.avatar }}" alt="" />
-  {{end}}
+  {{- end}}
   <p>{{.Params.name}}</p>
   <figcaption>
-    <p>
-      {{ .Summary }}
-    </p>
-    <p>
-      <a href="{{ .Permalink }}" class="block-link">
-        More about {{ .Params.name }}
-      </a>
-    </p>
+    <p>{{- .Summary -}}</p>
+    <p><a href="{{ .Permalink }}" class="block-link">More about {{ .Params.name }}</a></p>
   </figcaption>
 </figure>

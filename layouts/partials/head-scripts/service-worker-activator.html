@@ -1,4 +1,4 @@
-{{ if ne hugo.Environment "production" }}{{else}}
+{{- if ne hugo.Environment "production" }}{{- else}}
 <script>
   if('serviceWorker' in navigator) {
       navigator.serviceWorker

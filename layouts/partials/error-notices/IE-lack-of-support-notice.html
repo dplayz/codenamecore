@@ -1,8 +1,8 @@
-{{if eq .Site.Params.disableIEChecks true}}{{else}}
+{{- if eq .Site.Params.disableIEChecks true}}{{else}}
 <script>
     var isIE = !!navigator.userAgent.match(/Trident/g) || !!navigator.userAgent.match(/MSIE/g);
     if(isIE){
      alert("We don't guarantee support for Internet Explorer or Trident Edge . Please switch to other browser alternatives or use Chromium Edge"); 
     }
 </script>
-{{end}}
+{{- end}}

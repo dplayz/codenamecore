@@ -1,5 +1,5 @@
-{{ if ne hugo.Environment "production" }}
-{{if .Site.Params.identity.googleanalytics.measurementid}}
+{{- if ne hugo.Environment "production" }}
+{{- if .Site.Params.identity.googleanalytics.measurementid}}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{.Site.Params.identity.googleanalytics.measurementid}}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

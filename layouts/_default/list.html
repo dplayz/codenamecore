@@ -1,13 +1,13 @@
-{{ define "main" }}
-  {{if ne .RelPermalink "/"}}
-      {{partial "list/list-content.html" .}}
-  {{else}}
-    {{if os.FileExists "/content/_index.md"}}
-      {{if eq .Params.singlepage true}}
+{{- define "main" }}
+  {{- if ne .RelPermalink "/"}}
+      {{- partial "list/list-content.html" .}}
+  {{- else}}
+    {{- if os.FileExists "/content/_index.md"}}
+      {{- if eq .Params.singlepage true}}
         {{.Content}}
-      {{else}}
-        {{partial "list/list-content.html" .}}
-      {{end}}
-    {{end}}
-  {{end}}
-{{end}}
+      {{- else}}
+        {{- partial "list/list-content.html" .}}
+      {{- end}}
+    {{- end}}
+  {{- end}}
+{{- end}}

@@ -1,5 +1,5 @@
-{{ if eq .Site.Params.disableFacebookSDK true}}{{else}}
-{{if .Site.Params.identity.fbSDKID}}
+{{- if eq .Site.Params.disableFacebookSDK true}}{{else}}
+{{- if .Site.Params.identity.fbSDKID}}
 <div id="fb-root"></div>
 <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 <script> 

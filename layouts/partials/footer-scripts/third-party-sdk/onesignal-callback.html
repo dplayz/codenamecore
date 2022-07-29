@@ -1,4 +1,4 @@
-{{ if .Site.Params.identity.onesignalSDKID}}{{ if ne hugo.Environment "production" }}{{else}}
+{{- if .Site.Params.identity.onesignalSDKID}}{{- if ne hugo.Environment "production" }}{{- else}}
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 <script>
   window.OneSignal = window.OneSignal || [];

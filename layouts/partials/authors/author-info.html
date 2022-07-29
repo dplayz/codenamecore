@@ -1,11 +1,11 @@
-{{if .Params.author}}
+{{- if .Params.author}}
 <h2>About the {{ cond (eq (len .Params.author) 1) "author" "authors" }}{{end}}</h2>
     {{- range .Params.author }}
-        {{ $authorPath := printf "author/%s" (urlize .) }}
+        {{- $authorPath := printf "author/%s" (urlize .) }}
         {{- with $.Site.GetPage "taxonomyTerm" $authorPath }}
         {{ partial "authors/author-figure" . }}
-    {{ end }}
-{{else}}
+    {{- end -}}
+{{- else -}}
 <h2>About the authors</h2>
-    {{partial "authors/author-figure-default.html" . }}
-{{end}}
+{{- partial "authors/author-figure-default.html" . -}}
+{{- end -}}

@@ -1,4 +1,4 @@
-{{ if eq .Site.Params.disableNetlifyIdentity true}}{{else}}
+{{- if eq .Site.Params.disableNetlifyIdentity true}}{{- else}}
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
 	if (window.netlifyIdentity) {
@@ -11,4 +11,4 @@
 	  });
 	}
 </script>
-{{end}}
+{{- end}}

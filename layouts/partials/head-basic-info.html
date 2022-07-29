@@ -1,8 +1,12 @@
-{{if eq .Site.Params.noIndexAll true}}<meta name="robots" content="noindex">{{else if and (or (eq .Params.noIndexPage true) (eq .Params.sitemapExclude true) (eq .Params.excludeFromCrawlers true) (eq .Params.unlisted true))}}<meta name="robots" content="noindex">{{end}}
+{{ if eq .Site.Params.noIndexAll true}}
+<meta name="robots" content="noindex">
+{{ else if and (or (eq .Params.noIndexPage true) (eq .Params.sitemapExclude true) (eq .Params.excludeFromCrawlers true) (eq .Params.unlisted true))}}
+<meta name="robots" content="noindex">
+{{- end}}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="theme-color" content="{{if .Site.Params.themeColor}}{{.Site.Params.themeColor}}{{else}}#ffffff{{end}}">
-{{partial "head-css-bundler.html" . }}
+{{- partial "head-css-bundler.html" . }}
 <link rel="manifest" href="/manifest.json">
 <link rel="apple-touch-icon" href="/images/apple-touch-icon/152x152.png">
 {{ partial "head-site-identity.html" . }}

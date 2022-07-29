@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html>
-    {{ block "head" . }}
+    {{- block "head" . }}
     <head>
-        {{ partial "head.html" . }} 
+        {{- partial "head.html" . }} 
     </head>
-    {{end}}
-    <body {{if .Params.body_class}}class="{{.Params.body_class}}"{{end}}>
-        {{if and (or (eq .Params.hideHeader true) (eq .Params.infopage true))}}{{else}}
+    {{- end}}
+    <body {{- if .Params.body_class -}}class="{{.Params.body_class}}"{{end}}>
+        {{- if and (or (eq .Params.hideHeader true) (eq .Params.infopage true))}}{{else}}
         <header id="pageheader">{{ partial "header.html" .}}</header>
-        {{end}}
-        {{ block "main-container" .}}
+        {{- end}}
+        {{- block "main-container" .}}
         <div class="main-container">
-            {{ block "main" .}}
+            {{- block "main" .}}
             {{.Content}}
-            {{ end }}
+            {{- end }}
         </div>
-        {{end}}
-        {{ if and (or (eq .Params.hideHeader true) (eq .Params.infopage true))}}{{else}}
-        {{ block "sidebar-container" . }}
+        {{- end}}
+        {{- if and (or (eq .Params.hideHeader true) (eq .Params.infopage true))}}{{- else}}
+        {{- block "sidebar-container" . }}
         <aside id="sidebar" class="sidebar-container">
-            {{ if os.FileExists "layouts/partials/sidebar.html" }}{{ partial "sidebar/layout.html" . }}{{end}}
+            {{- if os.FileExists "layouts/partials/sidebar.html" }}{{ partial "sidebar/layout.html" . }}{{end}}
         </aside>
-        {{end}}
-        {{end}}
-        {{if and (or (eq .Params.hideFooter true) (eq .Params.infopage true))}}{{else}}
-        {{ block "footer-container" . }}
+        {{- end}}
+        {{- end}}
+        {{- if and (or (eq .Params.hideFooter true) (eq .Params.infopage true))}}{{else}}
+        {{- block "footer-container" . }}
         <footer id="pagefooter" class="footer-container">
-            {{if os.FileExists "layouts/partials/footer-links.html" }}
+            {{- if os.FileExists "layouts/partials/footer-links.html" }}
                 <div class="footer-sitelinks">{{partial "footer-links.html" . }}</div><hr>
-            {{end}}
+            {{- end}}
                 <div class="footer-siteinfo">{{ partial "footer.html" . }}</div>
-            {{end}}
+            {{- end}}
         </footer>
-        {{end}}
-        {{ block "medium-zoom-container" . }}
-            {{ partial "footer-scripts/medium-zoom-template.html"}}
-        {{end}}
-        {{ block "dev-mode-notice" . }}
-            {{ partial "dev-branch-notice/challenge.html" . }}
-        {{end}}
-        {{ block "footer-scripts-container" . }}
+        {{- end}}
+        {{- block "medium-zoom-container" . }}
+            {{- partial "footer-scripts/medium-zoom-template.html"}}
+        {{- end}}
+        {{- block "dev-mode-notice" . }}
+            {{- partial "dev-branch-notice/challenge.html" . }}
+        {{- end}}
+        {{- block "footer-scripts-container" . }}
             <div id="pagefooter-scripts">{{ partial "footer-scripts.html" . }}</div>
-        {{end}}
+        {{- end}}
     </body>
 </html>
