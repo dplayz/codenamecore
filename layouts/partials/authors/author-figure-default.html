@@ -1,6 +1,10 @@
 <figure class="author-info-snippet" id="articleauthors">
     <br>
+      {{- if .Site.Params.theme.logo }}
+      <img src="{{.Site.Params.theme.logo }}" width="120px">
+      {{- else if os.FileExists "static/images/logo.png" }}
       <img src="/images/logo.png" width="120px">
+      {{- end}}
       <h2>{{.Site.Params.author}}</h2>
     <figcaption>
       <p>

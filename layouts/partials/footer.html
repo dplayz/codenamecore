@@ -1,9 +1,13 @@
 <div style="text-align:center;">
+		{{- if .Site.Params.theme.logo }}
+		<img src="{{.Site.Params.theme.logo}}" width="100px">
+		{{- else}}
 		<img src="/images/logo.png" width="100px">
+		{{- end}}
 		<br>
-		<p>Copyright {{.Site.Params.copyrightYearStarted}}-{{ .Site.Params.copyrightYearToday }} by {{ if .Site.Params.copyrightHolder }}{{ .Site.Params.copyrightHolder }}{{else}}{{ .Site.Title }}{{end}}</p>
-		{{- if .Site.Params.copyrightNotes}}{{.Site.Params.copyrightNotes | markdownify }}<br><br>{{else}}{{end}}
-		{{- if .Site.Params.managedByWhom}}{{.Site.Params.managedByWhom | markdownify }}{{else}}<p>Managed by {{ .Site.Title }}</p>{{end}}
+		<p>Copyright {{.Site.Params.copyright.start}}-{{ .Site.Params.copyright.today }} by {{ if .Site.Params.copyright.rightholder }}{{ .Site.Params.copyright.rightholder }}{{else}}{{ .Site.Title }}{{end}}</p>
+		{{- if .Site.Params.copyright.notes}}{{.Site.Params.copyright.notes | markdownify }}<br><br>{{else}}{{end}}
+		{{- if .Site.Params.copyright.managedByWhom}}{{.Site.Params.copyright.managedByWhom | markdownify }}{{else}}<p>Managed by {{ .Site.Title }}</p>{{end}}
 		<div id="google_translate_element"></div>
 </p>
 </div>
