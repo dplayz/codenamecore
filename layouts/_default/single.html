@@ -10,7 +10,7 @@
     {{- partial "page/pagecontent.html" .}}
     </article>
     {{- end}}
-    {{- if ne .Params.infopage true}}
+    {{- if and (ne .Params.infopage true) (ne .Params.singlepage true)}}
     {{ partial "page/pagecomments.html" .}}
     {{ partial "authors/author-info.html" . }}
     {{ partial "page/relatedcontents.html" .}}
