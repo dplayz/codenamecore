@@ -11,6 +11,9 @@
     </article>
     {{- end}}
     {{- if and (ne .Params.infopage true) (ne .Params.singlepage true)}}
+    {{if eq .Site.Params.theme.crowdsourcing.enable true}}
+    {{ partial "page/pagecontribute.html" . }}
+    {{end}}
     {{ partial "page/pagecomments.html" .}}
     {{ partial "authors/author-info.html" . }}
     {{ partial "page/relatedcontents.html" .}}

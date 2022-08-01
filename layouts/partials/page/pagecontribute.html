@@ -1,0 +1,10 @@
+<div class="pagecontribute">
+<b>Contribute to this page:</b>
+<br>
+{{if eq .Site.Params.theme.crowdsourcing.by.cms true}}
+<b><a href="/admin">CMS</a></b>
+{{end}}
+{{if eq .Site.Params.theme.crowdsourcing.by.github.enable true}}
+<b><a href="{{.Site.Params.theme.crowdsourcing.by.github.url}}/edit/main/{{ replace .File.Dir  "%5c" "%2F" | safeHTML }}{{.File.LogicalName}}">GitHub{{.File.Dir}}</a></b>
+{{end}}
+</div>
