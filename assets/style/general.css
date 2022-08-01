@@ -5,3 +5,7 @@ body{
 	font-family: Roboto, Helvetica, Arial, sans-serif;
 	text-align:center;
 }
+.main-container{
+	height:auto;
+	min-height:500px;
+}
