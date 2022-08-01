@@ -1,9 +1,34 @@
-
 <style>
-{{- if .Site.Params.theme.backgroundcolor -}}
-html{background-color:{{.Site.Params.theme.backgroundcolor}};}
+{{- if eq .Site.Params.theme.background.color.type "lineargradient" }}
+    {{- if eq .Site.Params.theme.background.color.lightdarkscheme "true" -}}
+html{background: linear-gradient(95deg, {{.Site.Params.theme.background.color.light.left.color}} {{.Site.Params.theme.background.color.light.left.position}}, {{.Site.Params.theme.background.color.light.right.color}} {{.Site.Params.theme.background.color.light.right.position}});}
+@media (prefers-color-scheme: dark){html{background: linear-gradient(95deg, {{.Site.Params.theme.background.color.dark.left.color}} {{.Site.Params.theme.background.color.dark.left.position}}, {{.Site.Params.theme.background.color.dark.right.color}} {{.Site.Params.theme.background.color.dark.right.position}});}}
+    {{else}}
+html{background: linear-gradient(95deg, {{.Site.Params.theme.background.color.left.color}} {{.Site.Params.theme.background.color.left.position}}, {{.Site.Params.theme.background.color.right.color}} {{.Site.Params.theme.background.color.right.position}});}
+    {{- end -}}
+{{- else -}}
+    {{- if eq .Site.Params.theme.background.color.lightdarkscheme "true" -}}
+html{background-color: {{.Site.Params.theme.background.color.light.color}};}
+@media (prefers-color-scheme: dark){html{background-color: {{.Site.Params.theme.background.color.dark.color}};}}
+    {{- else -}}
+html{background-color: {{.Site.Params.theme.background.color.color}};}
 {{- end -}}
-{{- if .Site.Params.theme.backgroundcolor_dark -}}
-@media (prefers-color-scheme: dark){html{background:{{.Site.Params.theme.backgroundcolor_dark}};}}
 {{- end -}}
+{{- if .Site.Params.theme.font.custom -}}
+@font-face {
+    {{- range .Site.Params.theme.font.custom }}
+	    font-family: {{.family}};
+	    src: url({{.url}});
+    {{- end}}
+}
+{{- end -}}
+{{- if .Site.Params.theme.font.family}}
+body{font-family: {{.Site.Params.theme.font.family}} !important;}
+{{- end }}
+{{- if .Site.Params.theme.linkcolor.main}}
+a:link{color:{{.Site.Params.theme.linkcolor.main}};}
+{{- end -}}
+{{if .Site.Params.theme.linkcolor.visited}}
+a:visited{color:{{.Site.Params.theme.linkcolor.visited}};}
+{{- end}}
 </style>
