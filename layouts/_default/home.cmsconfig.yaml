@@ -1,0 +1,72 @@
+{{- if eq .Site.Params.cms.backend.name "git-gateway" -}}
+backend: 
+  name: {{.Site.Params.cms.backend.name}}
+  branch: {{.Site.Params.cms.backend.branch}}
+{{- else if .Site.Params.cms.backend.name "github"}}
+backend:
+  name: {{.Site.Params.cms.backend.name}}
+  repo: {{.Site.Params.cms.backend.repo}}
+  branch: {{.Site.Params.cms.backend.branch}}
+{{- else if .Site.Params.cms.backend.name "gitlab"}}
+backend:
+  name: {{.Site.Params.cms.backend.name}}
+  repo: {{.Site.Params.cms.backend.repo}}
+  branch: {{.Site.Params.cms.backend.branch}}
+  {{if .Site.Params.cms.backend.auth_type "pkce" }}
+  auth_type: {{.Site.Params.cms.backend.auth_type}}
+  app_id: {{.Site.Params.cms.backend.app_id}}
+  {{- end}} 
+{{- else if .Site.Params.cms.backend.name "bitbucket"}}
+backend:
+  name: {{.Site.Params.cms.backend.name}}
+  repo: {{.Site.Params.cms.backend.repo}}
+  branch: {{.Site.Params.cms.backend.branch}}
+  {{if .Site.Params.cms.backend.auth_type "implicit" }}
+  auth_type: {{.Site.Params.cms.backend.auth_type}}
+  app_id: {{.Site.Params.cms.backend.app_id}}
+  {{- end}} 
+{{- else if .Site.Params.cms.backend.name "azure"}}
+backend:
+  name: {{.Site.Params.cms.backend.name}}
+  repo: {{.Site.Params.cms.backend.repo}}
+  tenant_id: {{.Site.Params.cms.backend.tenant_id}}
+  app_id: {{.Site.Params.cms.backend.app_id}}
+{{- else if .Site.Params.cms.backend.name "test-repo"}}
+backend: 
+  name: {{.Site.Params.cms.backend.name}}
+{{- end}}
+{{- with or (eq .Site.Params.cms.editorial_workflow true) (eq .Site.Params.cms.publish_mode "editorial_workflow")}}
+publish_mode: editorial_workflow
+{{- end}}
+media_folder: {{.Site.Params.cms.media_folder}}
+public_folder: {{.Site.Params.cms.public_folder}}
+display_url: {{.Site.Params.cms.display_url}}
+logo_url: {{.Site.Params.cms.logo_url}}
+local_backend: true
+
+{{- with .Site.Params.cms.collections}}
+collections:  
+  {{- range .}}
+    {{- with .name}}
+  - name: {{.}}
+    {{- end}}
+    {{- with .label}}
+    label: {{.}}
+    {{- end}}
+    {{- with .folder}}
+    folder: {{.}}
+    {{- end}}
+    {{- with .create}}
+    create: {{.}}
+    {{- end}}
+    {{- with .slug}}
+    slug: "{{.}}"
+    {{- end}}
+    {{- with .fields}}
+    fields:    
+      {{- range .}}
+      - { {{- with .label}}label: "{{.}}", {{end}} {{- with .name}} name: "{{.}}", {{end}} widget: "{{if .type}}{{.type}}{{else}}{{.widget}}{{end}}", {{- with .picker_utc}} picker_utc: {{.}}, {{end}}{{- with .required}} required: {{.}}, {{end}}{{- with .default}} default: {{.}},{{end}}}
+      {{- end}}
+    {{- end}}
+  {{- end}}
+{{- end}}
