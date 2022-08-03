@@ -1,10 +1,20 @@
-<div class="pagecontribute">
-<b>Contribute to this page:</b>
+{{- if or (eq .Site.Params.edit_page.all_pages true)}}<div class="pagecontribute">
+{{- if ne .Params.hideEditThisPage true}}
+{{- if .Params.customEditThisPageText}}
+<b>{{.Params.customEditThisPageText}}</b>
+{{- else }}
+<strong>Edit this page:</strong>
+{{- end}}
 <br>
-{{if eq .Site.Params.theme.crowdsourcing.by.cms true}}
-<b><a href="/admin">CMS</a></b>
+{{if eq .Site.Params.edit_page.by.cms true}}
+<b><a target=”_blank” href="/admin">CMS</a></b>
 {{end}}
-{{if eq .Site.Params.theme.crowdsourcing.by.github.enable true}}
-<b><a href="{{.Site.Params.theme.crowdsourcing.by.github.url}}/edit/main/{{ replace .File.Dir  "%5c" "%2F" | safeHTML }}{{.File.LogicalName}}">GitHub{{.File.Dir}}</a></b>
-{{end}}
+{{- if eq .Site.Params.edit_page.by.github.enable true}}
+<b><a target=”_blank” href="{{ path.Join (.Site.Params.edit_page.by.github.repo) "/edit/main/content" .File.Path }}">GitHub</a></b>
+{{- end}}
+{{- if eq .Site.Params.edit_page.by.gitlab.enable true}}
+<b><a target=”_blank” href="{{ path.Join (.Site.Params.edit_page.by.gitlab.repo)  "/-/edit/main/content" .File.Path }}">GitLab</a></b>
+{{- end}}
 </div>
+{{- end}}
+{{- end}}
