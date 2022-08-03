@@ -1,13 +1,21 @@
-div#pagecomments{
-    background-color: #fff;
-    max-width:1000px; 
+div#pagecomments{ 
+    max-width:1000px;
+    margin-top: 30px;
+    margin-bottom:30px; 
     margin-left:auto;
     margin-right:auto;
-    width:75%;
+    width:83.5%;
     height:inherit;
     border-radius:10px;
-    border:5px solid black;
+    box-shadow:0px 0px 10px black;
+    border-radius:10px;
+}
+#disqus_thread p {
+    color: black;
 }
 @media(prefers-color-scheme:dark){
-    div#pagecomments{background-color: #000; color:white;}
+    div#pagecomments{background-color: rgba(0, 0 , 0, 0.85); color:white;}
+    #disqus_thread p {
+        color: white !important;
+    }
 }
