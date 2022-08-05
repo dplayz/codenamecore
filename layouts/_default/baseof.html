@@ -5,7 +5,7 @@
         {{- partial "head.html" . }} 
     </head>
     {{- end}}
-    <body {{- if .Params.body_class -}}class="{{.Params.body_class}}"{{end}}>
+    <body {{- if .Params.body_class }} class="{{.Params.body_class}}"{{end}}>
         {{- if and (or (eq .Params.hideHeader true) (eq .Params.infopage true))}}{{else}}
         <header id="pageheader">{{ partial "header.html" .}}</header>
         {{- end}}
