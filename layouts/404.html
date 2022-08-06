@@ -1,16 +1,11 @@
 {{define "main"}}
-	<div id="pagetitle">
-		<div id="errormessage">
-			<h2>404</h2>
-			<h1>Page Not Found</h1>
-				<p>The specified file was not found on this website. Please check the URL for mistakes and try again.</p>
+		<div id="errormessage" class="errormessage-404">
+			<h2>Error: HTTP 404 Not Found</h2>
+			<h1>Page Cannot be displayed</h1>
+				<p>The requested page or file was not found on this website. Please check the URL for mistakes and try again.</p>
 				<p><a href="javascript:history.back()">Go Back</a></p>
 		</div>
-	</div>
 {{end}}
-{{define "sidebar"}}
-<br>
-{{end}}
-{{define "footer"}}
+{{define "sidebar-container"}}
 <br>
 {{end}}
