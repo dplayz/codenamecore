@@ -4,8 +4,3 @@ outputFormats:
     baseName: manifest
     mediaType: application/json
     notAlternative: false
-  cmsconfig:
-    name: cmsconfig
-    baseName: cmsconfig
-    mediaType: application/yaml
-    notAlternative: false
