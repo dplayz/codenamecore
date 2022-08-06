@@ -4,3 +4,8 @@ outputFormats:
     baseName: manifest
     mediaType: application/json
     notAlternative: false
+markup:
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
