@@ -8,7 +8,11 @@
       <h2>{{.Site.Params.author}}</h2>
     <figcaption>
       <p>
+        {{- if .Site.Params.author_defaultDescription}}
+        {{- .Site.Params.author_defaultDescription }}
+        {{- else}}
         {{- .Site.Params.Description -}}
+        {{- end}}
       </p>
     </figcaption>
 </figure>
