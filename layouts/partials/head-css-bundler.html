@@ -46,8 +46,8 @@
     $devbranchnoticelayoutcss 
     $pagenoticecss
     | resources.Concat "style/style-bundle.css" | resources.Fingerprint "sha512"}}
-<link rel="stylesheet" href="{{ $stylebundle.RelPermalink }}" integrity="{{ $stylebundle.Data.Integrity }}">
+<link rel="stylesheet" href="{{ $stylebundle.RelPermalink }}">
 {{- if os.FileExists "/assets/style/custom.css"}}
 {{- $customcss := resources.Get "style/custom.css" | resources.Fingerprint "sha512" }}
-<link rel="stylesheet" href="{{ $customcss.RelPermalink }}" integrity="{{ $customcss.Data.Integrity }}">
+<link rel="stylesheet" href="{{ $customcss.RelPermalink }}">
 {{- end}}
