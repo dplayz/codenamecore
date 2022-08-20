@@ -138,7 +138,8 @@ div.psa{
 	border-bottom:3px solid red;
 	width:100%; 
 	top:0px; 
-	text-align:center
+	text-align:center;
+	word-wrap: break-word;
 }
 div.psa p {margin-top:-10px;}
 div.psa-height-00{height:0px;}
