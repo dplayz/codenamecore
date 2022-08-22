@@ -38,5 +38,11 @@
   </script>
   {{- partial "header-section.html" . }}
 <div class="pageheaderpadding" {{if eq .Site.Params.psa.enable true}}{{ if eq .Site.Params.psa.largedesign true}}style="margin-top:120px;"{{else}}style="margin-top:100px;"{{end}}{{else}}style="margin-top:80px;"{{end}}></div>
-{{if ne .Site.Params.psa.largedesign true}}{{if ge $psalettercount 60}}<style>@media(max-width:619px){div.psa{height:40px!important;}nav.navbar{top:40px!important;}div.pageheaderpadding{margin-top:120px!important;}}</style>{{end}}{{end}}
-{{if eq .Site.Params.psa.largedesign true}}{{if gt $psalettercount 150}}{{ warnf "\nTIP: You should use limit your characters within your notice with no more than 150 characters for better mobile compatability."}}{{end}}{{end}}
+{{- if eq .Site.Params.psa.enable true}}
+  <style>div.sectionheader{top:100px}</style>
+  {{- if ne .Site.Params.psa.largedesign true}}{{if ge $psalettercount 60}}<style>@media(max-width:619px){div.psa{height:40px!important;}nav.navbar{top:40px!important;}div.pageheaderpadding{margin-top:120px!important;}div.sectionheader{top:120px;}}</style>{{end}}{{end}}
+  {{- if eq .Site.Params.psa.largedesign true}}
+  <style>div.sectionheader{top:120px!important;}</style>
+  {{- if gt $psalettercount 150}}{{ warnf "\nTIP: You should use limit your characters within your notice with no more than 150 characters for better mobile compatability."}}{{end}}
+  {{end}}
+{{end}}
