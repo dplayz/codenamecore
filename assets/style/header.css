@@ -11,6 +11,23 @@
 	min-height:80px;
 	max-height:80px;
 }
+.sectionheader{
+	position:fixed;
+	top:100px;
+	width:100%;
+	height:30px;
+	background-color:#ffffff;
+	text-align:left;
+	font-size:25px;
+	text-indent:15px;
+	border-top:1px white solid;
+}
+.sectionheader b{
+	color:black;
+}
+.sectionheader img{
+	padding-right:5px;
+}
 
 .brand-title {
 	float:left;
@@ -156,6 +173,12 @@ div.psa img{
 		background-color: #333;
 		color: black;
 	}	
+	.sectionheader{
+		background-color:#333;
+	}
+	.sectionheader b{
+		color:white;
+	}
 	.navbar-links {
 		height: 100%;
 	}

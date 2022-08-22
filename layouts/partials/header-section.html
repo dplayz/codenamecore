@@ -1,0 +1,34 @@
+{{if .Section }}
+{{ with .Site.GetPage (.Section) }}
+{{if ne .Params.disableSectionHeader true}}
+<div class="sectionheader">
+        <a href="/{{.Section}}"><b class="text-noautoadjust">{{ with .Params.header_logo }}<img src="{{.}}" width="20px" />{{end}}{{.Title}}</b></a>
+        <style>
+            {{- with .Params.header_color}}
+            div.sectionheader{
+                background-color:{{ . }}!important;
+            }
+            {{- end}}
+            {{- with .Params.header_textcolor}}
+            div.sectionheader b{
+                color:{{.}}!important;
+            }
+            {{- end}}
+            @media (prefers-color-scheme: dark){
+                {{- with .Params.header_color_dark}}
+                div.sectionheader{
+                    background-color:{{ . }}!important;
+                }
+                {{- end}}
+                {{- with .Params.header_textcolor_dark}}
+                div.sectionheader b{
+                    color:{{.}}!important;
+                }
+                {{- end}}
+            }
+        </style>
+    </div>
+{{end}}
+<div class="pagesectionheadingpadding" style="padding-bottom:30px;"></div>
+{{end}}
+{{end}}
