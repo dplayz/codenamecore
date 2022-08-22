@@ -25,6 +25,9 @@
 .sectionheader b{
 	color:black;
 }
+.sectionheader a{
+	text-decoration:none;
+}
 .sectionheader img{
 	padding-right:5px;
 }
