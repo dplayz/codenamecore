@@ -11,3 +11,12 @@
         clear: both;
     }
 }
+aside.sidebar-container iframe{
+  border-radius:10px;
+}
+aside.sidebar-container div{
+  border-radius:10px;
+}
+aside.sidebar-container{
+  padding-bottom:20px;
+}
