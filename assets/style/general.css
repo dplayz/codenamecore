@@ -9,3 +9,21 @@ body{
 	height:auto;
 	min-height:500px;
 }
+html, body{
+	scroll-padding-top: 160px;
+	scroll-behavior: smooth;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
+	color:black;
+	text-decoration: none;
+}
+pre{
+	width:100%;
+	overflow:hidden;
+}
+pre:hover{
+	overflow:scroll;
+}
+iframe{
+	border-radius:10px;
+}
