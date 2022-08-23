@@ -14,9 +14,12 @@ article.list-style{
         border-right:2.5px solid black;
         border-bottom:2.5px solid black;
     }
+    article.list-style div.article-data{
+      padding-bottom:10px;
+    }
 }
 
-@media(min-width:650px){
+@media(min-width:870px){
   article.list-style{ height:200px; width:600px;}
   article.list-style div.article-cover{
     float:left;
@@ -38,7 +41,31 @@ article.list-style{
     clear:both;  
     text-align:left; 
     border:none;
+  }
 }
+@media all and (min-width:650px) and (max-width:869px){
+  article.list-style{ height:200px; width:550px;}
+  article.list-style div.article-cover{
+    float:left;
+  }
+  article.list-style div.article-cover img{
+    height:157.5px;width:247.5px;
+    object-fit:cover;
+    border-right:2.5px solid black;
+    border-bottom:2.5px solid black;
+  }
+  article.list-style div.article-title {
+    text-align:left; float:right;
+  }
+  article.list-style div.article-title h1 {
+    width:295px;
+    word-wrap: break-word;
+  }
+  article.list-style div.article-data{
+    clear:both;  
+    text-align:left; 
+    border:none;
+  }
 }
 
 span.list-style-authors{
