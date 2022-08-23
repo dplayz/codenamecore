@@ -21,6 +21,9 @@
 	font-size:25px;
 	text-indent:15px;
 }
+.sectionheader *{
+	margin-top:4px;
+}
 .sectionheader b{
 	color:black;
 }
