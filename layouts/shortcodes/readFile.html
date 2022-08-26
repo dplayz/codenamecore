@@ -1,0 +1,5 @@
+{{if eq (.Get 1) "markdownify"}}
+    {{- os.ReadFile (.Get 0) | markdownify }}
+{{- else}}
+    {{- os.ReadFile (.Get 0) }}
+{{- end}}
