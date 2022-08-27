@@ -8,5 +8,8 @@
 <meta name="theme-color" content="{{if .Site.Params.themeColor}}{{.Site.Params.themeColor}}{{else}}#ffffff{{end}}">
 {{- partial "head-css-bundler.html" . }}
 <link rel="manifest" href="/manifest.json">
+{{- if .Site.Params.theme.favicon}}
+<link rel="icon" type="image/x-icon" href="{{.Site.Params.theme.favicon}}">
+{{- end}}
 <link rel="apple-touch-icon" href="/images/apple-touch-icon/152x152.png">
 {{ partial "head-site-identity.html" . }}
