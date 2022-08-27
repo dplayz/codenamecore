@@ -6,6 +6,7 @@ div.infopage{
     margin-top:10px;
     min-height:200px;
     width:80%;
+    padding-top:1px;
 }
 @media(min-width:800px){
     div.infopage{
