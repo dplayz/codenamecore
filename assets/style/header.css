@@ -42,7 +42,7 @@
 }
 @media(max-width:800px){
 	.brand-title img.sitelogo {
-		margin-top:4px;
+		margin-top:6.5px;
 	}
 }
 img.sitelogo {max-width:120px; max-height:65px;}
