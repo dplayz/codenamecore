@@ -37,6 +37,11 @@
     })
   </script>
   {{- partial "header-section.html" . }}
+  {{if .Section}}
+    <style>div.sectionheader{border-radius:0px 0px 10px 10px;}</style>
+  {{else}}
+    <style>nav.navbar{border-radius:0px 0px 10px 10px;}</style>
+  {{end}}
 <div class="pageheaderpadding" {{if eq .Site.Params.psa.enable true}}{{ if eq .Site.Params.psa.largedesign true}}style="margin-top:120px;"{{else}}style="margin-top:100px;"{{end}}{{else}}style="margin-top:80px;"{{end}}></div>
 {{- if eq .Site.Params.psa.enable true}}
   <style>div.sectionheader{top:100px}</style>

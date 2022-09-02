@@ -2,4 +2,5 @@ div.dev-branch-notice{
 	background-color:yellow; 
 	width:100%;
 	z-index:1;
+	border-radius:10px 10px 0px 0px;
 }
