@@ -1,0 +1,19 @@
+div.tag-snippet{
+    border:2px solid black;
+    padding:5px;
+    width:auto;
+    display:inline-block;
+    border-radius:15px;
+    background-color:white;
+}
+div.tag-snippet b{
+    color:black;
+}
+@media(prefers-color-scheme: dark){
+    div.tag-snippet{
+        background-color:#333;
+    }
+    div.tag-snippet b{
+        color:white;
+    }
+}

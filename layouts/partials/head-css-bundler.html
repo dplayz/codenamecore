@@ -7,6 +7,7 @@
 {{- $articlelayoutmaincss := resources.Get "style/article-layout.css" | fingerprint }}
 {{- $articlesnippetliststylecss := resources.Get "style/article-snippet-layout/list-style.css" | fingerprint }}
 {{- $articlesnippetboxstylecss := resources.Get "style/article-snippet-layout/box-style.css" | fingerprint }}
+{{- $tagsnippetcss := resources.Get "style/tag-snippet.css" | fingerprint }}
 {{- $pagecommentblockcss := resources.Get "style/pagecommentblock.css" | fingerprint }}
 {{- $collapsibleblockcss := resources.Get "style/collapsibleblock.css" | fingerprint }}
 {{- $authorinfocss := resources.Get "style/author-info.css" | fingerprint  }}
@@ -31,6 +32,7 @@
     $articlelayoutmaincss 
     $articlesnippetliststylecss 
     $articlesnippetboxstylecss
+    $tagsnippetcss
     $pagecommentblockcss 
     $collapsibleblockcss 
     $authorinfocss

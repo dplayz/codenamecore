@@ -1,3 +1,4 @@
+{{ define "main" }}
 <div class="pagetitle">
     {{- if ne .RelPermalink "/"}}<h1>{{ .Title }}</h1>{{else}}{{.Site.Title}}{{end}}
     <p>{{.Params.Description}}</p>
@@ -14,3 +15,5 @@
     {{- end}}
     {{ partial "list/pagination.html" .}} 
 </div>
+
+{{ end }}
