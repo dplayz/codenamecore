@@ -1,8 +1,8 @@
 <div style="text-align:center;">
 		{{- if .Site.Params.theme.logo }}
-		<img src="{{.Site.Params.theme.logo}}" width="100px">
+		<img src="{{relURL .Site.Params.theme.logo}}" width="100px">
 		{{- else}}
-		<img src="/images/logo.png" width="100px">
+		<img src="{{relURL "/images/logo.png"}}" width="100px">
 		{{- end}}
 		<br>
 		<p>Copyright {{.Site.Params.copyright.start}}-{{ .Site.Params.copyright.today }} by {{ if .Site.Params.copyright.rightholder }}{{ .Site.Params.copyright.rightholder }}{{else}}{{ .Site.Title }}{{end}}</p>
