@@ -1,14 +1,14 @@
 <div class="pagetitle">
-    {{- if ne .RelPermalink "/"}}<h1>{{ .Title }}</h1>{{else}}{{.Site.Title}}{{end}}
+    {{- if ne .RelPermalink "/"}}<h1>{{ .Title }}</h1>{{else}}<h1>{{.Site.Title}}</h1>{{end}}
     <p>{{.Params.Description}}</p>
     <p>{{.Content}}</p>
     <hr>
     {{- range .Paginator.Pages}}
     {{- if ne .Params.singlepage true}}
-      {{- if (and (or (eq .Site.Params.sectionList.articleSnippetStyle "listStyle") (eq .Site.Params.relatedArticle.articleSnippetStyle "liststyle") (eq .Site.Params.relatedArticle.articleSnippetStyle "list-style" )))}}
-        {{ partial "list/article-snippet/list-style.html" . }}
-      {{- else}}
+      {{- if (and (or (eq .Site.Params.sectionList.articleSnippetStyle "boxStyle") (eq .Site.Params.sectionList.articleSnippetStyle "boxstyle") (eq .Site.Params.sectionList.articleSnippetStyle "box-style" )))}}
         {{ partial "list/article-snippet/box-style.html" .}}
+      {{- else}}
+      {{ partial "list/article-snippet/list-style.html" . }}
       {{- end}}
     {{- end}}
     {{- end}}
