@@ -2,8 +2,12 @@ body{
 	background:transparent; 
 	margin:0;
 	padding:0;
-	font-family: Roboto, Helvetica, Arial, sans-serif;
+	font-family: Roboto, Helvetica, Arial, sans-serif, 'Noto Color Emoji' !important;
 	text-align:center;
+}
+@font-face {
+	font-family: 'Noto Color Emoji';
+	src: url("/fonts/NotoColorEmoji-Regular.ttf");
 }
 .main-container{
 	height:auto;
