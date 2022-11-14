@@ -37,8 +37,10 @@
 .active, .collapsible:hover {
   	background-color: #666;
 }
-div.collapsible-content {
-  	display: none;
-  	overflow:hidden;
-  	background-color: transparent;
+div.collapsible-content{
+	padding: 0 18px;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease-in-out;
+	background-color: none;
 }
