@@ -41,6 +41,6 @@ div.collapsible-content{
 	padding: 0 18px;
 	max-height: 0;
 	overflow: hidden;
-	transition: max-height 0.5s ease-in-out;
+	transition: max-height 0.45s ease-out;
 	background-color: none;
 }

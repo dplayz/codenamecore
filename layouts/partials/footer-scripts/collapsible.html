@@ -7,9 +7,12 @@
 		this.classList.toggle("active");
 		var content = this.nextElementSibling;
 		if (content.style.maxHeight){
-		  content.style.maxHeight = null;
+		  content.style.maxHeight = content.scrollHeight + "px";
+		  setTimeout(() => { content.style.maxHeight = null; }, 500);
+		  
 		} else {
 		  content.style.maxHeight = content.scrollHeight + "px";
+		  setTimeout(() => { content.style.maxHeight = "100%"; }, 400);
 		} 
 	  });
 	}
