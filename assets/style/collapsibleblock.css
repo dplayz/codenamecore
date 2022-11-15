@@ -44,6 +44,3 @@ div.collapsible-content{
 	transition: max-height 0.45s ease-in-out;
 	background-color: none;
 }
-button.collapsible.collapsible-infopage{
-	margin-top:2.5px; margin-bottom:2.5px;
-}
