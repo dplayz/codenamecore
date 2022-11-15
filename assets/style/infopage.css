@@ -67,3 +67,15 @@ div.infopage-link-name-container{
     float: left;
     width: 90%;
 }
+a.button-infopage:link{
+    color:white;
+}
+a.button-infopage:visited{
+    color:white;
+}
+button.collapsible.collapsible-infopage{
+	margin-top:2.5px; margin-bottom:2.5px;
+}
+div.collapsible-content-infopage{
+    padding: 0px 0px !important;
+}
