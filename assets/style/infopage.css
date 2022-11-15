@@ -52,8 +52,18 @@ button.collapsible-infopage{
 a.button-infopage{
     max-width:550px;
     width:75%;
-    margin:5px;
+    margin:1px;
     min-width:1px;
     margin-left:auto;
     margin-right:auto;
+    font-size:20px;
+}
+div.infopage-link-icon-container{
+    float: left;
+    width: 5%;
+    min-height:20px;
+}
+div.infopage-link-name-container{
+    float: left;
+    width: 90%;
 }
