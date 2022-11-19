@@ -38,9 +38,10 @@
   	background-color: #666;
 }
 div.collapsible-content{
-	padding: 0 18px;
+	padding: 0;
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 0.45s ease-in-out;
 	background-color: none;
+	display:none;
 }
