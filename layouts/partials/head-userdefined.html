@@ -11,7 +11,7 @@ html{background: linear-gradient(95deg, {{.Site.Params.theme.background.color.li
 html{background-color: {{.Site.Params.theme.background.color.solid.light.color}};}
 @media (prefers-color-scheme: dark){html{background-color: {{.Site.Params.theme.background.color.solid.dark.color}};}}
     {{- else -}}
-html{background-color: {{.Site.Params.theme.background.color.solid.color}};}
+html{background-color: {{.Site.Params.theme.background.color.solid.light.color}};}
 {{- end -}}
 {{- end -}}
 {{- if .Site.Params.theme.font.custom -}}
