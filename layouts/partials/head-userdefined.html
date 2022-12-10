@@ -1,13 +1,13 @@
 <style>
 {{- if eq .Site.Params.theme.background.color.type "lineargradient" }}
-    {{- if eq .Site.Params.theme.background.color.lightdarkscheme "true" -}}
+    {{- if eq .Site.Params.theme.background.color.lightdarkscheme true -}}
 html{background: linear-gradient(95deg, {{.Site.Params.theme.background.color.lineargradient.light.left.color}} {{.Site.Params.theme.background.color.lineargradient.light.left.position}}, {{.Site.Params.theme.background.color.lineargradient.light.right.color}} {{.Site.Params.theme.background.color.lineargradient.light.right.position}});}
 @media (prefers-color-scheme: dark){html{background: linear-gradient(95deg, {{.Site.Params.theme.background.color.lineargradient.dark.left.color}} {{.Site.Params.theme.background.color.lineargradient.dark.left.position}}, {{.Site.Params.theme.background.color.lineargradient.dark.right.color}} {{.Site.Params.theme.background.color.lineargradient.dark.right.position}});}}
     {{else}}
 html{background: linear-gradient(95deg, {{.Site.Params.theme.background.color.lineargradient.light.left.color}} {{.Site.Params.theme.background.color.lineargradient.light.left.position}}, {{.Site.Params.theme.background.color.lineargradient.light.right.color}} {{.Site.Params.theme.background.color.lineargradient.light.right.position}});}
     {{- end -}}
 {{- else -}}
-    {{- if eq .Site.Params.theme.background.color.lightdarkscheme "true" -}}
+    {{- if eq .Site.Params.theme.background.color.lightdarkscheme true -}}
 html{background-color: {{.Site.Params.theme.background.color.solid.light.color}};}
 @media (prefers-color-scheme: dark){html{background-color: {{.Site.Params.theme.background.color.solid.dark.color}};}}
     {{- else -}}
