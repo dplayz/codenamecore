@@ -1,17 +1,17 @@
 <style>
 {{- if eq .Site.Params.theme.background.color.type "lineargradient" }}
     {{- if eq .Site.Params.theme.background.color.lightdarkscheme "true" -}}
-html{background: linear-gradient(95deg, {{.Site.Params.theme.background.color.light.left.color}} {{.Site.Params.theme.background.color.light.left.position}}, {{.Site.Params.theme.background.color.light.right.color}} {{.Site.Params.theme.background.color.light.right.position}});}
-@media (prefers-color-scheme: dark){html{background: linear-gradient(95deg, {{.Site.Params.theme.background.color.dark.left.color}} {{.Site.Params.theme.background.color.dark.left.position}}, {{.Site.Params.theme.background.color.dark.right.color}} {{.Site.Params.theme.background.color.dark.right.position}});}}
+html{background: linear-gradient(95deg, {{.Site.Params.theme.background.color.lineargradient.light.left.color}} {{.Site.Params.theme.background.color.lineargradient.light.left.position}}, {{.Site.Params.theme.background.color.lineargradient.light.right.color}} {{.Site.Params.theme.background.color.lineargradient.light.right.position}});}
+@media (prefers-color-scheme: dark){html{background: linear-gradient(95deg, {{.Site.Params.theme.background.color.lineargradient.dark.left.color}} {{.Site.Params.theme.background.color.lineargradient.dark.left.position}}, {{.Site.Params.theme.background.color.lineargradient.dark.right.color}} {{.Site.Params.theme.background.color.lineargradient.dark.right.position}});}}
     {{else}}
-html{background: linear-gradient(95deg, {{.Site.Params.theme.background.color.left.color}} {{.Site.Params.theme.background.color.left.position}}, {{.Site.Params.theme.background.color.right.color}} {{.Site.Params.theme.background.color.right.position}});}
+html{background: linear-gradient(95deg, {{.Site.Params.theme.background.color.lineargradient.light.left.color}} {{.Site.Params.theme.background.color.lineargradient.light.left.position}}, {{.Site.Params.theme.background.color.lineargradient.light.right.color}} {{.Site.Params.theme.background.color.lineargradient.light.right.position}});}
     {{- end -}}
 {{- else -}}
     {{- if eq .Site.Params.theme.background.color.lightdarkscheme "true" -}}
-html{background-color: {{.Site.Params.theme.background.color.light.color}};}
-@media (prefers-color-scheme: dark){html{background-color: {{.Site.Params.theme.background.color.dark.color}};}}
+html{background-color: {{.Site.Params.theme.background.color.solid.light.color}};}
+@media (prefers-color-scheme: dark){html{background-color: {{.Site.Params.theme.background.color.solid.dark.color}};}}
     {{- else -}}
-html{background-color: {{.Site.Params.theme.background.color.color}};}
+html{background-color: {{.Site.Params.theme.background.color.solid.color}};}
 {{- end -}}
 {{- end -}}
 {{- if .Site.Params.theme.font.custom -}}
