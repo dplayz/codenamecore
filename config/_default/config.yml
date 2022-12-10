@@ -9,3 +9,5 @@ markup:
     extensions:
       definitionList: true
       footnote: true
+taxonomy:
+  authors: author
