@@ -2,12 +2,12 @@
 <html>
     {{- block "head" . }}
     <head>
-        {{- partial "head.html" . }} 
+        {{- partial "head/head.html" . }} 
     </head>
     {{- end}}
     <body {{- if .Params.body_class }} class="{{.Params.body_class}}"{{end}}>
         {{- if and (or (eq .Params.hideHeader true) (eq .Params.infopage true))}}{{else}}
-        <header id="pageheader">{{ partial "header.html" .}}</header>
+        <header id="pageheader">{{ partial "header/header.html" .}}</header>
         {{- end}}
         {{- block "main-container" .}}
         <div class="main-container">
@@ -29,7 +29,7 @@
             {{- if os.FileExists "layouts/partials/footer-links.html" }}
                 <div class="footer-sitelinks">{{partial "footer-links.html" . }}</div><hr>
             {{- end}}
-                <div class="footer-siteinfo">{{ partial "footer.html" . }}</div>
+                <div class="footer-siteinfo">{{ partial "footer/footer.html" . }}</div>
             {{- end}}
         </footer>
         {{- end}}
@@ -40,7 +40,7 @@
             {{- partial "dev-branch-notice/challenge.html" . }}
         {{- end}}
         {{- block "footer-scripts-container" . }}
-            <div id="pagefooter-scripts">{{ partial "footer-scripts.html" . }}</div>
+            <div id="pagefooter-scripts">{{ partial "footer-scripts/footer-scripts.html" . }}</div>
         {{- end}}
     </body>
 </html>
