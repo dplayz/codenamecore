@@ -154,7 +154,7 @@ div.navbar-links-last{
 	}
 }
 div.psa{
-	font-size:14px;
+	font-size:100%;
 	z-index:1;
 	position:fixed;
 	border-bottom:3px solid red;
@@ -163,7 +163,7 @@ div.psa{
 	text-align:center;
 	word-wrap: break-word;
 }
-div.psa p {margin-top:-10px;}
+div.psa * {margin-top:-10px;}
 div.psa-height-00{height:0px;}
 div.psa-height-20{height:20px;}
 div.psa-height-40{height:40px;}
