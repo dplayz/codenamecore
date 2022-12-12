@@ -4,6 +4,10 @@
 		{{- else}}
 		<img src="{{relURL "/images/logo.png"}}" width="100px">
 		{{- end}}
+		{{- if .Site.Params.description}}
+			<br>
+			<p>{{.Site.Params.description}}</p>
+		{{- end }}
 		<br>
 		<p>Copyright {{.Site.Params.copyright.start}}-{{ .Site.Params.copyright.today }} by {{ if .Site.Params.copyright.rightholder }}{{ .Site.Params.copyright.rightholder }}{{else}}{{ .Site.Title }}{{end}}</p>
 		{{- if .Site.Params.copyright.notes}}{{.Site.Params.copyright.notes | markdownify }}<br><br>{{else}}{{end}}
