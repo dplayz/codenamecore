@@ -3,5 +3,29 @@ footer#pagefooter{
 	margin-bottom:-20px; 
 	padding:20px; 
 	color:white;
+	word-wrap: break-word;
 }
-#pagefooter a{color:skyblue;}
+#pagefooter a{color:skyblue;}    
+.footer-links-grid-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+.footer-links-grid-item {
+	list-style: none;
+	padding:5px;
+}
+.footer-links-grid-item *{
+	text-align:left;
+}
+.footer-links-grid-item li{
+	text-indent:5px;
+}
+.footer-links-grid-item ul {
+	margin:0;
+	list-style: none;
+	overflow-wrap:break-word;
+}
+.footer-links-grid-item ul li {
+	word-wrap: break-word;
+	text-indent: -25px;
+}

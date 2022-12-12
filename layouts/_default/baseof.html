@@ -26,9 +26,9 @@
         {{- if and (or (eq .Params.hideFooter true) (eq .Params.infopage true))}}{{else}}
         {{- block "footer-container" . }}
         <footer id="pagefooter" class="footer-container">
-            {{- if os.FileExists "layouts/partials/footer-links.html" }}
-                <div class="footer-sitelinks">{{partial "footer-links.html" . }}</div><hr>
-            {{- end}}
+                {{- if .Site.Menus.footer}}
+                <div class="footer-sitelinks">{{partial "footer/footer-links.html" . }}</div><hr>
+                {{- end}}
                 <div class="footer-siteinfo">{{ partial "footer/footer.html" . }}</div>
             {{- end}}
         </footer>
