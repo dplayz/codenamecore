@@ -1,7 +1,17 @@
 {{- $psalettercount := .Site.Params.psa.content | strings.Count "" }}
+{{ if eq .Site.Params.psa.enable true}}
 <div 
-  {{ if eq .Site.Params.psa.enable true}}
-  {{ if eq .Site.Params.psa.largedesign true}}class="psa psa-height-40"{{else}}class="psa psa-height-20"{{end}}{{else}}class="psa psa-height-00"{{end}}{{if .Site.Params.psa.color}}style="background:{{.Site.Params.psa.color}};"{{else}}style="background:yellow;"{{end}}>{{.Site.Params.psa.content | markdownify}}</div>
+  {{- if eq .Site.Params.psa.largedesign true}}
+    class="psa psa-height-40"
+  {{- else}}
+  class="psa psa-height-20"{{- end}}
+  {{- if .Site.Params.psa.color }}
+    style="background:{{.Site.Params.psa.color}};"
+  {{- else -}}
+    style="background:yellow;"{{- end -}}>
+  {{.Site.Params.psa.content | markdownify}}
+</div>
+{{ end }}
 <nav class="navbar"{{- if eq .Site.Params.psa.enable true}}{{if eq .Site.Params.psa.largedesign true}} style="top:40px;"{{else}} style="top:20px;"{{end}}{{else}} style="top:0px;"{{end}}>
     <div class="brand-title"><a href="/">{{ if .Site.Params.theme.logo}}<img src="{{relURL (.Site.Params.theme.logo)}}" class="sitelogo">{{else if os.FileExists "static/images/logo.png" }}<img src="{{relURL "/images/logo.png"}}" class="sitelogo">{{end}}</a></div>
       <a class="toggle-button">
