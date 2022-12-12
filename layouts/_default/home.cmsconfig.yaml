@@ -42,7 +42,9 @@ media_folder: {{.Site.Params.cms.media_folder}}
 public_folder: {{.Site.Params.cms.public_folder}}
 display_url: {{.Site.Params.cms.display_url}}
 logo_url: {{.Site.Params.cms.logo_url}}
-local_backend: true
+{{- if .hugo.environment "development"}}
+local_backend: true 
+{{- end}}
 
 {{- with .Site.Params.cms.collections}}
 collections:  
@@ -70,3 +72,214 @@ collections:
     {{- end}}
   {{- end}}
 {{- end}}
+  - label: "Site Configuration"
+    name: "config"
+    editor: { preview: false } 
+    files:
+    - name: "config"
+      label: "Build and Theme Configuration"
+      file: "config.yml"
+      fields: 
+        - { name: baseURL, label: 'Base URL', widget: string, required: true, default: "/" }
+        - { name: languageCode, label: 'Language Code', widget: string, required: true }
+        - { name: title, label: 'Site Name', widget: string, required: true, default: "Your Site"}   
+        - { name: theme, label: "Theme", widget: string, required: true, default: "codenamecore" }
+        - name: params
+          label: 'Site Parameters'
+          widget: object
+          fields: 
+            - { name: noIndexAll, label: 'Do not Index site to Search Engines', widget: boolean, default: false } 
+            - { name: description, label: 'Site Default Description', widget: text}
+            - { name: author, label: 'Site Default Author', widget: string }
+            - { name: author_defaultDescription, label: 'Site Default Author Description', widget: string}
+            - name: theme
+              label: 'Theme Configuration'
+              widget: object
+              collapsed: true
+              fields:
+              - { name: logo, label: 'Site Logo', widget: image, default: /images/logo.png }
+              - name: linkcolor
+                label: 'Color of the Links'
+                widget: object
+                fields:
+                - { name: main, label: 'Main links', widget: color, default: "lightblue" } 
+                - { name: visited, label: 'Visited links', widget: color, default: "lightblue" }
+              - name: background
+                label: 'Background'
+                widget: object
+                fields:
+                - name: color
+                  label: 'Color'
+                  widget: object
+                  fields: 
+                  - { name: type, label: 'type', widget: select, options: ["solid", "lineargradient"], required: false }
+                  - { name: lightdarkscheme, slabel: "Enable light-dark scheme", widget: boolean, required: false }
+                  - name: lineargradient
+                    label: lineargradient
+                    widget: object
+                    collapsed: true
+                    fields:
+                    - name: light
+                      label: "Light Mode"
+                      widget: object
+                      collapsed: true
+                      fields:
+                      - name: left
+                        label: "Left"
+                        widget: object
+                        fields:
+                          - { name: color, label: "Color", widget: color, required: false }
+                          - { name: position, label: "Position", widget: string, default: 10%, required: false }
+                      - name: right
+                        label: "Right"
+                        widget: object
+                        fields:
+                          - { name: color, label: "Color", widget: color, required: false }
+                          - { name: position, label: "Position", widget: string, default: 50%, required: false }
+                    - name: dark
+                      label: "Dark Mode"
+                      widget: object
+                      collapsed: true
+                      fields:
+                      - name: left
+                        label: "Left"
+                        widget: object
+                        fields:
+                          - { name: color, label: "Color", widget: color, required: false }
+                          - { name: position, label: "Position", widget: string, default: 10%, required: false }
+                      - name: right
+                        label: "Right"
+                        widget: object
+                        fields:
+                          - { name: color, label: "Color", widget: color, required: false }
+                          - { name: position, label: "Position", widget: string, default: 50%, required: false }
+                  - name: solid
+                    label: "Solid Color"
+                    widget: object
+                    collapsed: true
+                    fields:
+                    - name: light
+                      label: "Light Mode"
+                      widget: object
+                      collapsed: true
+                      fields:
+                        - { name: color, label: "Color", widget: color, required: false }
+                    - name: dark
+                      label: "Dark Mode"
+                      widget: object
+                      collapsed: true
+                      fields:
+                        - { name: color, label: "Color", widget: color, required: false }
+              - label: "Font"
+                name: font
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: "Font Family to be used", name: family, widget: string, default: "Roboto, Helvetica, Arial, sans-serif, Times New Roman" } 
+                  - label: "Custom Font"
+                    name: custom
+                    widget: list
+                    fields:
+                      - { label: "Font Family Name", name: family, widget: string }
+                      - { label: "Font Family URL", name: url, widget: string }
+              - { label: "Default Page Preview Thumbnail", name: pagePreviewImage, widget: image }
+              - { label: "Favicon URL", name: favicon, widget: image, default: "favicon.ico" }
+            - label: "Section List Options"
+              name: sectionList
+              widget: object
+              collapsed: true
+              fields:
+                - { label: "Article Snippet Style", name: articleSnippetStyle, widget: select, options: [listStyle, boxStyle] } 
+            - label: "Related Article Options"
+              name: relatedArticle
+              widget: object
+              collapsed: true
+              fields:
+                - label: "Enable Related Article"
+                  name: enable
+                  widget: boolean
+                  default: false
+                - label: "Article Snippet Style"
+                  name: articleSnippetStyle
+                  widget: select
+                  options: [listStyle, boxStyle]
+            - label: "Copyright Information"
+              name: copyright
+              collapsed: true
+              widget: object
+              fields:
+                - label: "Copyright Start Date"
+                  name: start
+                  widget: date
+                  format: 'YYYY'
+                - label: "Copyright Today Date"
+                  name: today
+                  widget: date
+                  format: 'YYYY'
+                - label: "Copyright rightholder"
+                  name: rightholder
+                  widget: string
+                - label: "Copyright notes"
+                  name: notes
+                  widget: string
+                - label: "Site managed by whom"
+                  name: managedByWhom
+                  widget: markdown
+            - label: "PSA/Notice"
+              name: psa
+              widget: object
+              collapsed: true
+              required: false
+              fields:
+                - { name: enable, label: "Enable", widget: boolean, default: false, required: false}
+                - { name: color, label: "Background Color", widget: color, required: false}
+                - { name: content, label: "Content", widget: markdown, required: false}
+        - { name: permalinks, widget: hidden }
+        - { name: enableGitInfo, label: "Enable Git Info", widget: boolean, default: true }
+        - { label: "Enable robots.txt file", name: enableRobotsTXT, widget: boolean, default: false } 
+        - { label: "Build Drafts", name: buildDrafts, widget: boolean, default: false }
+        - { label: "Build Future Posts", name: buildFuture, widget: boolean, default: false }
+        - label: "Menu Items"
+          name: "menu"
+          widget: object
+          collapsed: true
+          fields:
+          - label: "Header Links"
+            name: main
+            widget: list
+            collapsed: true
+            fields: 
+              - { label: "Identifier", name: identifier, widget: string }
+              - { label: "Name", name: name, widget: string }
+              - label: "Params"
+                name: params
+                widget: object
+                fields:
+                - { label "URL", name: url, widget: string } 
+              - { label: "Weight", name: weight, widget: number, value_type: "int", min: 0, step: 1 }
+              - { label: "Parent (use identifier)", name: parent, required: false }
+          - label: Footer Links
+            name: footer
+            widget: list
+            collapsed: true
+            fields:
+              - { label: "Identifier", name: identifier, widget: string}
+              - { label: "Name", name: name, widget: string}
+              - label: Parameters
+                name: params
+                widget: object
+                fields:
+                  - label: Links
+                    name: links
+                    widget: list
+                    collapsed: true
+                    fields:
+                    - { label: "Name", name: name, widget: string}
+                    - { label: "URL", name: url, widget: string, required: false}
+                    - label: Links
+                      name: links
+                      widget: list
+                      collapsed: true
+                      fields:
+                        - { label: "Name", name: name, widget: string, required: false}
+                        - { label: "URL", name: url, widget: string, required: false}
