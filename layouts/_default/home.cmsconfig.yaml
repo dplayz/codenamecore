@@ -1,48 +1,69 @@
-{{- if eq .Site.Params.cms.backend.name "git-gateway" -}}
+{{- if eq .Site.Params.cms.backend.name "git-gateway" }}
 backend: 
   name: {{.Site.Params.cms.backend.name}}
-  branch: {{.Site.Params.cms.backend.branch}}
-{{- else if .Site.Params.cms.backend.name "github"}}
+  branch: {{.Site.Params.cms.backend.gitgateway.branch}}
+{{- else if eq .Site.Params.cms.backend.name "github"}}
 backend:
   name: {{.Site.Params.cms.backend.name}}
-  repo: {{.Site.Params.cms.backend.repo}}
-  branch: {{.Site.Params.cms.backend.branch}}
-{{- else if .Site.Params.cms.backend.name "gitlab"}}
+  repo: {{.Site.Params.cms.backend.github.repo}}
+  {{- if eq .Site.Params.cms.backend.github.useGraphQL true}}
+  use_graphql: true
+  {{- end }}
+  {{- if eq .Site.Params.cms.backend.github.openAuthoring true}}
+  open_authoring: true
+  {{- end }}
+  branch: {{.Site.Params.cms.backend.github.branch}}
+{{- else if eq .Site.Params.cms.backend.name "gitlab"}}
 backend:
-  name: {{.Site.Params.cms.backend.name}}
-  repo: {{.Site.Params.cms.backend.repo}}
-  branch: {{.Site.Params.cms.backend.branch}}
-  {{if .Site.Params.cms.backend.auth_type "pkce" }}
-  auth_type: {{.Site.Params.cms.backend.auth_type}}
-  app_id: {{.Site.Params.cms.backend.app_id}}
+  name: {{.Site.Params.cms.backend.gitlab.name}}
+  repo: {{.Site.Params.cms.backend.gitlab.repo}}
+  branch: {{.Site.Params.cms.backend.gitlab.branch}}  
+  {{- if eq .Site.Params.cms.backend.gitlab.useGraphQL true}}
+  use_graphql: true
+  {{- end }}
+  {{if .Site.Params.cms.backend.gitlab.auth_type "pkce" }}
+  auth_type: {{.Site.Params.cms.backend.gitlab.auth_type}}
+  app_id: {{.Site.Params.cms.backend.gitlab.app_id}}
   {{- end}} 
-{{- else if .Site.Params.cms.backend.name "bitbucket"}}
+{{- else if eq .Site.Params.cms.backend.name "bitbucket"}}
 backend:
-  name: {{.Site.Params.cms.backend.name}}
-  repo: {{.Site.Params.cms.backend.repo}}
-  branch: {{.Site.Params.cms.backend.branch}}
-  {{if .Site.Params.cms.backend.auth_type "implicit" }}
-  auth_type: {{.Site.Params.cms.backend.auth_type}}
-  app_id: {{.Site.Params.cms.backend.app_id}}
+  name: {{.Site.Params.cms.backend.bitbucket.name}}
+  repo: {{.Site.Params.cms.backend.bitbucket.repo}}
+  branch: {{.Site.Params.cms.backend.bitbucket.branch}}
+  {{if .Site.Params.cms.backend.bitbucket.auth_type "implicit" }}
+  auth_type: {{.Site.Params.cms.backend.bitbucket.auth_type}}
+  app_id: {{.Site.Params.cms.backend.bitbucket.app_id}}
   {{- end}} 
-{{- else if .Site.Params.cms.backend.name "azure"}}
+{{- else if eq .Site.Params.cms.backend.name "azure"}}
 backend:
-  name: {{.Site.Params.cms.backend.name}}
-  repo: {{.Site.Params.cms.backend.repo}}
-  tenant_id: {{.Site.Params.cms.backend.tenant_id}}
-  app_id: {{.Site.Params.cms.backend.app_id}}
-{{- else if .Site.Params.cms.backend.name "test-repo"}}
+  name: {{.Site.Params.cms.backend.azure.name}}
+  repo: {{.Site.Params.cms.backend.azure.repo}}
+  tenant_id: {{.Site.Params.cms.backend.azure.tenant_id}}
+  app_id: {{.Site.Params.cms.backend.azure.app_id}}
+{{- else if eq .Site.Params.cms.backend.name "test-repo"}}
 backend: 
-  name: {{.Site.Params.cms.backend.name}}
+  name: {{.Site.Params.cms.backend.testrepo.name}}
 {{- end}}
 {{- with or (eq .Site.Params.cms.editorial_workflow true) (eq .Site.Params.cms.publish_mode "editorial_workflow")}}
 publish_mode: editorial_workflow
 {{- end}}
+{{- if .Site.Params.cms.media_folder}}
 media_folder: {{.Site.Params.cms.media_folder}}
+{{- end}}
+{{- if .Site.Params.cms.public_folder}}
 public_folder: {{.Site.Params.cms.public_folder}}
+{{- end}}
+{{- if .Site.Params.cms.display_url}}
 display_url: {{.Site.Params.cms.display_url}}
-logo_url: {{.Site.Params.cms.logo_url}}
-{{- if .hugo.environment "development"}}
+{{- else}}
+display_url: {{.Site.BaseURL}}
+{{- end}}
+{{- if .Site.Params.theme.logo}}
+logo_url: {{.Site.Params.theme.logo}}
+{{- else if .Site.Params.cms.logo_url}}
+logo_url: {{.Site.Params.theme.logo}}
+{{- end}}
+{{- if and (eq hugo.Environment "development") (ne .Site.Params.cms.disableLocalBackend true)}}
 local_backend: true 
 {{- end}}
 
@@ -64,11 +85,28 @@ collections:
     {{- with .slug}}
     slug: "{{.}}"
     {{- end}}
+    {{- if eq .useDefaultFields true}}
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string'}
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Page Thumbnail', name: 'customPagePreview', widget: 'image', required: false }
+      - { label: 'Author', name: 'author', widget: 'list', required: false }
+      - { label: 'Permalink', name: 'permalink', widget: 'string', required: false}
+      - label: "Build Options" 
+        name: "_build" 
+        collapse: false
+        widget: "object"
+        fields:
+          - { label: "List page", name: "list", widget: "select", multiple: false, options: ["never", "always"], default: "always"}
+    {{else}}
     {{- with .fields}}
     fields:    
       {{- range .}}
       - { {{- with .label}}label: "{{.}}", {{end}} {{- with .name}} name: "{{.}}", {{end}} widget: "{{if .type}}{{.type}}{{else}}{{.widget}}{{end}}", {{- with .picker_utc}} picker_utc: {{.}}, {{end}}{{- with .required}} required: {{.}}, {{end}}{{- with .default}} default: {{.}},{{end}}}
       {{- end}}
+    {{- end}}
     {{- end}}
   {{- end}}
 {{- end}}
