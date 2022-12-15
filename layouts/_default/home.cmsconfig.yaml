@@ -263,6 +263,107 @@ collections:
                 - label: "Site managed by whom"
                   name: managedByWhom
                   widget: markdown
+            - label: "CMS Configuration"
+              name: cms
+              widget: object
+              collapsed: true
+              fields:
+                - label: "Backend Information"
+                  name: backend
+                  widget: object
+                  collapsed: true
+                  fields:
+                    - label: "Backend Name"
+                      name: name
+                      widget: select
+                      options: ["git-gateway", "github", "gitlab", "bitbucket", "azure", "test-repo"]
+                    - label: "Github"
+                      name: github
+                      widget: object
+                      collapsed: true
+                      required: false
+                      fields:
+                        - label: "Repo"
+                          name: repo
+                          widget: string
+                          required: false
+                        - label: "Branch"
+                          name: branch
+                          widget: string
+                          required: false
+                        - label: "Use GraphQL"
+                          name: useGraphQL
+                          widget: boolean
+                          required: false
+                    - label: "Gitlab"
+                      name: gitlab
+                      widget: object
+                      collapsed: true
+                      required: false
+                      fields:
+                        - label: "Repo"
+                          name: repo
+                          widget: string
+                          required: false
+                        - label: "Branch"
+                          name: branch
+                          widget: string
+                          required: false
+                        - label: "Use GraphQL"
+                          name: useGraphQL
+                          widget: boolean
+                          required: false
+                        - label: "Authentication Type (for self-hosted options)"
+                          name: auth_type
+                          widget: select
+                          required: false
+                          options: ["pkce"]
+                        - label: "App ID (for self-hosted options)"
+                          name: app_id
+                          widget: string
+                          required: false
+                    - label: "Bitbucket"
+                      name: bitbucket
+                      widget: object
+                      collapsed: true
+                      required: false
+                      fields:
+                        - label: "Repo"
+                          name: repo
+                          widget: string
+                          required: false
+                        - label: "Branch"
+                          name: branch
+                          widget: string
+                          required: false
+                        - label: "Authentication Type (for self-hosted options)"
+                          name: auth_type
+                          widget: select
+                          options: ["implicit"]
+                          required: false
+                        - label: "App ID (for self-hosted options)"
+                          name: app_id
+                          widget: string
+                          required: false
+                    - label: "Azure Repo"
+                      name: azure
+                      widget: object
+                      collapsed: true
+                      required: false
+                      fields:
+                        - label: "Repo"
+                          name: repo
+                          widget: string
+                          required: false
+                        - label: "Tenant ID"
+                          name: tenant_id
+                          widget: string
+                          required: false
+                        - label: "App ID"
+                          name: app_id
+                          widget: string
+                          required: false
+                # task: []create collections, []cleanup the backend options(minify!)  
             - label: "PSA/Notice"
               name: psa
               widget: object
