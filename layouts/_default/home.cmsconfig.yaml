@@ -303,7 +303,17 @@ collections:
                         - { label: "Repo", name: repo, widget: string, required: false }
                         - { label: "Tenant ID", name: tenant_id, widget: string, required: false }
                         - { label: "App ID", name: app_id, widget: string, required: false }
-                # task: []create collections
+                - label: "Collections"
+                  name: collections
+                  widget: list
+                  collapsed: true
+                  required: false
+                  fields:
+                    - { label: Label, name: label,  widget: string }
+                    - { label: Name, name: name,  widget: string }
+                    - { label: Folder, name: folder, widget: string, default: "content/posts" }
+                    - { label: "Use Default Fields",  name: useDefaultFields, widget: boolean, default: true}
+                # task: []add customized collections order
             - label: "PSA/Notice"
               name: psa
               widget: object
