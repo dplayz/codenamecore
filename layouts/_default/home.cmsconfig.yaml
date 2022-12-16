@@ -66,9 +66,8 @@ logo_url: {{.Site.Params.theme.logo}}
 {{- if and (eq hugo.Environment "development") (ne .Site.Params.cms.disableLocalBackend true)}}
 local_backend: true 
 {{- end}}
-
-{{- with .Site.Params.cms.collections}}
 collections:  
+{{- with .Site.Params.cms.collections}}
   {{- range .}}
     {{- with .name}}
   - name: {{.}}
