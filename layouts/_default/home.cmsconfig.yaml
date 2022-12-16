@@ -93,7 +93,7 @@ collections:
       - { label: 'Page Thumbnail', name: 'customPagePreview', widget: 'image', required: false }
       - { label: 'Author', name: 'author', widget: 'list', required: false }
       - { label: 'Tags', name: tags, widget: list, required: false}
-      - { label: 'Categories', label: categories, widget: list, required: false}
+      - { label: 'Categories', name: categories, widget: list, required: false}
       - { label: 'Permalink', name: 'permalink', widget: 'string', required: false}
       - label: "Build Options" 
         name: "_build" 
