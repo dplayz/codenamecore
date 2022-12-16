@@ -312,6 +312,7 @@ collections:
                     - { label: Label, name: label,  widget: string }
                     - { label: Name, name: name,  widget: string }
                     - { label: Folder, name: folder, widget: string, default: "content/posts" }
+                    - { label: Enable Creation, name: create, widget: boolean, default: true }
                     - { label: "Use Default Fields",  name: useDefaultFields, widget: boolean, default: true}
                 # task: []add customized collections order
             - label: "PSA/Notice"
