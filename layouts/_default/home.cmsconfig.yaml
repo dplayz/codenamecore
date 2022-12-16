@@ -245,23 +245,11 @@ collections:
               collapsed: true
               widget: object
               fields:
-                - label: "Copyright Start Date"
-                  name: start
-                  widget: date
-                  format: 'YYYY'
-                - label: "Copyright Today Date"
-                  name: today
-                  widget: date
-                  format: 'YYYY'
-                - label: "Copyright rightholder"
-                  name: rightholder
-                  widget: string
-                - label: "Copyright notes"
-                  name: notes
-                  widget: string
-                - label: "Site managed by whom"
-                  name: managedByWhom
-                  widget: markdown
+                - { label: "Copyright Start Date", name: start, widget: date, format: 'YYYY' }
+                - { label: "Copyright Today Date", name: today, widget: date, format: 'YYYY' }
+                - { label: "Copyright rightholder", name: rightholder, widget: string }
+                - { label: "Copyright notes", name: notes, widget: string }
+                - { label: "Site managed by whom", name: managedByWhom, widget: markdown }
             - label: "CMS Configuration"
               name: cms
               widget: object
@@ -282,87 +270,40 @@ collections:
                       collapsed: true
                       required: false
                       fields:
-                        - label: "Repo"
-                          name: repo
-                          widget: string
-                          required: false
-                        - label: "Branch"
-                          name: branch
-                          widget: string
-                          required: false
-                        - label: "Use GraphQL"
-                          name: useGraphQL
-                          widget: boolean
-                          required: false
+                        - { label: "Repo", name: repo, widget: string, required: false }
+                        - { label: "Branch", name: branch, widget: string, required: false }
+                        - { label: "Use GraphQL", name: useGraphQL, widget: boolean, required: false }
                     - label: "Gitlab"
                       name: gitlab
                       widget: object
                       collapsed: true
                       required: false
                       fields:
-                        - label: "Repo"
-                          name: repo
-                          widget: string
-                          required: false
-                        - label: "Branch"
-                          name: branch
-                          widget: string
-                          required: false
-                        - label: "Use GraphQL"
-                          name: useGraphQL
-                          widget: boolean
-                          required: false
-                        - label: "Authentication Type (for self-hosted options)"
-                          name: auth_type
-                          widget: select
-                          required: false
-                          options: ["pkce"]
-                        - label: "App ID (for self-hosted options)"
-                          name: app_id
-                          widget: string
-                          required: false
+                        - { label: "Repo", name: repo, widget: string, required: false }
+                        - { label: "Branch", name: branch, widget: string, required: false }
+                        - { label: "Use GraphQL", name: useGraphQL, widget: boolean, required: false }
+                        - { label: "Authentication Type (for self-hosted options)", name: auth_type, widget: select, required: false, options: ["pkce"] }
+                        - { label: "App ID (for self-hosted options)", name: app_id, widget: string, required: false }
                     - label: "Bitbucket"
                       name: bitbucket
                       widget: object
                       collapsed: true
                       required: false
                       fields:
-                        - label: "Repo"
-                          name: repo
-                          widget: string
-                          required: false
-                        - label: "Branch"
-                          name: branch
-                          widget: string
-                          required: false
-                        - label: "Authentication Type (for self-hosted options)"
-                          name: auth_type
-                          widget: select
-                          options: ["implicit"]
-                          required: false
-                        - label: "App ID (for self-hosted options)"
-                          name: app_id
-                          widget: string
-                          required: false
+                        - { label: "Repo", name: repo, widget: string, required: false }
+                        - { label: "Branch", name: branch, widget: string, required: false }
+                        - { label: "Authentication Type (for self-hosted options)", name: auth_type, widget: select, options: ["implicit"], required: false }
+                        - { label: "App ID (for self-hosted options)", name: app_id, widget: string, required: false }
                     - label: "Azure Repo"
                       name: azure
                       widget: object
                       collapsed: true
                       required: false
                       fields:
-                        - label: "Repo"
-                          name: repo
-                          widget: string
-                          required: false
-                        - label: "Tenant ID"
-                          name: tenant_id
-                          widget: string
-                          required: false
-                        - label: "App ID"
-                          name: app_id
-                          widget: string
-                          required: false
-                # task: []create collections, []cleanup the backend options(minify!)  
+                        - { label: "Repo", name: repo, widget: string, required: false }
+                        - { label: "Tenant ID", name: tenant_id, widget: string, required: false }
+                        - { label: "App ID", name: app_id, widget: string, required: false }
+                # task: []create collections
             - label: "PSA/Notice"
               name: psa
               widget: object
