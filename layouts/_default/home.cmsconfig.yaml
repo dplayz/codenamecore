@@ -9,6 +9,10 @@ backend:
   {{- if eq .Site.Params.cms.backend.github.useGraphQL true}}
   use_graphql: true
   {{- end }}
+  base_url: {{.Site.BaseURL}}  
+  {{-  if .Site.Params.cms.backend.github.auth_endpoint}}
+  auth_endpoint: {{.Site.Params.cms.backend.github.auth_endpoint}}  
+  {{- end}}
   {{- if eq .Site.Params.cms.backend.github.openAuthoring true}}
   open_authoring: true
   {{- end }}
@@ -17,7 +21,7 @@ backend:
 backend:
   name: {{.Site.Params.cms.backend.gitlab.name}}
   repo: {{.Site.Params.cms.backend.gitlab.repo}}
-  branch: {{.Site.Params.cms.backend.gitlab.branch}}  
+  branch: {{.Site.Params.cms.backend.gitlab.branch}}
   {{- if eq .Site.Params.cms.backend.gitlab.useGraphQL true}}
   use_graphql: true
   {{- end }}
