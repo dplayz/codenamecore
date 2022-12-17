@@ -279,6 +279,7 @@ collections:
                         - { label: "Repo", name: repo, widget: string, required: false }
                         - { label: "Branch", name: branch, widget: string, required: false }
                         - { label: "Use GraphQL", name: useGraphQL, widget: boolean, required: false }
+                        - { label: "Auth Endpoint (for non-Netlify users)", name: auth_endpoint, widget: string, required: false }
                     - label: "Gitlab"
                       name: gitlab
                       widget: object
