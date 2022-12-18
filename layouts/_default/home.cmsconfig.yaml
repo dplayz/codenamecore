@@ -140,7 +140,7 @@ collections:
               widget: object
               collapsed: true
               fields:
-              - { name: logo, label: 'Site Logo', widget: image, default: /images/logo.png }
+              - { name: logo, label: 'Site Logo', widget: image, default: /images/logo, required: false }
               - name: linkcolor
                 label: 'Color of the Links'
                 widget: object
@@ -226,7 +226,7 @@ collections:
                       - { label: "Font Family Name", name: family, widget: string }
                       - { label: "Font Family URL", name: url, widget: string }
               - { label: "Default Page Preview Thumbnail", name: pagePreviewImage, widget: image }
-              - { label: "Favicon URL", name: favicon, widget: image, default: "favicon.ico" }
+              - { label: "Favicon URL", name: favicon, widget: image, default: "favicon.ico", required: false }
             - label: "Section List Options"
               name: sectionList
               widget: object
@@ -320,7 +320,7 @@ collections:
                     - { label: Label, name: label,  widget: string }
                     - { label: Name, name: name,  widget: string }
                     - { label: Folder, name: folder, widget: string, default: "content/posts" }
-                    - { label: Enable Creation, name: create, widget: boolean, default: true }
+                    - { label: Enable Creation, name: create, widget: boolean, default: true, required: false}
                     - { label: "Use Default Fields",  name: useDefaultFields, widget: boolean, default: true}
                 # task: []add customized collections order
             - label: "PSA/Notice"
