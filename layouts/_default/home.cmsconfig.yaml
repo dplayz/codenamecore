@@ -131,10 +131,10 @@ collections:
           label: 'Site Parameters'
           widget: object
           fields: 
-            - { name: noIndexAll, label: 'Do not Index site to Search Engines', widget: boolean, default: false } 
-            - { name: description, label: 'Site Default Description', widget: text}
+            - { name: noIndexAll, label: 'Do not Index site to Search Engines', widget: boolean, default: false, required: false } 
+            - { name: description, label: 'Site Default Description', widget: text, required: false}
             - { name: author, label: 'Site Default Author', widget: string }
-            - { name: author_defaultDescription, label: 'Site Default Author Description', widget: string}
+            - { name: author_defaultDescription, label: 'Site Default Author Description', widget: string, required: false}
             - name: theme
               label: 'Theme Configuration'
               widget: object
@@ -145,8 +145,8 @@ collections:
                 label: 'Color of the Links'
                 widget: object
                 fields:
-                - { name: main, label: 'Main links', widget: color, default: "lightblue" } 
-                - { name: visited, label: 'Visited links', widget: color, default: "lightblue" }
+                - { name: main, label: 'Main links', widget: color, default: "lightblue", required: false} 
+                - { name: visited, label: 'Visited links', widget: color, default: "lightblue", required: false }
               - name: background
                 label: 'Background'
                 widget: object
@@ -218,10 +218,11 @@ collections:
                 widget: object
                 collapsed: true
                 fields:
-                  - { label: "Font Family to be used", name: family, widget: string, default: "Roboto, Helvetica, Arial, sans-serif, Times New Roman" } 
+                  - { label: "Font Family to be used", name: family, widget: string, default: "Roboto, Helvetica, Arial, sans-serif, Times New Roman", required: false} 
                   - label: "Custom Font"
                     name: custom
                     widget: list
+                    required: false
                     fields:
                       - { label: "Font Family Name", name: family, widget: string }
                       - { label: "Font Family URL", name: url, widget: string }
@@ -321,7 +322,7 @@ collections:
                     - { label: Name, name: name,  widget: string }
                     - { label: Folder, name: folder, widget: string, default: "content/posts" }
                     - { label: Enable Creation, name: create, widget: boolean, default: true, required: false}
-                    - { label: "Use Default Fields",  name: useDefaultFields, widget: boolean, default: true}
+                    - { label: "Use Default Fields",  name: useDefaultFields, widget: boolean, default: true, required: false}
                 # task: []add customized collections order
             - label: "PSA/Notice"
               name: psa
@@ -353,7 +354,7 @@ collections:
                 name: params
                 widget: object
                 fields:
-                - { label "URL", name: url, widget: string } 
+                - { label "URL", name: url, widget: string, required: false } 
               - { label: "Weight", name: weight, widget: number, value_type: "int", min: 0, step: 1 }
               - { label: "Parent (use identifier)", name: parent, required: false }
           - label: Footer Links
