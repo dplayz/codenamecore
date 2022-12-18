@@ -105,6 +105,12 @@ collections:
         widget: "object"
         fields:
           - { label: "List page", name: "list", widget: "select", multiple: false, options: ["never", "always"], default: "always"}
+      # Section specific values, should be hidden
+      - { name: header_color, widget: hidden, required: false }
+      - { name: header_color_dark, widget: hidden, required: false }
+      - { name: header_textcolor, widget: hidden, required: false }
+      - { name: header_textcolor_dark, widget: hidden, required: false }
+      - { name: header_logo, widget: hidden, required: false }
     {{else}}
     {{- with .fields}}
     fields:    
