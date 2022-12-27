@@ -6,18 +6,18 @@
     {{.Content}}
     {{- else}}
     <article class="article-content">
-    {{- partial "body/page/pagetitle.html" .}}
-    {{- partial "body/page/pagecontent.html" .}}
+    {{- partial "page/pagetitle.html" .}}
+    {{- partial "page/pagecontent.html" .}}
     </article>
     {{- end}}
     {{- if and (ne .Params.infopage true) (ne .Params.singlepage true)}}
     {{if eq .Site.Params.theme.crowdsourcing.enable true}}
-    {{ partial "body/page/pagecontribute.html" . }}
+    {{ partial "page/pagecontribute.html" . }}
     {{end}}
-    {{ partial "body/page/pagecomments.html" .}}
-    {{ partial "body/page/pagecontribute.html" . }}
-    {{ partial "body/authors/author-info.html" . }}
-    {{ partial "body/page/relatedcontents.html" .}}
+    {{ partial "page/pagecomments.html" .}}
+    {{ partial "page/pagecontribute.html" . }}
+    {{ partial "authors/author-info.html" . }}
+    {{ partial "page/relatedcontents.html" .}}
     {{- end}}
 {{- end}}
-{{- end}}s
+{{- end}}

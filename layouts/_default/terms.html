@@ -5,9 +5,9 @@
     <p>{{.Content}}</p>
     <hr>
     {{- range .Paginator.Pages}}
-      {{ partial "body/list/tag-snippet.html" .}}
+      {{ partial "list/tag-snippet.html" .}}
     {{- end}}
-    {{ partial "body/list/pagination.html" .}} 
+    {{ partial "list/pagination.html" .}} 
 </div>
 
 {{ end }}
