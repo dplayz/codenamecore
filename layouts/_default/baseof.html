@@ -19,7 +19,7 @@
         {{- if and (or (eq .Params.hideHeader true) (eq .Params.infopage true))}}{{- else}}
         {{- block "sidebar-container" . }}
         <aside id="sidebar" class="sidebar-container">
-            {{- if os.FileExists "layouts/partials/sidebar.html" }}{{ partial "sidebar/layout.html" . }}{{end}}
+            {{- if os.FileExists "layouts/partials/sidebar.html" }}{{ partial "body/sidebar/layout.html" . }}{{end}}
         </aside>
         {{- end}}
         {{- end}}
@@ -34,13 +34,13 @@
         </footer>
         {{- end}}
         {{- block "medium-zoom-container" . }}
-            {{- partial "footer-scripts/medium-zoom-template.html"}}
+            {{- partial "footer/scripts/medium-zoom-template.html"}}
         {{- end}}
         {{- block "dev-mode-notice" . }}
-            {{- partial "dev-branch-notice/challenge.html" . }}
+            {{- partial "body/dev-branch-notice/challenge.html" . }}
         {{- end}}
         {{- block "footer-scripts-container" . }}
-            <div id="pagefooter-scripts">{{ partial "footer-scripts/footer-scripts.html" . }}</div>
+            <div id="pagefooter-scripts">{{ partial "footer/footer-scripts.html" . }}</div>
         {{- end}}
     </body>
 </html>

@@ -6,11 +6,11 @@
     {{- range .Paginator.Pages}}
     {{- if ne .Params.singlepage true}}
       {{- if (and (or (eq .Site.Params.sectionList.articleSnippetStyle "boxStyle") (eq .Site.Params.sectionList.articleSnippetStyle "boxstyle") (eq .Site.Params.sectionList.articleSnippetStyle "box-style" )))}}
-        {{ partial "list/article-snippet/box-style.html" .}}
+        {{ partial "body/list/article-snippet/box-style.html" .}}
       {{- else}}
-      {{ partial "list/article-snippet/list-style.html" . }}
+      {{ partial "body/list/article-snippet/list-style.html" . }}
       {{- end}}
     {{- end}}
     {{- end}}
-    {{ partial "list/pagination.html" .}} 
+    {{ partial "body/list/pagination.html" .}} 
 </div>
