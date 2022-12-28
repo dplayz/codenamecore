@@ -6,7 +6,7 @@
   function gtag(){window.dataLayer.push(arguments);}
   gtag('js', new Date());
   
-  {{if eq .Site.Params.identity.googleAnalytics.disablePageView true}}
+  {{if or (eq .Site.Params.identity.googleAnalytics.disablePageView true) (eq .Params.disableAnalytics true)}}
   gtag('config', '{{.Site.Params.identity.googleAnalytics.measurementID}}', { 'send_page_view': false });
   {{else}}
   gtag('config', '{{.Site.Params.identity.googleAnalytics.measurementID}}');
