@@ -263,6 +263,18 @@ collections:
                 - { label: "Copyright rightholder", name: rightholder, widget: string }
                 - { label: "Copyright notes", name: notes, widget: string }
                 - { label: "Site managed by whom", name: managedByWhom, widget: markdown }
+            - label: "Site Identity Information"
+              name: identity
+              widget: object
+              collapsed: true
+              fields:
+                - { label: "Facebook Page ID", name: fbPageID, widget: string, required: false}
+                - { label: "Google Search Console Verification Code", name: googleSiteVerificationCode, widget: string, required: false}
+                - { label: "Bing Webmaster Tools Site Validation Code", name: bingValidationCode, widget: string, required: false}
+                - { label: "Yandex.Webmaster Site Validation Code", name: yandexValidationCode, widget: string, required: false}
+                - { label: "Facebook SDK ID", name: fbSDKID, widget: string, required: false}
+                - { label: "OneSignal SDK ID", name: onesignalSDKID, widget: string, required: false}
+                - { label: "Google Analytics", name: googleAnalytics, widget: object, fields: [{label: "Measurement ID", name: measurementID, widget: string, required: false}, {label: "Disable Page View on whole site" , name: disablePageView, widget: boolean, required: false }], collapsed: true }
             - label: "CMS Configuration"
               name: cms
               widget: object
