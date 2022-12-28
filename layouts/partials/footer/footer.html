@@ -1,17 +1,18 @@
 <div style="text-align:center;">
-		{{- if .Site.Params.theme.logo }}
-		<img src="{{relURL .Site.Params.theme.logo}}" width="100px">
-		{{- else}}
-		<img src="{{relURL "/images/logo.png"}}" width="100px">
-		{{- end}}
-		{{- if .Site.Params.description}}
-			<br>
-			<p>{{.Site.Params.description}}</p>
-		{{- end }}
+	{{- if .Site.Params.theme.logo }}
+	<img src="{{relURL .Site.Params.theme.logo}}" width="100px">
+	{{- else}}
+	<img src="{{relURL "/images/logo.png"}}" width="100px">
+	{{- end}}
+	{{- if .Site.Params.description}}
 		<br>
-		<p>Copyright {{.Site.Params.copyright.start}}-{{ .Site.Params.copyright.today }} by {{ if .Site.Params.copyright.rightholder }}{{ .Site.Params.copyright.rightholder }}{{else}}{{ .Site.Title }}{{end}}</p>
-		{{- if .Site.Params.copyright.notes}}{{.Site.Params.copyright.notes | markdownify }}<br><br>{{else}}{{end}}
-		{{- if .Site.Params.copyright.managedByWhom}}{{.Site.Params.copyright.managedByWhom | markdownify }}{{else}}<p>Managed by {{ .Site.Title }}</p>{{end}}
-		<div style="margin-top:15px;" id="google_translate_element"></div>
+		<p>{{.Site.Params.description}}</p>
+	{{- end }}
+	</br>
+	<p>Copyright {{.Site.Params.copyright.start}}-{{ .Site.Params.copyright.today }} by {{ if .Site.Params.copyright.rightholder }}{{ .Site.Params.copyright.rightholder }}{{else}}{{ .Site.Title }}{{end}}</p>
+	{{- if .Site.Params.copyright.notes}}<p>{{.Site.Params.copyright.notes | markdownify }}</p>{{else}}{{end}}
+	{{- if .Site.Params.copyright.managedByWhom}}<p>{{.Site.Params.copyright.managedByWhom | markdownify }}</p>{{else}}<p>Managed by {{ .Site.Title }}</p>{{end}}
+	<p>Site built with ❤️ by <a href="https://gohugo.io">Hugo</a> and codenamecore theme</p>
+	<div style="margin-top:15px;" id="google_translate_element"></div>
 </p>
 </div>
