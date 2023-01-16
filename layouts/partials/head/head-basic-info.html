@@ -5,7 +5,20 @@
 {{- end}}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="theme-color" content="{{if .Site.Params.themeColor}}{{.Site.Params.themeColor}}{{else}}#ffffff{{end}}">
+{{ with .Site.Params.theme.themeColor}}
+    {{if .dark}}
+        {{- with .light}}
+            <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{.}}">
+        {{- end}}
+    {{else}}
+        {{- with .light}}
+            <meta name="theme-color" content="{{.}}">
+        {{- end}}
+    {{- end}}
+    {{with .dark}}
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{.}}">
+    {{end}}
+{{end}}
 {{- partial "head/head-css-bundler.html" . }}
 <link rel="manifest" href="{{relURL "/manifest.json"}}">
 {{- if .Site.Params.theme.favicon}}
