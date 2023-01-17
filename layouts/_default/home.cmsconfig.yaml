@@ -150,12 +150,14 @@ collections:
               - name: linkcolor
                 label: 'Color of the Links'
                 widget: object
+                collapsed: true
                 fields:
                 - { name: main, label: 'Main links', widget: color, default: "lightblue", required: false} 
                 - { name: visited, label: 'Visited links', widget: color, default: "lightblue", required: false }
               - name: background
-                label: 'Background'
+                label: 'Background Options'
                 widget: object
+                collapsed: true
                 fields:
                 - name: color
                   label: 'Color'
