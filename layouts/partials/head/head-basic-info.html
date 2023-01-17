@@ -5,18 +5,54 @@
 {{- end}}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-{{- with .Site.Params.theme.themeColor}}
-    {{if .dark}}
-        {{- with .light}}
-            <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{.}}">
+{{- if not .Section}}
+    {{- with .Site.Params.theme.themeColor}}
+        {{if .dark}}
+            {{- with .light}}
+                <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{.}}">
+            {{- end}}
+        {{- else}}
+            {{- with .light}}
+                <meta name="theme-color" content="{{.}}">
+            {{- end}}
         {{- end}}
-    {{- else}}
-        {{- with .light}}
-            <meta name="theme-color" content="{{.}}">
+        {{- with .dark}}
+            <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{.}}">
         {{- end}}
     {{- end}}
-    {{- with .dark}}
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{.}}">
+{{- else}}
+    {{- with .Site.GetPage (.Section) }}
+        {{if .Params.themeColor.dark}}
+            {{- with .Params.themeColor.light}}
+                <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{.}}">
+            {{- end}}
+        {{- else if .Params.themeColor.light}}
+            {{- with .Params.themeColor.light}}
+                <meta name="theme-color" content="{{.}}">
+            {{- end}}
+        {{- else}}
+            {{- with .Site.Params.theme.themeColor}}
+                {{if .dark}}
+                    {{- with .light}}
+                        <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{.}}">
+                    {{- end}}
+                {{- else}}
+                    {{- with .light}}
+                        <meta name="theme-color" content="{{.}}">
+                    {{- end}}
+                {{- end}}   
+            {{- end}}
+        {{- end}}
+        {{- if .Params.themeColor.dark }}
+            {{- with .Params.themeColor.dark}}
+                <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{.}}">
+            {{- end}}
+        {{- else if eq .Params.themeColor.disableDefaultDark true}}
+        {{- else}}
+            {{- with .Site.Params.theme.themeColor.dark}}
+                <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{.}}">
+            {{- end}}
+        {{- end}}
     {{- end}}
 {{- end}}
 {{- partial "head/head-css-bundler.html" . }}
