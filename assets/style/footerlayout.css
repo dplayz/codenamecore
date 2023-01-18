@@ -10,6 +10,12 @@ footer#pagefooter{
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
+@media(max-width:480px){
+	.footer-links-grid-container {
+		display: block;
+		word-wrap: break-word;
+	}
+}
 .footer-links-grid-item {
 	list-style: none;
 	padding:5px;
