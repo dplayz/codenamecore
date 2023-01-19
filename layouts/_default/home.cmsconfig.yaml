@@ -154,13 +154,6 @@ collections:
                 fields:
                 - { name: main, label: 'Main links', widget: color, default: "lightblue", required: false} 
                 - { name: visited, label: 'Visited links', widget: color, default: "lightblue", required: false }
-              - name: themeColor
-                label: 'Browser Toolbar Color'
-                widget: object
-                collapsed: true
-                fields:
-                  - { name: light, label: 'Light/Default Mode', widget: color, required: false}
-                  - { name: dark, label: 'Dark Mode', widget: color, required: false}
               - name: background
                 label: 'Background Options'
                 widget: object
@@ -243,25 +236,24 @@ collections:
                       - { label: "Font Family URL", name: url, widget: string }
               - { label: "Default Page Preview Thumbnail", name: pagePreviewImage, widget: image }
               - { label: "Favicon URL", name: favicon, widget: image, default: "favicon.ico", required: false }
-            - label: "Section List Options"
-              name: sectionList
-              widget: object
-              collapsed: true
-              fields:
-                - { label: "Article Snippet Style", name: articleSnippetStyle, widget: select, options: [listStyle, boxStyle] } 
-            - label: "Related Article Options"
-              name: relatedArticle
-              widget: object
-              collapsed: true
-              fields:
-                - label: "Enable Related Article"
-                  name: enable
-                  widget: boolean
-                  default: false
-                - label: "Article Snippet Style"
-                  name: articleSnippetStyle
-                  widget: select
-                  options: [listStyle, boxStyle]
+              - label: 'List Options'
+                name: list
+                widget: object
+                collapsed: true
+                fields:
+                - label: "Section List Options"
+                  name: sectionList
+                  widget: object
+                  collapsed: true
+                  fields:
+                    - { label: "Article Snippet Style", name: articleSnippetStyle, widget: select, options: [listStyle, boxStyle] } 
+                - label: "Related Article Options"
+                  name: relatedArticle
+                  widget: object
+                  collapsed: true
+                  fields:
+                    - { label: "Enable Related Article", name: enable, widget: boolean, default: false }
+                    - { label: "Article Snippet Style", name: articleSnippetStyle, widget: select, options: [listStyle, boxStyle] } 
             - label: "Copyright Information"
               name: copyright
               collapsed: true

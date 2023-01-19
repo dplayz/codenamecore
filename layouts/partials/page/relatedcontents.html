@@ -1,10 +1,10 @@
-{{- if eq .Site.Params.relatedArticle.enable true}}
+{{- if eq .Site.Params.theme.list.relatedArticle.enable true}}
 {{- $related := site.RegularPages.RelatedIndices . "tags" "date" }}
 {{- with $related }}
 <h3>Related Content:</h3>
 	{{- range $related}}
     {{- if ne .Params.singlepage true}}
-      {{- if (and (or (eq .Site.Params.relatedArticle.articleSnippetStyle "boxStyle") (eq .Site.Params.relatedArticle.articleSnippetStyle "boxstyle") (eq .Site.Params.relatedArticle.articleSnippetStyle "box-style" )))}}
+      {{- if (and (or (eq .Site.Params.theme.list.relatedArticle.articleSnippetStyle "boxStyle") (eq .Site.Params.relatedArticle.articleSnippetStyle "boxstyle") (eq .Site.Params.relatedArticle.articleSnippetStyle "box-style" )))}}
         {{ partial "list/article-snippet/box-style.html" .}}
       {{- else}}
         {{- partial "list/article-snippet/list-style.html" . }}
