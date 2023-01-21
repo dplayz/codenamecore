@@ -137,16 +137,11 @@ collections:
           label: 'Site Parameters'
           widget: object
           fields: 
-            - { name: noIndexAll, label: 'Do not Index site to Search Engines', widget: boolean, default: false, required: false } 
-            - { name: description, label: 'Site Default Description', widget: text, required: false}
-            - { name: author, label: 'Site Default Author', widget: string }
-            - { name: author_defaultDescription, label: 'Site Default Author Description', widget: string, required: false}
             - name: theme
               label: 'Theme Configuration'
               widget: object
               collapsed: true
               fields:
-              - { name: logo, label: 'Site Logo', widget: image, default: /images/logo, required: false }
               - name: linkcolor
                 label: 'Color of the Links'
                 widget: object
@@ -282,13 +277,26 @@ collections:
               widget: object
               collapsed: true
               fields:
+                - label: "General"
+                  name: general
+                  widget: object
+                  fields: 
+                    - { name: logo, label: 'Site Logo', widget: image, default: /images/logo, required: false }
+                    - { name: description, label: 'Site Default Description', widget: text, required: false }
+                    - label: "Default Author Options"
+                      name: defaultAuthor
+                      widget: object
+                      collapsed: true
+                      fields:
+                        - { name: name, label: 'Name', widget: string}
+                        - { name: description, label: 'Description', widget: string, required: false}                    
                 - label: "PWA"
                   name: pwa
                   widget: object
                   fields:
                     - { label: "App Name", name: appName, widget: string, required: false }
                     - { label: "Short App Name", name: shortAppName, widget: string, required: false }
-                    - { label: "Custom Splash Image", name: customSplashImage, widget: image, required: false }
+                    - { label: "Custom Splash", name: customSplashImage, widget: image, required: false }
                 - label: "Search Engine"
                   name: webmaster
                   widget: object
@@ -297,6 +305,7 @@ collections:
                     - { label: "Google Search Console Verification Code", name: googleSiteVerificationCode, widget: string, required: false}
                     - { label: "Bing Webmaster Tools Site Validation Code", name: bingValidationCode, widget: string, required: false}
                     - { label: "Yandex.Webmaster Site Validation Code", name: yandexValidationCode, widget: string, required: false}
+                    - { name: noIndexAll, label: 'Do not Index site to Search Engines', widget: boolean, default: false, required: false } 
                 - label: "SDKs"
                   name: sdk
                   widget: object
