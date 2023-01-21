@@ -55,7 +55,7 @@
 {{- end}}
 {{- partial "head/head-css-bundler.html" . }}
 <link rel="manifest" href="{{relURL "/manifest.json"}}">
-{{- if .Site.Params.theme.favicon}}
+{{- if .Site.Params.identity.general.favicon}}
 <link rel="icon" type="image/x-icon" href="{{relURL .Site.Params.theme.favicon}}">
 {{- end}}
 <link rel="apple-touch-icon" href="{{relURL "/images/apple-touch-icon/152x152.png"}}">
