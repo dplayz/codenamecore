@@ -309,6 +309,7 @@ collections:
                 - label: "SNS Information"
                   name: snsInfo
                   widget: object
+                  collapsed: true
                   fields:
                     - { label: "Facebook Page ID", name: fbPageID, widget: string, required: false}
             - label: "CMS Configuration"
