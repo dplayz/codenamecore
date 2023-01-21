@@ -62,10 +62,10 @@ display_url: {{.Site.Params.cms.display_url}}
 {{- else}}
 display_url: {{.Site.BaseURL}}
 {{- end}}
-{{- if .Site.Params.theme.logo}}
-logo_url: {{.Site.Params.theme.logo}}
+{{- if .Site.Params.identity.general.logo}}
+logo_url: {{.Site.Params.identity.general.logo}}
 {{- else if .Site.Params.cms.logo_url}}
-logo_url: {{.Site.Params.theme.logo}}
+logo_url: {{.Site.Params.cms.logo_url}}
 {{- end}}
 {{- if and (eq hugo.Environment "development") (ne .Site.Params.cms.disableLocalBackend true)}}
 local_backend: true 
@@ -380,6 +380,7 @@ collections:
                         - { label: "Tenant ID", name: tenant_id, widget: string, required: false }
                         - { label: "App ID", name: app_id, widget: string, required: false }
                 - { label: "Enable Editorial Workflow", name: editorial_workflow, widget: boolean, default: false, required: false  }
+                - { label: "CMS Custom Logo", name: logo_url, widget: image, required: false}
                 - label: "Collections"
                   name: collections
                   widget: list

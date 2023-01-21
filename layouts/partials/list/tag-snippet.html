@@ -1,5 +1,5 @@
 <div class="tag-snippet"> 
-    <a href="{{.RelPermalink}}" style="color:white; text-decoration: none;" {{if or (eq .Site.Params.noIndexAll true) (eq .Params.NoIndexPage true) (eq .Params.sitemapExclude true) (eq .Params.excludeFromCrawlers true) (eq .Params.unlisted true)}} rel="nofollow"{{end}}>
+    <a href="{{.RelPermalink}}" style="color:white; text-decoration: none;" {{if or (eq .Site.Params.identity.webmaster.noIndexAll true) (eq .Params.NoIndexPage true) (eq .Params.sitemapExclude true) (eq .Params.excludeFromCrawlers true) (eq .Params.unlisted true)}} rel="nofollow"{{end}}>
         <b>{{.Title}}</b>
     </a>
 </div>

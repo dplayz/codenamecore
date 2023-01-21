@@ -13,7 +13,7 @@
 </div>
 {{ end }}
 <nav class="navbar"{{- if eq .Site.Params.psa.enable true}}{{if eq .Site.Params.psa.largedesign true}} style="top:40px;"{{else}} style="top:20px;"{{end}}{{else}} style="top:0px;"{{end}}>
-    <div class="brand-title"><a href="/">{{ if .Site.Params.theme.logo}}<img src="{{relURL (.Site.Params.theme.logo)}}" class="sitelogo">{{else if os.FileExists "static/images/logo.png" }}<img src="{{relURL "/images/logo.png"}}" class="sitelogo">{{end}}</a></div>
+    <div class="brand-title"><a href="/">{{ if .Site.Params.identity.general.logo}}<img src="{{relURL (.Site.Params.general.identity.logo)}}" class="sitelogo">{{else if os.FileExists "static/images/logo.png" }}<img src="{{relURL "/images/logo.png"}}" class="sitelogo">{{end}}</a></div>
       <a class="toggle-button">
       <span class="bar"></span>
       <span class="bar"></span>
