@@ -285,6 +285,10 @@ collections:
                 - label: "PWA"
                   name: pwa
                   widget: object
+                  fields:
+                    - { label: "App Name", name: appName, widget: string, required: false }
+                    - { label: "Short App Name", name: shortAppName, widget: string, required: false }
+                    - { label: "Custom Splash Image", name: customSplashImage, widget: image, required: false }
                 - label: "Search Engine"
                   name: webmaster
                   widget: object
