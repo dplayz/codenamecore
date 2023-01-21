@@ -236,7 +236,6 @@ collections:
                     fields:
                       - { label: "Font Family Name", name: family, widget: string }
                       - { label: "Font Family URL", name: url, widget: string }
-              - { label: "Default Page Preview Thumbnail", name: pagePreviewImage, widget: image }
               - label: "List Options"
                 name: list
                 widget: object
@@ -283,6 +282,7 @@ collections:
                     - { name: logo, label: 'Site Logo', widget: image, default: /images/logo, required: false }
                     - { name: description, label: 'Site Default Description', widget: text, required: false }
                     - { label: "Favicon URL", name: favicon, widget: image, default: "favicon.ico", required: false }
+                    - { label: "Default Page Preview Thumbnail", name: pagePreviewImage, widget: image }
                     - label: "Default Author Options"
                       name: defaultAuthor
                       widget: object
