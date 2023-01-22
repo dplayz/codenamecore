@@ -1,6 +1,7 @@
 {{- if ne hugo.Environment "production" }}
-{{- if .Site.Params.identity.googleAnalytics.measurementID}}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{.Site.Params.identity.googleAnalytics.measurementID}}"></script>
+{{- if .Site.Params.disableFeature.googleAnalytics}}
+{{- if .Site.Params.identity.analytics.googleAnalytics.measurementID}}
+<script async defer src="https://www.googletagmanager.com/gtag/js?id={{.Site.Params.identity.googleAnalytics.measurementID}}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){window.dataLayer.push(arguments);}
@@ -12,5 +13,6 @@
   gtag('config', '{{.Site.Params.identity.googleAnalytics.measurementID}}');
   {{end}}
 </script>
-{{end}}
-{{end}}
+{{- end}}
+{{- end}}
+{{- end}}

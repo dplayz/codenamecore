@@ -1,5 +1,5 @@
-{{- if .Site.Params.identity.onesignalSDKID}}{{- if ne hugo.Environment "production" }}{{- else}}
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+{{- if .Site.Params.identity.sdk.onesignalSDKID}}{{- if ne hugo.Environment "production" }}{{- else}}
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async="" defer></script>
 <script>
   window.OneSignal = window.OneSignal || [];
   OneSignal.push(function() {
@@ -8,4 +8,4 @@
     });
   });
 </script>
-{{end}}{{end}}
+{{- end}}{{- end}}

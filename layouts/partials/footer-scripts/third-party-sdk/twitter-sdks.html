@@ -1,3 +1,3 @@
-{{- if eq .Site.Params.disableTwitterSDK true}}{{- else}}
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{- if eq .Site.Params.disableFeature.twitterSDK true}}{{- else}}
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8" async defer></script>
 {{end}}
