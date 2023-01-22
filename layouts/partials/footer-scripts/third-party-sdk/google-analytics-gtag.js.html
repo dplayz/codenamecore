@@ -1,4 +1,4 @@
-{{- if ne hugo.Environment "production" }}
+{{- if eq hugo.Environment "production" }}
 {{- if .Site.Params.disableFeature.googleAnalytics}}
 {{- if .Site.Params.identity.analytics.googleAnalytics.measurementID}}
 <script async defer src="https://www.googletagmanager.com/gtag/js?id={{.Site.Params.identity.googleAnalytics.measurementID}}"></script>
