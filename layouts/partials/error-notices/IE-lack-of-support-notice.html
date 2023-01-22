@@ -1,4 +1,4 @@
-{{- if eq .Site.Params.disableIEChecks true}}{{else}}
+{{- if ne .Site.Params.disableFeature.IEChecks true}}
 <script>
     var isIE = !!navigator.userAgent.match(/Trident/g) || !!navigator.userAgent.match(/MSIE/g);
     if(isIE){

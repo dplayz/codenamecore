@@ -1,14 +1,14 @@
-{{- if and (ne .Site.Params.identity.sdk.widgetbotcrate.disable true) (.Site.Params.identity.sdk.widgetbotcrate.serverid) (.Site.Params.identity.sdk.widgetbotcrate.channelid) }}
+{{- if and (ne .Site.Params.disableFeature.widgetbotcrate true) (.Site.Params.identity.sdk.widgetbotcrate.serverid) (.Site.Params.identity.sdk.widgetbotcrate.channelid) }}
 <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
     new Crate({
-      server: '{{.Site.Params.identity.widgetbotcrate.serverid}}',
+      server: '{{.Site.Params.identity.sdk.widgetbotcrate.serverid}}',
       channel: '{{.Site.Params.identity.widgetbotcrate.channelid}}'
     })
 </script>
-{{- else if .Site.Params.identity.widgetbotcrate.serverid}}
+{{- else if and (ne .Site.Params.disableFeature.widgetbotcrate true) (.Site.Params.identity.sdk.widgetbotcrate.serverid)}}
 <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
     new Crate({
-      server: '299881420891881473',
+      server: '{{.Site.Params.identity.sdk.widgetbotcrate.serverid}}',
     })
 </script>
 {{- end}}
