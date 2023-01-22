@@ -1,5 +1,0 @@
-{{- if eq .Site.Params.disableBrowserVersionChecks true}}{{else}}
-{{- if ne hugo.Environment "production" }}{{- else}}
-<script src="/scripts/browser-update.js"></script>
-{{end}}
-{{end}}
