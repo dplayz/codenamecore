@@ -9,7 +9,7 @@ body{
 	font-family: 'Noto Color Emoji';
 	src: url("/fonts/NotoColorEmoji-Regular.ttf");
 }
-.main-container{
+.content-container{
 	height:auto;
 	min-height:500px;
 }

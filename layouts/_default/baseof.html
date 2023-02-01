@@ -11,25 +11,33 @@
         {{- end}}
         {{- block "main-container" .}}
         <div class="main-container">
-            {{- block "main" .}}
-            {{.Content}}
-            {{- end }}
+            {{- block "content-container" .}}
+            <div class="content-container">
+                {{- block "main" .}}
+                {{.Content}}
+                {{- end }}
+            </div>
+            {{- end}}
+            {{- if and (or (eq .Params.hideHeader true) (eq .Params.infopage true))}}{{- else}}
+            {{- block "sidebar-container" . }}
+            <aside id="sidebar" class="sidebar-container">
+                {{- if os.FileExists "layouts/partials/sidebar.html" }}{{ partial "sidebar/layout.html" . }}{{end}}
+            </aside>
+            {{- end}}
+            {{- end}}
         </div>
-        {{- end}}
-        {{- if and (or (eq .Params.hideHeader true) (eq .Params.infopage true))}}{{- else}}
-        {{- block "sidebar-container" . }}
-        <aside id="sidebar" class="sidebar-container">
-            {{- if os.FileExists "layouts/partials/sidebar.html" }}{{ partial "sidebar/layout.html" . }}{{end}}
-        </aside>
-        {{- end}}
         {{- end}}
         {{- if and (or (eq .Params.hideFooter true) (eq .Params.infopage true))}}{{else}}
         {{- block "footer-container" . }}
         <footer id="pagefooter" class="footer-container">
+            {{- block "footer-content-container" .}}
+            <div class="footer-content-container">
                 {{- if .Site.Menus.footer}}
-                <div class="footer-sitelinks">{{partial "footer/footer-links.html" . }}</div><hr>
+                    <div class="footer-sitelinks">{{partial "footer/footer-links.html" . }}</div><hr>
+                    {{- end}}
+                    <div class="footer-siteinfo">{{ partial "footer/footer.html" . }}</div>
                 {{- end}}
-                <div class="footer-siteinfo">{{ partial "footer/footer.html" . }}</div>
+            </div>
             {{- end}}
         </footer>
         {{- end}}

@@ -4,6 +4,7 @@
 {{- $anchorbuttoncss := resources.Get "style/anchorbutton.css" | fingerprint }}
 {{- $errormessageblockcss := resources.Get "style/errormessageblock.css" | fingerprint }}
 {{- $infopagecss := resources.Get "style/infopage.css" | fingerprint  }}
+{{- $contentcontaineroptionscss := resources.Get "style/container-options.css" | fingerprint }}
 {{- $articlelayoutmaincss := resources.Get "style/article-layout.css" | fingerprint }}
 {{- $articlesnippetliststylecss := resources.Get "style/article-snippet-layout/list-style.css" | fingerprint }}
 {{- $articlesnippetboxstylecss := resources.Get "style/article-snippet-layout/box-style.css" | fingerprint }}
@@ -29,6 +30,7 @@
     $anchorbuttoncss
     $errormessageblockcss 
     $infopagecss
+    $contentcontaineroptionscss
     $articlelayoutmaincss 
     $articlesnippetliststylecss 
     $articlesnippetboxstylecss
