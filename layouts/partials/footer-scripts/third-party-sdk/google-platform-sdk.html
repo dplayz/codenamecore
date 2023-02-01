@@ -1,3 +1,3 @@
-{{- if eq .Site.Params.disableFeature.googlePlatformSDK true}}
+{{- if ne .Site.Params.disableFeature.googlePlatformSDK true}}
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 {{end}}
