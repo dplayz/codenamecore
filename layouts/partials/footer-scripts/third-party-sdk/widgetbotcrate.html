@@ -2,7 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
     new Crate({
       server: '{{.Site.Params.identity.sdk.widgetbotcrate.serverid}}',
-      channel: '{{.Site.Params.identity.widgetbotcrate.channelid}}'
+      channel: '{{.Site.Params.identity.sdk.widgetbotcrate.channelid}}'
     })
 </script>
 {{- else if and (ne .Site.Params.disableFeature.widgetbotcrate true) (.Site.Params.identity.sdk.widgetbotcrate.serverid)}}
