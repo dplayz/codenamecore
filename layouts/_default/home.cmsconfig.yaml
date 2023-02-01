@@ -427,7 +427,6 @@ collections:
         - { name: enableGitInfo, label: "Enable Git Info", widget: boolean, default: true }
         - { label: "Enable robots.txt file", name: enableRobotsTXT, widget: boolean, default: false } 
         - { label: "Build Drafts", name: buildDrafts, widget: boolean, default: false }
-        - { label: "Build Future Posts", name: buildFuture, widget: boolean, default: false }
         - label: "Menu Items"
           name: "menu"
           widget: object
