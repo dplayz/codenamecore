@@ -1,6 +1,6 @@
 {
-  "name": "{{if .Site.Params.pwa.name}}{{.Site.Params.pwa.name}}{{else}}{{.Site.Title}}{{end}}",
-  "short_name": "{{if .Site.Params.pwa.shortname}}{{.Site.Params.pwa.shortname}}{{else}}{{.Site.Title}}{{end}}",
+  "name": "{{if .Site.Params.identity.pwa.appName}}{{.Site.Params.pwa.appName}}{{else}}{{.Site.Title}}{{end}}",
+  "short_name": "{{if .Site.Params.identity.pwa.shortAppName}}{{.Site.Params.identity.pwa.shortAppName}}{{else}}{{.Site.Title}}{{end}}",
   {{- if os.FileExists "assets/favicon/icon.png" }}
   "icons": [
     {{- $pwaicons := resources.Get "favicon/icon.png" }}
@@ -40,7 +40,7 @@
       "purpose": "any maskable" 
     },
     {
-      "src": "{{if .Site.Params.pwa.customSplashImage}}{{.Site.Params.pwa.customSplashImage}}{{else}}{{ $pwaicon512px.RelPermalink}}{{end}}",
+      "src": "{{if .Site.Params.identity.pwa.customSplashImage}}{{.Site.Params.identity.pwa.customSplashImage}}{{else}}{{ $pwaicon512px.RelPermalink}}{{end}}",
       "sizes": "512x512",
       "type": "image/png"
     }
