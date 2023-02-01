@@ -137,8 +137,72 @@ collections:
           label: 'Site Parameters'
           widget: object
           fields: 
-            - name: theme
-              label: 'Theme Configuration'
+            - label: "Site Identity Information"
+              name: identity
+              widget: object
+              collapsed: true
+              fields:
+                - label: "General"
+                  name: general
+                  widget: object
+                  collapsed: true
+                  fields: 
+                    - { name: logo, label: 'Site Logo', widget: image, default: /images/logo, required: false }
+                    - { name: description, label: 'Site Default Description', widget: text, required: false }
+                    - { label: "Favicon URL", name: favicon, widget: image, default: "favicon.ico", required: false }
+                    - { label: "Default Page Preview Thumbnail", name: pagePreviewImage, widget: image, required: false}
+                    - label: "Default Author Options"
+                      name: defaultAuthor
+                      widget: object
+                      collapsed: true
+                      fields:
+                        - { name: name, label: 'Name', widget: string}
+                        - { name: description, label: 'Description', widget: string, required: false}                    
+                - label: "PWA"
+                  name: pwa
+                  widget: object
+                  collapsed: true
+                  fields:
+                    - { label: "App Name", name: appName, widget: string, required: false }
+                    - { label: "Short App Name", name: shortAppName, widget: string, required: false }
+                    - { label: "Custom Splash", name: customSplashImage, widget: image, required: false }
+                - label: "Search Engine"
+                  name: webmaster
+                  widget: object
+                  collapsed: true
+                  fields:
+                    - { label: "Google Search Console Verification Code", name: googleSiteVerificationCode, widget: string, required: false}
+                    - { label: "Bing Webmaster Tools Site Validation Code", name: bingValidationCode, widget: string, required: false}
+                    - { label: "Yandex.Webmaster Site Validation Code", name: yandexValidationCode, widget: string, required: false}
+                    - { name: noIndexAll, label: 'Do not Index site to Search Engines', widget: boolean, default: false, required: false } 
+                - label: "SDKs"
+                  name: sdk
+                  widget: object
+                  collapsed: true
+                  fields:
+                    - { label: "Facebook SDK ID", name: fbSDKID, widget: string, required: false}
+                    - { label: "OneSignal SDK ID", name: onesignalSDKID, widget: string, required: false}
+                    - label: "WidgetBot.io's Crate"
+                      name: widgetbotcrate
+                      widget: object
+                      collapsed: true
+                      fields:
+                      - { label: "Server ID", name: serverid, widget: string, required: false}
+                      - { label: "Channel ID", name: channelid, widget: string, required: false}
+                - label: "Analytics"
+                  name: analytics
+                  widget: object
+                  collapsed: true
+                  fields:
+                    - { label: "Google Analytics", name: googleAnalytics, widget: object, fields: [{label: "Measurement ID", name: measurementID, widget: string, required: false}, {label: "Disable Page View on whole site" , name: disablePageView, widget: boolean, required: false }], collapsed: true }
+                - label: "SNS Information"
+                  name: snsInfo
+                  widget: object
+                  collapsed: true
+                  fields:
+                    - { label: "Facebook Page ID", name: fbPageID, widget: string, required: false}
+            - label: 'Theme Configuration'
+              name: theme
               widget: object
               collapsed: true
               fields:
@@ -260,80 +324,6 @@ collections:
                       name: articleSnippetStyle
                       widget: select
                       options: [listStyle, boxStyle]
-            - label: "Copyright Information"
-              name: copyright
-              collapsed: true
-              widget: object
-              fields:
-                - { label: "Copyright Start Date", name: start, widget: date, format: 'YYYY' }
-                - { label: "Copyright Today Date", name: today, widget: date, format: 'YYYY' }
-                - { label: "Copyright rightholder", name: rightholder, widget: string }
-                - { label: "Copyright notes", name: notes, widget: string }
-                - { label: "Site managed by whom", name: managedByWhom, widget: markdown }
-            - label: "Site Identity Information"
-              name: identity
-              widget: object
-              collapsed: true
-              fields:
-                - label: "General"
-                  name: general
-                  widget: object
-                  collapsed: true
-                  fields: 
-                    - { name: logo, label: 'Site Logo', widget: image, default: /images/logo, required: false }
-                    - { name: description, label: 'Site Default Description', widget: text, required: false }
-                    - { label: "Favicon URL", name: favicon, widget: image, default: "favicon.ico", required: false }
-                    - { label: "Default Page Preview Thumbnail", name: pagePreviewImage, widget: image, required: false}
-                    - label: "Default Author Options"
-                      name: defaultAuthor
-                      widget: object
-                      collapsed: true
-                      fields:
-                        - { name: name, label: 'Name', widget: string}
-                        - { name: description, label: 'Description', widget: string, required: false}                    
-                - label: "PWA"
-                  name: pwa
-                  widget: object
-                  collapsed: true
-                  fields:
-                    - { label: "App Name", name: appName, widget: string, required: false }
-                    - { label: "Short App Name", name: shortAppName, widget: string, required: false }
-                    - { label: "Custom Splash", name: customSplashImage, widget: image, required: false }
-                - label: "Search Engine"
-                  name: webmaster
-                  widget: object
-                  collapsed: true
-                  fields:
-                    - { label: "Google Search Console Verification Code", name: googleSiteVerificationCode, widget: string, required: false}
-                    - { label: "Bing Webmaster Tools Site Validation Code", name: bingValidationCode, widget: string, required: false}
-                    - { label: "Yandex.Webmaster Site Validation Code", name: yandexValidationCode, widget: string, required: false}
-                    - { name: noIndexAll, label: 'Do not Index site to Search Engines', widget: boolean, default: false, required: false } 
-                - label: "SDKs"
-                  name: sdk
-                  widget: object
-                  collapsed: true
-                  fields:
-                    - { label: "Facebook SDK ID", name: fbSDKID, widget: string, required: false}
-                    - { label: "OneSignal SDK ID", name: onesignalSDKID, widget: string, required: false}
-                    - label: "WidgetBot.io's Crate"
-                      name: widgetbotcrate
-                      widget: object
-                      collapsed: true
-                      fields:
-                      - { label: "Server ID", name: serverid, widget: string, required: false}
-                      - { label: "Channel ID", name: channelid, widget: string, required: false}
-                - label: "Analytics"
-                  name: analytics
-                  widget: object
-                  collapsed: true
-                  fields:
-                    - { label: "Google Analytics", name: googleAnalytics, widget: object, fields: [{label: "Measurement ID", name: measurementID, widget: string, required: false}, {label: "Disable Page View on whole site" , name: disablePageView, widget: boolean, required: false }], collapsed: true }
-                - label: "SNS Information"
-                  name: snsInfo
-                  widget: object
-                  collapsed: true
-                  fields:
-                    - { label: "Facebook Page ID", name: fbPageID, widget: string, required: false}
             - label: "CMS Configuration"
               name: cms
               widget: object
@@ -414,15 +404,16 @@ collections:
                 - { label: "Disable Facebook SDK (will disable the FB Player)", name: fbSDK, widget: boolean, required: false, default: false }
                 - { label: "Disable Twitter Platform SDK", name: twitterSDK, widget: boolean, required: false, default: false }
                 - { label: "Disable Google Platform SDK", name: googlePlatformSDK, widget: boolean, required: false, default: false }
-            - label: "PSA/Notice"
-              name: psa
-              widget: object
+            - label: "Copyright Information"
+              name: copyright
               collapsed: true
-              required: false
+              widget: object
               fields:
-                - { name: enable, label: "Enable", widget: boolean, default: false, required: false}
-                - { name: color, label: "Background Color", widget: color, required: false}
-                - { name: content, label: "Content", widget: markdown, required: false}
+                - { label: "Copyright Start Date", name: start, widget: date, format: 'YYYY' }
+                - { label: "Copyright Today Date", name: today, widget: date, format: 'YYYY' }
+                - { label: "Copyright rightholder", name: rightholder, widget: string }
+                - { label: "Copyright notes", name: notes, widget: string }
+                - { label: "Site managed by whom", name: managedByWhom, widget: markdown }
         - { name: permalinks, widget: hidden }
         - { name: enableGitInfo, label: "Enable Git Info", widget: boolean, default: true }
         - { label: "Enable robots.txt file", name: enableRobotsTXT, widget: boolean, default: false } 
