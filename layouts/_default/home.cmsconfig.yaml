@@ -313,6 +313,13 @@ collections:
                   fields:
                     - { label: "Facebook SDK ID", name: fbSDKID, widget: string, required: false}
                     - { label: "OneSignal SDK ID", name: onesignalSDKID, widget: string, required: false}
+                    - label: "WidgetBot.io's Crate"
+                      name: widgetbotcrate
+                      widget: object
+                      collapsed: true
+                      fields:
+                      - { label: "Server ID", name: serverid, widget: string, required: false}
+                      - { label: "Channel ID", name: channelid, widget: string, required: false}
                 - label: "Analytics"
                   name: analytics
                   widget: object
