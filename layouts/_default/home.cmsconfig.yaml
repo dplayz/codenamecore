@@ -62,10 +62,10 @@ display_url: {{.Site.Params.cms.display_url}}
 {{- else}}
 display_url: {{.Site.BaseURL}}
 {{- end}}
-{{- if .Site.Params.identity.general.logo}}
-logo_url: {{.Site.Params.identity.general.logo}}
-{{- else if .Site.Params.cms.logo_url}}
+{{- if .Site.Params.cms.logo_url}}
 logo_url: {{.Site.Params.cms.logo_url}}
+{{- else if .Site.Params.identity.general.logo}}
+logo_url: {{.Site.Params.identity.general.logo}}
 {{- end}}
 {{- if and (eq hugo.Environment "development") (ne .Site.Params.cms.disableLocalBackend true)}}
 local_backend: true 
