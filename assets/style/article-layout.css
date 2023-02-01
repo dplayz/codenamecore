@@ -34,6 +34,11 @@ article.article-content div.pagetitle {
 	max-width:1000px;
 	height:auto;
 }
+@media(max-width:390px){
+    .page-post{
+        width:90%;
+    }
+}
 .page-post p {
     text-indent: 30px;
 }

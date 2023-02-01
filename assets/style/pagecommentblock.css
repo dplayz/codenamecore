@@ -1,14 +1,21 @@
-div#pagecomments{ 
+div#pagecomments{
     max-width:1000px;
     margin-top: 30px;
-    margin-bottom:30px; 
+    margin-bottom:30px;
     margin-left:auto;
     margin-right:auto;
-    width:83.5%;
+    width:95%;
     height:inherit;
     border-radius:10px;
     box-shadow:0px 0px 10px black;
     border-radius:10px;
+	padding-left:10px;
+	padding-right:10px;
+}
+@media(max-width:390px){
+    div#pagecomments{
+        width:90%;
+    }
 }
 #disqus_thread p {
     color: black;
