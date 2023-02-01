@@ -278,6 +278,7 @@ collections:
                 - label: "General"
                   name: general
                   widget: object
+                  collapsed: true
                   fields: 
                     - { name: logo, label: 'Site Logo', widget: image, default: /images/logo, required: false }
                     - { name: description, label: 'Site Default Description', widget: text, required: false }
@@ -293,6 +294,7 @@ collections:
                 - label: "PWA"
                   name: pwa
                   widget: object
+                  collapsed: true
                   fields:
                     - { label: "App Name", name: appName, widget: string, required: false }
                     - { label: "Short App Name", name: shortAppName, widget: string, required: false }
