@@ -282,7 +282,7 @@ collections:
                     - { name: logo, label: 'Site Logo', widget: image, default: /images/logo, required: false }
                     - { name: description, label: 'Site Default Description', widget: text, required: false }
                     - { label: "Favicon URL", name: favicon, widget: image, default: "favicon.ico", required: false }
-                    - { label: "Default Page Preview Thumbnail", name: pagePreviewImage, widget: image }
+                    - { label: "Default Page Preview Thumbnail", name: pagePreviewImage, widget: image, required: false}
                     - label: "Default Author Options"
                       name: defaultAuthor
                       widget: object
@@ -393,6 +393,18 @@ collections:
                     - { label: Enable Creation, name: create, widget: boolean, default: true, required: false}
                     - { label: "Use Default Fields",  name: useDefaultFields, widget: boolean, default: true, required: false}
                 # task: []add customized collections order
+            - label : "Disable Features"
+              name: disableFeature
+              widget: object
+              collapsed: true
+              fields:
+                - { label: "Disable IE Browser Checks", name: IEChecks, widget: boolean ,required: false, default: false }
+                - { label: "Disable Google Translate", name: googleTranslate, widget: boolean ,required: false, default: false }  
+                - { label: "Disable Widgetbot Crate", name: widgetbotcrate, widget: boolean ,required: false, default: false }
+                - { label: "Disable Onesignal SDK(will disable the Onesignal features support)", name: onesignalSDK, widget: boolean, required: false, default: false }
+                - { label: "Disable Facebook SDK (will disable the FB Player)", name: fbSDK, widget: boolean, required: false, default: false }
+                - { label: "Disable Twitter Platform SDK", name: twitterSDK, widget: boolean, required: false, default: false }
+                - { label: "Disable Google Platform SDK", name: googlePlatformSDK, widget: boolean, required: false, default: false }
             - label: "PSA/Notice"
               name: psa
               widget: object
