@@ -1,34 +1,45 @@
 <style>
-{{- if eq .Site.Params.theme.background.color.type "lineargradient" }}
+:root {
+    {{- if .Site.Params.theme.font.family}}
+    --font-preferences: {{.Site.Params.theme.font.family}}, 'sans-serif', 'Roboto', Arial, 'Noto Color Emoji';
+    {{- end}}
+    {{- if .Site.Params.theme.font.family}}
+    {{- end}}
+    --linkcolor-main: {{- .Site.Params.theme.linkcolor.main}}!important;
+    --linkcolor-visited: {{- .Site.Params.theme.linkcolor.visited}}!important;
+    {{- if eq .Site.Params.theme.background.color.type "lineargradient" -}}
     {{- if eq .Site.Params.theme.background.color.lightdarkscheme true -}}
-html{background: linear-gradient(95deg, {{.Site.Params.theme.background.color.lineargradient.light.left.color}} {{.Site.Params.theme.background.color.lineargradient.light.left.position}}, {{.Site.Params.theme.background.color.lineargradient.light.right.color}} {{.Site.Params.theme.background.color.lineargradient.light.right.position}});}
-@media (prefers-color-scheme: dark){html{background: linear-gradient(95deg, {{.Site.Params.theme.background.color.lineargradient.dark.left.color}} {{.Site.Params.theme.background.color.lineargradient.dark.left.position}}, {{.Site.Params.theme.background.color.lineargradient.dark.right.color}} {{.Site.Params.theme.background.color.lineargradient.dark.right.position}});}}
-    {{else}}
-html{background: linear-gradient(95deg, {{.Site.Params.theme.background.color.lineargradient.light.left.color}} {{.Site.Params.theme.background.color.lineargradient.light.left.position}}, {{.Site.Params.theme.background.color.lineargradient.light.right.color}} {{.Site.Params.theme.background.color.lineargradient.light.right.position}});}
+    --page-background-color: linear-gradient(95deg, {{.Site.Params.theme.background.color.lineargradient.light.left.color}} {{.Site.Params.theme.background.color.lineargradient.light.left.position}}, {{.Site.Params.theme.background.color.lineargradient.light.right.color}} {{.Site.Params.theme.background.color.lineargradient.light.right.position}});
+    --page-background-color-dark: linear-gradient(95deg, {{.Site.Params.theme.background.color.lineargradient.dark.left.color}} {{.Site.Params.theme.background.color.lineargradient.dark.left.position}}, {{.Site.Params.theme.background.color.lineargradient.dark.right.color}} {{.Site.Params.theme.background.color.lineargradient.dark.right.position}});
+    {{- else}}
+    --page-background-color: linear-gradient(95deg, {{.Site.Params.theme.background.color.lineargradient.light.left.color}} {{.Site.Params.theme.background.color.lineargradient.light.left.position}}, {{.Site.Params.theme.background.color.lineargradient.light.right.color}} {{.Site.Params.theme.background.color.lineargradient.light.right.position}});
     {{- end -}}
-{{- else -}}
-    {{- if eq .Site.Params.theme.background.color.lightdarkscheme true -}}
-html{background-color: {{.Site.Params.theme.background.color.solid.light.color}};}
-@media (prefers-color-scheme: dark){html{background-color: {{.Site.Params.theme.background.color.solid.dark.color}};}}
     {{- else -}}
-html{background-color: {{.Site.Params.theme.background.color.solid.light.color}};}
-{{- end -}}
-{{- end -}}
-{{- if .Site.Params.theme.font.custom -}}
-@font-face {
-    {{- range .Site.Params.theme.font.custom }}
-	    font-family: {{.family}};
-	    src: url({{.url}});
+    {{- if eq .Site.Params.theme.background.color.lightdarkscheme true -}}
+    {{- with .Site.Params.theme.background.color.solid.light.color}}
+    --page-background-color: {{.}};
+    {{- end}}
+    {{- with .Site.Params.theme.background.color.solid.dark.color}}
+    --page-background-color-dark: {{.}};
+    {{- end }}
+    {{- else -}}
+    {{- with .Site.Params.theme.background.color.solid.light.color}}
+    --page-background-color: {{.}};
+    {{- end }}
+    {{- end -}}
+    {{- end -}}
+
+    {{- if eq .Site.Params.theme.textColor.noDarkMode true}}
+    --text-color-dark:black;
     {{- end}}
 }
-{{- end -}}
-{{- if .Site.Params.theme.font.family}}
-body, button{font-family: {{.Site.Params.theme.font.family}}, 'Noto Color Emoji' !important;}
-{{- end }}
-{{- if .Site.Params.theme.linkcolor.main}}
-a:link{color:{{.Site.Params.theme.linkcolor.main}};}
-{{- end -}}
-{{if .Site.Params.theme.linkcolor.visited}}
-a:visited{color:{{.Site.Params.theme.linkcolor.visited}};}
+
+{{- if .Site.Params.theme.font.custom }}
+@font-face {
+    {{- range .Site.Params.theme.font.custom}}
+	    font-family: {{ .family }};
+	    src: url({{ .url }});
+    {{- end }}
+}
 {{- end}}
 </style>

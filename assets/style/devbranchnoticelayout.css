@@ -1,6 +1,9 @@
 div.dev-branch-notice{
-	background-color:yellow; 
+	background-color:var(--dev-branch-background-color); 
 	width:100%;
 	z-index:1;
 	border-radius:10px 10px 0px 0px;
+}
+div.dev-branch-notice b{
+	color:var(--dev-branch-text-color);
 }

@@ -1,3 +1,4 @@
+{{- $cssvariablescss := resources.Get "style/css-variables.css" | fingerprint }}
 {{- $generalcss := resources.Get "style/general.css" | fingerprint }}
 {{- $headercss := resources.Get "style/header.css" | fingerprint }}
 {{- $anchortagcss := resources.Get "style/anchortag.css" | fingerprint }}
@@ -24,6 +25,7 @@
 {{- $devbranchnoticelayoutcss := resources.Get "style/devbranchnoticelayout.css" | fingerprint  }}
 {{- $pagenoticecss := resources.Get "style/pagenotice.css" | fingerprint  }}
 {{- $stylebundle := slice 
+    $cssvariablescss
     $generalcss
     $headercss
     $anchortagcss

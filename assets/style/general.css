@@ -1,9 +1,16 @@
 body{
-	background:transparent; 
+	background:var(--page-background-color); 
 	margin:0;
 	padding:0;
-	font-family: Roboto, Helvetica, Arial, sans-serif, 'Noto Color Emoji' !important;
 	text-align:center;
+}
+@media(prefers-color-scheme: dark) {
+	body {
+		background:var(--page-background-color-dark); 
+	}
+}
+body, button{
+	font-family: var(--font-preferences);
 }
 @font-face {
 	font-family: 'Noto Color Emoji';
@@ -17,9 +24,14 @@ html, body{
 	scroll-padding-top: 160px;
 	scroll-behavior: smooth;
 }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
-	color:black;
+div.main-container h1, div.main-container h2, div.main-container h3, div.main-container h4, div.main-container h5, div.main-container h6, div.main-container p, div.main-container b, div.main-container span, div.main-container td, div.main-container th, div.main-container li, div.main-container figcaption{
+	color:var(--text-color);
 	text-decoration: none;
+}
+@media(prefers-color-scheme:dark){
+	div.main-container h1, div.main-container h2, div.main-container h3, div.main-container h4, div.main-container h5, div.main-container h6, div.main-container p, div.main-container b, div.main-container span, div.main-container td, div.main-container th, div.main-container li, div.main-container figcaption{
+		color:var(--text-color-dark);
+	}
 }
 pre{
 	width:100%;

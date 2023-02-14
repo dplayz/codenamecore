@@ -1,0 +1,14 @@
+:root{
+	--font-preferences: sans-serif, 'Roboto', Arial, 'Noto Color Emoji';
+    --heading-color:black;
+
+    --text-color:black;
+    --text-color-dark:white;
+
+    --page-background-color:white;
+    --page-background-color-dark:#111;
+
+    --dev-branch-background-color:yellow;
+    --dev-branch-text-color:black;
+
+}
