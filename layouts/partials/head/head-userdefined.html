@@ -28,9 +28,15 @@
     {{- end }}
     {{- end -}}
     {{- end -}}
-
+    {{- with .Site.Params.theme.textColor.light}}
+    --text-color: {{.}};
+    {{- end}}
     {{- if eq .Site.Params.theme.textColor.noDarkMode true}}
-    --text-color-dark:black;
+    --text-color-dark: var(--text-color);
+    {{- else}}
+    {{- with .Site.Params.theme.textColor.dark}}
+    --text-color-dark: {{.}};
+    {{- end}}
     {{- end}}
 }
 
