@@ -213,6 +213,14 @@ collections:
                 fields:
                 - { name: main, label: 'Main links', widget: color, default: "lightblue", required: false} 
                 - { name: visited, label: 'Visited links', widget: color, default: "lightblue", required: false }
+              - label: 'Text Color'
+                name: textColor
+                widget: object
+                collapsed: true
+                fields:
+                - { name: light, label: 'Default/Light Mode Color', widget: color, required: false} 
+                - { name: dark, label: 'Dark Mode Color', widget: color, required: false }
+                - { name: noDarkMode, label: 'Disable Dark Mode Colors', widget: boolean, default: false, required: false }
               - name: themeColor
                 label: 'Browser Toolbar Color'
                 widget: object
