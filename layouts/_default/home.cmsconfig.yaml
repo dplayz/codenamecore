@@ -48,9 +48,6 @@ backend:
 backend: 
   name: {{.Site.Params.cms.backend.testrepo.name}}
 {{- end}}
-{{- with or (eq .Site.Params.cms.editorial_workflow true) (eq .Site.Params.cms.publish_mode "editorial_workflow")}}
-publish_mode: editorial_workflow
-{{- end}}
 {{- if .Site.Params.cms.media_folder}}
 media_folder: {{.Site.Params.cms.media_folder}}
 {{- end}}
@@ -139,6 +136,7 @@ collections:
           fields: 
             - label: "Site Identity Information"
               name: identity
+              required: false
               widget: object
               collapsed: true
               fields:
@@ -162,6 +160,7 @@ collections:
                   name: pwa
                   widget: object
                   collapsed: true
+                  required: false
                   fields:
                     - { label: "App Name", name: appName, widget: string, required: false }
                     - { label: "Short App Name", name: shortAppName, widget: string, required: false }
@@ -178,6 +177,7 @@ collections:
                 - label: "SDKs"
                   name: sdk
                   widget: object
+                  required: false
                   collapsed: true
                   fields:
                     - { label: "Facebook SDK ID", name: fbSDKID, widget: string, required: false}
@@ -185,6 +185,7 @@ collections:
                     - label: "WidgetBot.io's Crate"
                       name: widgetbotcrate
                       widget: object
+                      required: false
                       collapsed: true
                       fields:
                       - { label: "Server ID", name: serverid, widget: string, required: false}
@@ -192,22 +193,26 @@ collections:
                 - label: "Analytics"
                   name: analytics
                   widget: object
+                  required: false
                   collapsed: true
                   fields:
-                    - { label: "Google Analytics", name: googleAnalytics, widget: object, fields: [{label: "Measurement ID", name: measurementID, widget: string, required: false}, {label: "Disable Page View on whole site" , name: disablePageView, widget: boolean, required: false }], collapsed: true }
+                    - { label: "Google Analytics", name: googleAnalytics, widget: object, required: false, fields: [{label: "Measurement ID", name: measurementID, widget: string, required: false}, {label: "Disable Page View on whole site" , name: disablePageView, widget: boolean, required: false }], collapsed: true }
                 - label: "SNS Information"
                   name: snsInfo
+                  required: false
                   widget: object
                   collapsed: true
                   fields:
                     - { label: "Facebook Page ID", name: fbPageID, widget: string, required: false}
             - label: 'Theme Configuration'
               name: theme
+              required: false
               widget: object
               collapsed: true
               fields:
               - name: linkcolor
                 label: 'Color of the Links'
+                required: false
                 widget: object
                 collapsed: true
                 fields:
@@ -216,6 +221,7 @@ collections:
               - label: 'Text Color'
                 name: textColor
                 widget: object
+                required: false
                 collapsed: true
                 fields:
                 - { name: light, label: 'Default/Light Mode Color', widget: color, required: false} 
@@ -224,6 +230,7 @@ collections:
               - name: themeColor
                 label: 'Browser Toolbar Color'
                 widget: object
+                required: false
                 collapsed: true
                 fields:
                   - { name: light, label: 'Light/Default Mode', widget: color, required: false}
@@ -231,49 +238,58 @@ collections:
               - name: background
                 label: 'Background Options'
                 widget: object
+                required: false
                 collapsed: true
                 fields:
                 - name: color
                   label: 'Color'
                   widget: object
+                  required: false
                   fields: 
                   - { name: type, label: 'type', widget: select, options: ["solid", "lineargradient"], required: false }
                   - { name: lightdarkscheme, slabel: "Enable light-dark scheme", widget: boolean, required: false }
                   - name: lineargradient
                     label: lineargradient
                     widget: object
+                    required: false
                     collapsed: true
                     fields:
                     - name: light
                       label: "Light Mode"
                       widget: object
+                      required: false
                       collapsed: true
                       fields:
                       - name: left
                         label: "Left"
                         widget: object
+                        required: false
                         fields:
                           - { name: color, label: "Color", widget: color, required: false }
                           - { name: position, label: "Position", widget: string, default: 10%, required: false }
                       - name: right
                         label: "Right"
+                        required: false
                         widget: object
                         fields:
                           - { name: color, label: "Color", widget: color, required: false }
                           - { name: position, label: "Position", widget: string, default: 50%, required: false }
                     - name: dark
                       label: "Dark Mode"
+                      required: false
                       widget: object
                       collapsed: true
                       fields:
                       - name: left
                         label: "Left"
+                        required: false
                         widget: object
                         fields:
                           - { name: color, label: "Color", widget: color, required: false }
                           - { name: position, label: "Position", widget: string, default: 10%, required: false }
                       - name: right
                         label: "Right"
+                        required: false
                         widget: object
                         fields:
                           - { name: color, label: "Color", widget: color, required: false }
@@ -282,22 +298,26 @@ collections:
                     label: "Solid Color"
                     widget: object
                     collapsed: true
+                    required: false
                     fields:
                     - name: light
                       label: "Light Mode"
                       widget: object
+                      required: false
                       collapsed: true
                       fields:
                         - { name: color, label: "Color", widget: color, required: false }
                     - name: dark
                       label: "Dark Mode"
                       widget: object
+                      required: false
                       collapsed: true
                       fields:
                         - { name: color, label: "Color", widget: color, required: false }
               - label: "Font"
                 name: font
                 widget: object
+                required: false
                 collapsed: true
                 fields:
                   - { label: "Font Family to be used", name: family, widget: string, default: "Roboto, Helvetica, Arial, sans-serif, Times New Roman", required: false} 
@@ -311,30 +331,36 @@ collections:
               - label: "List Options"
                 name: list
                 widget: object
+                required: false
                 collapsed: true
                 fields:  
                 - label: "Section List Options"
                   name: sectionList
                   widget: object
+                  required: false
                   collapsed: true
                   fields:
-                    - { label: "Article Snippet Style", name: articleSnippetStyle, widget: select, options: [listStyle, boxStyle] } 
+                    - { label: "Article Snippet Style", name: articleSnippetStyle, widget: select, options: [listStyle, boxStyle], required: false } 
                 - label: "Related Article Options"
                   name: relatedArticle
                   widget: object
+                  required: false
                   collapsed: true
                   fields:
                     - label: "Enable Related Article"
                       name: enable
                       widget: boolean
+                      required: false
                       default: false
                     - label: "Article Snippet Style"
                       name: articleSnippetStyle
                       widget: select
+                      required: false
                       options: [listStyle, boxStyle]
             - label: "CMS Configuration"
               name: cms
               widget: object
+              required: false
               collapsed: true
               fields:
                 - label: "Backend Information"
@@ -354,7 +380,6 @@ collections:
                       fields:
                         - { label: "Repo", name: repo, widget: string, required: false }
                         - { label: "Branch", name: branch, widget: string, required: false }
-                        - { label: "Use GraphQL", name: useGraphQL, widget: boolean, required: false }
                         - { label: "Auth Endpoint (for non-Netlify users)", name: auth_endpoint, widget: string, required: false }
                     - label: "Gitlab"
                       name: gitlab
@@ -364,7 +389,6 @@ collections:
                       fields:
                         - { label: "Repo", name: repo, widget: string, required: false }
                         - { label: "Branch", name: branch, widget: string, required: false }
-                        - { label: "Use GraphQL", name: useGraphQL, widget: boolean, required: false }
                         - { label: "Authentication Type (for self-hosted options)", name: auth_type, widget: select, required: false, options: ["pkce"] }
                         - { label: "App ID (for self-hosted options)", name: app_id, widget: string, required: false }
                     - label: "Bitbucket"
@@ -386,7 +410,6 @@ collections:
                         - { label: "Repo", name: repo, widget: string, required: false }
                         - { label: "Tenant ID", name: tenant_id, widget: string, required: false }
                         - { label: "App ID", name: app_id, widget: string, required: false }
-                - { label: "Enable Editorial Workflow", name: editorial_workflow, widget: boolean, default: false, required: false  }
                 - { label: "CMS Custom Logo", name: logo_url, widget: image, required: false}
                 - label: "Collections"
                   name: collections
@@ -403,6 +426,7 @@ collections:
             - label : "Disable Features"
               name: disableFeature
               widget: object
+              required: false
               collapsed: true
               fields:
                 - { label: "Disable IE Browser Checks", name: IEChecks, widget: boolean ,required: false, default: false }
@@ -415,14 +439,15 @@ collections:
             - label: "Copyright Information"
               name: copyright
               collapsed: true
+              required: false
               widget: object
               fields:
-                - { label: "Copyright Start Date", name: start, widget: date, format: 'YYYY' }
-                - { label: "Copyright Today Date", name: today, widget: date, format: 'YYYY' }
+                - { label: "Copyright Start Date", name: start, widget: datetime, date_format: yyyy, format: 'yyyy', time_format: false}
+                - { label: "Copyright Today Date", name: today, widget: datetime, date_format: 'yyyy', format: 'yyyy', time_format: false }
                 - { label: "Copyright rightholder", name: rightholder, widget: string }
                 - { label: "Copyright notes", name: notes, widget: string }
                 - { label: "Site managed by whom", name: managedByWhom, widget: markdown }
-        - { name: permalinks, widget: hidden }
+        - { name: permalinks, widget: hidden, required: false }
         - { name: enableGitInfo, label: "Enable Git Info", widget: boolean, default: true }
         - { label: "Enable robots.txt file", name: enableRobotsTXT, widget: boolean, default: false } 
         - { label: "Build Drafts", name: buildDrafts, widget: boolean, default: false }
@@ -435,6 +460,7 @@ collections:
             name: main
             widget: list
             collapsed: true
+            required: false
             fields: 
               - { label: "Identifier", name: identifier, widget: string }
               - { label: "Name", name: name, widget: string }
@@ -449,6 +475,7 @@ collections:
             name: footer
             widget: list
             collapsed: true
+            required: false
             fields:
               - { label: "Identifier", name: identifier, widget: string}
               - { label: "Name", name: name, widget: string}

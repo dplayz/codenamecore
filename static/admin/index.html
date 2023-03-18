@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/cmsconfig.yaml" type="text/yaml" rel="cms-config-url">
     <title>Content Manager</title>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <!-- Include the script that builds the page and powers Static CMS -->
+    <script src="https://unpkg.com/@staticcms/app@^1.0.0/dist/static-cms-app.js"></script>
+    <script>
+      window.CMS.init();
+    </script>
   </body>
 </html>
