@@ -7,33 +7,44 @@ div.e169jtoy0{
 }
 */
 @media (max-width: 799px) {
-    body{height:100% !important;}
-    aside.css-1gj57a0-SidebarContainer-card.el9l68m0 {
-      position: static  !important;
-      width: 100%  !important;
-      margin-bottom: 30px  !important;
+    #cms-root, .cms-wrapper, .css-1dxxesv, .css-1kspmvt, .css-1qw96cp, .css-1ago99h, .css-s18byi, .css-1s1xrnn{              
+      max-width:unset !important;
+      min-width:unset !important;
+      width:100% !important;
+    }
+    .css-1qw96cp{              
+      display: block !important;
     }
 
-    .css-v758ki-AppMainContainer, .css-12b66la-AppHeaderContent {
-      min-width: 0  !important;
+    .css-1s1xrnn {
+      display: block !important;
     }
-
+    .css-mx8tbv{
+      max-width: none !important;
+      display: block !important;
+    }
     .css-104dqk8-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton, .css-12yqrwa-AppHeaderNavLink-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton {
       margin: 0  !important;
       padding: 16px 7px  !important;
     }
-    .css-1f7nhiq-CollectionMain  {
+    .css-1ago99h  {
       padding-left: 0 !important;
       width:100% !important;
+      display: block !important;
     }
-    .css-1hvrgvd-CollectionTopContainer-card-cardTop {
+    .css-mx8tbv {
       width: 100%  !important;
+      position: static  !important;
+      margin-bottom: 30px  !important;
     }
-
-    .css-16b5p1f-ToolbarSectionMain-toolbarSection {
-      padding-top: 13.5px !important;
-      flex-direction: column  !important;
-      justify-content: space-evenly  !important;
+    .css-1kspmvt{
+      position: relative !important;
+      top: 0px !important;
+    }
+    .MuiToolbar-root.MuiToolbar-gutters.MuiToolbar-regular.css-xzdtk7 {
+      max-width:799px !important;
+      width:100% !important;
+      min-width:0px !important;
     }
 
     /* Media */
@@ -124,12 +135,20 @@ div.e169jtoy0{
       display: none  !important;
     }
 
-    .Pane.vertical.Pane2 {
+    #preview-pane, .preview-content, .css-tzzedi {
       display: none  !important;
     }
+    .css-5h3zfp{
+      display: block!important;
+      min-width:0px !important;
+      max-width:799px !important;
+      width:100% !important;
 
-    .Pane.vertical.Pane1 {
+    }
+    #control-pane {
       width: 100% !important;
+      display:block !important;
+      max-width:799px;
     }
 
     .css-1bqupl5-ViewControls.e1pxf6c47 {
