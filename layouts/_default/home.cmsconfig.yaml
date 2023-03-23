@@ -410,6 +410,8 @@ collections:
                         - { label: "Repo", name: repo, widget: string, required: false }
                         - { label: "Tenant ID", name: tenant_id, widget: string, required: false }
                         - { label: "App ID", name: app_id, widget: string, required: false }
+                - { label: "Media folder directory", name: media_folder, widget: string, required: false}
+                - { label: "Public folder directory", name: public_folder, widget: string, required: false}
                 - { label: "CMS Custom Logo", name: logo_url, widget: image, required: false}
                 - label: "Collections"
                   name: collections
