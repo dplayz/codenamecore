@@ -1,4 +1,4 @@
-body{
+html, body{
 	background:var(--page-background-color); 
 	margin:0;
 	padding:0;
