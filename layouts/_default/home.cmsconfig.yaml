@@ -85,11 +85,11 @@ collections:
     {{- with .slug}}
     slug: "{{.}}"
     {{- end}}
-    {{- if eq .useDefaultFields true}}
+    {{- if eq .fieldType "defaultFields"}}
     fields:
       - { label: 'Title', name: 'title', widget: 'string'}
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime'}
+      - { label: 'Description', name: 'description', widget: 'string'}
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Page Thumbnail', name: 'customPagePreview', widget: 'image', required: false }
       - { label: 'Author', name: 'author', widget: 'list', required: false }
@@ -108,6 +108,9 @@ collections:
       - { name: header_textcolor, widget: hidden, required: false }
       - { name: header_textcolor_dark, widget: hidden, required: false }
       - { name: header_logo, widget: hidden, required: false }
+    {{- else if eq .fieldType "markdownOnly"}}
+    fields: 
+      - { label: 'Body', name: 'body', widget: 'markdown'}
     {{else}}
     {{- with .fields}}
     fields:    
@@ -130,7 +133,7 @@ collections:
         - { name: languageCode, label: 'Language Code', widget: string, required: true }
         - { name: title, label: 'Site Name', widget: string, required: true, default: "Your Site"}   
         - { name: theme, label: "Theme", widget: string, required: true, default: "codenamecore" }
-        - name: params
+        - name: params  
           label: 'Site Parameters'
           widget: object
           fields: 
@@ -423,7 +426,16 @@ collections:
                     - { label: Name, name: name,  widget: string }
                     - { label: Folder, name: folder, widget: string, default: "content/posts" }
                     - { label: Enable Creation, name: create, widget: boolean, default: true, required: false}
-                    - { label: "Use Default Fields",  name: useDefaultFields, widget: boolean, default: true, required: false}
+                    - label: "Fields Type"
+                      name: fieldType
+                      widget: select
+                      default: defaultFields
+                      required: true
+                      options:
+                        - label: Default Fields
+                          value: defaultFields
+                        - label: Markdown Page
+                          value: markdownOnly
                 # task: []add customized collections order
             - label : "Disable Features"
               name: disableFeature
