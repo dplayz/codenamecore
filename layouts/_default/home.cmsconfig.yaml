@@ -109,7 +109,6 @@ collections:
       - { name: header_textcolor_dark, widget: hidden, required: false }
       - { name: header_logo, widget: hidden, required: false }
     {{- else if eq .fieldType "markdownOnly"}}
-    create: false
     fields: 
       - { label: 'Body', name: 'body', widget: 'markdown'}
     {{else}}
@@ -435,7 +434,7 @@ collections:
                       options:
                         - label: Default Fields
                           value: defaultFields
-                        - label: Markdown Page (In CMS Page creation disabled)
+                        - label: Markdown Page
                           value: markdownOnly
                 # task: []add customized collections order
             - label : "Disable Features"
