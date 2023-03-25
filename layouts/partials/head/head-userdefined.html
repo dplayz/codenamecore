@@ -13,11 +13,13 @@
     --page-background-color-dark: linear-gradient(95deg, {{.Site.Params.theme.background.color.lineargradient.dark.left.color}} {{.Site.Params.theme.background.color.lineargradient.dark.left.position}}, {{.Site.Params.theme.background.color.lineargradient.dark.right.color}} {{.Site.Params.theme.background.color.lineargradient.dark.right.position}});
     {{- else}}
     --page-background-color: linear-gradient(95deg, {{.Site.Params.theme.background.color.lineargradient.light.left.color}} {{.Site.Params.theme.background.color.lineargradient.light.left.position}}, {{.Site.Params.theme.background.color.lineargradient.light.right.color}} {{.Site.Params.theme.background.color.lineargradient.light.right.position}});
+    --page-background-color-dark:unset;
     {{- end -}}
     {{- else -}}
     {{- if eq .Site.Params.theme.background.color.lightdarkscheme true -}}
     {{- with .Site.Params.theme.background.color.solid.light.color}}
     --page-background-color: {{.}};
+    --page-background-color-dark:unset;
     {{- end}}
     {{- with .Site.Params.theme.background.color.solid.dark.color}}
     --page-background-color-dark: {{.}};
