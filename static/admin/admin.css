@@ -217,12 +217,11 @@ div.e169jtoy0{
       width: calc(100% - 60px)  !important;
       height: calc(100% - 60px)  !important;
     }
-  }
 }
 @media(max-width:500px) {
     h1:not(.text-noautoadjust){font-size:calc(22px + 1vw)!important}
     h2:not(.text-noautoadjust){font-size:calc(14px + 1vw)!important}
-    h3:not(.text-noautoadjust){font-size:calc(8.72px + 1vw!important)}
+    h3:not(.text-noautoadjust){font-size:calc(8.72px + 1vw)!important}
     h4:not(.text-noautoadjust){font-size:calc(6px + 1vw)!important}
     h5:not(.text-noautoadjust){font-size:calc(3.28px + 1vw)!important}
     h6:not(.text-noautoadjust){font-size:calc(15px + 1vw)!important}
