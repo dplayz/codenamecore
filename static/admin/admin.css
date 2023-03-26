@@ -61,6 +61,12 @@ div.e169jtoy0{
       max-width:unset !important;
       width:100% !important;
     }
+    #quick-create-button, #existing-published-button, .css-1h48b3{
+      margin:10px !important;
+    }
+    #quick-create-button span, #existing-published-button span, .css-1h48b3 span{
+      display: none
+    }
     /* Media */
     .css-1f3mf5k-StyledModal {
       padding: 15px  !important;
@@ -71,7 +77,6 @@ div.e169jtoy0{
       display: block  !important;
       width: 100%  !important;
     }
-
     .css-70ahfk {
       flex-direction: column  !important;
     }
