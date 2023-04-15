@@ -12,14 +12,16 @@
   {{.Site.Params.psa.content | markdownify}}
 </div>
 {{ end }}
-<nav class="navbar"{{- if eq .Site.Params.psa.enable true}}{{if eq .Site.Params.psa.largedesign true}} style="top:40px;"{{else}} style="top:20px;"{{end}}{{else}} style="top:0px;"{{end}}>
+
+<header class="header"{{- if eq .Site.Params.psa.enable true}}{{if eq .Site.Params.psa.largedesign true}} style="top:40px;"{{else}} style="top:20px;"{{end}}{{else}} style="top:0px;"{{end}}>
+  <div class="header-grid-container">
     <div class="brand-title"><a href="/">{{ if .Site.Params.identity.general.logo}}<img src="{{relURL (.Site.Params.identity.general.logo)}}" class="sitelogo">{{else if os.FileExists "static/images/logo.png" }}<img src="{{relURL "/images/logo.png"}}" class="sitelogo">{{end}}</a></div>
-      <a class="toggle-button">
+      <a class="header-links-toggle-button">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </a>
-    <div class="navbar-links">
+    <nav class="header-links">
       <ul>
       {{- $currentPage := . }}
       {{- range .Site.Menus.main }}
@@ -36,21 +38,22 @@
         {{- end}}
       {{- end}}
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </div>
+</header>
   <script>
-    const toggleButton = document.getElementsByClassName('toggle-button')[0]
-    const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+    const headerLinksToggleButton = document.getElementsByClassName('header-links-toggle-button')[0]
+    const headerLinks = document.getElementsByClassName('header-links')[0]
      
-     toggleButton.addEventListener('click', () => {
-    navbarLinks.classList.toggle('active')
+    headerLinksToggleButton.addEventListener('click', () => {
+    headerLinks.classList.toggle('active')
     })
   </script>
   {{- partial "header/header-section.html" . }}
   {{if .Section}}
     <style>div.sectionheader{border-radius:0px 0px 10px 10px;}</style>
   {{else}}
-    <style>nav.navbar{border-radius:0px 0px 10px 10px;}</style>
+    <style>header.header{border-radius:0px 0px 10px 10px;}</style>
   {{end}}
 <div class="pageheaderpadding" {{if eq .Site.Params.psa.enable true}}{{ if eq .Site.Params.psa.largedesign true}}style="margin-top:120px;"{{else}}style="margin-top:100px;"{{end}}{{else}}style="margin-top:80px;"{{end}}></div>
 {{- if eq .Site.Params.psa.enable true}}
