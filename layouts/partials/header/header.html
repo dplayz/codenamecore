@@ -1,44 +1,42 @@
 {{- $psalettercount := .Site.Params.psa.content | strings.Count "" }}
-{{ if eq .Site.Params.psa.enable true}}
-<div 
-  {{- if eq .Site.Params.psa.largedesign true}}
-    class="psa psa-height-40"
-  {{- else}}
-  class="psa psa-height-20"{{- end}}
-  {{- if .Site.Params.psa.color }}
-    style="background:{{.Site.Params.psa.color}};"
-  {{- else -}}
-    style="background:yellow;"{{- end -}}>
-  {{.Site.Params.psa.content | markdownify}}
-</div>
-{{ end }}
-
-<header class="header"{{- if eq .Site.Params.psa.enable true}}{{if eq .Site.Params.psa.largedesign true}} style="top:40px;"{{else}} style="top:20px;"{{end}}{{else}} style="top:0px;"{{end}}>
+<header class="header" id="pageheader">
   <div class="header-grid-container">
-    <div class="brand-title"><a href="/">{{ if .Site.Params.identity.general.logo}}<img src="{{relURL (.Site.Params.identity.general.logo)}}" class="sitelogo">{{else if os.FileExists "static/images/logo.png" }}<img src="{{relURL "/images/logo.png"}}" class="sitelogo">{{end}}</a></div>
+    {{ if eq .Site.Params.psa.enable true}}
+    <div class="header-psa-grid-container">
+      {{.Site.Params.psa.content | markdownify}}
+    </div>
+    {{ end }}
+    <div class="header-main-grid-container">
+      <div class="brand-title">
+        <a href="/">{{ if .Site.Params.identity.general.logo}}<img src="{{relURL (.Site.Params.identity.general.logo)}}" class="sitelogo">{{else if os.FileExists "static/images/logo.png" }}<img src="{{relURL "/images/logo.png"}}" class="sitelogo">{{end}}</a>
+      </div>
       <a class="header-links-toggle-button">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </a>
-    <nav class="header-links">
-      <ul>
-      {{- $currentPage := . }}
-      {{- range .Site.Menus.main }}
-        {{- if .HasChildren}}
-          <li><div class="dropdown">
-            <a class="dropbtn">{{ .Name }}</a>
-            <div class="dropdown-content">
-            {{- range .Children }}
-              <a href="{{.Params.URL}}">{{.Name}}</a>
-            {{- end}}
-          </li>
-        {{- else}}
-          <li><a href="{{.Params.URL}}">{{.Name}}</a></li>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <nav class="header-links">
+        <ul>
+        {{- $currentPage := . }}
+        {{- range .Site.Menus.main }}
+          {{- if .HasChildren}}
+            <li><div class="dropdown">
+              <a class="dropbtn">{{ .Name }}</a>
+              <div class="dropdown-content">
+              {{- range .Children }}
+                <a href="{{.Params.URL}}">{{.Name}}</a>
+              {{- end}}
+            </li>
+          {{- else}}
+            <li><a href="{{.Params.URL}}">{{.Name}}</a></li>
+          {{- end}}
         {{- end}}
-      {{- end}}
-      </ul>
-    </nav>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-section-grid-container">
+      {{- partial "header/header-section.html" . }}
+    </div>
   </div>
 </header>
   <script>
@@ -49,18 +47,3 @@
     headerLinks.classList.toggle('active')
     })
   </script>
-  {{- partial "header/header-section.html" . }}
-  {{if .Section}}
-    <style>div.sectionheader{border-radius:0px 0px 10px 10px;}</style>
-  {{else}}
-    <style>header.header{border-radius:0px 0px 10px 10px;}</style>
-  {{end}}
-<div class="pageheaderpadding" {{if eq .Site.Params.psa.enable true}}{{ if eq .Site.Params.psa.largedesign true}}style="margin-top:120px;"{{else}}style="margin-top:100px;"{{end}}{{else}}style="margin-top:80px;"{{end}}></div>
-{{- if eq .Site.Params.psa.enable true}}
-  <style>div.sectionheader{top:100px}</style>
-  {{- if ne .Site.Params.psa.largedesign true}}{{if ge $psalettercount 60}}<style>@media(max-width:619px){div.psa{height:40px!important;}nav.navbar{top:40px!important;}div.pageheaderpadding{margin-top:120px!important;}div.sectionheader{top:120px;}}</style>{{end}}{{end}}
-  {{- if eq .Site.Params.psa.largedesign true}}
-  <style>div.sectionheader{top:120px!important;}</style>
-  {{- if gt $psalettercount 150}}{{ warnf "\nTIP: You should use limit your characters within your notice with no more than 150 characters for better mobile compatability."}}{{end}}
-  {{end}}
-{{end}}
