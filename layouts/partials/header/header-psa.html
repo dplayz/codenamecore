@@ -24,7 +24,7 @@
     </div>
     {{- end}}
     {{- else }}
-    <div data-nosnippet class="header-psa-grid-item">
+    <div data-nosnippet class="header-psa-grid-item" {{- if .color}}style="background-color:{{.color}};" {{end}}>
     {{.content | markdownify}}
     </div>
     {{- end}}
