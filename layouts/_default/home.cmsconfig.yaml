@@ -225,9 +225,12 @@ collections:
                   widget: list
                   fields:
                       - { label: "Announcement Content", name: content, widget: string }
+                      - { label: "Background Color", name: color, widget: color, required: false} 
                       - { label: "Only display one time / enable close button", name: oneTime, widget: boolean, required: false, default: false }
                       - { label: "One-Time Announcement ID", name: id, widget: string, required: false }   
-                      - { label: "One-Time Announcement Button Text", name: buttonText, widget: string, required: false}                    
+
+                      - { label: "One-Time Announcement Button Text", name: buttonText, widget: string, required: false} 
+                      - { label: "One-Time Announcement Button Color", name: buttonColor, widget: color, required: false}                    
             - label: 'Theme Configuration'
               name: theme
               required: false

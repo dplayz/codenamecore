@@ -6,16 +6,16 @@
         Not a web admin? Report it to your web administrator to get fixed.
     </div>
     {{- else}}
-    <div id="header-psa-onetime-{{.id}}" class="header-psa-grid-item header-psa-onetime">
+    <div id="header-psa-onetime-{{.id}}" class="header-psa-grid-item header-psa-onetime" {{- if .color}}style="background-color:{{- .color}};" {{- end}}>
     {{.content | markdownify}}
-    <button class="header-psa-onetime-close-button" onclick="var headerPSAOneTimeContentId = {{.id}}; headerPSAContentToggle(headerPSAOneTimeContentId)">{{- if .buttonText}}{{- .buttonText}}{{- else}}Close{{- end}}</button>
+    <button class="header-psa-onetime-close-button" {{- if .buttonColor}}style="background-color:{{- .buttonColor}};" {{- end}} onclick="var headerPSAOneTimeContentId = {{.id}}; headerPSAContentToggle(headerPSAOneTimeContentId)">{{- if .buttonText}}{{- .buttonText}}{{- else}}Close{{- end}}</button>
     <script>
         var headerPSAContentDisplay = document.getElementById({{print "header-psa-onetime-" (.id) }});
         var headerPSAOneTimeEntryChecker = localStorage.getItem({{.id}});
         if (headerPSAOneTimeEntryChecker !== null){ 
-            console.log("{{.id}} entry exists in the localStorage")
+            console.log("{{.id}} entry exists in the localStorage, keeping content hidden")
         } else {
-            console.log("{{.id}} entry does not exist in the localStorage")
+            console.log("{{.id}} entry does not exist in the localStorage, displaying content")
             var headerPSAOneTimeContentDisplay = document.getElementById('header-psa-onetime-'+ '{{.id}}');
             headerPSAOneTimeContentDisplay.classList.toggle('headerPsaOneTimeEntryActive');
         }
