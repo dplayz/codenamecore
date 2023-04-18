@@ -29,9 +29,23 @@ div.header-grid-container .brand-title{
 	place-self: start;
 }
 div.header-psa-grid-container {
-	padding-top:10px;
-	padding-bottom:10px;
 	background-color:var(--psa-bg-color, yellow);
+}
+div.header-psa-grid-item{
+	padding-top:5px;
+	padding-bottom:5px;
+	border-bottom:2px solid black;
+}
+div.header-psa-onetime{
+	display: none;
+}
+button.header-psa-onetime-close-button{
+	border: 1.5px solid black;
+	border-radius: 5px;
+	font-weight:bolder;
+}
+div.headerPsaOneTimeEntryActive{
+	display:block;
 }
 .sectionheader{
 	width:100%;

@@ -1,11 +1,13 @@
 {{- $psalettercount := .Site.Params.psa.content | strings.Count "" }}
 <header class="header" id="pageheader">
   <div class="header-grid-container">
-    {{ if eq .Site.Params.psa.enable true}}
+    {{-  if eq .Site.Params.psa.enable true}}
+    {{- with .Site.Params.psa.entries}}
     <div class="header-psa-grid-container">
-      {{.Site.Params.psa.content | markdownify}}
+      {{- partial "header/header-psa.html" .}}
     </div>
-    {{ end }}
+    {{- end}}
+    {{- end }}
     <div class="header-main-grid-container">
       <div class="brand-title">
         <a href="/">{{ if .Site.Params.identity.general.logo}}<img src="{{relURL (.Site.Params.identity.general.logo)}}" class="sitelogo">{{else if os.FileExists "static/images/logo.png" }}<img src="{{relURL "/images/logo.png"}}" class="sitelogo">{{end}}</a>
