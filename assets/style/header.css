@@ -36,6 +36,10 @@ div.header-psa-grid-item{
 	padding-bottom:5px;
 	border-bottom:2px solid black;
 }
+div.header-psa-grid-item img{
+	max-width:20px;
+	display: inline;
+}
 div.header-psa-onetime{
 	display: none;
 }
