@@ -1,12 +1,12 @@
 {{- range .}}
     {{if eq .oneTime true}}
     {{- if not .id}}
-    <div id="header-psa-onetime-error" class="header-psa-grid-item header-psa-onetime-error">
+    <div data-nosnippet id="header-psa-onetime-error" class="header-psa-grid-item header-psa-onetime-error">
         Failed to add One-Time PSA Entry. You must provide a One-Time PSA ID in order to work. <br>
         Not a web admin? Report it to your web administrator to get fixed.
     </div>
     {{- else}}
-    <div id="header-psa-onetime-{{.id}}" class="header-psa-grid-item header-psa-onetime" {{- if .color}}style="background-color:{{- .color}};" {{- end}}>
+    <div data-nosnippet id="header-psa-onetime-{{.id}}" class="header-psa-grid-item header-psa-onetime" {{- if .color}}style="background-color:{{- .color}};" {{- end}}>
     {{.content | markdownify}}
     <button class="header-psa-onetime-close-button" {{- if .buttonColor}}style="background-color:{{- .buttonColor}};" {{- end}} onclick="var headerPSAOneTimeContentId = {{.id}}; headerPSAContentToggle(headerPSAOneTimeContentId)">{{- if .buttonText}}{{- .buttonText}}{{- else}}Close{{- end}}</button>
     <script>
@@ -24,7 +24,7 @@
     </div>
     {{- end}}
     {{- else }}
-    <div class="header-psa-grid-item">
+    <div data-nosnippet class="header-psa-grid-item">
     {{.content | markdownify}}
     </div>
     {{- end}}
