@@ -224,7 +224,7 @@ collections:
                   required: false
                   widget: list
                   fields:
-                      - { label: "Announcement Content", name: content, widget: string }
+                      - { label: "Announcement Content", name: content, widget: markdown }
                       - { label: "Background Color", name: color, widget: color, required: false} 
                       - { label: "Only display one time / enable close button", name: oneTime, widget: boolean, required: false, default: false }
                       - { label: "One-Time Announcement ID", name: id, widget: string, required: false }   
