@@ -1,13 +1,7 @@
 html, body{
-	background:var(--page-background-color); 
 	margin:0;
 	padding:0;
 	text-align:center;
-}
-@media(prefers-color-scheme: dark) {
-	body {
-		background:var(--page-background-color-dark); 
-	}
 }
 body, button{
 	font-family: var(--font-preferences);
