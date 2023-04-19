@@ -1,0 +1,16 @@
+{{- with .Site.Params.theme.thirdPartyIcons.fontawesome}}
+    {{- if eq .type "kits" }}
+    <script src="https://kit.fontawesome.com/{{.kits.kitName}}.js" crossorigin="anonymous"></script>
+    {{- else if eq .type "cdnjs"}}
+        {{- if (or (eq .cdnjs.version "6.4.2") (eq .cdnjs.version 6) ) }}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/v4-shims.min.js" integrity="sha512-jwXCc38I7s9ikGI6qbqIcktgJDVVppplsNQ5DgW7VbUZCVvdo31qQnpgiU7aDQRa3pETbn9LPnOo97r4Id5/cg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v5-font-face.min.css" integrity="sha512-W+lqPhhunEwz9brBt8usGl0j+mtLGggjFC/9RHzyFyDKe/SSkCgQ08Y9ZZSNYez5biH7IhJU66+iUiQagtSm8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        {{- else if (or (eq .cdnjs.version "5.15.4") (eq .cdnjs.version 5) ) }}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/v4-shims.min.js" integrity="sha512-VoCKE84b8mEoHVEtuynO91AlOwMwqkmqfYidt+Jykpqo0EXgQq1Ya9OT+QX4o4CD3TAmf9o4Q0EJY2aq0uNUDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        {{- end}}
+    {{- end}}
+{{- end}}

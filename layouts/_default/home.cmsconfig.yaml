@@ -384,6 +384,59 @@ collections:
                       widget: select
                       required: false
                       options: [listStyle, boxStyle]
+              - label: "Third Party Icons"
+                name: thirdPartyIcons
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - label: FontAwesome
+                    name: fontawesome
+                    widget: object
+                    collapsed: true
+                    required: false
+                    fields:
+                      - { name: enable, label: Enable FontAwesome, widget: boolean, required: false, default: false }
+                      - name: type
+                        label: FontAwesome Host
+                        widget: select
+                        options:
+                          - label: "FontAwesome's Kit Service"
+                            value: kits
+                          - label: "CloudFlare's cdnjs Service"
+                            value: cdnjs
+                        default: cdnjs
+                        required: false
+                      - name: kits
+                        label: FontAwesome's Kit Service Options
+                        widget: object
+                        collapsed: true
+                        required: false
+                        fields:
+                          - { name: kitName, label: Kit Name, widget: string, required: false, default: "0" }
+                      - name: cdnjs
+                        label: Cloudflare's cdnjs Options
+                        widget: object
+                        collapsed: true
+                        required: false
+                        fields:
+                          - name: version
+                            label: FontAwesome's Version
+                            widget: select
+                            options:
+                              - label: FontAwesome 6 (6.4.2)
+                                value: 6.4.2
+                              - label: FontAwesome 5 (5.15.4)
+                                value: 5.15.4
+                            required: false
+                            default: 6.4.2
+
+
+
+
+
+
+
             - label: "CMS Configuration"
               name: cms
               widget: object
