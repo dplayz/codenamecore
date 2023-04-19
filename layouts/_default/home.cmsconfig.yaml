@@ -148,7 +148,7 @@ collections:
                   widget: object
                   collapsed: true
                   fields: 
-                    - { name: logo, label: 'Site Logo', widget: image, default: /images/logo, required: false }
+                    - { name: logo, label: 'Site Logo', widget: image, default: /images/logo.png, required: false }
                     - { name: description, label: 'Site Default Description', widget: text, required: false }
                     - { label: "Favicon URL", name: favicon, widget: image, default: "favicon.ico", required: false }
                     - { label: "Default Page Preview Thumbnail", name: pagePreviewImage, widget: image, required: false}
@@ -506,7 +506,7 @@ collections:
                 name: params
                 widget: object
                 fields:
-                - { label "URL", name: url, widget: string, required: false } 
+                - { label: "URL", name: url, widget: string, required: false, default: / } 
               - { label: "Weight", name: weight, widget: number, value_type: "int", min: 0, step: 1 }
               - { label: "Parent (use identifier)", name: parent, required: false }
           - label: Footer Links
