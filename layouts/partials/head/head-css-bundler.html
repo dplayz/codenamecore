@@ -1,4 +1,5 @@
 {{- $cssvariablescss := resources.Get "style/css-variables.css" | fingerprint }}
+{{- $pagecolorcss := resources.Get "style/pagecolor.css" | fingerprint }}
 {{- $generalcss := resources.Get "style/general.css" | fingerprint }}
 {{- $headercss := resources.Get "style/header.css" | fingerprint }}
 {{- $anchortagcss := resources.Get "style/anchortag.css" | fingerprint }}
@@ -27,6 +28,7 @@
 {{- $stylebundle := slice 
     $cssvariablescss
     $generalcss
+    $pagecolorcss
     $headercss
     $anchortagcss
     $anchorbuttoncss
