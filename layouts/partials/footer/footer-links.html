@@ -1,17 +1,17 @@
 <div class="footer-links-grid-container">
     {{- range .Site.Menus.footer }}
         <div class="footer-links-grid-item">
-                <p><b>{{.Name}}</b></p>
+                <p><b>{{- with .Params.thirdPartyIconClass}}<i class="{{.}}"></i>&nbsp;{{- end}}{{.Name}}</b></p>
                 {{- range .Params.links}}
                 {{- if .links}}
                 <li>{{.name}}</li>
                     <ul>
                     {{range .links}}
-                        <li><a href="{{.url}}">{{.name}}</a></li>
+                        <li><a href="{{.url}}">{{- with .thirdPartyIconClass}}<i class="{{.}}"></i>&nbsp;{{- end}}{{.name}}</a></li>
                     {{end}}
                     </ul>
                 {{- else}}
-                <li><a href="{{.url}}">{{.name}}</a></li>
+                <li><a href="{{.url}}">{{- with .thirdPartyIconClass}}<i class="{{.}}"></i>&nbsp;{{- end}}{{.name}}</a></li>
                 {{- end}}
                 {{- end}}
         </div>        

@@ -41,14 +41,14 @@
         {{- range .Site.Menus.main }}
           {{- if .HasChildren}}
             <li><div class="dropdown">
-              <a class="dropbtn">{{ .Name }}</a>
+              <a class="dropbtn">{{- with .Params.thirdPartyIconClass}}<i class="{{.}}"></i>&nbsp;{{- end}}{{ .Name }}</a>
               <div class="dropdown-content">
               {{- range .Children }}
-                <a href="{{.Params.URL}}">{{.Name}}</a>
+                <a href="{{.Params.URL}}">{{- with .Params.thirdPartyIconClass}}<i class="{{.}}"></i>&nbsp;{{- end}}{{.Name}}</a>
               {{- end}}
             </li>
           {{- else}}
-            <li><a href="{{.Params.URL}}">{{.Name}}</a></li>
+            <li><a href="{{.Params.URL}}">{{- with .Params.thirdPartyIconClass}}<i class="{{.}}"></i>&nbsp;{{- end}}{{.Name}}</a></li>
           {{- end}}
         {{- end}}
         </ul>
