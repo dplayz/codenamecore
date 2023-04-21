@@ -4,7 +4,7 @@ header.header {
 	top:0;
 	display: grid;
 	grid-template-rows: fit-content(100%) fit-content(100%) fit-content(100%);
-	row-gap:1px;
+
 	position: sticky;
 	width:100%;
 	align-items: center;
@@ -12,6 +12,9 @@ header.header {
 	color: black;
 	min-height:80px;
 	border-radius:0px 0px 10px 10px;
+}
+div.header-grid-container{
+	margin-top:auto;
 }
 div.header-main-grid-container{
 	display:grid;
@@ -22,11 +25,17 @@ div.header-main-grid-container{
 	padding-top:5px;
 	padding-bottom:5px;
 }
-div.header-grid-container .brand-title{
+div.brand-title{
 	margin-left:5px;
 	margin-right:5px;
 	margin-top:auto;
 	place-self: start;
+}
+.header-main-brand-title-link-container{
+	display: grid;
+	grid-template-columns: auto auto;
+	text-decoration: none;
+	color:black;
 }
 div.header-psa-grid-container {
 	background-color:var(--psa-bg-color, yellow);
@@ -51,6 +60,12 @@ button.header-psa-onetime-close-button{
 div.headerPsaOneTimeEntryActive{
 	display:block;
 }
+div.subservice-brand-title{
+	margin-top:auto;
+	margin-bottom:auto;
+	display:grid; 
+	grid-template-columns:fit-content(100%) fit-content(100%) fit-content(100%); 
+}
 .sectionheader{
 	width:100%;
 	height:40px;
@@ -58,6 +73,7 @@ div.headerPsaOneTimeEntryActive{
 	text-align:left;
 	font-size:25px;
 	text-indent:15px;
+	border-radius:0px 0px 10px 10px;
 }
 .sectionheader *{
 	margin-top:4px;
@@ -73,6 +89,7 @@ div.headerPsaOneTimeEntryActive{
 }
 
 img.sitelogo {max-width:120px; max-height:65px;}
+img.subservicelogo {max-height:35px; margin-top:auto; margin-bottom:auto;}
 nav.header-links {
 	margin-top:auto;
 	margin-bottom:auto;
@@ -159,8 +176,8 @@ nav.header-links .dropdown-content {
 	}
 	div.header-main-grid-container{
 		grid-template-areas:
-		"hm-BT hm-LTB hm-LTB hm-LTB"
-		"hm-L hm-L hm-L hm-L";
+		"hm-BT hm-LTB"
+		"hm-L hm-L";
 	}
 	.header-links-toggle-button {
 		display: flex;
@@ -230,6 +247,9 @@ div.psa img{
 		background-color:#333;
 	}
 	.sectionheader b{
+		color:white;
+	}
+	.header-main-brand-title-link-container{
 		color:white;
 	}
 	nav.header-links li a {
