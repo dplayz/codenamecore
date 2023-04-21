@@ -1,0 +1,12 @@
+    {{- $cssvariablescss := resources.Get "style/css-variables.css" | fingerprint }}
+    {{- $generalcss := resources.Get "style/general.css" | fingerprint }}
+    {{- $headercss := resources.Get "style/header.css" | fingerprint }}
+    {{- $stylebundle := slice 
+        $cssvariablescss
+        $generalcss
+        $headercss
+        | resources.Concat "headerintegrationtool.css" }}
+    <link rel="stylesheet" href="{{ $stylebundle.RelPermalink }}">
+        {{- if and (or (eq .Params.hideHeader true) (eq .Params.infopage true))}}{{else}}
+        {{ partial "header/header.html" .}}
+        {{- end}}

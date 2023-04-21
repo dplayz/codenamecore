@@ -9,6 +9,11 @@ outputFormats:
     baseName: cmsconfig
     mediaType: application/yaml
     notAlternative: false
+  headerintegrationtool:
+    name: headerIntegrationTool
+    baseName: headerIntegrationTool
+    mediaType: text/html
+    notAlternative: false
 markup:
   goldmark:
     extensions:

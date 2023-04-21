@@ -9,8 +9,26 @@
     {{- end}}
     {{- end }}
     <div class="header-main-grid-container">
-      <div class="brand-title">
-        <a href="/">{{ if .Site.Params.identity.general.logo}}<img src="{{relURL (.Site.Params.identity.general.logo)}}" class="sitelogo">{{else if os.FileExists "static/images/logo.png" }}<img src="{{relURL "/images/logo.png"}}" class="sitelogo">{{end}}</a>
+        <div class="brand-title">
+          <a href="{{.Site.BaseURL}}" class="header-main-brand-title-link-container">
+            {{ if .Site.Params.identity.general.logo}}
+              <img src="{{relURL (.Site.Params.identity.general.logo)}}" class="sitelogo">
+              {{else if os.FileExists "static/images/logo.png" }}
+              <img src="{{relURL "/images/logo.png"}}" class="sitelogo">
+              {{end}}
+
+            {{- if eq .Site.Params.headerIntegrationTool.subServiceTitle.enable true }}
+            <div class="subservice-brand-title">
+                <span style="margin-top:auto; margin-bottom:auto">|</span>
+                {{- with .Site.Params.headerIntegrationTool.subServiceTitle.serviceLogo}}
+                <img src="{{.}}" style="margin-left:2px;" class="subservicelogo">
+                {{- end}}
+                {{- with .Site.Params.headerIntegrationTool.subServiceTitle.serviceName}}
+                <span style="margin-top:auto; margin-bottom:auto;">{{.}}</span>
+                {{- end}}
+            </div>
+            {{- end}}
+          </a>  
       </div>
       <a class="header-links-toggle-button">
         <span class="bar"></span>
