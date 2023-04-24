@@ -384,8 +384,8 @@ collections:
                       widget: select
                       required: false
                       options: [listStyle, boxStyle]
-              - label: "Third Party Icons"
-                name: thirdPartyIcons
+              - label: "Icon Fonts"
+                name: iconFonts
                 widget: object
                 required: false
                 collapsed: true
