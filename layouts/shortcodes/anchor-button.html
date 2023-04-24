@@ -1,0 +1,1 @@
+<a {{- with (.Get "href" )}} href="{{.}}"{{- end}} class="button {{- with (.Get "class")}}{{- .}}{{- end}}">{{- with (.Get "iconClass")}}<i class="{{.}}"></i>&nbsp;{{- end}}{{- with (.Get "text")}}{{.}}{{- end}}</a>
