@@ -1,3 +1,12 @@
+{{-  if eq .Site.Params.psa.enable true}}
+<header id="pageheader" class="header" style="min-height:unset;">
+    {{- with .Site.Params.psa.entries}}
+    <div class="header-psa-grid-container">
+      {{- partial "header/header-psa.html" .}}
+    </div>
+    {{- end}}
+</header>
+{{- end }}
 <div class="infopage">
     {{.Content}}
 </div>
