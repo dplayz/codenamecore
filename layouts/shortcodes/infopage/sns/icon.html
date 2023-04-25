@@ -1,0 +1,12 @@
+{{if eq .Page.Params.infopage true}}
+<a style="color:white; text-decoration:none; font-size:32px;" {{- with (.Get "link" )}} href="{{.}}"{{- end}} target="_parent">
+    {{- with (.Get "iconClass")}}
+        <i class="{{.}}" style="margin:auto; vertical-align:middle;"></i>
+    {{- end}}
+    {{- with (.Get "iconSrc")}}
+    <img src="{{.}}" style="margin:auto; vertical-align:middle; width:32px;" loading="lazy">
+    {{- end}}
+</a>
+{{else}}
+<p>This shortcode will only work for infopage</p>
+{{end}}
