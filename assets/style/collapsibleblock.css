@@ -45,3 +45,6 @@ div.collapsible-content{
 	background-color: none;
 	display:none;
 }
+div.collapsible-content + br{
+	display:block;
+}
