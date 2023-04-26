@@ -2,16 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="admin.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/cmsconfig.yaml" type="text/yaml" rel="cms-config-url">
+    <link href="/cmsconfig.yaml" type="text/yaml" rel=  "cms-config-url">
     <title>Content Manager</title>
   </head>
   <body>
-    <!-- Include the script that builds the page and powers Static CMS -->
-    <script src="https://unpkg.com/@staticcms/app@^1.0.0/dist/static-cms-app.js"></script>
+    <!-- Include the script and stylesheet that builds the page and powers Static CMS v2-->
+    <script src="https://unpkg.com/@staticcms/app@^2.0.0/dist/static-cms-app.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@staticcms/app@^2.0.0/dist/main.css" /> 
+    <!--Add a custom css file that uses weird hacks to make responsive design until the creator do a responsive design.-->
+    <link rel="stylesheet" href="admin.css">
     <!-- Include script that will bring Hugo shortcodes to the CMS editor-->
     <script src="/admin/shortcodes.js"></script>
+    <!--Initialize the CMS (because IDK why, docs said)-->
     <script>
       window.CMS.init();
     </script>

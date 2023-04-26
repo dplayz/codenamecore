@@ -21,39 +21,40 @@ div.e169jtoy0{
     font-size:0px !important;
   }
 }
+.relative.flex.h-16.items-center.justify-between{
+  overflow-y:scroll !important;
+}
+.relative.flex.h-16.items-center.justify-between::-webkit-scrollbar{
+  display: none !important;;
+}
+@media(max-width: 639px) {
+  .w-main.left-64.px-5.py-4.overflow-y-auto.h-main.relative.styled-scrollbars,  
+  .w-main.left-64.overflow-hidden.h-main.relative.styled-scrollbars{
+    left:unset !important;
+  }
+  .w-main.left-64.px-5.py-4.overflow-y-auto.h-main.relative.styled-scrollbars{
+    width:65% !important;
+  }
+  .w-sidebar-expanded{
+    width:40%;
+  }
+}
 @media (max-width: 799px) {
-
-    .css-1qw96cp{              
-      display: block !important;
+    .grid.grid-cols-editor.h-full{
+      grid-template-columns: auto !important;
     }
-
-    .css-1s1xrnn {
-      display: block !important;
+    .w-preview, #preview-pane{
+      display:block!important;
+      height: unset !important;
+      position:relative !important;
     }
-    .css-mx8tbv{
-      max-width: none !important;
-      display: block !important;
-    }
-    .css-104dqk8-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton, .css-12yqrwa-AppHeaderNavLink-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton {
-      margin: 0  !important;
-      padding: 16px 7px  !important;
-    }
-    .css-1ago99h  {
-      padding-left: 0 !important;
-      width:100% !important;
-      display: block !important;
-    }
-    .css-mx8tbv {
-      width: 100%  !important;
-      position: static  !important;
-      margin-bottom: 30px  !important;
-    }
-    .css-1kspmvt{
-      position: relative !important;
-      top: 0px !important;
+    .w-editor-only{
+      max-width:unset !important;
+      min-width:unset !important;
+      width:100%!important;
     }
     .MuiToolbar-root.MuiToolbar-gutters.MuiToolbar-regular.css-xzdtk7 {
-      max-width:799px !important;
+      max-width:799px !important; 
       width:100% !important;
       min-width:0px !important;
     }
@@ -117,7 +118,7 @@ div.e169jtoy0{
       display: inline-block  !important;
       margin-top: 0  !important;
     }
-    .css-6o0rf-PreviewPaneContainer-ControlPaneContainer{
+    .w-preview{
       width: 100% !important;
     }
     .css-1jydmlz-PreviewContainer{
