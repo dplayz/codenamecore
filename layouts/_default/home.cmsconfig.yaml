@@ -560,6 +560,7 @@ collections:
                 widget: object
                 fields:
                 - { label: "URL", name: url, widget: string, required: false, default: / } 
+                - { label: "Icon Font Class", name: iconClass, widget: string, required: false}
               - { label: "Weight", name: weight, widget: number, value_type: "int", min: 0, step: 1 }
               - { label: "Parent (use identifier)", name: parent, required: false }
           - label: Footer Links
@@ -574,6 +575,7 @@ collections:
                 name: params
                 widget: object
                 fields:
+                  - { label: "Icon Font Class", name: iconClass, widget: string, required: false}
                   - label: Links
                     name: links
                     widget: list
@@ -582,6 +584,7 @@ collections:
                     fields:
                     - { label: "Name", name: name, widget: string}
                     - { label: "URL", name: url, widget: string, required: false}
+                    - { label: "Icon Font Class", name: iconClass, widget: string, required: false}
                     - label: Links
                       name: links
                       widget: list
@@ -590,4 +593,5 @@ collections:
                       fields:
                         - { label: "Name", name: name, widget: string, required: false}
                         - { label: "URL", name: url, widget: string, required: false}
+                        - { label: "Icon Font Class", name: iconClass, widget: string, required: false}
         - {name: outputs, widget: hidden}
