@@ -430,12 +430,56 @@ collections:
                                 value: 5.15.4
                             required: false
                             default: 6.4.2
+                  - name: bootstrapIcons
+                    label: Bootstrap Icons
+                    widget: object
+                    collapsed: true
+                    required: false
+                    fields:
+                      - { name: enable, label: Enable FontAwesome, widget: boolean, required: false, default: false }
+                      - name: type
+                        label: Bootstrap Icon Host Host
+                        widget: select
+                        options:
+                          - label: "JSDeliver"
+                            value: jsdeliver
+                          - label: "CloudFlare's cdnjs Service"
+                            value: cdnjs
+                        default: jsdeliver
+                        required: false
 
-
-
-
-
-
+                  - name: custom
+                    label: Custom Icon Fonts
+                    widget: object
+                    required: false
+                    collapsed: true
+                    fields:
+                      - name: assets
+                        label: Assets
+                        widget: list
+                        allow_add: true
+                        required: false
+                        collapsed: true
+                        fields:
+                          - { label: "Enable", name: enable, widget: boolean, required: false }
+                          - name: css
+                            label: CSS Paths
+                            collapsed: true
+                            required: false
+                            widget: list
+                            fields:
+                              - name: csspaths
+                                label: Path/URL
+                                widget: string
+                          - name: js
+                            label: Javascript Paths
+                            collapsed: true
+                            required: false
+                            widget: list
+                            fields:
+                              - name: jspaths
+                                label: Path/URL
+                                widget: string
 
             - label: "CMS Configuration"
               name: cms
