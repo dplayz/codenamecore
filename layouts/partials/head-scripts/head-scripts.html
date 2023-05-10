@@ -1,0 +1,41 @@
+<!--Head Scripts Error Notices-->
+{{- partial "head-scripts/error-notices/js-blocked.html" . }}
+{{- partial "head-scripts/error-notices/IE-lack-of-support-notice.html" .}}
+
+<!--Head Scripts PWA Service Worker Initializer - Used to Initialize Service Workers-->
+{{- if ne hugo.Environment "production" }}{{- else}}
+<script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/sw.js', { scope: '.' })
+          .then(function(registration) {
+              console.log('Service Worker Registered');
+          });
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              console.log('Service Worker Ready');
+          });
+}
+</script>
+{{end}}
+
+<!--Head Scripts JQuery Callback - Used to initialize JQuery Library-->
+<!--DEPRECATION NOTICE: Potential integration removal is planned-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!--Head Scripts Dynamic Content Backend - URL Based Content Display-->
+<style>div.dynamicContent{display:none;}</style>
+<script>
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+</script>
+
+<!--Head Scripts Icon Fonts Assets Integration - Used to integrate Icon Fonts -->
+{{- partial "head-scripts/iconFonts-integration.html" . }}  

@@ -1,4 +1,95 @@
-{{- partial "head/head-basic-info.html" . }}
+<!--Head Page Basic Info - NOINDEX options-->
+{{-  if (or (eq .Site.Params.identity.webmaster.noIndexAll true) (eq .Params.noIndexPage true) (eq .Params.sitemapExclude true) (eq .Params.excludeFromCrawlers true) (eq .Params.unlisted true))}}
+<meta name="robots" content="noindex">
+{{- end}}
+<!--Head Page Basic Info - Viewport Instructions-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--Head Page Basic Info - <meta> theme-color tag instructions  -->
+{{- if not .Section}}
+    {{- with .Site.Params.theme.themeColor}}
+        {{if .dark}}
+            {{- with .light}}
+                <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{.}}">
+            {{- end}}
+        {{- else}}
+            {{- with .light}}
+                <meta name="theme-color" content="{{.}}">
+            {{- end}}
+        {{- end}}
+        {{- with .dark}}
+            <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{.}}">
+        {{- end}}
+    {{- end}}
+{{- else}}
+    {{- with .Site.GetPage (.Section) }}
+        {{if .Params.themeColor.dark}}
+            {{- with .Params.themeColor.light}}
+                <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{.}}">
+            {{- end}}
+        {{- else if .Params.themeColor.light}}
+            {{- with .Params.themeColor.light}}
+                <meta name="theme-color" content="{{.}}">
+            {{- end}}
+        {{- else}}
+            {{- with .Site.Params.theme.themeColor}}
+                {{if .dark}}
+                    {{- with .light}}
+                        <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{.}}">
+                    {{- end}}
+                {{- else}}
+                    {{- with .light}}
+                        <meta name="theme-color" content="{{.}}">
+                    {{- end}}
+                {{- end}}   
+            {{- end}}
+        {{- end}}
+        {{- if .Params.themeColor.dark }}
+            {{- with .Params.themeColor.dark}}
+                <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{.}}">
+            {{- end}}
+        {{- else if eq .Params.themeColor.disableDefaultDark true}}
+        {{- else}}
+            {{- with .Site.Params.theme.themeColor.dark}}
+                <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{.}}">
+            {{- end}}
+        {{- end}}
+    {{- end}}
+{{- end}}
+<!--Head Page Basic Info - Favicon delegation instructions -->
+{{- if .Site.Params.identity.general.favicon}}
+<link rel="icon" type="image/x-icon" href="{{relURL .Site.Params.theme.favicon}}">
+{{- else }}
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+{{- end}}
+<!--Head Website Assets - CSS Bundler/Builder-->
+{{- partial "head/head-css-bundler.html" . }}
+<link rel="manifest" href="{{relURL "/manifest.json"}}">
+<link rel="apple-touch-icon" href="{{relURL "/images/apple-touch-icon/152x152.png"}}">
+
+<!--Head Site Identity Options-->
+{{- with .Site.Params.identity.fbPageID}}<meta property="fb:pages" content="{{.}}" />{{end}}
+{{- with .Site.Params.identity.bingValidationCode}}<meta name="msvalidate.01" content="{{.}}" />{{end}}
+{{- with .Site.Params.identity.yandexValidationCode}}<meta name="yandex-verification" content="{{.}}" />{{end}}
+{{- with .Site.Params.identity.googleSiteVerificationCode}}<meta name="google-site-verification" content="{{.}}">{{end}}
+
+<!-- Head User Defined Partial - User-Defined options that can be configured at config file-->
 {{- partial "head/head-userdefined.html" . }}
-{{- partial "head/head-scripts.html" . }}
-{{- partial "head/head-meta-tags.html" . }}
+
+<!--Head Scripts Partial - Scripts placed at '<head>' tag-->
+{{- partial "head-scripts/head-scripts.html" .}}
+
+<!--Head Meta Tags - Webpage Meta Tags-->
+<title>{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ .Site.Title }}</title>
+<meta name="title" content="{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ .Site.Title }}">
+<meta name="description" content="{{- if .Params.description}}{{.Params.description}}{{- else if or .IsPage .IsSection}}{{- .Summary | default .Site.Params.identity.general.description}}{{- else}}{{.Site.Params.identity.general.description}}{{- end}}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ .Site.Title }}">
+<meta property="og:description" content="{{- if .Params.description}}{{.Params.description}}{{- else if or .IsPage .IsSection}}{{- .Summary | default .Site.Params.identity.general.description}}{{- else}}{{.Site.Params.identity.general.description}}{{- end}}">
+<meta property="og:image" content="{{if .Params.customPagePreviewImageURL }}{{ .Params.customPagePreviewImageURL | absURL }}{{ else }}{{ .Site.Params.identity.general.pagePreviewImage| absURL }}{{end}}">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ .Permalink }}">
+<meta property="twitter:title" content="{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ .Site.Title }}">
+<meta property="twitter:description" content="{{- if .Params.description}}{{.Params.description}}{{- else if or .IsPage .IsSection}}{{- .Summary | default .Site.Params.identity.general.description}}{{- else}}{{.Site.Params.identity.general.description}}{{- end}}}">
+<meta property="twitter:image" content="{{if .Params.customPagePreviewImageURL }}{{ .Params.customPagePreviewImageURL | absURL }}{{ else }}{{ .Site.Params.identity.general.pagePreviewImage | absURL }}{{end}}">
