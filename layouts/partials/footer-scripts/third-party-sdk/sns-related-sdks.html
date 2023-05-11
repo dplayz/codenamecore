@@ -1,3 +1,4 @@
+<!--Facebook Video SDK-->
 {{- if ne .Site.Params.disableFeature.fbSDK true}}
 {{- if .Site.Params.identity.sdk.fbSDKID}}
 <div id="fb-root"></div>
@@ -19,4 +20,9 @@
 };
 </script> 
 {{end}}
+{{end}}
+
+<!--Twitter SDK-->
+{{- if eq .Site.Params.disableFeature.twitterSDK true}}{{- else}}
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8" async defer></script>
 {{end}}

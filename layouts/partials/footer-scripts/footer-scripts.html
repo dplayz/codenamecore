@@ -1,10 +1,45 @@
-{{- partial "footer-scripts/netlify-identity-callback.html" . }}
+<!--Footer Scripts Medium Zoom Script-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S+Yti0U7QtuZvQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>	
+	const images = Array.from(document.querySelectorAll(".zoomable-img"));
+	images.forEach(img => {
+	  mediumZoom(img, {
+		margin: 0, /* The space outside the zoomed image */
+		background: 'rgba(0, 0, 0, 0.90)',
+		scrollOffset: 0, /* The number of pixels to scroll to close the zoom */
+		container: '#zoom-container', /* The viewport to render the zoom in */
+		template: '#zoom-template' /* The template element to display on zoom */
+	  });
+	});
+</script>
+
+<!--Footer Scripts Collapsible Script-->
+<script>	
+	var coll = document.getElementsByClassName("collapsible");
+	var i;
+	
+	for (i = 0; i < coll.length; i++) {
+	  coll[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+		var content = this.nextElementSibling;
+		if (content.style.maxHeight){
+		  content.style.maxHeight = content.scrollHeight + "px";
+		  setTimeout(() => {content.style.maxHeight = null; }, 480);
+		  setTimeout(() => {content.style.display = null; }, 1200);
+		  
+		} else {
+		  content.style.display = "block";
+		  content.style.maxHeight = content.scrollHeight + "px";
+		  setTimeout(() => { content.style.maxHeight = "100%"; }, 400);
+		} 
+	  });
+	}
+</script>
+<!--Footer Scripts Third Party Tools Partials-->
+{{- partial "footer-scripts/third-party-sdk/netlify-identity-callback.html" . }}
 {{- partial "footer-scripts/third-party-sdk/widgetbotcrate.html" . }}
 {{- partial "footer-scripts/third-party-sdk/onesignal-callback.html" . }}
-{{- partial "footer-scripts/third-party-sdk/google-translate.html" . }}
-{{- partial "footer-scripts/third-party-sdk/facebook-sdk.html" .}}
-{{- partial "footer-scripts/third-party-sdk/google-analytics-gtag.js.html" . }}
-{{- partial "footer-scripts/third-party-sdk/google-platform-sdk.html" . }}
-{{- partial "footer-scripts/third-party-sdk/twitter-sdks.html" . }}
-{{- partial "footer-scripts/medium-zoom.html" .}}
-{{- partial "footer-scripts/collapsible.html" . }}
+{{- partial "footer-scripts/third-party-sdk/google-ecosystem-related-tools.html" . }}
+{{- partial "footer-scripts/third-party-sdk/sns-related-sdks.html" .}}
+
+
