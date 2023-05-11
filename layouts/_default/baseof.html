@@ -21,7 +21,11 @@
             {{- if and (or (eq .Params.hideHeader true) (eq .Params.infopage true))}}{{- else}}
             {{- block "sidebar-container" . }}
             <aside id="sidebar" class="sidebar-container">
-                {{- if os.FileExists "layouts/partials/sidebar.html" }}{{ partial "sidebar/layout.html" . }}{{end}}
+                {{- if os.FileExists "layouts/partials/sidebar.html" }}
+                    {{- $sidebarcss := resources.Get "style/sidebar-layout.css" | fingerprint }}
+                    <link rel="stylesheet" href="{{ $sidebarcss.RelPermalink }}">
+                    {{ partial "sidebar.html" . }}
+                {{end}}
             </aside>
             {{- end}}
             {{- end}}

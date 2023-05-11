@@ -1,3 +1,0 @@
-{{- $sidebarcss := resources.Get "style/sidebar-layout.css" | fingerprint }}
-<link rel="stylesheet" href="{{ $sidebarcss.RelPermalink }}">
-{{ partial "sidebar.html" . }}
