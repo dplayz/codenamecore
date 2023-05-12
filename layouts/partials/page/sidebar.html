@@ -1,0 +1,17 @@
+{{- with .Site.Params.theme.sidebar.entries }}
+<!--Loops at the entries-->
+{{- range .}}
+    <!--Checks if we will use partial on this entry and if partial is defined-->
+    {{- if and (eq .usePartial true) .partialPath }}
+        {{- partial .partialPath .}}
+    {{- else}}
+    <!--Display the default fields-->
+    {{- with .title}}
+    <h3>{{.}}</h3>
+    {{- end}}
+    {{- with .content }} 
+        {{. | markdownify }}
+    {{- end}}
+    {{- end}}
+{{- end}}
+{{- end}}

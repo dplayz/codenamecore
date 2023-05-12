@@ -20,12 +20,13 @@
             {{- end}}
             {{- if and (or (eq .Params.hideHeader true) (eq .Params.infopage true))}}{{- else}}
             {{- block "sidebar-container" . }}
+            {{- if and (ne .Params.disableSidebar true) (eq .Site.Params.theme.sidebar.enable true) }}
             <aside id="sidebar" class="sidebar-container">
-                {{- if os.FileExists "layouts/partials/sidebar.html" }}
-                    {{- $sidebarcss := resources.Get "style/sidebar-layout.css" | fingerprint }}
-                    <link rel="stylesheet" href="{{ $sidebarcss.RelPermalink }}">
-                    {{ partial "sidebar.html" . }}
-                {{end}}
+                {{- $sidebarcss := resources.Get "style/sidebar-layout.css" | fingerprint }}
+                <link rel="stylesheet" href="{{ $sidebarcss.RelPermalink }}">
+                {{ partial "page/sidebar.html" . }}
+                <script>console.log("Sidebar enabled!")</script>
+            {{end}}
             </aside>
             {{- end}}
             {{- end}}
