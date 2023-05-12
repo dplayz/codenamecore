@@ -7,7 +7,7 @@
     {{- else}}
     <!--Display the default fields-->
     {{- with .title}}
-    <h3>{{.}}</h3>
+    <h3>{{. | markdownify }}</h3>
     {{- end}}
     {{- with .content }} 
         {{. | markdownify }}
