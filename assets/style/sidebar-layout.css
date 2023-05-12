@@ -1,15 +1,17 @@
 @media(min-width:800px){
-    .content-container {
-        float: left;
-        width: 70%;
-      }
-    .sidebar-container {
-        float: right;
-        width: 30%;
-      }
-    .footer-container {
-        clear: both;
+    div.main-container{
+      display: grid;
+      margin-right: 10px;
+      margin-left: 5px;
+      column-gap:5px;
+      grid-template-columns: 75% 25%;
     }
+}
+@media(max-width:800px){
+  aside#sidebar{
+    margin-left:5px;
+    margin-right:5px;
+  }
 }
 aside.sidebar-container iframe{
   border-radius:10px;
