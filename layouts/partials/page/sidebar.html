@@ -2,8 +2,8 @@
 <!--Loops at the entries-->
 {{- range .}}
     <!--Checks if we will use partial on this entry and if partial is defined-->
-    {{- if and (eq .usePartial true) .partialPath }}
-        {{- partial .partialPath .}}
+    {{- if and (eq .legacy.usePartial true) .legacy.partialPath }}
+        {{- partial .legacy.partialPath .}}
     {{- else}}
     <!--Display the default fields-->
     {{- with .title}}
