@@ -384,6 +384,31 @@ collections:
                       widget: select
                       required: false
                       options: [listStyle, boxStyle]
+              - label: Sidebar
+                name: sidebar
+                widget: object
+                collapsed: true
+                required: false
+                fields:
+                  - { label: Enabled, name: enabled, widget: boolean, required: false, default: false}
+                  - label: Entries
+                    name: entries
+                    widget: list
+                    collapsed: true
+                    required: false
+                    fields:
+                      - { label: Title, name: title, widget: string, required: false }
+                      - { label: Content, name: content, widget: markdown, required: false}
+                      - label: Legacy Sidebar Implementation (Partials implementation)
+                        name: legacy
+                        widget: object
+                        required: false
+                        collapsed: true
+                        fields:
+                          - { label: Use Partial, name: usePartial, widget: boolean, required: false }
+                          - { label: Partial Path, name: partialPath, widget: string, required: false }
+
+            
               - label: "Icon Fonts"
                 name: iconFonts
                 widget: object
