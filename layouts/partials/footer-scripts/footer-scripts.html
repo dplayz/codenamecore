@@ -17,25 +17,24 @@
 <script>	
 	var coll = document.getElementsByClassName("collapsible");
 	var i;
-	var collapsibleAnimationRunning;
 	for (i = 0; i < coll.length; i++) {
 	  coll[i].addEventListener("click", function() {
 		this.classList.toggle("active");
 		var content = this.nextElementSibling;
 		if (content.style.maxHeight){
-		  if (collapsibleAnimationRunning != true){
-			collapsibleAnimationRunning = true;		
+		  if (!content.classList.contains('collapsible-animation-active')){
+			content.classList.toggle('collapsible-animation-active');
 			content.style.maxHeight = content.scrollHeight + "px";
 			setTimeout(() => {content.style.maxHeight = null; }, 480);
-			setTimeout(() => {content.style.display = null; collapsibleAnimationRunning = false; }, 1200);
+			setTimeout(() => {content.style.display = null; content.classList.toggle('collapsible-animation-active'); }, 1200);
 		  }
 		  
 		} else {
-		  if (collapsibleAnimationRunning != true){
-			collapsibleAnimationRunning = true;
+		  if (!content.classList.contains('collapsible-animation-active')){
+			content.classList.toggle('collapsible-animation-active');
 			content.style.display = "block";
 			content.style.maxHeight = content.scrollHeight + "px";
-			setTimeout(() => { content.style.maxHeight = "100%"; collapsibleAnimationRunning = false; }, 400);
+			setTimeout(() => { content.style.maxHeight = "100%"; content.classList.toggle('collapsible-animation-active'); }, 400);
 
 		  }
 		} 
