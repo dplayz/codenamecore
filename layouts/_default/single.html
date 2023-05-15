@@ -1,11 +1,9 @@
 {{- define "main" }}
     {{- if eq .Params.infopage true}}
     {{- partial "page/infopage.html" .}}
-    {{- else}}
-    {{- if eq .Params.singlePage true }}
+    {{- else if eq .Params.singlePage true }}
     {{.Content}}
     {{- else}}
     {{- partial "page/article.html" .}}
     {{- end}}
-{{- end}}
 {{- end}}
