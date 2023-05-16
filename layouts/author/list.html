@@ -6,19 +6,14 @@
     <img src="{{ .Params.avatar }}" alt="" />
 {{- end}}
 <h1>{{ .Params.name }}</h1>
-<h2>Bio</h2>
 {{ .Content }}
-<!--{{ with .Params.twitter }}
-  <p>
-    <a href="https://twitter.com/{{ substr . 1 }}">
-      Follow {{ $.Params.name }} on Twitter
-    </a>
-  </p>
-{{ end }}-->
-<!--<h2>Articles</h2>
-{{- $authortaxo := "author" }}
-{{- $authors := where $.Site.Pages "Section" $authortaxo -}}
-{{- range $authors -}}
-  {{ . }}
-{{- end }}-->
+<hr>
+<h2>Articles written by the author</h2>
+{{ range .Data.Pages }}
+  {{- if (and (or (eq .Site.Params.theme.list.sectionList.articleSnippetStyle "boxStyle") (eq .Site.Params.theme.list.sectionList.articleSnippetStyle "boxstyle") (eq .Site.Params.theme.list.sectionList.articleSnippetStyle "box-style" )))}}
+    {{ partial "list/article-snippet/box-style.html" .}}
+  {{- else}}
+    {{ partial "list/article-snippet/list-style.html" . }}
+  {{- end}}
+{{ end }}
 {{- end}}
