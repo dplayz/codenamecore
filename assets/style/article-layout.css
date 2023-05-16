@@ -74,3 +74,51 @@ div.pagecontribute{
     margin-right:auto;
     
 }
+
+
+article.post-design-layout-container{
+    margin:5px auto 5px auto;
+    padding:10px;
+    width:90%;
+    border:2px solid black;
+    border-radius:5px;
+}
+section.post-design-layout-title{
+    display: grid;
+    padding:10px;
+    grid-template-columns: fit-content(100%);
+}
+img.post-design-layout-title-user-pfp{
+    grid-area: pdltu-pfp;
+    border-radius: 100%;
+}
+span.post-design-layout-title-user-name{
+    grid-area:pdltu-nm;
+    justify-self:start;
+    margin:auto;
+}
+span.post-design-layout-title-user-postdate{
+    grid-area:pdltu-dt;
+    justify-self: start;
+    font-size:12px;
+}
+button.post-design-layout-title-author-modal-trigger{
+    background: none ;
+    border: none;
+    padding: 0!important;
+    color: black;
+    font-size:15px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight:bolder;
+    text-align:left;
+}
+div.post-design-layout-title-user{
+    display: grid;
+    column-gap:5px;
+    text-align:left;
+    grid-template-areas: 
+        "pdltu-pfp pdltu-nm"
+        "pdltu-pfp pdltu-dt"
+    ;
+}

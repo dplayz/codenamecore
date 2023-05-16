@@ -1,0 +1,41 @@
+<article class="post-design-layout-container">
+    <section class="post-design-layout-post-title">
+        {{- with .Params.title}}<h1>{{.}}</h1>{{- end}}
+    </section>
+    <section class="post-design-layout-title">
+        <div class="post-design-layout-title-user">
+            {{if .Params.author}}
+                {{- $authorsplice := index (.Params.author) 0 }}
+                {{- $authorsplicedpath := path.Join "/author" ($authorsplice | urlize) }}
+                {{- with .Site.GetPage ($authorsplicedpath) }}
+                    {{- with .Params.gravatar}}
+                        <img class="post-design-layout-title-user-pfp" src="https://www.gravatar.com/avatar/{{md5 .}}?s=50">
+                    {{- end}}
+                {{- end}}
+            {{- else if .Site.Params.identity.general.defaultAuthor.profilePicture }}
+            <img class="post-design-layout-title-user-pfp" width="50px" src="{{.Site.Params.identity.general.defaultAuthor.profilePicture }}">
+            {{- else if .Site.Params.identity.general.defaultAuthor.gravatar}}
+            <img class="post-design-layout-title-user-pfp" width="50px" src="https://www.gravatar.com/avatar/{{md5 .Site.Params.identity.general.defaultAuthor.gravatar}}?s=50">
+            {{- else if .Site.Params.identity.general.logo }}
+                <img class="post-design-layout-title-user-pfp" width="50px" src="{{.Site.Params.identity.general.logo }}">
+            {{- end}}
+            <span class="post-design-layout-title-user-name">
+                <button class="modal-button post-design-layout-title-author-modal-trigger" href="#authorModal">{{ if .Params.author }}{{$authorsplice := index (.Params.author) 0 }}{{ $authorsplice }} {{if index (ge .Params.author 2)}}and others{{end}}{{ else }}{{ .Site.Params.identity.general.defaultAuthor.name }}{{end}}</button>
+                <div id="authorModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                      <div class="modal-body">
+                        <span class="close">×</span>
+                        {{ partial "authors/author-info-post-design.html" . }}
+                      </div>
+                    </div>
+                  </div>
+            </span>
+            <span class="post-design-layout-title-user-postdate">{{ dateFormat "02 Jan 06 15:04 MST" .Date.Local }}</span>
+        </div>
+    </section>
+    <section class="post-design-layout-content">
+        {{.Content}}
+    </section>
+
+</article>
