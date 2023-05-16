@@ -3,9 +3,38 @@
     {{- range .Params.author }}
         {{- $authorPath := printf "author/%s" (urlize .) }}
         {{- with $.Site.GetPage "taxonomyTerm" $authorPath }}
-        {{ partial "authors/author-figure" . }}
+        <figure class="author-info-snippet" id="articleauthors">
+            <br>
+            {{- if .Params.gravatar -}}
+              <img src="https://www.gravatar.com/avatar/{{md5 .Params.gravatar}}">
+            {{- else}}
+              <img src="{{ .Params.avatar }}" alt="" />
+            {{- end}}
+            <p>{{.Params.name}}</p>
+            <figcaption>
+              <p>{{- .Summary -}}</p>
+              <p><a href="{{ .Permalink }}" class="block-link">More about {{ .Params.name }}</a></p>
+            </figcaption>
+          </figure>
     {{- end -}}
 {{- else -}}
 <h2>About the authors</h2>
-{{- partial "authors/author-figure-default.html" . -}}
+<figure class="author-info-snippet" id="articleauthors">
+    <br>
+      {{- if .Site.Params.identity.general.logo }}
+      <img src="{{.Site.Params.identity.general.logo }}" width="120px">
+      {{- else if os.FileExists "static/images/logo.png" }}
+      <img src="/images/logo.png" width="120px">
+      {{- end}}
+      <h2>{{.Site.Params.author}}</h2>
+    <figcaption>
+      <p>
+        {{- if .Site.Params.author_defaultDescription}}
+        {{- .Site.Params.author_defaultDescription }}
+        {{- else}}
+        {{- .Site.Params.Description -}}
+        {{- end}}
+      </p>
+    </figcaption>
+</figure>
 {{- end -}}
