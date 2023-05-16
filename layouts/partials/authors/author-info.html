@@ -26,11 +26,11 @@
       {{- else if os.FileExists "static/images/logo.png" }}
       <img src="/images/logo.png" width="120px">
       {{- end}}
-      <h2>{{.Site.Params.author}}</h2>
+      <h2>{{.Site.Params.identity.general.defaultAuthor.name}}</h2>
     <figcaption>
       <p>
-        {{- if .Site.Params.author_defaultDescription}}
-        {{- .Site.Params.author_defaultDescription }}
+        {{- if .Site.Params.identity.general.defaultAuthor.description}}
+        {{- .Site.Params.identity.general.defaultAuthor.description }}
         {{- else}}
         {{- .Site.Params.Description -}}
         {{- end}}
