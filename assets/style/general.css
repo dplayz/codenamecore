@@ -37,3 +37,22 @@ pre:hover{
 iframe{
 	border-radius:10px;
 }
+
+section.post-design-layout-content img {
+    height:auto;
+    width:80%;
+
+    border-radius:15px;
+    transition:1s !important;
+    transition-timing-function: cubic-bezier(0, 1, .5, 1) !important;
+}
+@media(min-width:800px){
+    section.post-design-layout-content img {
+        width:60%;
+    }
+}
+@media(min-width:1500px){
+    section.post-design-layout-content img {
+        width:35%;
+    }
+} 
