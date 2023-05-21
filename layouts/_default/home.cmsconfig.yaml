@@ -67,6 +67,8 @@ logo_url: {{.Site.Params.identity.general.logo}}
 {{- if and (eq hugo.Environment "development") (ne .Site.Params.cms.disableLocalBackend true)}}
 local_backend: true 
 {{- end}}
+media_library:
+  max_file_size: 26214400
 collections:  
 {{- with .Site.Params.cms.collections}}
   {{- range .}}
