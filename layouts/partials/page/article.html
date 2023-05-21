@@ -1,7 +1,9 @@
 <article class="article-content">
 
     <div class="pagetitle">
-        <img class="cover-image zoomable-img"  style="margin:0;" src="{{if .Params.customPagePreviewImageURL }}{{ .Params.customPagePreviewImageURL | absURL }}{{ else }}{{ .Site.Params.identity.general.pagePreviewImage | absURL }}{{end}}">
+        {{- with (or (.Params.thumbnail) (.Params.customPagePreviewImageURL) (.Params.customPagePreviewImage) (.Site.Params.identity.general.thumbnail) (.Site.Params.identity.general.pagePreviewImage))}}
+        <img class="cover-image zoomable-img" style="margin:0;" src="{{. | relURL}}">
+        {{- end}}
         <h1>{{ .Title }}</h1>
         <div class="article-data">
             <span>&nbsp<img src="/images/icons/publish.png" width="15px"> {{ dateFormat "02 January 2006" .Date.Local }}&nbsp<img src="/images/icons/author.png" width="15px"> {{ if .Params.author }}<a href="#articleauthors">{{$authorsplice := index (.Params.author) 0 }}{{ $authorsplice }} {{if index (ge .Params.author 2)}}and others{{end}}{{ else }}{{ .Site.Params.identity.general.defaultAuthor.name }}{{end}}</a></span>
