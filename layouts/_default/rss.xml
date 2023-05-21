@@ -42,7 +42,7 @@
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Summary | html }}</description>
       {{- with (or (.Params.thumbnail) (.Params.customPagePreviewImageURL) (.Params.customPagePreviewImage) (.Site.Params.identity.general.thumbnail) (.Site.Params.identity.general.pagePreviewImage))}}
-      <descriptionImage>{{. | relURL}}"</descriptionImage>
+      <thumbnail>{{. | relURL}}"</thumbnail>
       {{- end}}
     </item>
     {{end}}
