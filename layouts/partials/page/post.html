@@ -1,4 +1,9 @@
 <article class="post-design-layout-container">
+    {{- with (or (.Params.thumbnail) (.Params.customPagePreviewImageURL) (.Params.customPagePreview))}}
+    <section class="post-design-layout-post-thumbnail">
+        <img class="zoomable-img" src="{{. | absURL}}">
+    </section>
+    {{- end}}
     <section class="post-design-layout-post-title">
         {{- with .Params.title}}<h1>{{.}}</h1>{{- end}}
     </section>
