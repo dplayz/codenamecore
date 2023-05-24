@@ -17,12 +17,15 @@ div#pagecomments{
         width:90%;
     }
 }
-#disqus_thread p {
-    color: black;
+@media(prefers-color-scheme:light){
+    div#pagecomments, section.post-design-layout-comments{
+        background-color: rgba(185, 185, 185, 0.6);
+        color:black;
+    }
 }
 @media(prefers-color-scheme:dark){
-    div#pagecomments{background-color: rgba(0, 0 , 0, 0.85); color:white;}
-    #disqus_thread p {
-        color: white !important;
+    div#pagecomments, section.post-design-layout-comments{
+        background-color: rgba(0, 0 , 0, 0.6); 
+        color:white;
     }
 }
