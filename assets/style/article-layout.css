@@ -138,3 +138,7 @@ div.post-design-layout-title-user{
         "pdltu-pfp pdltu-dt"
     ;
 }
+section.post-design-layout-comments{
+    padding:10px;
+    border-radius:10px;
+}

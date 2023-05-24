@@ -42,5 +42,20 @@
     <section class="post-design-layout-content">
         {{.Content}}
     </section>
+    {{- if eq .Site.Params.comments.enable true}}
+    <hr>
+    <section class="post-design-layout-comments">
+
+    {{- if or (eq .Params.comments true) (eq .Params.enableComments true)}}
+    {{ partial "footer-scripts/third-party-sdk/disqus-comments.html" . }}
+
+    {{- else if .Params.externalDiscussionLink}}
+    <p>Let's discuss it here: <a href="{{.Params.externalDiscussionLink}}">{{.Params.externalDiscussionLink}}</a></p>
+
+    {{- else }}
+    <h3>Comments are disabled for this post.</h3>
+    {{- end }}
+    </section> 
+    {{- end}}
 
 </article>
