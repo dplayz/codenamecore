@@ -1,0 +1,67 @@
+/*
+Tabbed Views Stylesheet
+Attributions:
+Multiple Tabbed views answer by: 
+  Aramean @ Stackoverflow
+  Licensed Under CC BY-SA 4.0
+  https://stackoverflow.com/a/63784436
+Customizations made by dp
+*/
+.tabs {
+    display: flex;
+    flex-wrap: wrap; 
+    margin: 10px 0px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.75);
+    width:100%;
+  }
+  .tabs input:first-child + label{
+    border-top-left-radius: 10px;
+
+  }
+  .tabs label {
+    order: 1; 
+    display: block;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background ease 0.2s;
+    overflow-x:hidden;
+  }
+  
+  .tabs [class^="tab"] {
+    order: 99; 
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    border-top:1px black solid;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .tabs input[type="radio"] {
+    display: none;
+  }
+  
+  .tabs input[type="radio"]:checked + label {
+    background: #319df5;
+    
+  }
+  
+  .tabs input[type="radio"]:checked + label + [class^="tab"] {
+    display: block;
+  }
+
+
+@media(prefers-color-scheme:dark){
+  .tabs {
+    background-color: rgba(68, 68, 68, 0.65 );
+    width:100%;
+  }
+  
+  .tabs [class^="tab"] {
+    border-top:1px white solid;
+    background: transparent;
+  }
+}

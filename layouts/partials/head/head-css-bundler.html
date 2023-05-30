@@ -20,6 +20,7 @@
 {{- $paddinglayoutcss := resources.Get "style/paddinglayout.css" | fingerprint }}
 {{- $imagelayoutcss := resources.Get "style/imagelayout.css" | fingerprint }}
 {{- $tablelayoutcss := resources.Get "style/tablelayout.css" | fingerprint }}
+{{- $tabbedviewscss := resources.Get "style/tabbedviews.css" | fingerprint }}
 {{- $listlayoutcss := resources.Get "style/listlayout.css" | fingerprint }}
 {{- $textautoadjustcss := resources.Get "style/text-autoadjust.css" | fingerprint }}
 {{- $marqueeanimationcss := resources.Get "style/marquee-animation.css" | fingerprint  }}
@@ -49,6 +50,7 @@
     $paddinglayoutcss
     $imagelayoutcss
     $tablelayoutcss
+    $tabbedviewscss
     $listlayoutcss
     $marqueeanimationcss 
     $footerlayoutcss 

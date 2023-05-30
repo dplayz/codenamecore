@@ -1,0 +1,10 @@
+{{- if (and (.Parent) (.Get 0) (.Parent.Get 0) )}}
+{{- $tabName:= (.Get 0) }}
+{{- $tabGroup:= (.Parent.Get 0) }} 
+{{- $tabID := printf "tab-group-%s-tab-name-%s" (.Parent.Get 0) (.Get 0) }} 
+<input type="radio" name="{{$tabGroup}}" id="{{$tabID}}" {{ if eq .Ordinal 0 }}checked="checked"{{ end }}>
+<label for="{{$tabID}}">{{$tabName}}</label>
+<div class="tab">
+    {{.Inner}}
+</div>
+{{- end}}
