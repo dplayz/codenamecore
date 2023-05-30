@@ -4,4 +4,6 @@
 <div class="tabs" id="{{$tabGroupID}}">
     {{.Inner}}
 </div>
+{{- else}}
+{{- errorf "A tab group cannot be build without it's ID. Consider adding it."}}
 {{- end}}

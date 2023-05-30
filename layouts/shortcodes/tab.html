@@ -7,4 +7,6 @@
 <div class="tab">
     {{.Inner}}
 </div>
+{{- else}}
+{{- errorf "A tab or tab group cannot be build without it's name. Consider adding it."}}
 {{- end}}
