@@ -1,8 +1,7 @@
 {{- if (.Get 0)}}
 {{- if .Inner }}{{ end}}
-{{ $tabGroup := printf "tab-group-%s" (.Get 0) }}
-<div class="tabs" id="{{$tabGroup}}">
+{{ $tabGroupID := printf "tab-group-%s" (replaceRE "(\\s)" "" (.Get 0)) }}
+<div class="tabs" id="{{$tabGroupID}}">
     {{.Inner}}
 </div>
-
 {{- end}}
