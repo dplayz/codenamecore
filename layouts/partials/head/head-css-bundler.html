@@ -4,6 +4,7 @@
 {{- $headercss := resources.Get "style/header.css" | fingerprint }}
 {{- $anchortagcss := resources.Get "style/anchortag.css" | fingerprint }}
 {{- $anchorbuttoncss := resources.Get "style/anchorbutton.css" | fingerprint }}
+{{- $codeblockcss := resources.Get "style/codeblock.css" | fingerprint }}
 {{- $modalcss := resources.Get "style/modal.css" | fingerprint }}
 {{- $errormessageblockcss := resources.Get "style/errormessageblock.css" | fingerprint }}
 {{- $infopagecss := resources.Get "style/infopage.css" | fingerprint  }}
@@ -34,6 +35,7 @@
     $headercss
     $anchortagcss
     $anchorbuttoncss
+    $codeblockcss
     $modalcss
     $errormessageblockcss 
     $infopagecss

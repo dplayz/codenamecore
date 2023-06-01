@@ -33,6 +33,7 @@ Customizations made by dp
     order: 99; 
     flex-grow: 1;
     width: 100%;
+    overflow:auto;
     display: none;
     padding: 1rem;
     border-top:1px black solid;
