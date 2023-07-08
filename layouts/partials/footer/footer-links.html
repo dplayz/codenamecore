@@ -1,7 +1,7 @@
 <div class="footer-links-grid-container">
     {{- range .Site.Menus.footer }}
         <div class="footer-links-grid-item">
-                <p><b>{{- with .Params.iconClass}}<i class="{{.}}" style="text-decoration:none; color:white;"></i>&nbsp;{{- end}}{{.Name}}sdasd</b></p>
+                <p><b>{{- with .Params.iconClass}}<i class="{{.}}" style="text-decoration:none; color:white;"></i>&nbsp;{{- end}}{{.Name}}</b></p>
                 {{- range .Params.links}}
                 {{- if .links}}
                 <li>{{.name}}</li>
