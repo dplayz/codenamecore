@@ -44,11 +44,19 @@
               <a class="dropbtn">{{- with .Params.iconClass}}<i class="{{.}}"></i>&nbsp;{{- end}}{{ .Name }}</a>
               <div class="dropdown-content">
               {{- range .Children }}
-                <a href="{{.Params.URL}}">{{- with .Params.iconClass}}<i class="{{.}}"></i>&nbsp;{{- end}}{{.Name}}</a>
+                {{if eq .Params.openInNewTab true }}
+                <a href="{{.Params.URL}}" target="_blank" >{{- with .Params.iconClass}}<i class="{{.}}"></i>&nbsp;{{- end}}{{.Name}}</a>
+                {{- else}}
+                <a href="{{.Params.URL}}" >{{- with .Params.iconClass}}<i class="{{.}}"></i>&nbsp;{{- end}}{{.Name}}</a>
+                {{- end}}
               {{- end}}
             </li>
           {{- else}}
+            {{if eq .Params.openInNewTab true }}
+            <li><a href="{{.Params.URL}}" target="_blank">{{- with .Params.iconClass}}<i class="{{.}}"></i>&nbsp;{{- end}}{{.Name}}</a></li>
+            {{- else}}
             <li><a href="{{.Params.URL}}">{{- with .Params.iconClass}}<i class="{{.}}"></i>&nbsp;{{- end}}{{.Name}}</a></li>
+            {{- end}}
           {{- end}}
         {{- end}}
         </ul>

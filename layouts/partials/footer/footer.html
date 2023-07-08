@@ -21,11 +21,19 @@
 					<li>{{.name}}</li>
 						<ul>
 						{{range .links}}
+							{{- if eq .openInNewTab true}}
+							<li><a href="{{.url}}" target="_blank">{{- with .iconClass}}<i class="{{.}}" style="text-decoration:none; color:white;"></i>&nbsp;{{- end}}{{.name}}</a></li>
+							{{- else}}
 							<li><a href="{{.url}}">{{- with .iconClass}}<i class="{{.}}" style="text-decoration:none; color:white;"></i>&nbsp;{{- end}}{{.name}}</a></li>
+							{{- end}}
 						{{end}}
 						</ul>
 					{{- else}}
-					<li><a href="{{.url}}">{{- with .iconClass}}<i class="{{.}}" style="text-decoration:none; color:white;"></i>&nbsp;{{- end}}{{.name}}</a></li>
+						{{- if eq .openInNewTab true}}
+						<li><a href="{{.url}}" target="_blank">{{- with .iconClass}}<i class="{{.}}" style="text-decoration:none; color:white;"></i>&nbsp;{{- end}}{{.name}}</a></li>
+						{{- else}}
+						<li><a href="{{.url}}">{{- with .iconClass}}<i class="{{.}}" style="text-decoration:none; color:white;"></i>&nbsp;{{- end}}{{.name}}</a></li>
+						{{- end}}
 					{{- end}}
 					{{- end}}
 			</div>        
