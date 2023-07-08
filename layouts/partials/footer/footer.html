@@ -1,4 +1,4 @@
-<div style="text-align:center;">
+<div class="footer-siteinfo" style="text-align:center;">
 	{{- if .Site.Params.identity.general.logo }}
 	<img src="{{relURL .Site.Params.identity.general.logo}}" width="100px">
 	{{- else}}
@@ -8,11 +8,37 @@
 		<br>
 		<p>{{.Site.Params.description}}</p>
 	{{- end }}
-	</br>
-	<p>Copyright {{.Site.Params.copyright.start}}-{{ .Site.Params.copyright.today }} by {{ if .Site.Params.copyright.rightholder }}{{ .Site.Params.copyright.rightholder }}{{else}}{{ .Site.Title }}{{end}}</p>
-	{{- if .Site.Params.copyright.notes}}<p>{{.Site.Params.copyright.notes | markdownify }}</p>{{else}}{{end}}
-	{{- if .Site.Params.copyright.managedByWhom}}<p>{{.Site.Params.copyright.managedByWhom | markdownify }}</p>{{else}}<p>Managed by {{ .Site.Title }}</p>{{end}}
+</div>
+
+{{- if .Site.Menus.footer}}
+<div class="footer-sitelinks">
+	<div class="footer-links-grid-container">
+		{{- range .Site.Menus.footer }}
+			<div class="footer-links-grid-item">
+					<p><b>{{- with .Params.iconClass}}<i class="{{.}}" style="text-decoration:none; color:white;"></i>&nbsp;{{- end}}{{.Name}}</b></p>
+					{{- range .Params.links}}
+					{{- if .links}}
+					<li>{{.name}}</li>
+						<ul>
+						{{range .links}}
+							<li><a href="{{.url}}">{{- with .iconClass}}<i class="{{.}}" style="text-decoration:none; color:white;"></i>&nbsp;{{- end}}{{.name}}</a></li>
+						{{end}}
+						</ul>
+					{{- else}}
+					<li><a href="{{.url}}">{{- with .iconClass}}<i class="{{.}}" style="text-decoration:none; color:white;"></i>&nbsp;{{- end}}{{.name}}</a></li>
+					{{- end}}
+					{{- end}}
+			</div>        
+		{{- end}}
+	</div>
+</div>
+{{- end}}
+<div class="footer-copyright">
+	<p>&copy;{{.Site.Params.copyright.start}}-{{ .Site.Params.copyright.today }} {{ if .Site.Params.copyright.rightholder }}{{ .Site.Params.copyright.rightholder }}{{else}}{{ .Site.Title }}{{end}}. 
+		{{- if .Site.Params.copyright.notes}} {{.Site.Params.copyright.notes | markdownify }}{{end}}
+
+	</p>
 	<p>Site built with ❤️ by <a href="https://gohugo.io">Hugo</a> and codenamecore theme</p>
 	<div style="margin-top:15px;" id="google_translate_element"></div>
-</p>
+	</p>
 </div>

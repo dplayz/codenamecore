@@ -36,13 +36,10 @@
         {{- block "footer-container" . }}
         <footer id="pagefooter" class="footer-container">
             {{- block "footer-content-container" .}}
-            <div class="footer-content-container">
-                {{- if .Site.Menus.footer}}
-                    <div class="footer-sitelinks">{{partial "footer/footer-links.html" . }}</div><hr>
-                    {{- end}}
-                    <div class="footer-siteinfo">{{ partial "footer/footer.html" . }}</div>
-                {{- end}}
-            </div>
+                <div class="footer-content-container">
+                    {{ partial "footer/footer.html" . }}
+                </div>
+            {{- end}}
             {{- end}}
         </footer>
         {{- end}}
