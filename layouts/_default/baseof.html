@@ -52,7 +52,21 @@
             </template>
         {{- end}}
         {{- block "dev-mode-notice" . }}
-            {{- partial "dev-branch-notice/challenge.html" . }}
+            {{- if and (eq .Site.Params.devBranchNotice.enable true) (ne hugo.Environment "production") -}}
+                <div class="dev-branch-notice" style="position:fixed; bottom:0;">
+                    {{- if os.FileExists "partials/dev-branch-notice.html"}}
+                        {{partial "dev-branch-notice.html" -}}
+                    {{- else -}}
+                    <p><b>
+                        This is {{hugo.Environment}} version of dplayz Games.
+                        Report bugs <a href="{{.Site.Params.devBranchNotice.bugreportURL}}" style="color:blue;">here</a>
+                        <br>
+                        Build {{now.Format "20060102150405"}} | Theme {{readFile "version.txt"}}
+                        
+                    </b></p>
+                    {{- end -}}
+                </div>
+            {{- end -}}
         {{- end}}
         {{- block "footer-scripts-container" . }}
             <div id="pagefooter-scripts">{{ partial "footer-scripts/footer-scripts.html" . }}</div>

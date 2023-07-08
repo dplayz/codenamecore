@@ -1,4 +1,0 @@
-{{- if eq .Site.Params.devBranchNotice.enable true -}}
-{{- if ne hugo.Environment "production" -}}{{ partial "dev-branch-notice/default.html" . }}
-{{- end -}}
-{{- end -}}
