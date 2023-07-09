@@ -60,6 +60,14 @@ button.header-psa-onetime-close-button{
 div.headerPsaOneTimeEntryActive{
 	display:block;
 }
+div.header-psa-details-modal-body{
+	color:black;
+}
+@media (prefers-color-scheme: dark){
+	div.header-psa-details-modal-body{
+		color:white;
+	}
+}
 div.subservice-brand-title{
 	margin-top:auto;
 	margin-bottom:auto;

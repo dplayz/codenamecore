@@ -5,6 +5,20 @@
     {{- else}}
     <div data-nosnippet id="header-psa-onetime-{{.id}}" class="header-psa-grid-item header-psa-onetime" {{- if .color}}style="background-color:{{- .color}};" {{- end}}>
     {{.content | markdownify}}
+    {{if .details}}
+    <span id="header-psa-onetime-{{.id}}-details">
+        <button class="modal-button" href="#header-psa-onetime-{{.id}}-details-modal">Details</button>
+        <div id="header-psa-onetime-{{.id}}-details-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-body header-psa-details-modal-body">
+                <span class="close">×</span>
+                <p>{{.details | markdownify}}</p>
+              </div>
+            </div>
+          </div>
+    </span>
+    {{- end}}
     <button class="header-psa-onetime-close-button" {{- if .buttonColor}}style="background-color:{{- .buttonColor}};" {{- end}} onclick="var headerPSAOneTimeContentId = {{.id}}; headerPSAContentToggle(headerPSAOneTimeContentId)">{{- if .buttonText}}{{- .buttonText}}{{- else}}Close{{- end}}</button>
     <script>
         var headerPSAContentDisplay = document.getElementById({{print "header-psa-onetime-" (.id) }});
@@ -23,7 +37,24 @@
     {{- else }}
     <div data-nosnippet class="header-psa-grid-item" {{- if .color}}style="background-color:{{.color}};" {{end}}>
     {{.content | markdownify}}
-    </div>
+    {{- if and (.details) (not .id)}}
+        {{- warnf "Failed to create modal for an announcement. You must provide an Announcement ID in order to work." }}
+    {{- else }}
+    <span id="header-psa-persistent-{{.id}}-details">
+        <button class="modal-button" href="#header-psa-persistent-{{.id}}-details-modal">Details</button>
+        <div id="header-psa-persistent-{{.id}}-details-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div class="modal-body header-psa-details-modal-body">
+                <span class="close">×</span>
+                <p>{{.details | markdownify}}</p>
+            </div>
+            </div>
+        </div>
+    </span>
+    {{- end}}
+    </div>    
+
     {{- end}}
 {{- end }}
 <script>
