@@ -4,10 +4,10 @@
         {{warnf "Failed to add One-Time Announcement Entry. You must provide an Announcement ID in order to work." }}
     {{- else}}
     <div data-nosnippet id="header-psa-onetime-{{.id}}" class="header-psa-grid-item header-psa-onetime" {{- if .color}}style="background-color:{{- .color}};" {{- end}}>
-    {{.content | markdownify}}
+    <p class="header-psa-content">{{.content | markdownify}}</p>
     {{if .details}}
     <span id="header-psa-onetime-{{.id}}-details">
-        <button class="modal-button" href="#header-psa-onetime-{{.id}}-details-modal">Details</button>
+        <button class="modal-button header-psa-modal-button" href="#header-psa-onetime-{{.id}}-details-modal">Details</button>
         <div id="header-psa-onetime-{{.id}}-details-modal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
@@ -41,7 +41,7 @@
         {{- warnf "Failed to create modal for an announcement. You must provide an Announcement ID in order to work." }}
     {{- else }}
     <span id="header-psa-persistent-{{.id}}-details">
-        <button class="modal-button" href="#header-psa-persistent-{{.id}}-details-modal">Details</button>
+        <button class="modal-button header-psa-modal-button" href="#header-psa-persistent-{{.id}}-details-modal">Details</button>
         <div id="header-psa-persistent-{{.id}}-details-modal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">

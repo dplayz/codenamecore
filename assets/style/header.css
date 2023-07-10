@@ -52,10 +52,22 @@ div.header-psa-grid-item img{
 div.header-psa-onetime{
 	display: none;
 }
-button.header-psa-onetime-close-button{
+button.header-psa-onetime-close-button, button.header-psa-modal-button{
 	border: 1.5px solid black;
 	border-radius: 5px;
 	font-weight:bolder;
+}
+p.header-psa-content{
+	margin:3px 0px;
+}
+@media (max-width: 800px){
+	button.header-psa-onetime-close-button, button.header-psa-modal-button{
+		font-size:14px;
+		padding:5px;
+	}
+	div.header-psa-details-modal-body, p.header-psa-content{
+		font-size:16px;
+	}
 }
 div.headerPsaOneTimeEntryActive{
 	display:block;
@@ -64,7 +76,7 @@ div.header-psa-details-modal-body{
 	color:black;
 }
 @media (prefers-color-scheme: dark){
-	div.header-psa-details-modal-body{
+	div.header-psa-details-modal-body, div.header-psa-details-modal-body span.close:hover{
 		color:white;
 	}
 }
