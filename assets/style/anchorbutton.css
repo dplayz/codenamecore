@@ -2,13 +2,12 @@ a.button {
 	display:inline-block;
 	background-color:#32373C;
 	color:white;
-    padding: 8px 20px;
-	margin:5px;
+    padding: 10px 20px;
+	margin:10px;
     text-decoration:none;
     font-weight:bold;
-    border-radius:5px;
     cursor:pointer;
-	border-radius:25px;
+	border-radius:10px 10px;
 	border:2px solid black;
 }
 @media (prefers-color-scheme:dark){
