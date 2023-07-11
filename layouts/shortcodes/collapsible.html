@@ -1,4 +1,13 @@
+{{if eq .Site.Params.flags.legacyCollapsible true}}
 <button type="button" class="collapsible {{.Get "class"}} collapsible-infopage">{{if .Get "iconClass"}}<i class="{{.Get "iconClass"}}"></i>&nbsp;{{end}}{{- with (.Get "iconSrc")}}<img src="{{.}}" style="margin:auto; vertical-align:middle; width:32px;" loading="lazy">&nbsp;{{- end}}{{if .Get "name" }}{{.Get "name"}}{{else}}{{.Get 0}}{{end}}</button>
 <div class="collapsible-content">
     {{.Inner}}
 </div>
+{{- else }}
+<details class="collapsible">
+    <summary>{{if .Get "iconClass"}}<i class="{{.Get "iconClass"}}"></i>&nbsp;{{end}}{{- with (.Get "iconSrc")}}<img src="{{.}}" style="margin:auto; vertical-align:middle; width:32px;" loading="lazy">&nbsp;{{- end}}{{if .Get "name" }}{{.Get "name"}}{{else}}{{.Get 0}}{{end}}</summary>
+    <div class="content">
+        {{.Inner}}
+    </div>
+</details>
+{{- end}}

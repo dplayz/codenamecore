@@ -1,50 +1,82 @@
-/*pagecontent-light-collapsablecontent | collapsable content for lists */
-.collapsible {
-	text-align:center;
-	display:flex;
-	align-items:center;
-	justify-content:center;
-  	padding:5px;
-  	margin-left:auto;
-  	margin-right:auto;
-  	background-color: #888;
-  	color: white;
-  	cursor:pointer;
-	width:50%;
-  	padding:27px;
-	border:10px;
-  	text-align: left;
-  	outline: none;
+details.collapsible summary{
+	border: 4px solid transparent;
+	outline: none;
+	padding: 1rem;
+	display: block;
+	background: #32373C;
+	color: white;
+	padding-left: 2.2rem;
+	position: relative;
+	cursor: pointer;
+	border-radius:10px 10px 8px 8px;
 }
-.collapsible-notbig{
-	padding-left:5px;
-	padding-right:5px;
-	padding:2.5px;
-} 
-.collapsible-fullwidth{
-	width:100%;
+details.collapsible summary:focus {
+	border-color: black;
 }
-@media(min-width:600px){
-	.collapsible-fullwidth{
-		width:75%;
+details.collapsible {
+	max-width: 500px;
+	box-sizing: border-box;
+	margin-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	padding:0px 5px;
+}
+
+details.collapsible summary::-webkit-details-marker {
+	display: none;
+}
+details.collapsible[open] > summary:before {
+	transform: rotate(90deg);
+}
+details.collapsible summary:before {
+	content: '';
+	border-width: 0.4rem;
+	border-style: solid;
+	border-color: transparent transparent transparent #fff;
+	position: absolute;
+	top: 1.3rem;
+	left: 1rem;
+	transform: rotate(0);
+	transform-origin: 0.2rem 50%;
+	transition: 0.25s transform ease;
+}
+details.collapsible .content {
+	border-top: none;
+	padding: 5px;
+	margin-left:5px;
+	margin-right:5px;
+	border: 2px solid #888;
+	border-top: none;
+	border-radius:0px 0px 10px 10px;
+	color: var(--text-color-dark, black);
+}
+@media(prefers-color-scheme:dark){
+	details.collapsible .content{
+		color: var(--text-color-dark, white);
 	}
 }
-@media(min-width:900px){
-	.collapsible-fullwidth{
-		width:50%;
-	}
+details.collapsible .content p {
+	margin: 0;
+	padding-bottom: 10px;
 }
-.active, .collapsible:hover {
-  	background-color: #666;
-}
-div.collapsible-content{
+details.collapsible .content p:last-child {
 	padding: 0;
-	max-height: 0;
-	overflow: hidden;
-	transition: max-height 0.45s ease-in-out;
-	background-color: none;
-	display:none;
 }
-div.collapsible-content + br{
-	display:block;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
