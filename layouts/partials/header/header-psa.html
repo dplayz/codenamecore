@@ -23,10 +23,10 @@
     <script>
         var headerPSAContentDisplay = document.getElementById({{print "header-psa-onetime-" (.id) }});
         var headerPSAOneTimeEntryChecker = localStorage.getItem({{.id}});
-        if (headerPSAOneTimeEntryChecker !== null){ 
-            console.log("{{.id}} entry exists in the localStorage, keeping content hidden")
+        if (headerPSAOneTimeEntryChecker !== "false" && headerPSAOneTimeEntryChecker !== null ) { 
+            console.log("INFO: {{.id}} entry exists in the localStorage, keeping content hidden")
         } else {
-            console.log("{{.id}} entry does not exist in the localStorage, displaying content")
+            console.log("INFO: {{.id}} entry in the localStorage does not exist or value set into false, thus displaying it's content")
             var headerPSAOneTimeContentDisplay = document.getElementById('header-psa-onetime-'+ '{{.id}}');
             headerPSAOneTimeContentDisplay.classList.toggle('headerPsaOneTimeEntryActive');
         }
