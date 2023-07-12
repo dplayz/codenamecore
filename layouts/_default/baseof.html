@@ -58,7 +58,7 @@
                         {{partial "dev-branch-notice.html" -}}
                     {{- else -}}
                     <p><b>
-                        This is {{hugo.Environment}} version of dplayz Games.
+                        This is {{hugo.Environment}} version of {{.Site.Title}}.
                         Report bugs <a href="{{.Site.Params.devBranchNotice.bugreportURL}}" style="color:blue;">here</a>
                         <br>
                         Build {{now.Format "20060102150405"}} | Theme {{readFile "version.txt"}}
