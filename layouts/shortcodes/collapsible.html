@@ -1,4 +1,5 @@
-{{if eq .Site.Params.flags.legacyCollapsible true}}
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{- if eq .Site.Params.flags.legacyCollapsible true}}
 <button type="button" class="collapsible {{.Get "class"}} collapsible-infopage">{{if .Get "iconClass"}}<i class="{{.Get "iconClass"}}"></i>&nbsp;{{end}}{{- with (.Get "iconSrc")}}<img src="{{.}}" style="margin:auto; vertical-align:middle; width:32px;" loading="lazy">&nbsp;{{- end}}{{if .Get "name" }}{{.Get "name"}}{{else}}{{.Get 0}}{{end}}</button>
 <div class="collapsible-content">
     {{.Inner}}
