@@ -1,0 +1,48 @@
+{{- $_hugo_config := `{ "version": 1 }` }}
+{{- if eq (.Get 0) "info"}}
+<div class="noticeShortcode noticeShortcode-info">
+    <div>
+        {{- if eq .Site.Params.theme.iconFonts.fontawesome.enable true }}
+            <i class="fas fa-circle-info"></i>
+        {{- else}}
+            ℹ️
+        {{- end}}
+        Info
+    </div>
+    <hr>
+    <div>
+        {{.Inner}}
+    </div>
+</div>
+{{- else if eq (.Get 0) "warn"}}
+<div class="noticeShortcode noticeShortcode-warn">
+    <div>
+        {{- if eq .Site.Params.theme.iconFonts.fontawesome.enable true}}
+            <i class="fas fa-triangle-exclamation"></i>
+        {{- else}}
+            ⚠️
+        {{- end}}
+        Warning
+    </div>
+    <hr>
+    <div>
+        {{.Inner}}
+    </div>
+</div>
+{{- else if eq (.Get 0) "error"}}
+<div class="noticeShortcode noticeShortcode-error">
+    <div>
+        {{- if eq .Site.Params.theme.iconFonts.fontawesome.enable true}}
+            <i class="fa-solid fa-circle-exclamation"></i>
+        {{- else}}
+            🛑
+        {{- end}}
+        Error
+    </div>
+    <hr>
+    <div>
+        {{.Inner}}
+    </div>
+</div>
+{{- else}}
+{{- end}}
