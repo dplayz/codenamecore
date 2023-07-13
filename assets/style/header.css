@@ -114,7 +114,7 @@ nav.header-links {
 	margin-top:auto;
 	margin-bottom:auto;
 	background-color: unset;
-	overflow-x: scroll;
+	overflow-x: auto;
 }
 nav.header-links ul {
 	display: flex;
