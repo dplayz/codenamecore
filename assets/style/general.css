@@ -1,11 +1,17 @@
-html, body{
+html, body, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
 	margin:0;
 	padding:0;
 	color:var(--text-color);
 	text-align:center;
 }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
+	text-decoration: none;
+}
+h1 a:hover:after, h2 a:hover:after, h3 a:hover:after, h4 a:hover:after, h5 a:hover:after, h6 a:hover:after{
+	content: " 🔗"
+}
 @media(prefers-color-scheme: dark){
-	html, body{
+	html, body, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
 		color:var(--text-color-dark);
 	}
 }
@@ -36,8 +42,8 @@ pre:hover{
 }
 iframe{
 	border-radius:10px;
-}
 
+}
 section.post-design-layout-content img {
     height:auto;
     width:80%;
