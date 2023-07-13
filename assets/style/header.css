@@ -160,6 +160,7 @@ nav.header-links .dropdown-content {
 	position: absolute;
 	background-color: #ffffff;
 	z-index: 1;
+	border-radius: 10px;
 }
 .header-links-toggle-button {
 	float:right;
@@ -273,7 +274,7 @@ div.psa img{
 		color:white;
 	}
 	nav.header-links li a {
-		background-color:#333;
+
 		color:#fff;
 	}
 	nav.header-links ul li {
@@ -301,11 +302,11 @@ div.psa img{
 	}  
 	nav.header-links .dropdown:hover .dropdown-content{display: block;}
 	nav.header-links .dropdown-content {
-		background-color: #555;
+		background-color:#333;
 	}
 	.header-links-toggle-button .bar {
 		background-color: #fff;
-		border-radius: 10px;
+		border-radius: 5px;
 	}
 	@media (max-width: 800px) {
 		header.header {
