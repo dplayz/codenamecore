@@ -6,6 +6,7 @@
 {{- $anchorbuttoncss := resources.Get "style/anchorbutton.css" | fingerprint }}
 {{- $codeblockcss := resources.Get "style/codeblock.css" | fingerprint }}
 {{- $modalcss := resources.Get "style/modal.css" | fingerprint }}
+{{- $noticeshortcodecss := resources.Get "style/noticeShortcode.css" | fingerprint }}
 {{- $errormessageblockcss := resources.Get "style/errormessageblock.css" | fingerprint }}
 {{- $infopagecss := resources.Get "style/infopage.css" | fingerprint  }}
 {{- $contentcontaineroptionscss := resources.Get "style/container-options.css" | fingerprint }}
@@ -37,6 +38,7 @@
     $anchorbuttoncss
     $codeblockcss
     $modalcss
+    $noticeshortcodecss
     $errormessageblockcss 
     $infopagecss
     $contentcontaineroptionscss
