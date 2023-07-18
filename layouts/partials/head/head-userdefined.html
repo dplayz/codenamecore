@@ -1,7 +1,7 @@
 <style>
 :root {
     {{- if .Site.Params.theme.font.family}}
-    --font-preferences: {{.Site.Params.theme.font.family}}, 'sans-serif', 'Roboto', Arial, 'Noto Color Emoji';
+    --font-preferences: {{.Site.Params.theme.font.family}};
     {{- end}}
     {{- if .Site.Params.theme.font.family}}
     {{- end}}
@@ -47,6 +47,7 @@
     {{- range .Site.Params.theme.font.custom}}
 	    font-family: {{ .family }};
 	    src: url({{ .url }});
+        font-display: swap;
     {{- end }}
 }
 {{- end}}
