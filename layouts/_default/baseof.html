@@ -62,8 +62,7 @@
                         Report bugs <a href="{{.Site.Params.devBranchNotice.bugreportURL}}" style="color:blue;">here</a>
                         <br>
                         Build {{now.Format "20060102150405"}} | Theme {{readFile "version.txt"}}
-                        <br>
-                        <button class="devnotice-session-hide-button" onclick="devBranchNoticeToggle()">Hide this message for now</button>
+                        <button class="devnotice-session-hide-button" onclick="devBranchNoticeToggle()">Hide</button>
                         <script defer>
                             const devBranchNoticeDiv = document.getElementById("dev-branch-notice");
                             const devBranchNoticeSessionStorageEntryChecker = sessionStorage.getItem("dev-branch-notice-hide");
