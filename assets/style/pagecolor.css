@@ -2,7 +2,7 @@ html, body{
 	background:var(--page-background-color); 
 }
 @media(prefers-color-scheme: dark) {
-	body {
+	html, body {
 		background:var(--page-background-color-dark); 
 	}
 }
