@@ -1,6 +1,6 @@
 {{- if or (eq .Site.Params.theme.enableNetlifyIdentity true) (eq .Site.Params.cms.backend.name "gitgateway")}}
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
+<script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script defer>
 	if (window.netlifyIdentity) {
 	  window.netlifyIdentity.on("init", user => {
 		if (!user) {

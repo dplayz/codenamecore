@@ -1,6 +1,6 @@
 {{- if .Site.Params.identity.sdk.onesignalSDKID}}{{- if and (eq hugo.Environment "production") (ne .Site.Params.disableFeature.onesignalSDK true)}}
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async="" defer></script>
-<script>
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+<script defer>
   window.OneSignal = window.OneSignal || [];
   OneSignal.push(function() {
     OneSignal.init({

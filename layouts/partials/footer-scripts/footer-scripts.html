@@ -5,7 +5,7 @@
 </script>
 <!--Footer Scripts Medium Zoom Script-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js" integrity="sha512-J3G1KdOKUuj92x5w2mV/7AmPckHbiTQdoPXd6qaeHemfcNOsuwFVQm851m+lLuJR33sGuz9TAzWtccXZOsFE0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>	
+<script defer>	
 	const images = Array.from(document.querySelectorAll(".zoomable-img"));
 	images.forEach(img => {
 	  mediumZoom(img, {
@@ -22,7 +22,7 @@ Attributions:
 Tom Spencer @ tomspencer.dev
 https://tomspencer.dev/blog/2018/09/14/adding-click-to-copy-buttons-to-a-hugo-powered-blog/
 -->
-<script>
+<script defer>
 	(function() {
 		'use strict';
 		if(!document.queryCommandSupported('copy')) {
@@ -69,7 +69,7 @@ https://tomspencer.dev/blog/2018/09/14/adding-click-to-copy-buttons-to-a-hugo-po
 
 {{if eq .Site.Params.flags.legacyCollapsible true}}
 <!--Legacy Footer Scripts Collapsible Script-->
-<script>	
+<script defer>	
 	var coll = document.getElementsByClassName("collapsible");
 	var i;
 	for (i = 0; i < coll.length; i++) {
@@ -103,7 +103,7 @@ CSS-Tricks
 https://css-tricks.com/how-to-animate-the-details-element/
 Comments were removed to narrow down the codebase
 -->
-<script>
+<script defer>
 	class Accordion {
 		constructor(el) {
 		this.el = el;
@@ -185,7 +185,7 @@ Multiple Modal Support by
     Licensed under CC BY-SA 3.0
 Dark mode and rounded corners support by dp
 -->
-<script>
+<script defer>
 var btn = document.querySelectorAll("button.modal-button");
 var modals = document.querySelectorAll('.modal');
 var spans = document.getElementsByClassName("close");
@@ -219,5 +219,3 @@ window.onclick = function(event) {
 {{- partial "footer-scripts/third-party-sdk/onesignal-callback.html" . }}
 {{- partial "footer-scripts/third-party-sdk/google-ecosystem-related-tools.html" . }}
 {{- partial "footer-scripts/third-party-sdk/sns-related-sdks.html" .}}
-
-
