@@ -53,7 +53,7 @@
         {{- end}}
         {{- block "dev-mode-notice" . }}
             {{- if and (eq .Site.Params.devBranchNotice.enable true) (ne hugo.Environment "production") -}}
-                <div class="dev-branch-notice" style="position:fixed; bottom:0;">
+                <div class="dev-branch-notice" id="dev-branch-notice">
                     {{- if os.FileExists "partials/dev-branch-notice.html"}}
                         {{partial "dev-branch-notice.html" -}}
                     {{- else -}}
@@ -62,7 +62,22 @@
                         Report bugs <a href="{{.Site.Params.devBranchNotice.bugreportURL}}" style="color:blue;">here</a>
                         <br>
                         Build {{now.Format "20060102150405"}} | Theme {{readFile "version.txt"}}
-                        
+                        <br>
+                        <button class="devnotice-session-hide-button" onclick="devBranchNoticeToggle()">Hide this message for now</button>
+                        <script defer>
+                            const devBranchNoticeDiv = document.getElementById("dev-branch-notice");
+                            const devBranchNoticeSessionStorageEntryChecker = sessionStorage.getItem("dev-branch-notice-hide");
+                            if (devBranchNoticeSessionStorageEntryChecker == "true" && devBranchNoticeSessionStorageEntryChecker !== null ) { 
+                                console.log("INFO: dev-branch-notice-hide entry exists in the sessionStorage and is true, keeping content hidden")
+                                devBranchNoticeDiv.classList.toggle('devBranchNoticeDivHidden');
+                            } else {
+                                console.log("INFO: dev-branch-notice-hide entry in the sessionStorage does not exist or value set into false, displaying it's content")
+                            }
+                            function devBranchNoticeToggle(){
+                                sessionStorage.setItem("dev-branch-notice-hide", true);
+                                devBranchNoticeDiv.classList.toggle('devBranchNoticeDivHidden');
+                            }
+                        </script>
                     </b></p>
                     {{- end -}}
                 </div>

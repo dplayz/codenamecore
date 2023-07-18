@@ -2,8 +2,15 @@ div.dev-branch-notice{
 	background-color:var(--dev-branch-background-color); 
 	width:100%;
 	z-index:1;
+	bottom:0;
+	position:fixed;
 	border-radius:10px 10px 0px 0px;
 }
 div.dev-branch-notice b{
 	color:var(--dev-branch-text-color);
+}
+div.devBranchNoticeDivHidden{
+	bottom: -50vh;
+	visibility: hidden;
+	transition:ease-out .75s;
 }
