@@ -1,0 +1,10 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class="homepage-contentblock" 
+     style="
+        {{- with (.Get "width")}}width:{{.}};{{- end}}    
+        {{- with (.Get "bg")}}background:{{.}};{{- end}}  
+    ">
+    <div class="homepage-contentblock-container">
+    {{.Inner}}
+    </div>
+</div>

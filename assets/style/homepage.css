@@ -1,0 +1,25 @@
+div.homepage-sidebysidecontainer{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    border-radius: 10px;
+    padding:5px;
+    row-gap:100px;
+}
+@media(max-width:800px){
+    div.homepage-sidebysidecontainer{
+        grid-template-rows:50% 50%;
+        grid-template-columns:unset;
+        row-gap: 0px;
+    }
+    div.homepage-sidebysidecontainer div:nth-child(2n){
+        margin-bottom: 100px;
+    }
+    div.homepage-sidebysidecontainer img {
+        width:75%;
+    }
+}
+div.homepage-sidebysidecontainer div.homepage-contentblock{
+    position:relative;
+    display: grid;
+    align-items: center;
+}

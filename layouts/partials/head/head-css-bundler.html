@@ -9,6 +9,7 @@
 {{- $noticeshortcodecss := resources.Get "style/noticeShortcode.css" | fingerprint }}
 {{- $errormessageblockcss := resources.Get "style/errormessageblock.css" | fingerprint }}
 {{- $infopagecss := resources.Get "style/infopage.css" | fingerprint  }}
+{{- $homepageblockscss := resources.Get "style/homepage.css" | fingerprint }}
 {{- $contentcontaineroptionscss := resources.Get "style/container-options.css" | fingerprint }}
 {{- $articlelayoutmaincss := resources.Get "style/article-layout.css" | fingerprint }}
 {{- $articlesnippetliststylecss := resources.Get "style/article-snippet-layout/list-style.css" | fingerprint }}
@@ -41,6 +42,7 @@
     $noticeshortcodecss
     $errormessageblockcss 
     $infopagecss
+    $homepageblockscss
     $contentcontaineroptionscss
     $articlelayoutmaincss 
     $articlesnippetliststylecss 
