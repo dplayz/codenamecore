@@ -23,3 +23,11 @@ div.homepage-sidebysidecontainer div.homepage-contentblock{
     display: grid;
     align-items: center;
 }
+
+div.homepage-gridcontainer{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap:5px;
+    row-gap:50px;
+    margin:25px auto;
+}
