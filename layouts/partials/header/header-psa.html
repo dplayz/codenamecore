@@ -20,11 +20,19 @@
     </span>
     {{- end}}
     <button class="header-psa-onetime-close-button" {{- if .buttonColor}}style="background-color:{{- .buttonColor}};" {{- end}} onclick="var headerPSAOneTimeContentId = {{.id}}; headerPSAContentToggle(headerPSAOneTimeContentId)">{{- if .buttonText}}{{- .buttonText}}{{- else}}Close{{- end}}</button>
+    {{- with .expire}}
+    <script>
+        var expireDate = new Date({{.}});
+        var dateNow = new Date;
+    </script>
+    {{- end}}
     <script>
         var headerPSAContentDisplay = document.getElementById({{print "header-psa-onetime-" (.id) }});
         var headerPSAOneTimeEntryChecker = localStorage.getItem({{.id}});
         if (headerPSAOneTimeEntryChecker !== "false" && headerPSAOneTimeEntryChecker !== null ) { 
             console.log("INFO: {{.id}} entry exists in the localStorage, keeping content hidden")
+        } else if (dateNow.getTime() >= expireDate.getTime()) {
+            console.log("INFO: {{.id}} entry had expired, keeping it hidden until removed, or renewed")
         } else {
             console.log("INFO: {{.id}} entry in the localStorage does not exist or value set into false, thus displaying it's content")
             var headerPSAOneTimeContentDisplay = document.getElementById('header-psa-onetime-'+ '{{.id}}');
@@ -35,7 +43,7 @@
     </div>
     {{- end}}
     {{- else }}
-    <div data-nosnippet class="header-psa-grid-item" {{- if .color}}style="background-color:{{.color}};" {{end}}>
+    <div data-nosnippet id="header-psa-persistent-{{.id}}" class="header-psa-grid-item" {{- if .color}}style="background-color:{{.color}};" {{end}}>
     {{.content | markdownify}}
     {{- if and (.details) (not .id)}}
         {{- warnf "Failed to create modal for an announcement. You must provide an Announcement ID in order to work." }}
@@ -52,6 +60,16 @@
             </div>
         </div>
     </span>
+    {{- if .expire}}
+    <script>
+        var expireDate = new Date({{.expire}});
+        var dateNow = new Date;
+        if (dateNow.getTime() >= expireDate.getTime()) {
+            document.getElementById("{{- print "header-psa-persistent-" (.id) -}}").style.display = "none";
+            console.log("INFO: {{.id}} persistent entry had expired, hiding it until removed, or renewed")
+        }
+    </script>
+    {{- end}}
     {{- end}}
     </div>    
 
