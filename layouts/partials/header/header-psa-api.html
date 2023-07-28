@@ -6,22 +6,47 @@ xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.onload = function() {
     if (xhr.status === 200) {
         var list = JSON.parse(xhr.responseText);
-        var divItemStart = "<div class='header-psa-grid-item'>";
-        var divWell = "<div class='well'>";
+        var divOneTimeItemStart = "<div class='header-psa-grid-item'>";
+        var divPersistentItemStart = "<div class='header-psa-grid-item'>";
+
+        var modalDivStart = "<div class='modal-content'>";
+        var modalBodyStart = "<div class='modal-body header-psa-details-modal-body'>";
+        var modalCloseBtn = "<span class='close'>×</span>";
+        var modalSpanClose = "</span>";
         var divClose = "</div>";
 
+        console.log(list);
         list.forEach(function(obj, index) {
-            var title = "<h5>" + obj.title + "</h5>";
-            var image = "<img data-toggle='tooltip' data-placement='left' title='Click to open data' src='" + obj.imagePath + "' width='20%'/>";
             
-            var content = obj.content ? obj.content : "<!-- No description defined-->";
-          
-            var div = divItemStart +
+            var content = obj.content ? "<p class='header-psa-content'>" + obj.content + "</p>" : "<!-- No description defined-->";
+            if (obj.details !== undefined && obj.details !== null) {
+            var modalSpanStart = "<span id='header-psa-persistent-" + obj.id + "-details'>";
+            var modalContentContainer = "<div id='header-psa-persistent-" + obj.id + "-details-modal' class='modal'>";
+            var modalButton = "<button class='modal-button header-psa-modal-button'" + "href='#header-psa-persistent-" + obj.id + "-details-modal'>Details</button>";
+            var modalContent = "<p>" + obj.details + "</p>"
+            
+            var div = divPersistentItemStart +
+                content +
+
+                modalSpanStart + 
+                modalButton + 
+                    modalContentContainer + modalDivStart + modalBodyStart +
+                        modalCloseBtn +
+                        modalContent +
+                    divClose + divClose + divClose +
+                modalSpanClose +
+
+                divClose;
+            } else {
+            var div = divPersistentItemStart +
                 content +
                 divClose;
+            }
 
             document.querySelector('.header-psa-api-grid-container').insertAdjacentHTML('beforeend', div);
         });
+        clearTimeout(modalTrigger);
+        setTimeout(modalTrigger, 1);
     } else {
         console.error("There seems to be an error fetching the API contents.")
     }
@@ -29,4 +54,6 @@ xhr.onload = function() {
 
 // Send the request
 xhr.send();
+
+
 </script>
