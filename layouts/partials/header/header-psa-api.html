@@ -19,28 +19,40 @@ xhr.onload = function() {
         list.forEach(function(obj, index) {
             
             var content = obj.content ? "<p class='header-psa-content'>" + obj.content + "</p>" : "<!-- No description defined-->";
-            if (obj.details !== undefined && obj.details !== null) {
+
             var modalSpanStart = "<span id='header-psa-persistent-" + obj.id + "-details'>";
             var modalContentContainer = "<div id='header-psa-persistent-" + obj.id + "-details-modal' class='modal'>";
             var modalButton = "<button class='modal-button header-psa-modal-button'" + "href='#header-psa-persistent-" + obj.id + "-details-modal'>Details</button>";
             var modalContent = "<p>" + obj.details + "</p>"
-            
-            var div = divPersistentItemStart +
-                content +
 
-                modalSpanStart + 
-                modalButton + 
-                    modalContentContainer + modalDivStart + modalBodyStart +
-                        modalCloseBtn +
-                        modalContent +
-                    divClose + divClose + divClose +
-                modalSpanClose +
+            if (obj.details !== undefined && obj.details !== null) {
+                var div = divPersistentItemStart +
+                    content +
 
-                divClose;
+                    modalSpanStart + 
+                    modalButton + 
+                        modalContentContainer + modalDivStart + modalBodyStart +
+                            modalCloseBtn +
+                            modalContent +
+                        divClose + divClose + divClose +
+                    modalSpanClose +
+
+                    divClose;
             } else {
-            var div = divPersistentItemStart +
-                content +
-                divClose;
+                var div = divPersistentItemStart +
+                    content +
+                    divClose;
+            }
+
+            if (obj.expire !== undefined && obj.expire !== null) {
+                var expireDate = new Date(obj.expire);
+                var dateNow = new Date();
+
+                // Compare the current time in milliseconds with the expireDate time in milliseconds
+                if (dateNow.getTime() >= expireDate.getTime()) {
+                    var div = "<!--The announcement has expired-->";
+                    console.warn("elapsed!");
+                }
             }
 
             document.querySelector('.header-psa-api-grid-container').insertAdjacentHTML('beforeend', div);
