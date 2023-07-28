@@ -1,0 +1,32 @@
+<script async>
+var xhr = new XMLHttpRequest();
+xhr.open('GET', '{{- .url}}', true);
+xhr.setRequestHeader('Content-Type', 'application/json');
+
+xhr.onload = function() {
+    if (xhr.status === 200) {
+        var list = JSON.parse(xhr.responseText);
+        var divItemStart = "<div class='header-psa-grid-item'>";
+        var divWell = "<div class='well'>";
+        var divClose = "</div>";
+
+        list.forEach(function(obj, index) {
+            var title = "<h5>" + obj.title + "</h5>";
+            var image = "<img data-toggle='tooltip' data-placement='left' title='Click to open data' src='" + obj.imagePath + "' width='20%'/>";
+            
+            var content = obj.content ? obj.content : "<!-- No description defined-->";
+          
+            var div = divItemStart +
+                content +
+                divClose;
+
+            document.querySelector('.header-psa-api-grid-container').insertAdjacentHTML('beforeend', div);
+        });
+    } else {
+        console.error("There seems to be an error fetching the API contents.")
+    }
+};
+
+// Send the request
+xhr.send();
+</script>

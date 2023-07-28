@@ -37,7 +37,7 @@ div.brand-title{
 	text-decoration: none;
 	color:black;
 }
-div.header-psa-grid-container {
+div.header-psa-grid-container, div.header-psa-api-grid-container {
 	background-color:var(--psa-bg-color, yellow);
 }
 div.header-psa-grid-item{

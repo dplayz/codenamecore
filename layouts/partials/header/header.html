@@ -1,10 +1,15 @@
 {{- $psalettercount := .Site.Params.psa.content | strings.Count "" }}
 <header class="header" id="pageheader">
   <div class="header-grid-container">
-    {{-  if eq .Site.Params.psa.enable true}}
+    {{-  if or (eq .Site.Params.psa.enable true) (eq .Site.Params.psa.remoteAPI.enable)}}
     {{- with .Site.Params.psa.entries}}
     <div class="header-psa-grid-container">
       {{- partial "header/header-psa.html" .}}
+    </div>
+    {{- end}}
+    {{- with .Site.Params.psa.remoteAPI}}
+    <div class="header-psa-api-grid-container">
+      {{- partial "header/header-psa-api.html" .}}
     </div>
     {{- end}}
     {{- end }}
@@ -75,3 +80,4 @@
     headerLinks.classList.toggle('active')
     })
   </script>
+
