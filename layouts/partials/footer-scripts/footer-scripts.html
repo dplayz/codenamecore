@@ -186,6 +186,7 @@ Multiple Modal Support by
 Dark mode and rounded corners support by dp
 -->
 <script defer>
+function modalTrigger() {
 var btn = document.querySelectorAll("button.modal-button");
 var modals = document.querySelectorAll('.modal');
 var spans = document.getElementsByClassName("close");
@@ -212,6 +213,8 @@ window.onclick = function(event) {
      }
     }
 }
+}
+setTimeout(modalTrigger, 1);
 </script>
 <!--Footer Scripts Third Party Tools Partials-->
 {{- partial "footer-scripts/third-party-sdk/netlify-identity-callback.html" . }}
