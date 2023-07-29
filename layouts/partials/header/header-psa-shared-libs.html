@@ -1,0 +1,16 @@
+<script>
+function checkPSADisplayStatus(headerPSAOneTimeEntryChecker, psaID){
+    if (headerPSAOneTimeEntryChecker !== "false" && headerPSAOneTimeEntryChecker !== null ) { 
+            console.log(`INFO: ${psaID} entry exists in the localStorage, keeping content hidden`)
+        } else {
+            console.log(`INFO: ${psaID} entry in the localStorage does not exist or value set into false, thus displaying it's content`)
+            var headerPSAOneTimeContentDisplay = document.getElementById('header-psa-onetime-'+ `${psaID}`);
+            headerPSAOneTimeContentDisplay.classList.toggle('headerPsaOneTimeEntryActive');
+        }
+}
+function headerPSAContentToggle(headerPSAOneTimeContentId){
+    localStorage.setItem(headerPSAOneTimeContentId, "true");
+    var headerPSAContentDisplay = document.getElementById("header-psa-onetime-" + headerPSAOneTimeContentId);
+    headerPSAContentDisplay.classList.toggle('headerPsaOneTimeEntryActive');
+}
+</script>

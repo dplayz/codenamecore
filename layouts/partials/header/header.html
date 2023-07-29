@@ -2,6 +2,7 @@
 <header class="header" id="pageheader">
   <div class="header-grid-container">
     {{-  if or (eq .Site.Params.psa.enable true) (eq .Site.Params.psa.remoteAPI.enable)}}
+    {{- partial "header/header-psa-shared-libs.html" .}}
     {{- with .Site.Params.psa.entries}}
     <div class="header-psa-grid-container">
       {{- partial "header/header-psa.html" .}}

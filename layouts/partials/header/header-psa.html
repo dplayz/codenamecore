@@ -29,14 +29,10 @@
     <script>
         var headerPSAContentDisplay = document.getElementById({{print "header-psa-onetime-" (.id) }});
         var headerPSAOneTimeEntryChecker = localStorage.getItem({{.id}});
-        if (headerPSAOneTimeEntryChecker !== "false" && headerPSAOneTimeEntryChecker !== null ) { 
-            console.log("INFO: {{.id}} entry exists in the localStorage, keeping content hidden")
-        } else if (dateNow.getTime() >= expireDate.getTime()) {
+        if (dateNow.getTime() >= expireDate.getTime()) {
             console.log("INFO: {{.id}} entry had expired, keeping it hidden until removed, or renewed")
         } else {
-            console.log("INFO: {{.id}} entry in the localStorage does not exist or value set into false, thus displaying it's content")
-            var headerPSAOneTimeContentDisplay = document.getElementById('header-psa-onetime-'+ '{{.id}}');
-            headerPSAOneTimeContentDisplay.classList.toggle('headerPsaOneTimeEntryActive');
+            checkPSADisplayStatus(headerPSAOneTimeEntryChecker, {{.id}})
         }
 
     </script>
@@ -75,11 +71,3 @@
 
     {{- end}}
 {{- end }}
-<script>
-        function headerPSAContentToggle(headerPSAOneTimeContentId){
-            localStorage.setItem(headerPSAOneTimeContentId, true);
-            var headerPSAContentDisplay = document.getElementById("header-psa-onetime-" + headerPSAOneTimeContentId);
-            headerPSAContentDisplay.classList.toggle('headerPsaOneTimeEntryActive');
- 
-        }
-</script>
