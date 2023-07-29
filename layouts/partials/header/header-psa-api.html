@@ -1,3 +1,8 @@
+{{- with .buttonText }}
+<script async>
+var defaultAPIOneTimeButtonText = "{{.}}";
+</script>
+{{- end }}
 <script async>
 var xhr = new XMLHttpRequest();
 xhr.open('GET', '{{- .url}}', true);
@@ -6,18 +11,70 @@ xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.onload = function() {
     if (xhr.status === 200) {
         var list = JSON.parse(xhr.responseText);
-        var divOneTimeItemStart = "<div class='header-psa-grid-item'>";
-        var divPersistentItemStart = "<div class='header-psa-grid-item'>";
-
-        var modalDivStart = "<div class='modal-content'>";
-        var modalBodyStart = "<div class='modal-body header-psa-details-modal-body'>";
-        var modalCloseBtn = "<span class='close'>×</span>";
-        var modalSpanClose = "</span>";
-        var divClose = "</div>";
+            var divPersistentItemStart = "<div class='header-psa-grid-item'>";
+            var scriptTagStart = "<script>";
+            var scriptTagEnd = "</scr" + "ipt>";
+            var modalDivStart = "<div class='modal-content'>";
+            var modalBodyStart = "<div class='modal-body header-psa-details-modal-body'>";
+            var modalCloseBtn = "<span class='close'>×</span>";
+            var modalSpanClose = "</span>";
+            var divClose = "</div>";
 
         console.log(list);
         list.forEach(function(obj, index) {
+
+        if (obj.oneTime === true) {
+            var divOneTimeItemStart = `<div data-nosnippet id='header-psa-onetime-${obj.id}' class='header-psa-grid-item header-psa-onetime'>`;
             
+            var content = obj.content ? "<p class='header-psa-content'>" + obj.content + "</p>" : "<!-- No description defined-->";
+
+            var modalSpanStart = "<span id='header-psa-persistent-" + obj.id + "-details'>";
+            var modalContentContainer = "<div id='header-psa-persistent-" + obj.id + "-details-modal' class='modal'>";
+            var modalButton = "<button class='modal-button header-psa-modal-button'" + "href='#header-psa-persistent-" + obj.id + "-details-modal'>Details</button>";
+            var modalContent = "<p>" + obj.details + "</p>";
+
+            if (obj.closeButtonText !== undefined && obj.closeButtonText !== null) {
+                var oneTimeCloseButton = `<button class='header-psa-onetime-close-button'  onclick="var headerPSAOneTimeContentId = '${obj.id}'; headerPSAContentToggle(headerPSAOneTimeContentId)">${obj.closeButtonText}</button>`
+            } else if (defaultAPIOneTimeButtonText !== undefined && defaultAPIOneTimeButtonText !== null) {
+                console.log("success")
+                var oneTimeCloseButton = `<button class='header-psa-onetime-close-button'  onclick="var headerPSAOneTimeContentId = '${obj.id}'; headerPSAContentToggle(headerPSAOneTimeContentId)">${defaultAPIOneTimeButtonText}</button>`
+            } else {
+                var oneTimeCloseButton = `<button class='header-psa-onetime-close-button'  onclick="var headerPSAOneTimeContentId = '${obj.id}'; headerPSAContentToggle(headerPSAOneTimeContentId)">Okay</button>`
+            }
+
+
+            if (obj.details !== undefined && obj.details !== null) {
+                var div = divOneTimeItemStart +
+                    content +
+
+                    modalSpanStart + 
+                    modalButton + 
+                        modalContentContainer + modalDivStart + modalBodyStart +
+                            modalCloseBtn +
+                            modalContent +
+                        divClose + divClose + divClose +
+                    modalSpanClose + "&nbsp" + oneTimeCloseButton +
+
+                    divClose;
+            } else {
+                var div = divOneTimeItemStart +
+                    content +
+                    oneTimeCloseButton +
+                    divClose;
+            }
+
+            if (obj.expire !== undefined && obj.expire !== null) {
+                var expireDate = new Date(obj.expire);
+                var dateNow = new Date();
+
+                // Compare the current time in milliseconds with the expireDate time in milliseconds
+                if (dateNow.getTime() >= expireDate.getTime()) {
+                    var div = "<!--The announcement has expired-->";
+                    console.warn("elapsed!");
+                }
+            }
+
+        } else {
             var content = obj.content ? "<p class='header-psa-content'>" + obj.content + "</p>" : "<!-- No description defined-->";
 
             var modalSpanStart = "<span id='header-psa-persistent-" + obj.id + "-details'>";
@@ -51,11 +108,17 @@ xhr.onload = function() {
                 // Compare the current time in milliseconds with the expireDate time in milliseconds
                 if (dateNow.getTime() >= expireDate.getTime()) {
                     var div = "<!--The announcement has expired-->";
-                    console.warn("elapsed!");
+                        console.log(`INFO: ${obj.id} entry had expired, keeping it hidden until removed, or renewed`)
                 }
             }
-
+        }
             document.querySelector('.header-psa-api-grid-container').insertAdjacentHTML('beforeend', div);
+            if (obj.oneTime === true){
+                var headerPSAContentDisplay = document.getElementById("header-psa-onetime-" + obj.id );
+                var headerPSAOneTimeEntryChecker = localStorage.getItem(obj.id);
+                checkPSADisplayStatus(headerPSAOneTimeEntryChecker, obj.id);
+                console.log(headerPSAContentDisplay)
+            }
         });
         clearTimeout(modalTrigger);
         setTimeout(modalTrigger, 1);
