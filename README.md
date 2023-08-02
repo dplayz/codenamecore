@@ -45,6 +45,3 @@ See [CONTRIBUTION.md](./blob/main/CONTRIBUTION.md) to be a contributor
 - staticJsCMS/static-cms - StaticCMS
 - francoischalifour/medium-zoom - Medium Zoom library
 
-
-# License 
-This project is under [CC-BY-SA-4.0 license](./blob/main/LICENSE.md)
