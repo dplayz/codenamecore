@@ -175,9 +175,9 @@ collections:
                   widget: object
                   collapsed: true
                   fields:
-                    - { label: "Google Search Console Verification Code", name: googleSiteVerificationCode, widget: string, required: false}
-                    - { label: "Bing Webmaster Tools Site Validation Code", name: bingValidationCode, widget: string, required: false}
-                    - { label: "Yandex.Webmaster Site Validation Code", name: yandexValidationCode, widget: string, required: false}
+                    - { label: "Google Search Console Verification Code", name: googleSiteVerificationCode, widget: string, required: false, condition: { field: params.identity.webmaster.noIndexAll, value: false } }
+                    - { label: "Bing Webmaster Tools Site Validation Code", name: bingValidationCode, widget: string, required: false, condition: { field: params.identity.webmaster.noIndexAll, value: false } }
+                    - { label: "Yandex.Webmaster Site Validation Code", name: yandexValidationCode, widget: string, required: false, condition: { field: params.identity.webmaster.noIndexAll, value: false } }
                     - { name: noIndexAll, label: 'Do not Index site to Search Engines', widget: boolean, default: false, required: false } 
                 - label: "SDKs"
                   name: sdk
@@ -254,7 +254,7 @@ collections:
                 collapsed: true
                 fields:
                 - { name: light, label: 'Default/Light Mode Color', widget: color, required: false} 
-                - { name: dark, label: 'Dark Mode Color', widget: color, required: false }
+                - { name: dark, label: 'Dark Mode Color', widget: color, required: false , condition: { field: params.theme.textColor.noDarkMode, value: false } }
                 - { name: noDarkMode, label: 'Disable Dark Mode Colors', widget: boolean, default: false, required: false }
               - name: themeColor
                 label: 'Browser Toolbar Color'
@@ -282,6 +282,9 @@ collections:
                     widget: object
                     required: false
                     collapsed: true
+                    condition: 
+                      field: params.theme.background.color.type
+                      value: lineargradient
                     fields:
                     - name: light
                       label: "Light Mode"
@@ -308,6 +311,9 @@ collections:
                       required: false
                       widget: object
                       collapsed: true
+                      condition: 
+                        field: params.theme.background.color.lightdarkscheme
+                        value: true
                       fields:
                       - name: left
                         label: "Left"
@@ -326,6 +332,9 @@ collections:
                   - name: solid
                     label: "Solid Color"
                     widget: object
+                    condition: 
+                      field: params.theme.background.color.type
+                      value: solid
                     collapsed: true
                     required: false
                     fields:
@@ -339,6 +348,9 @@ collections:
                     - name: dark
                       label: "Dark Mode"
                       widget: object
+                      condition: 
+                        field: params.theme.background.color.lightdarkscheme
+                        value: true
                       required: false
                       collapsed: true
                       fields:
@@ -397,7 +409,9 @@ collections:
                     name: entries
                     widget: list
                     collapsed: true
-                    required: false
+                    condition:
+                      field: params.theme.sidebar.enable
+                      value: true
                     fields:
                       - { label: Title, name: title, widget: string, required: false }
                       - { label: Content, name: content, widget: markdown, required: false}
@@ -439,6 +453,9 @@ collections:
                         widget: object
                         collapsed: true
                         required: false
+                        condition:
+                          field: params.theme.iconFonts.fontawesome.type
+                          value: kits
                         fields:
                           - { name: kitName, label: Kit Name, widget: string, required: false, default: "0" }
                       - name: cdnjs
@@ -446,6 +463,9 @@ collections:
                         widget: object
                         collapsed: true
                         required: false
+                        condition:
+                          field: params.theme.iconFonts.fontawesome.type
+                          value: cdnjs
                         fields:
                           - name: version
                             label: FontAwesome's Version
@@ -528,6 +548,9 @@ collections:
                       widget: object
                       collapsed: true
                       required: false
+                      condition: 
+                        field: params.cms.backend.name
+                        value: github
                       fields:
                         - { label: "Repo", name: repo, widget: string, required: false }
                         - { label: "Branch", name: branch, widget: string, required: false }
@@ -537,6 +560,9 @@ collections:
                       widget: object
                       collapsed: true
                       required: false
+                      condition: 
+                        field: params.cms.backend.name
+                        value: gitlab
                       fields:
                         - { label: "Repo", name: repo, widget: string, required: false }
                         - { label: "Branch", name: branch, widget: string, required: false }
@@ -547,6 +573,9 @@ collections:
                       widget: object
                       collapsed: true
                       required: false
+                      condition: 
+                        field: params.cms.backend.name
+                        value: bitbucket
                       fields:
                         - { label: "Repo", name: repo, widget: string, required: false }
                         - { label: "Branch", name: branch, widget: string, required: false }
@@ -557,6 +586,9 @@ collections:
                       widget: object
                       collapsed: true
                       required: false
+                      condition: 
+                        field: params.cms.backend.name
+                        value: azure
                       fields:
                         - { label: "Repo", name: repo, widget: string, required: false }
                         - { label: "Tenant ID", name: tenant_id, widget: string, required: false }
