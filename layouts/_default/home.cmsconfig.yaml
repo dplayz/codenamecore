@@ -276,7 +276,7 @@ collections:
                   required: false
                   fields: 
                   - { name: type, label: 'type', widget: select, options: ["solid", "lineargradient"], required: false }
-                  - { name: lightdarkscheme, slabel: "Enable light-dark scheme", widget: boolean, required: false }
+                  - { name: lightdarkscheme, label: "Enable light-dark scheme", widget: boolean, required: false }
                   - name: lineargradient
                     label: lineargradient
                     widget: object
