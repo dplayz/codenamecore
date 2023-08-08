@@ -5,6 +5,8 @@
     {{.Content}}
     {{- else if eq .Params.postMode true }}
     {{- partial "page/post.html" .}}
+    {{- else if or (eq .Params.wikiMode true) (eq .Params.pageType "wiki") }}
+    {{- partial "page/wikiPage.html" .}}
     {{- else}}
     {{- partial "page/article.html" .}}
     {{- end}}

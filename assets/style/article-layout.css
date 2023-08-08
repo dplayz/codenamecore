@@ -142,3 +142,22 @@ section.post-design-layout-comments{
     padding:10px;
     border-radius:10px;
 }
+
+/*Wiki Page Layout*/
+article.wiki-article-content h1, article.wiki-article-content h2, article.wiki-article-content h3, article.wiki-article-content h4, article.wiki-article-content h5, article.wiki-article-content lh6{
+    border-bottom:1px solid;
+}
+div.infobox-right {
+    float: right;
+    width:35%;
+}
+div.infobox-left {
+    float: left;
+    width:35%;
+}
+@media (max-width:800px){
+    div.infobox-right, div.infobox-left {
+        float: unset;
+        width:100%;
+    }
+}
