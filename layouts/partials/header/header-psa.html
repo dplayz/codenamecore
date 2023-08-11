@@ -29,7 +29,7 @@
     <script>
         var headerPSAContentDisplay = document.getElementById({{print "header-psa-onetime-" (.id) }});
         var headerPSAOneTimeEntryChecker = localStorage.getItem({{.id}});
-        if (dateNow.getTime() >= expireDate.getTime()) {
+        if (typeof dateNow !== 'undefined' && typeof expireDate !== 'undefined' && dateNow.getTime() >= expireDate.getTime()) {
             console.log("INFO: {{.id}} entry had expired, keeping it hidden until removed, or renewed")
         } else {
             checkPSADisplayStatus(headerPSAOneTimeEntryChecker, {{.id}})
