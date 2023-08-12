@@ -62,7 +62,21 @@ xhr.onload = function() {
                     oneTimeCloseButton +
                     divClose;
             }
-
+            if (obj.condition !== undefined && obj.condition !== null){
+                console.error("yaoooo");
+                var customCondition = eval(obj.condition);
+                if (customCondition !== true){
+                    console.log("DEBUG-PSA_API_ONETIME: Custom Condition "+ obj.condition +" returns " + customCondition);
+                    var div = "<!--The announcement does not met it's condition-->";
+                    var customConditionOutcome = true;
+                    var customCondition = undefined;
+                } else {
+                    console.log("DEBUG-PSA_API_ONETIME: Custom Condition "+ obj.condition +" returns " + customCondition);
+                    var customConditionOutcome = false;
+                    var customCondition = undefined;
+                }
+                console.log(customCondition)
+            }
             if (obj.expire !== undefined && obj.expire !== null) {
                 var expireDate = new Date(obj.expire);
                 var dateNow = new Date();
@@ -71,6 +85,9 @@ xhr.onload = function() {
                 if (dateNow.getTime() >= expireDate.getTime()) {
                     var div = "<!--The announcement has expired-->";
                     console.warn("elapsed!");
+                    var psaExpired = true;
+                }  else {
+                    var psaExpired = false;
                 }
             }
 
@@ -100,7 +117,19 @@ xhr.onload = function() {
                     content +
                     divClose;
             }
+            if (obj.condition !== undefined && obj.condition !== null){
+                var customCondition = eval(obj.condition);
+                console.log(customCondition);
+                if (customCondition !== true){
+                    console.log("DEBUG-PSA_API_PERSISTENT: Custom Condition "+ obj.condition +" returns " + customCondition);
+                    var div = "<!--The announcement does not met it's condition-->";
+                    var customCondition = undefined;
+                } else {
+                    console.log("DEBUG-PSA_API_PERSISTENT: Custom Condition "+ obj.condition +" returns " + customCondition);      
+                    var customCondition = undefined;              
+                }
 
+            }
             if (obj.expire !== undefined && obj.expire !== null) {
                 var expireDate = new Date(obj.expire);
                 var dateNow = new Date();
@@ -114,12 +143,19 @@ xhr.onload = function() {
         }
             document.querySelector('.header-psa-api-grid-container').insertAdjacentHTML('beforeend', div);
             if (obj.oneTime === true){
-                var headerPSAContentDisplay = document.getElementById("header-psa-onetime-" + obj.id );
-                var headerPSAOneTimeEntryChecker = localStorage.getItem(obj.id);
-                checkPSADisplayStatus(headerPSAOneTimeEntryChecker, obj.id);
-                console.log(headerPSAContentDisplay)
+                if (psaExpired !== true && customConditionOutcome !== true) {
+                    var headerPSAContentDisplay = document.getElementById("header-psa-onetime-" + obj.id );
+                    var headerPSAOneTimeEntryChecker = localStorage.getItem(obj.id);
+                    checkPSADisplayStatus(headerPSAOneTimeEntryChecker, obj.id);
+                    console.log(headerPSAContentDisplay)
+                    console.log("executed")
+                    console.log(customCondition)
+                    var psaExpired = undefined;
+                    var customConditionOutcome = undefined;
+                } 
             }
         });
+
         clearTimeout(modalTrigger);
         setTimeout(modalTrigger, 1);
     } else {

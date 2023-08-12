@@ -20,6 +20,12 @@
     </span>
     {{- end}}
     <button class="header-psa-onetime-close-button" {{- if .buttonColor}}style="background-color:{{- .buttonColor}};" {{- end}} onclick="var headerPSAOneTimeContentId = {{.id}}; headerPSAContentToggle(headerPSAOneTimeContentId)">{{- if .buttonText}}{{- .buttonText}}{{- else}}Close{{- end}}</button>
+    {{- with .condition}}
+    <script>
+        var customCondition = {{safeJS .}};
+        console.log("DEBUG-PSA: Custom Condition '{{.}}'  " + customCondition);
+    </script>
+    {{- end}}
     {{- with .expire}}
     <script>
         var expireDate = new Date({{.}});
@@ -31,6 +37,11 @@
         var headerPSAOneTimeEntryChecker = localStorage.getItem({{.id}});
         if (typeof dateNow !== 'undefined' && typeof expireDate !== 'undefined' && dateNow.getTime() >= expireDate.getTime()) {
             console.log("INFO: {{.id}} entry had expired, keeping it hidden until removed, or renewed")
+            var expireDate = undefined;
+            var dateNow = undefined;
+        } else if (typeof customCondition !== 'undefined' && customCondition !== true) {
+            console.log("INFO: {{.id}} entry does not match the condition, keeping it hidden.")
+            var customCondition = undefined;
         } else {
             checkPSADisplayStatus(headerPSAOneTimeEntryChecker, {{.id}})
         }
@@ -63,6 +74,16 @@
         if (typeof dateNow !== 'undefined' && typeof expireDate !== 'undefined' && dateNow.getTime() >= expireDate.getTime()) {
             document.getElementById("{{- print "header-psa-persistent-" (.id) -}}").style.display = "none";
             console.log("INFO: {{.id}} persistent entry had expired, hiding it until removed, or renewed")
+        }
+    </script>
+    {{- end}}
+    {{- with .condition}}
+    <script>
+        var customCondition = {{safeJS .}};
+        console.log("DEBUG-PSA_PERSISTENT: Custom Condition '{{.}}'  " + customCondition);
+        if (customCondition == true) {
+            document.getElementById("{{- print "header-psa-persistent-" (.id) -}}").style.display = "none";
+            console.log("INFO: {{.id}} entry does not match the condition, keeping it hidden.")
         }
     </script>
     {{- end}}
