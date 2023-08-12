@@ -33,9 +33,9 @@ xhr.onload = function() {
             var modalButton = "<button class='modal-button header-psa-modal-button'" + "href='#header-psa-persistent-" + obj.id + "-details-modal'>Details</button>";
             var modalContent = "<p>" + obj.details + "</p>";
 
-            if (obj.closeButtonText !== undefined && obj.closeButtonText !== null) {
+            if (typeof obj.closeButtonText !== 'undefined' && obj.closeButtonText !== null) {
                 var oneTimeCloseButton = `<button class='header-psa-onetime-close-button'  onclick="var headerPSAOneTimeContentId = '${obj.id}'; headerPSAContentToggle(headerPSAOneTimeContentId)">${obj.closeButtonText}</button>`
-            } else if (defaultAPIOneTimeButtonText !== undefined && defaultAPIOneTimeButtonText !== null) {
+            } else if (typeof defaultAPIOneTimeButtonText !== 'undefined' && typeof defaultAPIOneTimeButtonText !== null) {
                 console.log("success")
                 var oneTimeCloseButton = `<button class='header-psa-onetime-close-button'  onclick="var headerPSAOneTimeContentId = '${obj.id}'; headerPSAContentToggle(headerPSAOneTimeContentId)">${defaultAPIOneTimeButtonText}</button>`
             } else {

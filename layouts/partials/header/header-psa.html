@@ -60,7 +60,7 @@
     <script>
         var expireDate = new Date({{.expire}});
         var dateNow = new Date;
-        if (dateNow.getTime() >= expireDate.getTime()) {
+        if (typeof dateNow !== 'undefined' && typeof expireDate !== 'undefined' && dateNow.getTime() >= expireDate.getTime()) {
             document.getElementById("{{- print "header-psa-persistent-" (.id) -}}").style.display = "none";
             console.log("INFO: {{.id}} persistent entry had expired, hiding it until removed, or renewed")
         }
