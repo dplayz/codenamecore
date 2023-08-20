@@ -82,3 +82,23 @@
     })
   </script>
 
+<script>
+  const header = document.getElementById("pageheader");
+  const root = document.documentElement;
+
+  function getHeaderSizeInit() {
+      const headerHeightInit = header.clientHeight;
+      root.style.setProperty('--dyngen-header-size-init', `${headerHeightInit}px`);
+    }
+
+  getHeaderSizeInit();
+  window.addEventListener("resize", getHeaderSizeInit);
+
+  function getHeaderSize(entries) {
+  const headerHeight = entries[0].contentRect.height;
+  root.style.setProperty('--dyngen-header-size', `${headerHeight}px`);
+}
+
+const resizeObserver = new ResizeObserver(getHeaderSize);
+resizeObserver.observe(header);
+</script>

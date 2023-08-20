@@ -29,7 +29,8 @@ body, button{
 	min-height:500px;
 }
 html, body{
-	scroll-padding-top: 160px;
+    scroll-padding-top: calc(var(--dyngen-header-size));
+    --dyngen-header-size:160px;
 	scroll-behavior: smooth;
 }
 div.main-container h1, div.main-container h2, div.main-container h3, div.main-container h4, div.main-container h5, div.main-container h6, div.main-container p, div.main-container b, div.main-container span, div.main-container td, div.main-container th, div.main-container li, div.main-container figcaption{
