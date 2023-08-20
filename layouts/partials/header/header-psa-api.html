@@ -1,9 +1,9 @@
 {{- with .buttonText }}
-<script async>
+<script defer>
 var defaultAPIOneTimeButtonText = "{{.}}";
 </script>
 {{- end }}
-<script async>
+<script defer>
 var xhr = new XMLHttpRequest();
 xhr.open('GET', '{{- .url}}', true);
 xhr.setRequestHeader('Content-Type', 'application/json');
