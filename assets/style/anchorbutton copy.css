@@ -24,11 +24,11 @@ button.buttonAnimated {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    border: 2px solid var(--animated-button-color,black);
+    border: 2px solid var(--animated-button-color,lightslategray);
     border-radius: 10px;
-    color: var(--animated-button-color,white);
+    color: var(--animated-button-color,lightslategray);
     background-color: transparent;
-    background-image: linear-gradient(var(--animated-button-color,#32373C), var(--animated-button-color,#32373C));
+    background-image: linear-gradient(var(--animated-button-color,lightslategray), var(--animated-button-color,lightslategray));
     background-position: 50% 50%;   
     background-repeat: no-repeat;
     background-size: 0% 100%;
