@@ -1,0 +1,19 @@
+{{- if .Inner}}
+    {{- if and (.Get "icon-class") (eq (.Get "icon-side" ) "both")}}
+    <button class="button prevButton"><i class='{{.Get "icon-class"}}'></i><span>{{.Inner | htmlUnescape | safeHTML}}</span><i class='{{.Get "icon-class"}}'></i></button>
+    {{- else if and (.Get "icon-class") (eq (.Get "icon-side" ) "left")}}
+    <button class="button prevButton"><i class='{{.Get "icon-class"}}'></i><span>{{.Inner | htmlUnescape | safeHTML}}</span></button>
+    {{- else if and (.Get "icon-class") (eq (.Get "icon-side" ) "right")}}
+    <button class="button prevButton"><span>{{.Inner | htmlUnescape | safeHTML}}</span><i class='{{.Get "icon-class"}}'></i></button>
+    {{- end}}
+{{- else if (.Get "name")}}
+    {{- if and (.Get "icon-class") (eq (.Get "icon-side" ) "both")}}
+    <button class="button prevButton"><i class='{{.Get "icon-class"}}'></i><span> {{.Get "name" | htmlUnescape | safeHTML}} </span><i class='{{.Get "icon-class"}}'></i></button>
+    {{- else if and (.Get "icon-class") (eq (.Get "icon-side" ) "left")}}
+    <button class="button prevButton"><i class='{{.Get "icon-class"}}'></i><span> {{.Get "name" | htmlUnescape | safeHTML}} </span></button>
+    {{- else if and (.Get "icon-class") (eq (.Get "icon-side" ) "right")}}
+    <button class="button prevButton"><span> {{.Get "name" | htmlUnescape | safeHTML}} </span><i class='{{.Get "icon-class"}}'></i></button>
+    {{- end}}
+{{- else}}
+<button class="button prevButton"><span>↓ Next ↓</span></button>
+{{- end}}

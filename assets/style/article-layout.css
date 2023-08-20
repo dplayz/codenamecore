@@ -161,3 +161,16 @@ div.infobox-left {
         width:100%;
     }
 }
+/* Homepage Layout */
+main.homepage-content-fs-snap-container section.homepage-fs-snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    border-bottom:1px solid black;
+    min-height: calc(100vh - var(--dyngen-header-size-init));
+    overflow-x: scroll;
+}
+main.homepage-content-fs-container section.homepage-fs-only-section {
+    border-bottom:1px solid black;
+    min-height: calc(100vh - var(--dyngen-header-size-init));
+    overflow-x: scroll;
+}

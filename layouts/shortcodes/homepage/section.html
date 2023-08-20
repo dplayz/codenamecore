@@ -1,0 +1,14 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{- if eq .Page.Params.homepageSectionsType "fs-snap"}}
+<section class="homepage-fs-snap-section homepage-section" {{- with .Get "id"}} id="{{.}}" {{- end}} style="background:url(images/f58fe8e19a7e25ddf0c459a3599261d6.gif); background-repeat:no-repeat; background-size: cover; background-position:center;">
+    {{.Inner | htmlUnescape | safeHTML }}
+</section>
+{{- else if eq .Page.Params.homepageSectionsType "fs-only"}}
+<section class="homepage-fs-only-section homepage-section" {{- with .Get "id"}} id="{{.}}" {{- end}} style="background:url(images/f58fe8e19a7e25ddf0c459a3599261d6.gif); background-repeat:no-repeat; background-size: cover; background-position:center;">
+    {{.Inner | htmlUnescape | safeHTML }}
+</section>
+{{- else }}
+<section class="homepage-no-style-section homepage-section" {{- with .Get "id"}} id="{{.}}" {{- end}} style="background:url(images/f58fe8e19a7e25ddf0c459a3599261d6.gif); background-repeat:no-repeat; background-size: cover; background-position:center;">
+    {{.Inner | htmlUnescape | safeHTML }}
+</section>
+{{- end}}

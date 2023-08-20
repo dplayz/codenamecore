@@ -1,0 +1,90 @@
+{{- if eq .Params.homepageSectionsType "fs-snap"}}
+<div style="position: fixed; top: 50%; right:0%;  z-index:1;border-radius: 100%;">
+    <button style="font-size:50px; aspect-ratio: 1/1;" class="prevButton"><span>↑</span></button>
+    <br>
+    <button style="font-size:50px; aspect-ratio: 1/1;" class="nextButton"><span>↓</span></button>
+</div>
+<main class="homepage-content-fs-container homepage-content-fs-snap-container">
+    {{.Content | safeHTML }}
+</main>
+<style>
+html {
+    scroll-snap-type: y proximity;
+    margin: 0;
+    padding: 0;
+}
+</style>
+<script defer>    
+const divs = document.querySelectorAll('.homepage-fs-snap-section');
+let currentDivIndex = 0;
+
+const nextButtons = document.querySelectorAll('.nextButton');
+const prevButtons = document.querySelectorAll('.prevButton');
+
+function scrollToSection(index) {
+    divs[index].scrollIntoView({ behavior: 'smooth' });
+    currentDivIndex = index;
+
+    nextButtons.forEach(button => {
+        button.disabled = currentDivIndex === divs.length - 1;
+    });
+
+    prevButtons.forEach(button => {
+        button.disabled = currentDivIndex === 0;
+    });
+
+    const sectionId = divs[index].getAttribute('id');
+    history.pushState({}, '', `#${sectionId}`);
+}
+
+nextButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const nextDivIndex = (currentDivIndex + 1) % divs.length;
+        scrollToSection(nextDivIndex);
+    });
+});
+
+prevButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const prevDivIndex = (currentDivIndex - 1 + divs.length) % divs.length;
+        scrollToSection(prevDivIndex);
+    });
+});
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const index = Array.from(divs).indexOf(entry.target);
+                currentDivIndex = index;
+
+                nextButtons.forEach(button => {
+                    button.disabled = currentDivIndex === divs.length - 1;
+                });
+
+                prevButtons.forEach(button => {
+                    button.disabled = currentDivIndex === 0;
+                });
+            }
+        });
+    },
+    { rootMargin: '0px', threshold: 0.5 }
+);
+
+divs.forEach((div) => {
+    observer.observe(div);
+});
+
+prevButtons.forEach(button => {
+    button.disabled = true;
+});
+</script>
+{{- else if eq .Params.homepageSectionsType "fs-only"}}
+<main class="homepage-content-fs-container">
+    {{.Content | safeHTML }}
+</main>
+{{- else}}
+<main class="homepage-content-no-style-container">
+    {{.Content | safeHTML }}
+</main>
+{{- end}}

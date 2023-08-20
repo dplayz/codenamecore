@@ -1,6 +1,8 @@
 {{- define "main" }}
     {{- if eq .Params.infopage true}}
     {{- partial "page/infopage.html" .}}
+    {{- else if eq .Params.pageType "homepage" }}
+    {{- partial "page/homepage.html" .}}
     {{- else if eq .Params.singlePage true }}
     {{.Content}}
     {{- else if eq .Params.postMode true }}
