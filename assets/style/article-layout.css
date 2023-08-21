@@ -168,9 +168,19 @@ main.homepage-content-fs-snap-container section.homepage-fs-snap-section {
     border-bottom:1px solid black;
     min-height: calc(100vh - var(--dyngen-header-size-init));
     overflow-x: scroll;
+    position: relative;
 }
 main.homepage-content-fs-container section.homepage-fs-only-section {
     border-bottom:1px solid black;
     min-height: calc(100vh - var(--dyngen-header-size-init));
     overflow-x: scroll;
+}
+
+@media (min-width: 799px){
+    main.homepage-content-fs-container img{
+        width:100%;
+    }
+}
+.homepage-gridcontainer .homepage-contentblock img {
+    max-width:30%;
 }
