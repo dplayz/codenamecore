@@ -1,0 +1,17 @@
+{{- if .Inner}}
+    {{- if and (.Get "icon-class") (eq (.Get "icon-side" ) "both")}}
+    <a class="button buttonAnimated" {{- with (.Get "href")}}href="{{.}}"{{- end}}{{- with (.Get "color" )}}style="--animated-button-color:{{.}};"{{- end}}><i class='{{.Get "icon-class"}}'></i><span>{{.Inner | htmlUnescape | safeHTML}}</span><i class='{{.Get "icon-class"}}'></i></a>
+    {{- else if and (.Get "icon-class") (eq (.Get "icon-side" ) "left")}}
+    <a class="button buttonAnimated" {{- with (.Get "href")}}href="{{.}}"{{- end}}{{- with (.Get "color" )}}style="--animated-button-color:{{.}};"{{- end}}><i class='{{.Get "icon-class"}}'></i><span>{{.Inner | htmlUnescape | safeHTML}}</span></a>
+    {{- else if and (.Get "icon-class") (eq (.Get "icon-side" ) "right")}}
+    <a class="button buttonAnimated" {{- with (.Get "href")}}href="{{.}}"{{- end}}{{- with (.Get "color" )}}style="--animated-button-color:{{.}};"{{- end}}><span>{{.Inner | htmlUnescape | safeHTML}}</span><i class='{{.Get "icon-class"}}'></i></a>
+    {{- end}}
+{{- else if (.Get "name")}}
+    {{- if and (.Get "icon-class") (eq (.Get "icon-side" ) "both")}}
+    <a class="button buttonAnimated" {{- with (.Get "href")}}href="{{.}}"{{- end}}{{- with (.Get "color" )}}style="--animated-button-color:{{.}};"{{- end}}><i class='{{.Get "icon-class"}}'></i><span> {{.Get "name" | htmlUnescape | safeHTML}} </span><i class='{{.Get "icon-class"}}'></i></a>
+    {{- else if and (.Get "icon-class") (eq (.Get "icon-side" ) "left")}}
+    <a class="button buttonAnimated" {{- with (.Get "href")}}href="{{.}}"{{- end}}{{- with (.Get "color" )}}style="--animated-button-color:{{.}};"{{- end}}><i class='{{.Get "icon-class"}}'></i><span> {{.Get "name" | htmlUnescape | safeHTML}} </span></a>
+    {{- else if and (.Get "icon-class") (eq (.Get "icon-side" ) "right")}}
+    <a class="button buttonAnimated" {{- with (.Get "href")}}href="{{.}}"{{- end}}{{- with (.Get "color" )}}style="--animated-button-color:{{.}};"{{- end}}><span> {{.Get "name" | htmlUnescape | safeHTML}} </span><i class='{{.Get "icon-class"}}'></i></a>
+    {{- end}}
+{{- end}}
