@@ -2,8 +2,8 @@
 {{- if ne .Site.Params.disableFeature.fbSDK true}}
 {{- if .Site.Params.identity.sdk.fbSDKID}}
 <div id="fb-root"></div>
-<script defer src="https://connect.facebook.net/en_US/sdk.js" async defer></script>
-<script> 
+<script defer src="https://connect.facebook.net/en_US/sdk.js" defer></script>
+<script defer> 
 	window.fbAsyncInit = function() { 
 		FB.init({ 
 		appId : '{{.Site.Params.identity.fbSDKID}}', 

@@ -34,7 +34,7 @@
     --text-color: {{.}};
     {{- end}}
     {{- if eq .Site.Params.theme.textColor.noDarkMode true}}
-    --text-color-dark: var(--text-color);
+    --text-color-dark: var(--text-color, black);
     {{- else}}
     {{- with .Site.Params.theme.textColor.dark}}
     --text-color-dark: {{.}};
