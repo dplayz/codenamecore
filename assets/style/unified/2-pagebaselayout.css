@@ -581,10 +581,18 @@ div.infobox-left {
 /* Homepage Base Layout */
 div.homepage-sidebysidecontainer{
     display:grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 100%;
     border-radius: 10px;
     padding:5px;
     row-gap:100px;
+}
+/* 
+   Hide the items when in column 3 and up.
+   This is supposed to be 2 column only
+   Will try to add multicolumn when I have time.
+*/
+div.homepage-sidebysidecontainer div.homepage-sidebyside-row div:nth-child(n+3) {
+	display:none;
 }
 @media(max-width:800px){
     div.homepage-sidebysidecontainer{
@@ -597,6 +605,18 @@ div.homepage-sidebysidecontainer{
     }
     div.homepage-sidebysidecontainer img {
         width:75%;
+    }
+}
+@media(min-width:799px){
+    div.homepage-sidebysidecontainer div.homepage-sidebyside-row{
+		display:grid;
+        grid-template-columns:50% 50%;
+		width:100%;
+        grid-template-rows:unset;
+        row-gap: 0px;
+    }
+	div.homepage-sidebysidecontainer div.homepage-sidebyside-row:nth-child(2n) div:nth-child(1) {
+		order:2;
     }
 }
 div.homepage-sidebysidecontainer div.homepage-contentblock{

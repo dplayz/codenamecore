@@ -1,0 +1,8 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class="homepage-sidebyside-row" 
+     style="
+        {{- with (.Get "width")}}width:{{.}};{{- end}}    
+        {{- with (.Get "bg")}}background:{{.}};{{- end}}  
+    ">
+    {{.Inner}}
+</div>
