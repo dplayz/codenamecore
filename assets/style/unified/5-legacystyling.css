@@ -1,0 +1,97 @@
+/* Legacy Stylings */
+/* Styles that are anytime soon, will be removed 
+   to codebase when proper replacements are set,
+   and/or just kept for compatability reasons. */
+/* Legacy Collapsible Block */
+/*pagecontent-light-collapsablecontent | collapsable content for lists */
+/*
+.collapsible-legacy {
+	text-align:center;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+  	padding:5px;
+  	margin-left:auto;
+  	margin-right:auto;
+  	background-color: #888;
+  	color: white;
+  	cursor:pointer;
+	width:50%;
+  	padding:27px;
+	border:10px;
+  	text-align: left;
+  	outline: none;
+}
+.collapsible-legacy-notbig{
+	padding-left:5px;
+	padding-right:5px;
+	padding:2.5px;
+} 
+.collapsible-legacy-fullwidth{
+	width:100%;
+}
+@media(min-width:600px){
+	.collapsible-legacy-fullwidth{
+		width:75%;
+	}
+}
+@media(min-width:900px){
+	.collapsible-legacy-fullwidth{
+		width:50%;
+	}
+}
+.active, .collapsible:hover {
+  	background-color: #666;
+}
+div.collapsible-legacy-content{
+	padding: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.45s ease-in-out;
+	background-color: none;
+	display:none;
+}
+div.collapsible-legacy-content + br{
+	display:block;
+}*/
+
+/* Legacy Auto-adjusting text */
+@media(max-width:500px) {
+    h1:not(.text-noautoadjust){font-size:calc(22px + 1vw)}
+    h2:not(.text-noautoadjust){font-size:calc(14px + 1vw)} 
+    h3:not(.text-noautoadjust){font-size:calc(8.72px + 1vw)}
+    h4:not(.text-noautoadjust){font-size:calc(6px + 1vw)}
+    h5:not(.text-noautoadjust){font-size:calc(3.28px + 1vw)}
+    h6:not(.text-noautoadjust){font-size:calc(15px + 1vw)}
+} 
+
+/* Legacy 2-Column Section Layout */
+/*pagecontent-both-column | Column Style */
+.row {
+	display: flex;
+  }
+  .column {
+	flex: 50%;
+	margin-top:auto;
+	margin-bottom:auto;
+	padding:15px;
+}
+@media (max-width: 600px) {
+	.row {
+		display: block;
+	}
+}
+
+/* Legacy Padding Base Layout */
+div.padding{
+	padding:100px 50px;
+}
+div.padding-top{
+	padding:100px 0px 0px;
+}
+div.pagetitle{
+	padding-top:50px;
+}
+div.padding-bottom{
+	padding-bottom:100px;
+}

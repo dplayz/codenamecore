@@ -1,0 +1,473 @@
+/* Modal Base Layout
+Modal by w3schools.io
+Multiple Modal Support by 
+    Denis Mysenko via StackOverflow post:
+    https://stackoverflow.com/a/40645236
+    Post licensed under CC BY-SA 3.0
+Dark mode and rounded corners support by dp
+*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 2%;
+    margin-bottom:10%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 80%;
+    border-radius:5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+@media (prefers-color-scheme: dark){
+    .modal-content {
+        background-color: black;
+    }
+}
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* Post Comments Block Base Layout*/
+div#pagecomments{
+    max-width:1000px;
+    margin-top: 30px;
+    margin-bottom:30px;
+    margin-left:auto;
+    margin-right:auto;
+    width:95%;
+    height:inherit;
+    border-radius:10px;
+    box-shadow:0px 0px 10px black;
+    border-radius:10px;
+	padding-left:10px;
+	padding-right:10px;
+}
+@media(max-width:390px){
+    div#pagecomments{
+        width:90%;
+    }
+}
+@media(prefers-color-scheme:light){
+    div#pagecomments, section.post-design-layout-comments{
+        background-color: rgba(185, 185, 185, 0.6);
+        color:black;
+    }
+}
+@media(prefers-color-scheme:dark){
+    div#pagecomments, section.post-design-layout-comments{
+        background-color: rgba(0, 0 , 0, 0.6); 
+        color:white;
+    }
+}
+
+
+/* Collapsible blocks base layout */
+details.collapsible summary{
+	border: 4px solid transparent;
+	outline: none;
+	padding: 1rem;
+	display: block;
+	background: #32373C;
+	color: white;
+	padding-left: 2.2rem;
+	position: relative;
+	cursor: pointer;
+	transition: box-shadow .3s ease-in-out;
+	border-radius:10px 10px 8px 8px;
+	border:2px solid black;
+}
+details.collapsible summary:focus {
+	box-shadow:0px 0px 13px black;
+	transition: box-shadow .3s ease-in-out;
+}
+@media (prefers-color-scheme:dark){
+	details.collapsible summary {
+		border-color: white;
+	}
+	details.collapsible summary:focus {
+		box-shadow:0px 0px 13px white;
+	}
+}
+
+details.collapsible {
+	max-width: 500px;
+	box-sizing: border-box;
+	margin-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	padding:0px 5px;
+}
+
+details.collapsible summary::-webkit-details-marker {
+	display: none;
+}
+details.collapsible[open] > summary:before {
+	transform: rotate(90deg);
+}
+details.collapsible summary:before {
+	content: '';
+	border-width: 0.4rem;
+	border-style: solid;
+	border-color: transparent transparent transparent #fff;
+	position: absolute;
+	top: 1.3rem;
+	left: 1rem;
+	transform: rotate(0);
+	transform-origin: 0.2rem 50%;
+	transition: 0.25s transform ease;
+}
+details.collapsible .content {
+	border-top: none;
+	padding: 5px;
+	margin-left:5px;
+	margin-right:5px;
+	border: 2px solid #888;
+	border-top: none;
+	border-radius:0px 0px 10px 10px;
+	color: var(--text-color-dark, black);
+}
+@media(prefers-color-scheme:dark){
+	details.collapsible .content{
+		color: var(--text-color-dark, white);
+	}
+}
+details.collapsible .content p {
+	margin: 0;
+	padding-bottom: 10px;
+}
+details.collapsible .content p:last-child {
+	padding: 0;
+}
+
+/* */
+div#pagecomments{
+    max-width:1000px;
+    margin-top: 30px;
+    margin-bottom:30px;
+    margin-left:auto;
+    margin-right:auto;
+    width:95%;
+    height:inherit;
+    border-radius:10px;
+    box-shadow:0px 0px 10px black;
+    border-radius:10px;
+	padding-left:10px;
+	padding-right:10px;
+}
+@media(max-width:390px){
+    div#pagecomments{
+        width:90%;
+    }
+}
+@media(prefers-color-scheme:light){
+    div#pagecomments, section.post-design-layout-comments{
+        background-color: rgba(185, 185, 185, 0.6);
+        color:black;
+    }
+}
+@media(prefers-color-scheme:dark){
+    div#pagecomments, section.post-design-layout-comments{
+        background-color: rgba(0, 0 , 0, 0.6); 
+        color:white;
+    }
+}
+
+
+/* Table of contents 
+/* */
+div#pagecomments{
+    max-width:1000px;
+    margin-top: 30px;
+    margin-bottom:30px;
+    margin-left:auto;
+    margin-right:auto;
+    width:95%;
+    height:inherit;
+    border-radius:10px;
+    box-shadow:0px 0px 10px black;
+    border-radius:10px;
+	padding-left:10px;
+	padding-right:10px;
+}
+@media(max-width:390px){
+    div#pagecomments{
+        width:90%;
+    }
+}
+@media(prefers-color-scheme:light){
+    div#pagecomments, section.post-design-layout-comments{
+        background-color: rgba(185, 185, 185, 0.6);
+        color:black;
+    }
+}
+@media(prefers-color-scheme:dark){
+    div#pagecomments, section.post-design-layout-comments{
+        background-color: rgba(0, 0 , 0, 0.6); 
+        color:white;
+    }
+}
+Bas
+e layout */
+div.tableofcontents-container{border:5px black solid; border-radius:5px;padding:5px; text-align:left;}
+
+/* Notice Shortcode Base Layout*/
+div.noticeShortcode{
+    padding:5px 10px 2px;
+    border-radius: 5px;
+    margin: 10px auto; 
+
+}
+div.noticeShortcode p{
+    text-indent:unset;
+}
+div.noticeShortcode.noticeShortcode-warn{
+    background-color:#fc0;
+}
+div.noticeShortcode.noticeShortcode-info{
+    background-color:#9c3;
+}
+div.noticeShortcode.noticeShortcode-error{
+    background-color:#c30;
+}
+
+/* Contribute section Base layout */
+div.pagecontribute{
+    box-shadow:0px 0px 10px black;
+    border-radius:10px;
+    max-width:1000px;
+    width:95%;
+    padding-top:15px;
+    padding-bottom:15px;
+    margin-top:10px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+/* Code block Base Layout*/
+div.highlight div table{
+    background:inherit;
+}
+div.highlight{
+    overflow-x: auto;
+    position: relative;
+}
+/* Codeblock Tap to Copy Button 
+Attributions: 
+Tom Spencer @ tomspencer.dev
+https://tomspencer.dev/blog/2018/09/14/adding-click-to-copy-buttons-to-a-hugo-powered-blog/
+*/
+.highlight-copy-btn {
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+    border: 0;
+    border-radius: 10px;
+    padding: 1px;
+    font-size: 0.7em;
+    line-height: 1.8;
+    color: #fff;
+    background-color: #777;
+    min-width: 55px;
+    text-align: center;
+}
+.highlight-copy-btn:hover {
+    background-color: #666;
+}
+
+/* Tabbed views base layout
+Tabbed Views Stylesheet
+Attributions:
+Multiple Tabbed views answer by: 
+  Aramean @ Stackoverflow
+  Licensed Under CC BY-SA 4.0
+  https://stackoverflow.com/a/63784436
+Customizations made by dp
+*/
+.tabs {
+    display: flex;
+    flex-wrap: wrap; 
+    margin: 10px 0px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.75);
+    width:100%;
+}
+.tabs input:first-child + label{
+    border-top-left-radius: 10px;
+}
+.tabs label {
+    order: 1; 
+    display: block;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background ease 0.2s;
+    overflow-x:hidden;
+}  
+.tabs [class^="tab"] {
+    order: 99; 
+    flex-grow: 1;
+    width: 100%;
+    overflow:auto;
+    display: none;
+    padding: 1rem;
+    border-top:1px black solid;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}  
+.tabs input[type="radio"] {
+    display: none;
+}
+.tabs input[type="radio"]:checked + label {
+    background: #319df5;    
+}
+.tabs input[type="radio"]:checked + label + [class^="tab"] {
+    display: block;
+}
+@media(prefers-color-scheme:dark){
+  .tabs {
+    background-color: rgba(68, 68, 68, 0.65 );
+    width:100%;
+  }
+  .tabs [class^="tab"] {
+    border-top:1px white solid;
+    background: transparent;
+  }
+}
+
+/* */
+div#pagecomments{
+    max-width:1000px;
+    margin-top: 30px;
+    margin-bottom:30px;
+    margin-left:auto;
+    margin-right:auto;
+    width:95%;
+    height:inherit;
+    border-radius:10px;
+    box-shadow:0px 0px 10px black;
+    border-radius:10px;
+	padding-left:10px;
+	padding-right:10px;
+}
+@media(max-width:390px){
+    div#pagecomments{
+        width:90%;
+    }
+}
+@media(prefers-color-scheme:light){
+    div#pagecomments, section.post-design-layout-comments{
+        background-color: rgba(185, 185, 185, 0.6);
+        color:black;
+    }
+}
+@media(prefers-color-scheme:dark){
+    div#pagecomments, section.post-design-layout-comments{
+        background-color: rgba(0, 0 , 0, 0.6); 
+        color:white;
+    }
+}
+
+
+/* Error messages block Base Layout */
+#errormessage { background:white; border-radius:10px !important; border:5px solid black;max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
+.errormessage-404 {box-shadow:0px 0px 20px orange !important; border:5px solid orange !important;}
+.errormessage-jsblocked {box-shadow:0px 0px 20px red !important; border:5px solid red !important;}
+#errormessage h3 { color: #888; font-weight: normal; font-size: 16px; margin: 16px 0 12px; }
+#errormessage h2 { color: red; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+#errormessage h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+#errormessage p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; border-radius:10px;}
+#errormessage a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+#errormessage, #errormessage a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+#load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+
+
+/* Development Branch/Environment Notice (devbranchnotice) Base Layout */
+div.dev-branch-notice{
+	background-color:var(--dev-branch-background-color); 
+	width:100%;
+	z-index:1;
+	bottom:0;
+	position:fixed;
+	border-radius:10px 10px 0px 0px;
+}
+div.dev-branch-notice b{
+	color:var(--dev-branch-text-color);
+}
+div.devBranchNoticeDivHidden{
+	bottom: -50vh;
+	visibility: hidden;
+	transition:ease-out .75s;
+}
+button.devnotice-session-hide-button{
+	position:absolute;
+	font-weight: bold;
+	top:2px;
+	border-radius: 5px;
+	right:4px;
+	opacity:0.25;
+	padding:3.5px;
+	font-size:13.5px;
+}
+button.devnotice-session-hide-button:hover{
+	opacity:1;
+}
+@media(max-width:800px){
+	button.devnotice-session-hide-button{
+		padding:7px;
+		font-size:17px;
+	}
+}
