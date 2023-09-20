@@ -55,16 +55,6 @@ div.collapsible-legacy-content + br{
 	display:block;
 }*/
 
-/* Legacy Auto-adjusting text */
-@media(max-width:500px) {
-    h1:not(.text-noautoadjust){font-size:calc(22px + 1vw)}
-    h2:not(.text-noautoadjust){font-size:calc(14px + 1vw)} 
-    h3:not(.text-noautoadjust){font-size:calc(8.72px + 1vw)}
-    h4:not(.text-noautoadjust){font-size:calc(6px + 1vw)}
-    h5:not(.text-noautoadjust){font-size:calc(3.28px + 1vw)}
-    h6:not(.text-noautoadjust){font-size:calc(15px + 1vw)}
-} 
-
 /* Legacy 2-Column Section Layout */
 /*pagecontent-both-column | Column Style */
 .row {
