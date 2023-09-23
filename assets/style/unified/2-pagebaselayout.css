@@ -660,6 +660,9 @@ div.homepage-sidebysidecontainer{
     padding:5px;
     row-gap:100px;
 }
+div.homepage-sidebysidecontainer img{
+	width:100%;
+}
 /* 
    Hide the items when in column 3 and up.
    This is supposed to be 2 column only
