@@ -383,10 +383,8 @@ footer#pagefooter{
 @media(min-width:800px){
     div.main-container.with-sidebar{
       display: grid;
-      margin-right: 10px;
-      margin-left: 5px;
       column-gap:5px;
-      grid-template-columns: 75% 25%;
+      grid-template-columns: 75% 24.5%;
     }
 }
 @media(max-width:800px){
