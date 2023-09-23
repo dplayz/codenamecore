@@ -2,6 +2,27 @@
 /* Styles that are anytime soon, will be removed 
    to codebase when proper replacements are set,
    and/or just kept for compatability reasons. */
+
+/* Article Lists Box-Style Base Layout */
+article.box-style div.pagetitle-design{
+	color:black;
+	background-color:gray;
+	border-radius:10px;
+	border:5px solid black;
+}
+@media (prefers-color-scheme: dark) {
+    article.box-style div.pagetitle-design{
+		color:white;
+		background-color:#333;
+	}
+}
+@media(min-width:800px) {
+		article.box-style { margin-left:15%;margin-right:15%;}}
+@media(max-width:800px) {
+		article.box-style { margin-left:5%;margin-right:5%;}}
+@media(max-width:500px) {
+		article.box-style {margin-left:0%;margin-right:0%;}}
+
 /* Legacy Collapsible Block */
 /*pagecontent-light-collapsablecontent | collapsable content for lists */
 /*
