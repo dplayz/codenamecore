@@ -1,0 +1,30 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+
+{{- if .Inner}}
+<div class="carousel-cell" {{- with (.Get "image") }}style="background-image:url('{{.}}');"{{- end}} >
+    {{- with (.Get "link")}}
+    <a href="{{.}}">
+    {{- end}}
+    <div class="description">
+        {{ printf "Debug: .Inner content: %q" .Inner }}
+        {{.Inner}}
+    </div>
+    {{- with (.Get "link")}}
+    </a>
+    {{- end}}
+</div>
+{{- else}}
+<div class="carousel-cell" {{- with (.Get "image")}}style="background-image:url('{{.}}');"{{- end}} >
+    
+    {{- with (.Get "link")}}
+    <a href="{{.}}">
+    {{- end}}
+    {{- with (.Get "description")}}
+    <div class="description" style="text-align:center;">{{.}}</div>
+    {{- end}}
+    {{- with (.Get "link")}}
+    </a>
+    {{- end}}
+    
+</div>
+{{- end}}

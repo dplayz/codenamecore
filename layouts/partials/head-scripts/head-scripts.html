@@ -38,3 +38,19 @@
 
 <!--Head Scripts Icon Fonts Assets Integration - Used to integrate Icon Fonts -->
 {{- partial "head-scripts/iconFonts-integration.html" . }}  
+
+<!--Head Scripts Flickity Carousel Library-->
+<link rel="stylesheet" href="https://unpkg.com/flickity@3/dist/flickity.min.css">
+<link rel="stylesheet" href="https://unpkg.com/flickity-fade@2/flickity-fade.css">
+<script src="https://unpkg.com/flickity@3/dist/flickity.pkgd.min.js"></script>
+<script src="https://unpkg.com/flickity-fade@2/flickity-fade.js"></script>
+<script>
+// https://github.com/metafizzy/flickity-fade/issues/13#issuecomment-758800627
+Flickity.prototype.stopPlayer = function() {
+  this.player.stop();
+  // always resume play after 3 seconds
+  setTimeout( () => {
+    this.player.play();
+  }, 3000 )
+};
+</script>

@@ -388,6 +388,77 @@ Customizations made by dp
   }
 }
 
+/* Carousel Block Base CSS*/
+.main-carousel{
+  max-width:1000px;
+  margin: 20px auto 60px;
+  padding:10px;
+}
+.flickity-prev-next-button.previous {
+    left:15px !important;
+}
+.flickity-prev-next-button.next{
+    right:15px !important;
+}
+.flickity-viewport, .carousel-cell{
+    border-radius:15px;
+}
+.flickity-page-dots{
+    position: relative !important;
+}
+.carousel-cell {
+  width: 100%;
+  height: 300px;
+  margin-right: 10px;
+  background: #8C8;
+  background-position:center; background-size:cover;
+}
+.carousel-cell img{
+  object-fit:cover;
+  height:300px;
+  width:100%;
+}
+.carousel-cell div.description{
+  animation: gradientTransition 300ms ease-out;
+  background: linear-gradient(0deg, rgba(0,0,0,0.50) 5%, rgba(0,0,0,0) 100%);
+  color:white;
+  font-size:17px;
+  margin:0;
+  height: 300px;
+  width: 100%;
+  display: flex; /* This enables flexbox layout */
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index:1;
+}
+@media(max-width:768px){
+  .carousel-cell div.description{
+      font-size:14px;
+  }
+}
+.carousel-cell div.description::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0,0,0,0.75) 5%, rgba(0,0,0,0) 100%);
+  transition: opacity 300ms ease-out;
+  opacity: 0;
+  z-index:-1;
+}
+.carousel-cell div.description:hover::before {
+  opacity: 1;
+  background: linear-gradient(0deg, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0) 100%);
+}
+.carousel-cell p, .carousel-cell a,
+.carousel-cell h1, .carousel-cell h2, .carousel-cell h3,.carousel-cell h4,.carousel-cell h5,.carousel-cell h6{
+    margin:0;
+    text-decoration: none;
+    color:white !important;
+}
+
 /* */
 div#pagecomments{
     max-width:1000px;
