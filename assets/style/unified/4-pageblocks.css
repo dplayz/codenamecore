@@ -489,6 +489,7 @@ div#pagecomments{
     div#pagecomments, section.post-design-layout-comments{
         background-color: rgba(0, 0 , 0, 0.6); 
         color:white;
+        border:unset;
     }
 }
 
