@@ -692,7 +692,7 @@ div.homepage-sidebysidecontainer div.homepage-sidebyside-row div:nth-child(n+3) 
         grid-template-rows:unset;
         row-gap: 0px;
     }
-	div.homepage-sidebysidecontainer div.homepage-sidebyside-row:nth-child(2n) div:nth-child(1) {
+	div.homepage-sidebysidecontainer.alternate div.homepage-sidebyside-row:nth-child(2n) div:nth-child(1) {
 		order:2;
     }
 }
