@@ -103,7 +103,7 @@ div.subservice-brand-title{
 }
 .sectionheader{
 	width:100%;
-	height:40px;
+	min-height:45px;
 	background-color:#ffffff;
 	text-align:left;
 	font-size:25px;
