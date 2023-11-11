@@ -46,6 +46,9 @@ pre:hover{
 iframe{
 	border-radius:10px;
 }
+hr {
+	width:95%;
+}
 
 /*Border Default Style */
 div.border{
