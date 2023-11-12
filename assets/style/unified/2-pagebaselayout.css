@@ -19,7 +19,7 @@ header.header {
 	top:0;
 	display: grid;
 	grid-template-rows: fit-content(100%) fit-content(100%) fit-content(100%);
-
+    margin:auto;
 	position: sticky;
 	width:100%;
 	align-items: center;
@@ -30,6 +30,9 @@ header.header {
 }
 div.header-grid-container{
 	margin-top:auto;
+    margin:auto;
+    width:100%;
+    max-width:1500px;
 }
 div.header-main-grid-container{
 	display:grid;
