@@ -23,17 +23,13 @@
 <!--DEPRECATION NOTICE: Potential integration removal is planned-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<!--Head Scripts Dynamic Content Backend - URL Based Content Display-->
-<style>div.dynamicContent{display:none;}</style>
+<!-- Head Scripts URL Parameters Parser-->
 <script>
-        function getParameterByName(name, url = window.location.href) {
-            name = name.replace(/[\[\]]/g, '\\$&');
-            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }
+    var urlParamValues = {};
+    const urlParams = new URLSearchParams(window.location.search);
+    for (const [key, value] of urlParams) {
+        urlParamValues[key] = value;
+    }
 </script>
 
 <!--Head Scripts Icon Fonts Assets Integration - Used to integrate Icon Fonts -->
