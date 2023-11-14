@@ -150,6 +150,10 @@ nav.header-links li a {
 	color: black;
 	padding: 1rem;
 }
+nav.header-links li a[target="_blank"]::after{
+    content:" ⭷";
+    user-select: none;
+}
 nav.header-links li a:hover {
 	background-color: #ddd;
 	border-radius:10px;
@@ -159,6 +163,10 @@ nav.header-links li a:hover {
 	display: inline-block;
 	text-decoration:none;
 	color:black;
+  }
+.dropbtn::after{
+    content:" ▼";
+    user-select:none;
   }
 .dropdown-content {
 	display: none;
@@ -173,7 +181,9 @@ nav.header-links li a:hover {
 	display: block;
 	border-radius:unset;
 }  
+@media (min-width:799px){
 nav.header-links .dropdown:hover .dropdown-content{display: block;}
+}
 nav.header-links .dropdown-content {
 	position: absolute;
 	background-color: #ffffff;
