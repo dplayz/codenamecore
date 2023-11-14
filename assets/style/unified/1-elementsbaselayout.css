@@ -24,6 +24,9 @@ body, button{
 	src: url("/fonts/Twemoji.Mozilla.0.7.0.ttf");
 	font-display: swap;
 }
+div.dynamicContent{
+	display:none;
+}
 .content-container{
 	height:auto;
 	min-height:500px;
