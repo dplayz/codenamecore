@@ -7,6 +7,17 @@ html, body{
 		background:var(--page-background-color-dark); 
 	}
 }
+a.headerAnchorLink{
+    display:none;
+}
+a.headerAnchorLink:hover{
+    text-decoration:underline
+}
+h1:hover a.headerAnchorLink, h2:hover a.headerAnchorLink,
+h3:hover a.headerAnchorLink, h4:hover a.headerAnchorLink, 
+h5:hover a.headerAnchorLink, h6:hover a.headerAnchorLink{
+    display: inline-block
+}
 /* Page containers Base Layout */
 div.main-container, div.footer-content-container{
     max-width:1500px;
