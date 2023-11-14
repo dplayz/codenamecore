@@ -1,7 +1,6 @@
 <div class="dynamicContent" id="{{ .Get 0 }}">{{.Inner}}</div>
 <script>
-  var dynamicContent = getParameterByName('display{{ .Get 0 }}');
-  if (dynamicContent == "true")
+  if (urlParamValues.display{{.Get 0 | safeJS }} == "true")
   {
     item = document.getElementById("{{ .Get 0 }}");
     item.classList.remove("dynamicContent");
