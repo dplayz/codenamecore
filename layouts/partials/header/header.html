@@ -16,7 +16,7 @@
     {{- end }}
     <div class="header-main-grid-container">
         <div class="brand-title">
-          <a href="{{.Site.BaseURL | relURL}}" class="header-main-brand-title-link-container">
+          <a href="{{ .Site.BaseURL | relURL }}" class="header-main-brand-title-link-container">
             {{ if .Site.Params.identity.general.logo}}
               <img src="{{relURL (.Site.Params.identity.general.logo)}}" class="sitelogo">
               {{else if os.FileExists "static/images/logo.png" }}

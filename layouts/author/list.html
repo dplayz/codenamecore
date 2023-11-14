@@ -9,7 +9,7 @@
 {{ .Content }}
 <hr>
 <h2>Articles written by the author</h2>
-{{ range .Data.Pages }}
+{{ range where .Site.Pages "Params.author" "intersect" (slice .Params.name) }}
   {{- if (and (or (eq .Site.Params.theme.list.sectionList.articleSnippetStyle "boxStyle") (eq .Site.Params.theme.list.sectionList.articleSnippetStyle "boxstyle") (eq .Site.Params.theme.list.sectionList.articleSnippetStyle "box-style" )))}}
     {{ partial "list/article-snippet/box-style.html" .}}
   {{- else}}

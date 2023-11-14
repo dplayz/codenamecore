@@ -1,4 +1,10 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
+{{if eq (.Get "alternate") "true" }}
+<div class="homepage-sidebysidecontainer alternate">
+    {{.Inner}}
+</div>
+{{- else}}
 <div class="homepage-sidebysidecontainer">
     {{.Inner}}
 </div>
+{{- end}}

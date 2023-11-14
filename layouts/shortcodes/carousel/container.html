@@ -1,0 +1,15 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class="main-carousel" data-flickity='{"cellAlign": "center", "wrapAround": true,  "autoPlay": 3000 {{- if eq (.Get "fade") "true"}}, "fade" : true {{- end}} }'>
+    {{.Inner}}
+</div>
+{{- if eq (.Get "fade") "true"}}
+<style>
+.carousel-cell {
+    opacity: 0 !important;
+    transition: opacity 1s ease !important;
+}
+.carousel-cell.is-selected {
+    opacity: 1 !important;
+}
+</style>
+{{- end}}

@@ -94,7 +94,7 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime'}
       - { label: 'Author', name: 'author', widget: 'list', required: false }
       - { label: 'Description', name: 'description', widget: 'string', required: false}
-      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown', show_raw: true, required: false }
       - { label: 'Tags', name: tags, widget: list, required: false}
       - { label: 'Categories', name: categories, widget: list, required: false}
       - { label: 'Permalink', name: 'permalink', widget: 'string', required: false}

@@ -1,0 +1,108 @@
+/* Legacy Stylings */
+/* Styles that are anytime soon, will be removed 
+   to codebase when proper replacements are set,
+   and/or just kept for compatability reasons. */
+
+/* Article Lists Box-Style Base Layout */
+article.box-style div.pagetitle-design{
+	color:black;
+	background-color:gray;
+	border-radius:10px;
+	border:5px solid black;
+}
+@media (prefers-color-scheme: dark) {
+    article.box-style div.pagetitle-design{
+		color:white;
+		background-color:#333;
+	}
+}
+@media(min-width:800px) {
+		article.box-style { margin-left:15%;margin-right:15%;}}
+@media(max-width:800px) {
+		article.box-style { margin-left:5%;margin-right:5%;}}
+@media(max-width:500px) {
+		article.box-style {margin-left:0%;margin-right:0%;}}
+
+/* Legacy Collapsible Block */
+/*pagecontent-light-collapsablecontent | collapsable content for lists */
+/*
+.collapsible-legacy {
+	text-align:center;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+  	padding:5px;
+  	margin-left:auto;
+  	margin-right:auto;
+  	background-color: #888;
+  	color: white;
+  	cursor:pointer;
+	width:50%;
+  	padding:27px;
+	border:10px;
+  	text-align: left;
+  	outline: none;
+}
+.collapsible-legacy-notbig{
+	padding-left:5px;
+	padding-right:5px;
+	padding:2.5px;
+} 
+.collapsible-legacy-fullwidth{
+	width:100%;
+}
+@media(min-width:600px){
+	.collapsible-legacy-fullwidth{
+		width:75%;
+	}
+}
+@media(min-width:900px){
+	.collapsible-legacy-fullwidth{
+		width:50%;
+	}
+}
+.active, .collapsible:hover {
+  	background-color: #666;
+}
+div.collapsible-legacy-content{
+	padding: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.45s ease-in-out;
+	background-color: none;
+	display:none;
+}
+div.collapsible-legacy-content + br{
+	display:block;
+}*/
+
+/* Legacy 2-Column Section Layout */
+/*pagecontent-both-column | Column Style */
+.row {
+	display: flex;
+  }
+  .column {
+	flex: 50%;
+	margin-top:auto;
+	margin-bottom:auto;
+	padding:15px;
+}
+@media (max-width: 600px) {
+	.row {
+		display: block;
+	}
+}
+
+/* Legacy Padding Base Layout */
+div.padding{
+	padding:100px 50px;
+}
+div.padding-top{
+	padding:100px 0px 0px;
+}
+div.pagetitle{
+	padding-top:50px;
+}
+div.padding-bottom{
+	padding-bottom:100px;
+}

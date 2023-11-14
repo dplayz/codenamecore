@@ -1,4 +1,6 @@
-    #pagecontent, .pagetitle {
+/* 6-legacy-animation.css is normally not included from the CSS bundle.*/
+/* Legacy Slide-in from Left Animation */
+#pagecontent, .pagetitle {
 	animation: .3s ease-out 0s 1 slideInFromLeft;
 	padding: 30px;
 }

@@ -1,3 +1,9 @@
+
+<!--Head Website Assets - CSS Bundler/Builder-->
+{{- partial "head/head-css-bundler.html" . }}
+<!-- Head User Defined Partial - User-Defined options that can be configured at config file-->
+{{- partial "head/head-userdefined.html" . }}
+
 <!--Head Page Basic Info - NOINDEX options-->
 {{-  if (or (eq .Site.Params.identity.webmaster.noIndexAll true) (eq .Params.noIndexPage true) (eq .Params.sitemapExclude true) (eq .Params.excludeFromCrawlers true) (eq .Params.unlisted true))}}
 <meta name="robots" content="noindex">
@@ -60,8 +66,7 @@
 {{- if .Site.Params.identity.general.favicon}}
 <link rel="icon" type="image/x-icon" href="{{relURL .Site.Params.identity.general.favicon}}">
 {{- end}}
-<!--Head Website Assets - CSS Bundler/Builder-->
-{{- partial "head/head-css-bundler.html" . }}
+
 <link rel="manifest" href="{{relURL "/manifest.json"}}">
 
 <!--Head Site Identity Options-->
@@ -70,8 +75,6 @@
 {{- with .Site.Params.identity.yandexValidationCode}}<meta name="yandex-verification" content="{{.}}" />{{end}}
 {{- with .Site.Params.identity.googleSiteVerificationCode}}<meta name="google-site-verification" content="{{.}}">{{end}}
 
-<!-- Head User Defined Partial - User-Defined options that can be configured at config file-->
-{{- partial "head/head-userdefined.html" . }}
 
 <!--Head Scripts Partial - Scripts placed at '<head>' tag-->
 {{- partial "head-scripts/head-scripts.html" .}}

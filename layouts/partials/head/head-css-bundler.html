@@ -1,67 +1,16 @@
-{{- $cssvariablescss := resources.Get "style/css-variables.css" | fingerprint }}
-{{- $pagecolorcss := resources.Get "style/pagecolor.css" | fingerprint }}
-{{- $generalcss := resources.Get "style/general.css" | fingerprint }}
-{{- $headercss := resources.Get "style/header.css" | fingerprint }}
-{{- $anchortagcss := resources.Get "style/anchortag.css" | fingerprint }}
-{{- $anchorbuttoncss := resources.Get "style/anchorbutton.css" | fingerprint }}
-{{- $codeblockcss := resources.Get "style/codeblock.css" | fingerprint }}
-{{- $modalcss := resources.Get "style/modal.css" | fingerprint }}
-{{- $noticeshortcodecss := resources.Get "style/noticeShortcode.css" | fingerprint }}
-{{- $errormessageblockcss := resources.Get "style/errormessageblock.css" | fingerprint }}
-{{- $infopagecss := resources.Get "style/infopage.css" | fingerprint  }}
-{{- $homepageblockscss := resources.Get "style/homepage.css" | fingerprint }}
-{{- $contentcontaineroptionscss := resources.Get "style/container-options.css" | fingerprint }}
-{{- $articlelayoutmaincss := resources.Get "style/article-layout.css" | fingerprint }}
-{{- $articlesnippetliststylecss := resources.Get "style/article-snippet-layout/list-style.css" | fingerprint }}
-{{- $articlesnippetboxstylecss := resources.Get "style/article-snippet-layout/box-style.css" | fingerprint }}
-{{- $tagsnippetcss := resources.Get "style/tag-snippet.css" | fingerprint }}
-{{- $pagecommentblockcss := resources.Get "style/pagecommentblock.css" | fingerprint }}
-{{- $collapsibleblockcss := resources.Get "style/collapsibleblock.css" | fingerprint }}
-{{- $authorinfocss := resources.Get "style/author-info.css" | fingerprint  }}
-{{- $borderclasscss := resources.Get "style/borderclass.css" | fingerprint }}
-{{- $columnlayoutcss := resources.Get "style/columnlayout.css" | fingerprint }}
-{{- $paddinglayoutcss := resources.Get "style/paddinglayout.css" | fingerprint }}
-{{- $imagelayoutcss := resources.Get "style/imagelayout.css" | fingerprint }}
-{{- $tablelayoutcss := resources.Get "style/tablelayout.css" | fingerprint }}
-{{- $tabbedviewscss := resources.Get "style/tabbedviews.css" | fingerprint }}
-{{- $listlayoutcss := resources.Get "style/listlayout.css" | fingerprint }}
-{{- $textautoadjustcss := resources.Get "style/text-autoadjust.css" | fingerprint }}
-{{- $marqueeanimationcss := resources.Get "style/marquee-animation.css" | fingerprint  }}
-{{- $footerlayoutcss := resources.Get "style/footerlayout.css" | fingerprint  }}
-{{- $devbranchnoticelayoutcss := resources.Get "style/devbranchnoticelayout.css" | fingerprint  }}
-{{- $pagenoticecss := resources.Get "style/pagenotice.css" | fingerprint  }}
+{{- $0variablecss := resources.Get "style/unified/0-variables.css" | fingerprint }}
+{{- $1elementsbaselayoutcss := resources.Get "style/unified/1-elementsbaselayout.css" | fingerprint }}
+{{- $2pagebaselayoutcss := resources.Get "style/unified/2-pagebaselayout.css" | fingerprint }}
+{{- $3animationcss := resources.Get "style/unified/3-animation.css" | fingerprint }}
+{{- $4pageblockscss := resources.Get "style/unified/4-pageblocks.css" | fingerprint }}
+{{- $5legacystylingcss := resources.Get "style/unified/5-legacystyling.css" | fingerprint }}
 {{- $stylebundle := slice 
-    $cssvariablescss
-    $generalcss
-    $pagecolorcss
-    $headercss
-    $anchortagcss
-    $anchorbuttoncss
-    $codeblockcss
-    $modalcss
-    $noticeshortcodecss
-    $errormessageblockcss 
-    $infopagecss
-    $homepageblockscss
-    $contentcontaineroptionscss
-    $articlelayoutmaincss 
-    $articlesnippetliststylecss 
-    $articlesnippetboxstylecss
-    $tagsnippetcss
-    $pagecommentblockcss 
-    $collapsibleblockcss 
-    $authorinfocss
-    $borderclasscss 
-    $columnlayoutcss
-    $paddinglayoutcss
-    $imagelayoutcss
-    $tablelayoutcss
-    $tabbedviewscss
-    $listlayoutcss
-    $marqueeanimationcss 
-    $footerlayoutcss 
-    $devbranchnoticelayoutcss 
-    $pagenoticecss
+    $0variablecss
+    $1elementsbaselayoutcss
+    $2pagebaselayoutcss
+    $3animationcss
+    $4pageblockscss
+    $5legacystylingcss
     | resources.Concat "style/style-bundle.css" | resources.Fingerprint "sha512"}}
 <link rel="stylesheet" href="{{ $stylebundle.RelPermalink }}">
 {{- if os.FileExists "/assets/style/custom.css"}}

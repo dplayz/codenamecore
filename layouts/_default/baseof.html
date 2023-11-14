@@ -10,7 +10,16 @@
         {{ partial "header/header.html" .}}
         {{- end}}
         {{- block "main-container" .}}
+        {{- if and 
+            (eq .Site.Params.theme.sidebar.enable true)
+            (ne .Params.disableSidebar true)
+            (ne .Params.hideHeader true)
+            (ne .Params.infopage true) (ne .Params.pageType "infopage")
+        }}
+        <div class="main-container with-sidebar">
+        {{- else}}
         <div class="main-container">
+        {{- end}}
             {{- block "content-container" .}}
             <div class="content-container">
                 {{- block "main" .}}
@@ -18,17 +27,18 @@
                 {{- end }}
             </div>
             {{- end}}
-            {{- if and (or (eq .Params.hideHeader true) (eq .Params.infopage true))}}{{- else}}
+            {{- if and 
+                (eq .Site.Params.theme.sidebar.enable true)
+                (ne .Params.disableSidebar true)
+                (ne .Params.hideHeader true)
+                (ne .Params.infopage true) (ne .Params.pageType "infopage")
+            }}
             {{- block "sidebar-container" . }}
-            {{- if and (ne .Params.disableSidebar true) (eq .Site.Params.theme.sidebar.enable true) }}
             <aside id="sidebar" class="sidebar-container">
-                {{- $sidebarcss := resources.Get "style/sidebar-layout.css" | fingerprint }}
-                <link rel="stylesheet" href="{{ $sidebarcss.RelPermalink }}">
                 {{ partial "page/sidebar.html" . }}
                 <script>console.log("Sidebar enabled!")</script>
             {{end}}
             </aside>
-            {{- end}}
             {{- end}}
         </div>
         {{- end}}
