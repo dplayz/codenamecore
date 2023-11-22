@@ -161,10 +161,15 @@ nav.header-links li a{
 	color: black;
 	padding: 1rem;
 }
+nav.header-links li#searchButton{
+    display: flex;
+    align-items: center;
+}
 nav.header-links li input#search-submit{
-    padding: .50rem 1rem .65rem;
-    margin-top:1.5rem;
     font-size:15px;
+    height:55px;
+    font-weight:600;
+    border-radius: 10px;
     background: unset;
     color:black;
     border:unset;
@@ -281,6 +286,9 @@ nav.header-links .dropdown-content {
 		width: 85vw;
 		margin:auto;
 	}
+    nav.header-links li input#search-submit {
+        height:70px;
+    }
 	nav.header-links ul li div.dropdown div.dropdown-content{
 		position:relative;
 	}
