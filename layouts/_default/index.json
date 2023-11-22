@@ -1,0 +1,20 @@
+{{/* layouts/_default/index.json */}}
+{{- $index := slice -}}
+{{- range .Site.Pages }}
+	{{if and (not .IsSection) (.Params.date)}}
+	{{ if .Params.date }}
+			{{ $.Scratch.Set "date" (.Params.date) }}
+	{{ end }}
+	{{ if .Params.author }}
+		{{ $.Scratch.Set "author" (.Params.author) }}
+	{{ else if .Site.Params.identity.general.defaultAuthor.name}}
+			{{ $.Scratch.Set "author" (.Site.Params.identity.general.defaultAuthor.name) }}
+	{{	else }}
+				{{ $.Scratch.Set "author" "" }}
+	{{ end }}
+	{{ else }}
+		{{ $.Scratch.Set "date" "" }}
+	{{ end }}
+    {{- $index = $index | append (dict "title" ( .Title | plainify ) "permalink" .Permalink "section" (i18n (.Section | title)) "tags" (apply .Params.tags "i18n" "." ) "categories" (apply .Params.categories "i18n" "." ) "summary" (.Params.summary | markdownify | htmlUnescape | plainify) "author" ($.Scratch.Get "author") "date" ($.Scratch.Get "date")) -}}
+{{- end -}}
+{{- $index | jsonify -}}
