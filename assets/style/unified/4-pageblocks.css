@@ -302,8 +302,22 @@ div.highlight div table{
     background:inherit;
 }
 div.highlight{
+    width:95%;
+    margin:auto;
     overflow-x: auto;
     position: relative;
+}
+div.highlight pre{
+    padding:10px;
+    border-radius:10px;
+}
+div.highlight code[class^="language-"]:before {
+    content: attr(data-lang);
+    background:#555;
+    padding:8px 10px;
+    max-width:500%;
+    margin:-10px -2px 10px -10px;
+    display:flex;
 }
 /* Codeblock Tap to Copy Button 
 Attributions: 
@@ -312,7 +326,7 @@ https://tomspencer.dev/blog/2018/09/14/adding-click-to-copy-buttons-to-a-hugo-po
 */
 .highlight-copy-btn {
     position: absolute;
-    bottom: 7px;
+    top: 17px;
     right: 7px;
     border: 0;
     border-radius: 10px;
