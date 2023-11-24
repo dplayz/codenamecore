@@ -164,6 +164,7 @@ nav.header-links li a{
 nav.header-links li#searchButton{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 nav.header-links li input#search-submit{
     font-size:15px;
@@ -174,6 +175,7 @@ nav.header-links li input#search-submit{
     color:black;
     border:unset;
     cursor: pointer;
+    padding: 1rem;
 }
 nav.header-links li a[target="_blank"]::after{
     content:" ⭷";
@@ -395,13 +397,13 @@ div.psa img{
     backdrop-filter: blur(150px);
     border-radius:5px;
     border:1px solid black;
-    top: 2%;
+    top: 10px;
     padding:10px;
     left: 2%;
     margin: 0;
-    width:94.5%;
+    width:calc(95% - 20px);
     min-width: var(--icon-size, 1.2rem);
-    height: 93vh;
+    height: calc(93vh - 10px);
     z-index: 1000;
     color:black;
 }
