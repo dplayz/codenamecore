@@ -16,7 +16,7 @@ a[target="_blank"]::after{
 		color:var(--text-color-dark);
 	}
 }
-body, button{
+body, button, input{
 	font-family: var(--font-preferences), 'sans-serif', 'Roboto', Arial, 'Twemoji Country Flags', 'Twemoji Offline Fallback';
 }
 @font-face {
